@@ -79,6 +79,20 @@ const lessons = {
             <div class="output-container" id="output-w2_00-0"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_00-1">
+            <div class="cell-header"><span>[ ] Practice 2: 2. Introduction to NumPy</span></div>
+            <div class="editor-container" id="editor-w2_00-1"></div>
+            <div class="controls"><button onclick="runCode('w2_00-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_00-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_00-2">
+            <div class="cell-header"><span>[ ] Practice 3: 2. Introduction to NumPy</span></div>
+            <div class="editor-container" id="editor-w2_00-2"></div>
+            <div class="controls"><button onclick="runCode('w2_00-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_00-2"></div>
+        </div>
+        
     `,
     'w2_01': `
         <h1>Understanding Data Types in Python</h1>
@@ -168,6 +182,13 @@ const lessons = {
             <div class="output-container" id="output-w2_03-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_03-2">
+            <div class="cell-header"><span>[ ] Practice 3: Computation on NumPy Arrays: Universal Functions</span></div>
+            <div class="editor-container" id="editor-w2_03-2"></div>
+            <div class="controls"><button onclick="runCode('w2_03-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_03-2"></div>
+        </div>
+        
     `,
     'w2_04': `
         <h1>Aggregations: Min, Max, and Everything In Between</h1>
@@ -184,6 +205,20 @@ const lessons = {
             <div class="editor-container" id="editor-w2_04-0"></div>
             <div class="controls"><button onclick="runCode('w2_04-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_04-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_04-1">
+            <div class="cell-header"><span>[ ] Practice 2: Aggregations: Min, Max, and Everything In Between</span></div>
+            <div class="editor-container" id="editor-w2_04-1"></div>
+            <div class="controls"><button onclick="runCode('w2_04-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_04-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_04-2">
+            <div class="cell-header"><span>[ ] Practice 3: Aggregations: Min, Max, and Everything In Between</span></div>
+            <div class="editor-container" id="editor-w2_04-2"></div>
+            <div class="controls"><button onclick="runCode('w2_04-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_04-2"></div>
         </div>
         
     `,
@@ -211,6 +246,13 @@ const lessons = {
             <div class="output-container" id="output-w2_05-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_05-2">
+            <div class="cell-header"><span>[ ] Practice 3: Computation on Arrays: Broadcasting</span></div>
+            <div class="editor-container" id="editor-w2_05-2"></div>
+            <div class="controls"><button onclick="runCode('w2_05-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_05-2"></div>
+        </div>
+        
     `,
     'w2_06': `
         <h1>Comparisons, Masks, and Boolean Logic</h1>
@@ -227,6 +269,20 @@ const lessons = {
             <div class="editor-container" id="editor-w2_06-0"></div>
             <div class="controls"><button onclick="runCode('w2_06-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_06-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_06-1">
+            <div class="cell-header"><span>[ ] Practice 2: Comparisons, Masks, and Boolean Logic</span></div>
+            <div class="editor-container" id="editor-w2_06-1"></div>
+            <div class="controls"><button onclick="runCode('w2_06-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_06-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_06-2">
+            <div class="cell-header"><span>[ ] Practice 3: Comparisons, Masks, and Boolean Logic</span></div>
+            <div class="editor-container" id="editor-w2_06-2"></div>
+            <div class="controls"><button onclick="runCode('w2_06-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_06-2"></div>
         </div>
         
     `,
@@ -247,6 +303,20 @@ const lessons = {
             <div class="output-container" id="output-w2_07-0"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_07-1">
+            <div class="cell-header"><span>[ ] Practice 2: Fancy Indexing</span></div>
+            <div class="editor-container" id="editor-w2_07-1"></div>
+            <div class="controls"><button onclick="runCode('w2_07-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_07-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_07-2">
+            <div class="cell-header"><span>[ ] Practice 3: Fancy Indexing</span></div>
+            <div class="editor-container" id="editor-w2_07-2"></div>
+            <div class="controls"><button onclick="runCode('w2_07-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_07-2"></div>
+        </div>
+        
     `,
     'w2_08': `
         <h1>Sorting Arrays</h1>
@@ -265,6 +335,20 @@ const lessons = {
             <div class="output-container" id="output-w2_08-0"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_08-1">
+            <div class="cell-header"><span>[ ] Practice 2: Sorting Arrays</span></div>
+            <div class="editor-container" id="editor-w2_08-1"></div>
+            <div class="controls"><button onclick="runCode('w2_08-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_08-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_08-2">
+            <div class="cell-header"><span>[ ] Practice 3: Sorting Arrays</span></div>
+            <div class="editor-container" id="editor-w2_08-2"></div>
+            <div class="controls"><button onclick="runCode('w2_08-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_08-2"></div>
+        </div>
+        
     `,
     'w2_09': `
         <h1>Structured Data: NumPy\'s Structured Arrays</h1>
@@ -281,6 +365,20 @@ const lessons = {
             <div class="editor-container" id="editor-w2_09-0"></div>
             <div class="controls"><button onclick="runCode('w2_09-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_09-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_09-1">
+            <div class="cell-header"><span>[ ] Practice 2: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="editor-container" id="editor-w2_09-1"></div>
+            <div class="controls"><button onclick="runCode('w2_09-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_09-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_09-2">
+            <div class="cell-header"><span>[ ] Practice 3: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="editor-container" id="editor-w2_09-2"></div>
+            <div class="controls"><button onclick="runCode('w2_09-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_09-2"></div>
         </div>
         
     `,
@@ -308,6 +406,13 @@ const lessons = {
             <div class="output-container" id="output-w4_00-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_00-2">
+            <div class="cell-header"><span>[ ] Practice 3: 4. Visualization with Matplotlib</span></div>
+            <div class="editor-container" id="editor-w4_00-2"></div>
+            <div class="controls"><button onclick="runCode('w4_00-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_00-2"></div>
+        </div>
+        
     `,
     'w4_01': `
         <h1>Simple Line Plots</h1>
@@ -331,6 +436,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_01-1"></div>
             <div class="controls"><button onclick="runCode('w4_01-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_01-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_01-2">
+            <div class="cell-header"><span>[ ] Practice 3: Simple Line Plots</span></div>
+            <div class="editor-container" id="editor-w4_01-2"></div>
+            <div class="controls"><button onclick="runCode('w4_01-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_01-2"></div>
         </div>
         
     `,
@@ -358,6 +470,13 @@ const lessons = {
             <div class="output-container" id="output-w4_02-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_02-2">
+            <div class="cell-header"><span>[ ] Practice 3: Simple Scatter Plots</span></div>
+            <div class="editor-container" id="editor-w4_02-2"></div>
+            <div class="controls"><button onclick="runCode('w4_02-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_02-2"></div>
+        </div>
+        
     `,
     'w4_03': `
         <h1>Visualizing Errors</h1>
@@ -381,6 +500,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_03-1"></div>
             <div class="controls"><button onclick="runCode('w4_03-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_03-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_03-2">
+            <div class="cell-header"><span>[ ] Practice 3: Visualizing Errors</span></div>
+            <div class="editor-container" id="editor-w4_03-2"></div>
+            <div class="controls"><button onclick="runCode('w4_03-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_03-2"></div>
         </div>
         
     `,
@@ -408,6 +534,13 @@ const lessons = {
             <div class="output-container" id="output-w4_04-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_04-2">
+            <div class="cell-header"><span>[ ] Practice 3: Density and Contour Plots</span></div>
+            <div class="editor-container" id="editor-w4_04-2"></div>
+            <div class="controls"><button onclick="runCode('w4_04-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_04-2"></div>
+        </div>
+        
     `,
     'w4_05': `
         <h1>Histograms, Binnings, and Density</h1>
@@ -431,6 +564,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_05-1"></div>
             <div class="controls"><button onclick="runCode('w4_05-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_05-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_05-2">
+            <div class="cell-header"><span>[ ] Practice 3: Histograms, Binnings, and Density</span></div>
+            <div class="editor-container" id="editor-w4_05-2"></div>
+            <div class="controls"><button onclick="runCode('w4_05-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_05-2"></div>
         </div>
         
     `,
@@ -458,6 +598,13 @@ const lessons = {
             <div class="output-container" id="output-w4_06-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_06-2">
+            <div class="cell-header"><span>[ ] Practice 3: Customizing Plot Legends</span></div>
+            <div class="editor-container" id="editor-w4_06-2"></div>
+            <div class="controls"><button onclick="runCode('w4_06-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_06-2"></div>
+        </div>
+        
     `,
     'w4_07': `
         <h1>Customizing Colorbars</h1>
@@ -481,6 +628,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_07-1"></div>
             <div class="controls"><button onclick="runCode('w4_07-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_07-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_07-2">
+            <div class="cell-header"><span>[ ] Practice 3: Customizing Colorbars</span></div>
+            <div class="editor-container" id="editor-w4_07-2"></div>
+            <div class="controls"><button onclick="runCode('w4_07-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_07-2"></div>
         </div>
         
     `,
@@ -508,6 +662,13 @@ const lessons = {
             <div class="output-container" id="output-w4_08-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_08-2">
+            <div class="cell-header"><span>[ ] Practice 3: Multiple Subplots</span></div>
+            <div class="editor-container" id="editor-w4_08-2"></div>
+            <div class="controls"><button onclick="runCode('w4_08-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_08-2"></div>
+        </div>
+        
     `,
     'w4_09': `
         <h1>Text and Annotation</h1>
@@ -531,6 +692,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_09-1"></div>
             <div class="controls"><button onclick="runCode('w4_09-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_09-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_09-2">
+            <div class="cell-header"><span>[ ] Practice 3: Text and Annotation</span></div>
+            <div class="editor-container" id="editor-w4_09-2"></div>
+            <div class="controls"><button onclick="runCode('w4_09-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_09-2"></div>
         </div>
         
     `,
@@ -558,6 +726,13 @@ const lessons = {
             <div class="output-container" id="output-w4_10-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_10-2">
+            <div class="cell-header"><span>[ ] Practice 3: Customizing Ticks</span></div>
+            <div class="editor-container" id="editor-w4_10-2"></div>
+            <div class="controls"><button onclick="runCode('w4_10-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_10-2"></div>
+        </div>
+        
     `,
     'w4_11': `
         <h1>Customizing Matplotlib: Configurations and Stylesheets</h1>
@@ -581,6 +756,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_11-1"></div>
             <div class="controls"><button onclick="runCode('w4_11-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_11-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_11-2">
+            <div class="cell-header"><span>[ ] Practice 3: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="editor-container" id="editor-w4_11-2"></div>
+            <div class="controls"><button onclick="runCode('w4_11-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_11-2"></div>
         </div>
         
     `,
@@ -608,6 +790,13 @@ const lessons = {
             <div class="output-container" id="output-w4_12-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_12-2">
+            <div class="cell-header"><span>[ ] Practice 3: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="editor-container" id="editor-w4_12-2"></div>
+            <div class="controls"><button onclick="runCode('w4_12-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_12-2"></div>
+        </div>
+        
     `,
     'w4_13': `
         <h1>Geographic Data with Basemap</h1>
@@ -631,6 +820,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_13-1"></div>
             <div class="controls"><button onclick="runCode('w4_13-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_13-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_13-2">
+            <div class="cell-header"><span>[ ] Practice 3: Geographic Data with Basemap</span></div>
+            <div class="editor-container" id="editor-w4_13-2"></div>
+            <div class="controls"><button onclick="runCode('w4_13-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_13-2"></div>
         </div>
         
     `,
@@ -658,6 +854,13 @@ const lessons = {
             <div class="output-container" id="output-w4_14-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_14-2">
+            <div class="cell-header"><span>[ ] Practice 3: Visualization with Seaborn</span></div>
+            <div class="editor-container" id="editor-w4_14-2"></div>
+            <div class="controls"><button onclick="runCode('w4_14-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_14-2"></div>
+        </div>
+        
     `,
     'w4_15': `
         <h1>Further Resources</h1>
@@ -683,6 +886,13 @@ const lessons = {
             <div class="output-container" id="output-w4_15-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_15-2">
+            <div class="cell-header"><span>[ ] Practice 3: Further Resources</span></div>
+            <div class="editor-container" id="editor-w4_15-2"></div>
+            <div class="controls"><button onclick="runCode('w4_15-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_15-2"></div>
+        </div>
+        
     `,
     'w3_0': `
         <h1>What kind of data does pandas handle?</h1>
@@ -704,6 +914,13 @@ const lessons = {
             <div class="editor-container" id="editor-w3_0-1"></div>
             <div class="controls"><button onclick="runCode('w3_0-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_0-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_0-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_0-2"></div>
+            <div class="controls"><button onclick="runCode('w3_0-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_0-2"></div>
         </div>
         
     `,
@@ -729,6 +946,13 @@ const lessons = {
             <div class="output-container" id="output-w3_1-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_1-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_1-2"></div>
+            <div class="controls"><button onclick="runCode('w3_1-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_1-2"></div>
+        </div>
+        
     `,
     'w3_2': `
         <h1>How do I select a subset of a DataFrame?</h1>
@@ -745,6 +969,20 @@ const lessons = {
             <div class="output-container" id="output-w3_2-0"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_2-1">
+            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_2-1"></div>
+            <div class="controls"><button onclick="runCode('w3_2-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_2-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_2-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_2-2"></div>
+            <div class="controls"><button onclick="runCode('w3_2-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_2-2"></div>
+        </div>
+        
     `,
     'w3_3': `
         <h1>How do I create plots in pandas?</h1>
@@ -759,6 +997,20 @@ const lessons = {
             <div class="editor-container" id="editor-w3_3-0"></div>
             <div class="controls"><button onclick="runCode('w3_3-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_3-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_3-1">
+            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_3-1"></div>
+            <div class="controls"><button onclick="runCode('w3_3-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_3-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_3-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_3-2"></div>
+            <div class="controls"><button onclick="runCode('w3_3-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_3-2"></div>
         </div>
         
     `,
@@ -784,6 +1036,13 @@ const lessons = {
             <div class="output-container" id="output-w3_4-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_4-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_4-2"></div>
+            <div class="controls"><button onclick="runCode('w3_4-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_4-2"></div>
+        </div>
+        
     `,
     'w3_5': `
         <h1>How to calculate summary statistics</h1>
@@ -807,6 +1066,13 @@ const lessons = {
             <div class="output-container" id="output-w3_5-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_5-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_5-2"></div>
+            <div class="controls"><button onclick="runCode('w3_5-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_5-2"></div>
+        </div>
+        
     `,
     'w3_6': `
         <h1>How to reshape the layout of tables</h1>
@@ -821,6 +1087,20 @@ const lessons = {
             <div class="editor-container" id="editor-w3_6-0"></div>
             <div class="controls"><button onclick="runCode('w3_6-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_6-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_6-1">
+            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_6-1"></div>
+            <div class="controls"><button onclick="runCode('w3_6-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_6-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_6-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_6-2"></div>
+            <div class="controls"><button onclick="runCode('w3_6-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_6-2"></div>
         </div>
         
     `,
@@ -846,6 +1126,13 @@ const lessons = {
             <div class="output-container" id="output-w3_7-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_7-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_7-2"></div>
+            <div class="controls"><button onclick="runCode('w3_7-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_7-2"></div>
+        </div>
+        
     `,
     'w3_8': `
         <h1>How to handle time series data with ease</h1>
@@ -860,6 +1147,20 @@ const lessons = {
             <div class="editor-container" id="editor-w3_8-0"></div>
             <div class="controls"><button onclick="runCode('w3_8-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_8-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_8-1">
+            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_8-1"></div>
+            <div class="controls"><button onclick="runCode('w3_8-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_8-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_8-2">
+            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="editor-container" id="editor-w3_8-2"></div>
+            <div class="controls"><button onclick="runCode('w3_8-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_8-2"></div>
         </div>
         
     `,
@@ -892,6 +1193,13 @@ const lessons = {
             <div class="output-container" id="output-w6_0-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w6_0-2">
+            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="editor-container" id="editor-w6_0-2"></div>
+            <div class="controls"><button onclick="runCode('w6_0-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_0-2"></div>
+        </div>
+        
     `,
     'w6_1': `
         <h1>Pipeline Documentation</h1>
@@ -913,6 +1221,13 @@ const lessons = {
             <div class="editor-container" id="editor-w6_1-1"></div>
             <div class="controls"><button onclick="runCode('w6_1-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_1-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w6_1-2">
+            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="editor-container" id="editor-w6_1-2"></div>
+            <div class="controls"><button onclick="runCode('w6_1-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_1-2"></div>
         </div>
         
     `,
@@ -938,6 +1253,13 @@ const lessons = {
             <div class="output-container" id="output-w6_2-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w6_2-2">
+            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="editor-container" id="editor-w6_2-2"></div>
+            <div class="controls"><button onclick="runCode('w6_2-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_2-2"></div>
+        </div>
+        
     `,
     'w6_3': `
         <h1>Preprocessing Data</h1>
@@ -959,6 +1281,13 @@ const lessons = {
             <div class="editor-container" id="editor-w6_3-1"></div>
             <div class="controls"><button onclick="runCode('w6_3-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_3-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w6_3-2">
+            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="editor-container" id="editor-w6_3-2"></div>
+            <div class="controls"><button onclick="runCode('w6_3-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_3-2"></div>
         </div>
         
     `,
@@ -984,587 +1313,1480 @@ const lessons = {
             <div class="output-container" id="output-w6_4-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w6_4-2">
+            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="editor-container" id="editor-w6_4-2"></div>
+            <div class="controls"><button onclick="runCode('w6_4-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_4-2"></div>
+        </div>
+        
     `
 };
 
 const initialCode = {
-    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `# Practice: 2. Introduction to NumPy
-# Scenario: Apply the concepts from 2. Introduction to NumPy.
+    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `# Easy: 2. Introduction to NumPy
+# Scenario: E-Commerce Sales
 import numpy as np
 
-# 1. Create a dummy dataset relevant to this topic.
-# 2. Apply a core function from the reading to solve a problem.
-`,    'w2_01-0': `# Easy: Array Creation and Inspection
-# Scenario: You are collecting temperature readings.
+# 1. Write a basic implementation of the core concept from the reading.
+# 2. Print the result.
+`,    'w2_00-1': `# Intermediate: 2. Introduction to NumPy
+# Scenario: E-Commerce Sales
 import numpy as np
-import pandas as pd
 
-# Data:
-temperatures_list = [22.5, 23.1, "24.5", 21.8, 22.0]
+# 1. Create a 2D array and apply the concept across axes.
+`,    'w2_00-2': `# Complex: 2. Introduction to NumPy
+# Scenario: E-Commerce Sales
+import numpy as np
 
-# 1. Convert the mixed list to a NumPy array of type float.
+# 1. Combine this concept with a boolean mask and argsort.
+`,    'w2_01-0': `# Easy: Understanding Array Types
+# Scenario: Employee HR System
+import numpy as np
+
+# Data Setup
+prices = [10.5, 20.0, "30.5", 40.0, 50.5]
+
+# 1. Convert \`prices\` to a NumPy array of type float32.
 # 2. Print the shape, ndim, dtype, and itemsize of the array.
-# 3. Create a 3x3 array of zeros to hold tomorrow's forecasts.
-`,    'w2_01-1': `# Intermediate: Slicing and Reshaping
-# Scenario: A 1D array of 24 hourly readings needs to be converted into a 2D array of (days, hours).
+# 3. Create a 3x3 array of zeros of type int8.
+`,    'w2_01-1': `# Intermediate: Indexing and Slicing
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-hourly = np.arange(1, 25)
+# Data Setup
+rng = np.random.default_rng(2026)
+matrix = rng.integers(1, 100, size=(5, 5))
 
-# 1. Reshape the 24-element array into a (3 days, 8 hours) matrix.
-# 2. Extract the readings for the second day (index 1).
-# 3. Extract the last two hours of every day using slicing.
-`,    'w2_01-2': `# Complex: Advanced Extraction
-# Scenario: You have a matrix of image pixel intensities.
+# 1. Print the original 5x5 matrix.
+# 2. Extract the first row and the last column.
+# 3. Extract a 2x2 sub-matrix from the top-right corner.
+# 4. Reverse the order of the rows in the matrix.
+`,    'w2_01-2': `# Complex: Reshaping and Copies
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-rng = np.random.default_rng(42)
-pixels = rng.integers(0, 256, size=(10, 10))
+# Data Setup
+raw_stream = np.arange(1, 37)
 
-# 1. Extract a 3x3 sub-grid from the exact center of the matrix.
-# 2. Replace the four corner pixels of the full matrix with 0.
-# 3. Print the modified matrix.
-`,    'w2_02-0': `# Easy: Array Creation and Inspection
-# Scenario: You are collecting temperature readings.
+# 1. Reshape \`raw_stream\` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).
+# 2. Extract the data for the second day (index 1).
+# 3. Create a completely independent copy (not a view) of the first day's data.
+# 4. Modify a value in the copy and prove the original \`raw_stream\` is unchanged.
+`,    'w2_02-0': `# Easy: Understanding Array Types
+# Scenario: Employee HR System
 import numpy as np
-import pandas as pd
 
-# Data:
-temperatures_list = [22.5, 23.1, "24.5", 21.8, 22.0]
+# Data Setup
+prices = [10.5, 20.0, "30.5", 40.0, 50.5]
 
-# 1. Convert the mixed list to a NumPy array of type float.
+# 1. Convert \`prices\` to a NumPy array of type float32.
 # 2. Print the shape, ndim, dtype, and itemsize of the array.
-# 3. Create a 3x3 array of zeros to hold tomorrow's forecasts.
-`,    'w2_02-1': `# Intermediate: Slicing and Reshaping
-# Scenario: A 1D array of 24 hourly readings needs to be converted into a 2D array of (days, hours).
+# 3. Create a 3x3 array of zeros of type int8.
+`,    'w2_02-1': `# Intermediate: Indexing and Slicing
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-hourly = np.arange(1, 25)
+# Data Setup
+rng = np.random.default_rng(2026)
+matrix = rng.integers(1, 100, size=(5, 5))
 
-# 1. Reshape the 24-element array into a (3 days, 8 hours) matrix.
-# 2. Extract the readings for the second day (index 1).
-# 3. Extract the last two hours of every day using slicing.
-`,    'w2_02-2': `# Complex: Advanced Extraction
-# Scenario: You have a matrix of image pixel intensities.
+# 1. Print the original 5x5 matrix.
+# 2. Extract the first row and the last column.
+# 3. Extract a 2x2 sub-matrix from the top-right corner.
+# 4. Reverse the order of the rows in the matrix.
+`,    'w2_02-2': `# Complex: Reshaping and Copies
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-rng = np.random.default_rng(42)
-pixels = rng.integers(0, 256, size=(10, 10))
+# Data Setup
+raw_stream = np.arange(1, 37)
 
-# 1. Extract a 3x3 sub-grid from the exact center of the matrix.
-# 2. Replace the four corner pixels of the full matrix with 0.
-# 3. Print the modified matrix.
+# 1. Reshape \`raw_stream\` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).
+# 2. Extract the data for the second day (index 1).
+# 3. Create a completely independent copy (not a view) of the first day's data.
+# 4. Modify a value in the copy and prove the original \`raw_stream\` is unchanged.
 `,    'w2_03-0': `# Easy: Vectorized Arithmetic
-# Scenario: Apply a currency conversion rate to a list of prices.
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-usd_prices = np.array([19.99, 5.50, 150.00, 2.99])
-conversion_rate = 3400 # to MNT
+# Data Setup
+base_values = np.array([100, 200, 300, 400, 500])
+multiplier = 1.15
 
-# 1. Multiply all prices by the conversion rate without using loops.
-# 2. Round the results to the nearest integer.
-`,    'w2_03-1': `# Intermediate: Ufuncs and broadcasting
-# Scenario: You have base prices and a list of different tax rates.
+# 1. Multiply all base_values by the multiplier without using loops.
+# 2. Add 50 to the result.
+# 3. Round the final values to 1 decimal place using np.round.
+`,    'w2_03-1': `# Intermediate: Ufuncs and Broadcasting
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-base_prices = np.array([[10], [20], [30]]) # shape (3,1)
-tax_rates = np.array([1.05, 1.10, 1.20]) # shape (3,)
+# Data Setup
+matrix = np.array([[10, 20], [30, 40], [50, 60]]) # shape (3,2)
+vector = np.array([1, 2]) # shape (2,)
 
-# 1. Add the tax to the base prices using broadcasting (result should be 3x3).
-# 2. Find the absolute difference between the highest and lowest taxed prices for each item.
-`,    'w2_04-0': `# Intermediate: Axis Aggregations
-# Scenario: You have test scores for 5 students across 3 exams.
+# 1. Add the vector to the matrix (Broadcasting).
+# 2. Compute the natural logarithm (np.log) of the resulting matrix.
+# 3. Explain in a comment how broadcasting matched the shapes.
+`,    'w2_03-2': `# Complex: Advanced Ufuncs
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-scores = np.array([
+# Data Setup
+rng = np.random.default_rng(42)
+x = rng.uniform(1, 10, size=100)
+
+# 1. Use np.power to square every element in x.
+# 2. Use np.sin and np.cos to compute sin(x)^2 + cos(x)^2.
+# 3. Assert or verify that all results in step 2 are exactly (or extremely close to) 1.0.
+# 4. Find the sum of all elements using np.add.reduce.
+`,    'w2_04-0': `# Easy: Simple Aggregations
+# Scenario: E-Commerce Sales
+import numpy as np
+
+# Data Setup
+scores = np.array([75, 88, 92, 60, 100, 85, 77, 95])
+
+# 1. Find the min, max, and mean of the scores.
+# 2. Find the index of the highest score using np.argmax.
+# 3. Find the median score using np.median.
+`,    'w2_04-1': `# Intermediate: Axis Aggregations
+# Scenario: E-Commerce Sales
+import numpy as np
+
+# Data Setup
+# Rows are students, columns are 3 different exams
+results = np.array([
     [85, 90, 88],
-    [70, 75, 72],
+    [70, 75, np.nan],
     [95, 98, 100],
-    [60, 65, 62],
-    [80, 85, 82]
+    [60, np.nan, 62]
 ])
 
-# 1. Find the mean score for the entire class.
-# 2. Find the minimum score on each exam (columns).
-# 3. Find the maximum score for each student (rows).
+# 1. Calculate the mean score for each student (axis=1). Notice what NaN does.
+# 2. Use np.nanmean to calculate the mean score for each student while ignoring NaNs.
+# 3. Find the maximum score achieved on each exam (axis=0) using np.nanmax.
+`,    'w2_04-2': `# Complex: Multi-dimensional Aggregations
+# Scenario: E-Commerce Sales
+import numpy as np
+
+# Data Setup
+rng = np.random.default_rng(99)
+# shape (4 weeks, 5 days, 8 hours)
+data_3d = rng.integers(10, 50, size=(4, 5, 8))
+
+# 1. Find the total sum of all elements.
+# 2. Find the maximum value for each week (reduce across days and hours).
+# 3. Find the average value for each hour of the day (average across weeks and days).
+# 4. Verify the shape of the result from step 3 is (8,).
 `,    'w2_05-0': `# Easy: Vectorized Arithmetic
-# Scenario: Apply a currency conversion rate to a list of prices.
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-usd_prices = np.array([19.99, 5.50, 150.00, 2.99])
-conversion_rate = 3400 # to MNT
+# Data Setup
+base_values = np.array([100, 200, 300, 400, 500])
+multiplier = 1.15
 
-# 1. Multiply all prices by the conversion rate without using loops.
-# 2. Round the results to the nearest integer.
-`,    'w2_05-1': `# Intermediate: Ufuncs and broadcasting
-# Scenario: You have base prices and a list of different tax rates.
+# 1. Multiply all base_values by the multiplier without using loops.
+# 2. Add 50 to the result.
+# 3. Round the final values to 1 decimal place using np.round.
+`,    'w2_05-1': `# Intermediate: Ufuncs and Broadcasting
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
-base_prices = np.array([[10], [20], [30]]) # shape (3,1)
-tax_rates = np.array([1.05, 1.10, 1.20]) # shape (3,)
+# Data Setup
+matrix = np.array([[10, 20], [30, 40], [50, 60]]) # shape (3,2)
+vector = np.array([1, 2]) # shape (2,)
 
-# 1. Add the tax to the base prices using broadcasting (result should be 3x3).
-# 2. Find the absolute difference between the highest and lowest taxed prices for each item.
-`,    'w2_06-0': `# Complex: Boolean Masking and Filtering
-# Scenario: Sensor anomaly detection.
+# 1. Add the vector to the matrix (Broadcasting).
+# 2. Compute the natural logarithm (np.log) of the resulting matrix.
+# 3. Explain in a comment how broadcasting matched the shapes.
+`,    'w2_05-2': `# Complex: Advanced Ufuncs
+# Scenario: Employee HR System
 import numpy as np
 
-# Data:
+# Data Setup
+rng = np.random.default_rng(42)
+x = rng.uniform(1, 10, size=100)
+
+# 1. Use np.power to square every element in x.
+# 2. Use np.sin and np.cos to compute sin(x)^2 + cos(x)^2.
+# 3. Assert or verify that all results in step 2 are exactly (or extremely close to) 1.0.
+# 4. Find the sum of all elements using np.add.reduce.
+`,    'w2_06-0': `# Easy: Boolean Masks
+# Scenario: Employee HR System
+import numpy as np
+
+# Data Setup
+ages = np.array([12, 18, 25, 30, 15, 45, 10, 60])
+
+# 1. Create a boolean mask for ages >= 18.
+# 2. Print the mask itself.
+# 3. Use the mask to extract and print only the adult ages.
+`,    'w2_06-1': `# Intermediate: Compound Logic
+# Scenario: Employee HR System
+import numpy as np
+
+# Data Setup
+rng = np.random.default_rng(42)
+temps = rng.integers(-10, 40, size=20)
+
+# 1. Create a mask for temperatures that are "comfortable": between 15 and 25 inclusive.
+# 2. Use the mask to extract the comfortable temperatures.
+# 3. Count how many comfortable temperatures there are using np.sum() or np.count_nonzero().
+# 4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).
+`,    'w2_06-2': `# Complex: np.where and Conditional Assignment
+# Scenario: Employee HR System
+import numpy as np
+
+# Data Setup
 rng = np.random.default_rng(2026)
-sensor_readings = rng.normal(loc=20, scale=5, size=100)
+values = rng.normal(100, 20, size=50)
 
-# 1. Find how many readings are considered anomalies (below 10 or above 30).
-# 2. Create a clean array containing ONLY the normal readings using a boolean mask.
-# 3. Instead of dropping anomalies, use np.clip to restrict all values to the 10-30 range.
-`,    'w2_07-0': `# Practice: Fancy Indexing
-# Scenario: Apply the concepts from Fancy Indexing.
+# 1. Use np.where to create a new array: if value > 120, set to "High", else "Normal".
+# 2. Replace all values in the original array that are negative with 0 (using boolean indexing).
+# 3. Use np.clip to restrict the array values to a minimum of 50 and maximum of 150.
+# 4. Print the final cleaned array.
+`,    'w2_07-0': `# Easy: Fancy Indexing 1D
+# Scenario: Employee HR System
 import numpy as np
 
-# 1. Create a dummy dataset relevant to this topic.
-# 2. Apply a core function from the reading to solve a problem.
-`,    'w2_08-0': `# Practice: Sorting Arrays
-# Scenario: Apply the concepts from Sorting Arrays.
+# Data Setup
+items = np.array(["A", "B", "C", "D", "E", "F", "G"])
+indices = [0, 3, 5]
+
+# 1. Use the \`indices\` list to extract elements "A", "D", and "F" in one operation.
+# 2. Create a new index array \`[5, 5, 5]\` and use it to extract "F" three times.
+`,    'w2_07-1': `# Intermediate: Fancy Indexing 2D
+# Scenario: Employee HR System
 import numpy as np
 
-# 1. Create a dummy dataset relevant to this topic.
-# 2. Apply a core function from the reading to solve a problem.
-`,    'w2_09-0': `# Practice: Structured Data: NumPy's Structured Arrays
-# Scenario: Apply the concepts from Structured Data: NumPy's Structured Arrays.
+# Data Setup
+matrix = np.arange(25).reshape(5, 5)
+
+# 1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.
+# 2. Extract the entire 1st and 3rd rows using fancy indexing.
+# 3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.
+`,    'w2_07-2': `# Complex: Combined Indexing
+# Scenario: Employee HR System
 import numpy as np
 
-# 1. Create a dummy dataset relevant to this topic.
-# 2. Apply a core function from the reading to solve a problem.
-`,    'w4_00-0': `# Easy Practice: 4. Visualization with Matplotlib
+# Data Setup
+rng = np.random.default_rng(123)
+data = rng.integers(0, 100, size=(6, 6))
+
+# 1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.
+# 2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.
+# 3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.
+`,    'w2_08-0': `# Easy: Basic Sorting
+# Scenario: IoT Sensor Network
+import numpy as np
+
+# Data Setup
+rng = np.random.default_rng(42)
+unsorted_data = rng.integers(1, 100, size=10)
+
+# 1. Use np.sort() to return a sorted copy of the data.
+# 2. Call the .sort() method on the array to sort it in-place.
+# 3. Verify the array is sorted.
+`,    'w2_08-1': `# Intermediate: argsort
+# Scenario: IoT Sensor Network
+import numpy as np
+
+# Data Setup
+names = np.array(["Ari", "Bataa", "Caraa", "Davaa"])
+scores = np.array([85, 92, 78, 88])
+
+# 1. Use np.argsort() on the \`scores\` array to get the sorted indices.
+# 2. Use those indices to print the \`names\` array in order of lowest to highest score.
+# 3. Reverse the indices to print the names from highest to lowest score.
+`,    'w2_08-2': `# Complex: Multi-dimensional Sorting
+# Scenario: IoT Sensor Network
+import numpy as np
+
+# Data Setup
+rng = np.random.default_rng(2026)
+matrix = rng.integers(0, 50, size=(5, 4))
+
+# 1. Sort each column of the matrix independently (axis=0).
+# 2. Sort each row of the matrix independently (axis=1).
+# 3. Given the matrix, sort the entire matrix ROWS based entirely on the values in the 2nd column.
+#    (Hint: Use argsort on the 2nd column, then fancy index the rows).
+`,    'w2_09-0': `# Easy: Structured Data: NumPy's Structured Arrays
+# Scenario: IoT Sensor Network
+import numpy as np
+
+# 1. Write a basic implementation of the core concept from the reading.
+# 2. Print the result.
+`,    'w2_09-1': `# Intermediate: Structured Data: NumPy's Structured Arrays
+# Scenario: IoT Sensor Network
+import numpy as np
+
+# 1. Create a 2D array and apply the concept across axes.
+`,    'w2_09-2': `# Complex: Structured Data: NumPy's Structured Arrays
+# Scenario: IoT Sensor Network
+import numpy as np
+
+# 1. Combine this concept with a boolean mask and argsort.
+`,    'w4_00-0': `# Easy: Matplotlib Basics
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_00-1': `# Intermediate: Subplots
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_00-2': `# Complex: Customizations
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_01-0': `# Easy: Matplotlib Basics
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_01-1': `# Intermediate: Subplots
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_01-2': `# Complex: Customizations
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_02-0': `# Easy: Matplotlib Basics
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_02-1': `# Intermediate: Subplots
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_02-2': `# Complex: Customizations
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_03-0': `# Easy: Matplotlib Basics
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_03-1': `# Intermediate: Subplots
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_03-2': `# Complex: Customizations
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_04-0': `# Easy: Matplotlib Basics
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_04-1': `# Intermediate: Subplots
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_04-2': `# Complex: Customizations
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_05-0': `# Easy: Matplotlib Basics
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_05-1': `# Intermediate: Subplots
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_05-2': `# Complex: Customizations
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_06-0': `# Easy: Matplotlib Basics
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_06-1': `# Intermediate: Subplots
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_06-2': `# Complex: Customizations
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_07-0': `# Easy: Matplotlib Basics
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_07-1': `# Intermediate: Subplots
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_07-2': `# Complex: Customizations
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_08-0': `# Easy: Matplotlib Basics
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_08-1': `# Intermediate: Subplots
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_08-2': `# Complex: Customizations
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_09-0': `# Easy: Matplotlib Basics
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_09-1': `# Intermediate: Subplots
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_09-2': `# Complex: Customizations
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_10-0': `# Easy: Matplotlib Basics
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_10-1': `# Intermediate: Subplots
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_10-2': `# Complex: Customizations
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_11-0': `# Easy: Matplotlib Basics
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_11-1': `# Intermediate: Subplots
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_11-2': `# Complex: Customizations
+# Scenario: IoT Sensor Network
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_12-0': `# Easy: Matplotlib Basics
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_12-1': `# Intermediate: Subplots
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_12-2': `# Complex: Customizations
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_13-0': `# Easy: Matplotlib Basics
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_13-1': `# Intermediate: Subplots
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_13-2': `# Complex: Customizations
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_14-0': `# Easy: Matplotlib Basics
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_14-1': `# Intermediate: Subplots
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_14-2': `# Complex: Customizations
+# Scenario: Employee HR System
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w4_15-0': `# Easy: Matplotlib Basics
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display in this terminal sandbox, but write the correct code.
+# 1. Create x = np.arange(10) and y = x ** 2
+# 2. Write the code to plot x vs y.
+# 3. Add a title and x/y labels.
+print("Write the plotting code!")
+`,    'w4_15-1': `# Intermediate: Subplots
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
+# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
+print("Write the plotting code!")
+`,    'w4_15-2': `# Complex: Customizations
+# Scenario: E-Commerce Sales
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Note: Plots won't display.
+# 1. Create a scatter plot of 100 random points.
+# 2. Color the points based on a third array of random values.
+# 3. Add a colorbar and a legend.
+print("Write the plotting code!")
+`,    'w3_0-0': `# Easy: Series construction
+# Scenario: Employee HR System
 import pandas as pd
 import numpy as np
 
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_00-1': `# Complex Practice: 4. Visualization with Matplotlib
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply 4. Visualization with Matplotlib to clean it.
-`,    'w4_01-0': `# Easy Practice: Simple Line Plots
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_01-1': `# Complex Practice: Simple Line Plots
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Simple Line Plots to clean it.
-`,    'w4_02-0': `# Easy Practice: Simple Scatter Plots
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_02-1': `# Complex Practice: Simple Scatter Plots
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Simple Scatter Plots to clean it.
-`,    'w4_03-0': `# Easy Practice: Visualizing Errors
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_03-1': `# Complex Practice: Visualizing Errors
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Visualizing Errors to clean it.
-`,    'w4_04-0': `# Easy Practice: Density and Contour Plots
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_04-1': `# Complex Practice: Density and Contour Plots
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Density and Contour Plots to clean it.
-`,    'w4_05-0': `# Easy Practice: Histograms, Binnings, and Density
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_05-1': `# Complex Practice: Histograms, Binnings, and Density
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Histograms, Binnings, and Density to clean it.
-`,    'w4_06-0': `# Easy Practice: Customizing Plot Legends
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_06-1': `# Complex Practice: Customizing Plot Legends
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Customizing Plot Legends to clean it.
-`,    'w4_07-0': `# Easy Practice: Customizing Colorbars
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_07-1': `# Complex Practice: Customizing Colorbars
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Customizing Colorbars to clean it.
-`,    'w4_08-0': `# Easy Practice: Multiple Subplots
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_08-1': `# Complex Practice: Multiple Subplots
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Multiple Subplots to clean it.
-`,    'w4_09-0': `# Easy Practice: Text and Annotation
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_09-1': `# Complex Practice: Text and Annotation
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Text and Annotation to clean it.
-`,    'w4_10-0': `# Easy Practice: Customizing Ticks
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_10-1': `# Complex Practice: Customizing Ticks
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Customizing Ticks to clean it.
-`,    'w4_11-0': `# Easy Practice: Customizing Matplotlib: Configurations and Stylesheets
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_11-1': `# Complex Practice: Customizing Matplotlib: Configurations and Stylesheets
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Customizing Matplotlib: Configurations and Stylesheets to clean it.
-`,    'w4_12-0': `# Easy Practice: Three-Dimensional Plotting in Matplotlib
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_12-1': `# Complex Practice: Three-Dimensional Plotting in Matplotlib
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Three-Dimensional Plotting in Matplotlib to clean it.
-`,    'w4_13-0': `# Easy Practice: Geographic Data with Basemap
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_13-1': `# Complex Practice: Geographic Data with Basemap
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Geographic Data with Basemap to clean it.
-`,    'w4_14-0': `# Easy Practice: Visualization with Seaborn
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_14-1': `# Complex Practice: Visualization with Seaborn
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Visualization with Seaborn to clean it.
-`,    'w4_15-0': `# Easy Practice: Further Resources
-import pandas as pd
-import numpy as np
-
-# Write your code below to practice the concepts from the textbook:
-`,    'w4_15-1': `# Complex Practice: Further Resources
-import pandas as pd
-import numpy as np
-
-# Think of an edge case or dirty dataset and apply Further Resources to clean it.
-`,    'w3_0-0': `# Easy: Student Series Report
-# Scenario: A school assistant gives you this list of exam scores.
-import pandas as pd
-import numpy as np
-
-scores = [76, 91, 84, 68, 95, 88, 73]
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa"]
-
-# 1. Create a Pandas Series named \`score_series\` using the names as index labels.
-# 2. Print the score for "Caraa".
-# 3. Print students with scores of at least 85.
-# 4. Find the mean, minimum, maximum, and median score.
-# 5. Add 5 bonus points to every score, but cap scores at 100 (use clip).
-`,    'w3_0-1': `# Intermediate: Build and Inspect a DataFrame
-# Scenario: A small bookstore inventory.
-import pandas as pd
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
 
 data = {
-    "title": ["The Steppe", "Blue Sky", "Nomad Code", "River Song", "Altan Book"],
-    "category": ["History", "Fiction", "Technology", "Fiction", "History"],
-    "price": [18.5, 12.0, 25.0, 15.5, 20.0],
-    "stock": [8, 15, 4, 0, 11],
-    "rating": [4.7, 4.2, 4.9, 4.0, 4.6]
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
 }
+# Introduce some missing/dirty data intentionally
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0 # invalid
+data["name"][7] = " Khas "
 
-# 1. Create \`books_df\`.
-# 2. Print its shape, column names, index, and dtypes.
-# 3. Select books that cost more than 18.
-# 4. Add an \`inventory_value\` column equal to \`price * stock\`.
-# 5. Find the title of the book with the largest inventory value.
-`,    'w3_1-0': `# Intermediate: CSV Round Trip
-# Scenario: Handling CSV data natively in python.
+
+# 1. Convert the 'name' list from the data dict into a Pandas Series named \`name_series\`.
+# 2. Print the first 3 elements of the Series.
+# 3. Create a Series for 'salary' and find its mean.
+`,    'w3_0-1': `# Intermediate: DataFrame Construction
+# Scenario: Employee HR System
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
+
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+# Introduce some missing/dirty data intentionally
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0 # invalid
+data["name"][7] = " Khas "
+
+
+# 1. Convert the entire \`data\` dictionary into a Pandas DataFrame named \`df\`.
+# 2. Print the \`.shape\`, \`.columns\`, and \`.dtypes\`.
+# 3. Use \`.head()\` to show the first 4 rows.
+# 4. Use \`.info()\` to inspect missing values.
+`,    'w3_0-2': `# Complex: DataFrame Operations
+# Scenario: Employee HR System
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
+
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+# Introduce some missing/dirty data intentionally
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0 # invalid
+data["name"][7] = " Khas "
+
+
+# 1. Convert \`data\` to a DataFrame \`df\`.
+# 2. Set the index of the DataFrame to be the \`emp_id\` or \`order_id\` (whichever exists).
+# 3. Select only the numerical columns.
+# 4. Sort the DataFrame by the last column in descending order.
+# 5. Extract the top 3 rows into a new DataFrame.
+`,    'w3_1-0': `# Easy: CSV Writing
+# Scenario: IoT Sensor Network
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
+
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0 # impossible humidity
+
+
+# 1. Convert \`data\` to a DataFrame \`df\`.
+# 2. Save the DataFrame to a CSV string using \`df.to_csv(index=False)\`.
+#    (We use strings here since we don't have a real filesystem in this sandbox).
+# 3. Print the resulting CSV string.
+`,    'w3_1-1': `# Intermediate: CSV Reading and Inspection
+# Scenario: IoT Sensor Network
 import pandas as pd
 import io
 
-csv_text = """order_id,customer,product,quantity,total,status
-1001,Ari,Notebook,2,10.0,paid
-1002,Bataa,Pen,5,7.5,paid
-1003,Caraa,Backpack,1,45.0,pending
-1004,Davaa,Notebook,,5.0,paid
-1005,Enkh,Pen,3,invalid,cancelled
-1005,Enkh,Pen,3,invalid,cancelled"""
+csv_text = """id,name,value,date
+1,Ari,10.5,2026-01-01
+2,Bataa,,2026-01-02
+3,Caraa,invalid,2026-01-03
+4,Davaa,15.2,2026-01-04"""
 
-# 1. Load the csv_text into a DataFrame using pd.read_csv(io.StringIO(csv_text)).
-# 2. Convert \`total\` to numeric using pd.to_numeric(..., errors='coerce').
-# 3. Remove exact duplicate rows.
-# 4. Create \`valid_orders\`: only paid orders with non-missing quantity and total.
-`,    'w3_1-1': `# Complex: JSON Records and Data Quality
-import pandas as pd
-
-records = [
-    {"id": 1, "name": "Ari", "country": "Mongolia", "score": 88, "active": True},
-    {"id": 2, "name": "Bataa", "country": "Mongolia", "score": None, "active": True},
-    {"id": 3, "name": "Caraa", "country": "Japan", "score": 91, "active": False},
-    {"id": 4, "name": "Davaa", "country": "Mongolia", "score": "unknown", "active": True}
-]
-
-# 1. Convert \`records\` to a DataFrame.
-# 2. Convert \`score\` to numeric, making "unknown" missing.
-# 3. Fill missing \`country\` values with "Unknown".
-# 4. Fill missing score with the median valid score.
-`,    'w3_2-0': `# Complex: Clean a Messy Table
+# 1. Use io.StringIO(csv_text) to read the CSV into a DataFrame.
+# 2. Inspect the dtypes. Notice that 'value' is an object (string) because of "invalid".
+# 3. Convert 'value' to numeric using pd.to_numeric(..., errors='coerce').
+# 4. Check the dtypes again and print the missing value count.
+`,    'w3_1-2': `# Complex: JSON Round-Trip
+# Scenario: IoT Sensor Network
 import pandas as pd
 import numpy as np
 
-members = pd.DataFrame({
-    "name": [" Ari ", "BATAA", "Caraa", "Davaa", "Enkh", "Enkh", None],
-    "age": [16, 17, None, 150, 15, 15, 18],
-    "city": ["Ulaanbaatar", "ulaanbaatar", "Darkhan", "Ulaanbaatar", "Erdenet", "Erdenet", "Khovd"],
-    "hours_volunteered": [8, 12, "ten", 6, None, None, 4]
-})
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
 
-# 1. Create \`clean_members = members.copy()\`.
-# 2. Clean names: remove outer whitespace (.str.strip()) and convert to title case.
-# 3. Convert "ten" to 10 and change \`hours_volunteered\` to numeric.
-# 4. Treat ages below 13 or above 100 as invalid (replace with np.nan).
-# 5. Remove rows missing a name. Remove duplicate rows.
-`,    'w3_3-0': `# Practice: Mini Data Pipeline
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0 # impossible humidity
+
+
+# 1. Convert \`data\` to a DataFrame \`df\`.
+# 2. Export the DataFrame to JSON using \`to_json(orient='records')\`.
+# 3. Read the JSON string back into a new DataFrame \`df_json\`.
+# 4. Assert or verify that the shape and columns of \`df_json\` match the original \`df\`.
+# 5. Explain in a comment why orient='records' is often preferred for web APIs.
+`,    'w3_2-0': `# Easy: Selecting Columns
+# Scenario: E-Commerce Sales
 import pandas as pd
 import numpy as np
 
-raw_data = pd.DataFrame({
-    "user_id": [101, 102, 103, 104, 105, 105, 106, 107],
-    "name": ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Enkh", "Faraa", None],
-    "age": [16, 17, 150, 15, np.nan, np.nan, 18, 20],
-    "hours_online": [3.5, 7.0, -2.0, "five", 4.5, 4.5, np.nan, 6.0],
-    "subscription": ["free", "premium", "free", "basic", "premium", "premium", "basic", "free"]
-})
+rng = np.random.default_rng(99)
 
-# FINAL CHALLENGE:
-# 1. Convert hours_online to numeric.
-# 2. Replace negative hours and ages > 100 with np.nan.
-# 3. Fill missing ages and hours with their respective medians.
-# 4. Drop duplicates by user_id.
-# 5. Create 'daily_cost' based on subscription (free: 0, basic: 0.5, premium: 1.0) using np.select or map.
-`,    'w3_4-0': `# Intermediate: Game Scoreboard
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Select just the first column (e.g. name or timestamp) as a Series.
+# 3. Select the first column AND the last column as a DataFrame (use a list of columns).
+`,    'w3_2-1': `# Intermediate: loc vs iloc
+# Scenario: E-Commerce Sales
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(99)
+
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Change the index to be completely random strings or non-sequential integers.
+# 3. Use \`.iloc\` to select the exactly 3rd row (integer position).
+# 4. Use \`.loc\` to select rows based on a specific label from your new index.
+# 5. Use \`.loc\` to select the 3rd row BUT only the first two columns.
+`,    'w3_2-2': `# Complex: Boolean Filtering
+# Scenario: E-Commerce Sales
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(99)
+
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.
+# 3. Filter for rows where a categorical column (dept, sensor_id, category) equals a specific value, AND a numerical column is not null.
+# 4. Use \`.isin()\` to filter for rows matching two different categorical values.
+# 5. Reset the index of the final filtered DataFrame.
+`,    'w3_3-0': `# Easy Practice: How do I create plots in pandas?
+# Scenario: IoT Sensor Network
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
+
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0 # impossible humidity
+
+
+# 1. Load the data.
+# 2. Apply a basic function related to 'How do I create plots in pandas?'.
+`,    'w3_3-1': `# Intermediate Practice: How do I create plots in pandas?
+# Scenario: IoT Sensor Network
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
+
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0 # impossible humidity
+
+
+# 1. Use the data to solve a multi-step problem for 'How do I create plots in pandas?'.
+`,    'w3_3-2': `# Complex Practice: How do I create plots in pandas?
+# Scenario: IoT Sensor Network
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
+
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0 # impossible humidity
+
+
+# 1. Combine How do I create plots in pandas? with grouping, missing data handling, and sorting.
+`,    'w3_4-0': `# Easy: Creating New Columns
+# Scenario: E-Commerce Sales
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(99)
+
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Create a new column that is exactly double the value of an existing numerical column.
+# 3. Create a static column called \`data_source\` and set all its values to "System A".
+`,    'w3_4-1': `# Intermediate: Vectorized Logic
+# Scenario: E-Commerce Sales
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(99)
+
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Create a boolean column \`is_high_value\` which is True if the numerical column is greater than its mean.
+# 3. Use \`np.where()\` to create a column \`status_label\`: if \`is_high_value\` is True, set to "Priority", else "Standard".
+`,    'w3_4-2': `# Complex: Complex Feature Engineering
+# Scenario: E-Commerce Sales
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(99)
+
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df = pd.DataFrame(data)\`.
+# 2. Clean the numerical column (fill NaNs).
+# 3. Create a column \`normalized_score\`: subtract the min and divide by (max - min) for the numerical column.
+# 4. Create a categorical column \`band\` using \`pd.cut()\` to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.
+# 5. Verify the distributions of your new bins using \`.value_counts()\`.
+`,    'w3_5-0': `# Easy: Summary Statistics
+# Scenario: Employee HR System
 import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
-players = np.array(["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa"])
-round_scores = rng.integers(0, 101, size=(6, 5))
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
 
-# 1. Build a DataFrame with players as its index and columns round_1 through round_5.
-# 2. Add 'total', 'mean', 'best_round', and 'worst_round' columns.
-# 3. Add a 'rank' column, where rank 1 is the highest total (use df['total'].rank(ascending=False)).
-`,    'w3_4-1': `# Complex: Product Inventory Validation
-import pandas as pd
-import numpy as np
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+# Introduce some missing/dirty data intentionally
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0 # invalid
+data["name"][7] = " Khas "
 
-inventory = pd.DataFrame({
-    "product_id": np.arange(101, 109),
-    "product": ["Tea", "Coffee", "Juice", "Milk", "Bread", "Rice", "Eggs", "Salt"],
-    "price": [4.5, 8.0, 3.2, 2.8, 1.5, 10.0, 6.5, 1.2],
-    "stock": [20, -3, 15, np.nan, 50, 10, 12, 200],
-    "reorder_level": [5, 5, 8, 10, 20, 3, 6, 25]
-})
 
-# 1. Replace missing or negative stock with 0.
-# 2. Add inventory_value = price * stock.
-# 3. Add a boolean column \`needs_reorder\` (stock <= reorder_level).
-# 4. Use np.clip to cap stock at 100 for a separate \`stock_capped\` column.
-`,    'w3_5-0': `# Intermediate: Game Scoreboard
-import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-players = np.array(["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa"])
-round_scores = rng.integers(0, 101, size=(6, 5))
-
-# 1. Build a DataFrame with players as its index and columns round_1 through round_5.
-# 2. Add 'total', 'mean', 'best_round', and 'worst_round' columns.
-# 3. Add a 'rank' column, where rank 1 is the highest total (use df['total'].rank(ascending=False)).
-`,    'w3_5-1': `# Complex: Product Inventory Validation
-import pandas as pd
-import numpy as np
-
-inventory = pd.DataFrame({
-    "product_id": np.arange(101, 109),
-    "product": ["Tea", "Coffee", "Juice", "Milk", "Bread", "Rice", "Eggs", "Salt"],
-    "price": [4.5, 8.0, 3.2, 2.8, 1.5, 10.0, 6.5, 1.2],
-    "stock": [20, -3, 15, np.nan, 50, 10, 12, 200],
-    "reorder_level": [5, 5, 8, 10, 20, 3, 6, 25]
-})
-
-# 1. Replace missing or negative stock with 0.
-# 2. Add inventory_value = price * stock.
-# 3. Add a boolean column \`needs_reorder\` (stock <= reorder_level).
-# 4. Use np.clip to cap stock at 100 for a separate \`stock_capped\` column.
-`,    'w3_6-0': `# Practice: Mini Data Pipeline
-import pandas as pd
-import numpy as np
-
-raw_data = pd.DataFrame({
-    "user_id": [101, 102, 103, 104, 105, 105, 106, 107],
-    "name": ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Enkh", "Faraa", None],
-    "age": [16, 17, 150, 15, np.nan, np.nan, 18, 20],
-    "hours_online": [3.5, 7.0, -2.0, "five", 4.5, 4.5, np.nan, 6.0],
-    "subscription": ["free", "premium", "free", "basic", "premium", "premium", "basic", "free"]
-})
-
-# FINAL CHALLENGE:
-# 1. Convert hours_online to numeric.
-# 2. Replace negative hours and ages > 100 with np.nan.
-# 3. Fill missing ages and hours with their respective medians.
-# 4. Drop duplicates by user_id.
-# 5. Create 'daily_cost' based on subscription (free: 0, basic: 0.5, premium: 1.0) using np.select or map.
-`,    'w3_7-0': `# Intermediate: Game Scoreboard
+# 1. Create \`df\` from \`data\`.
+# 2. Use \`.describe()\` to print summary statistics for all numeric columns.
+# 3. Find the exact median of the numerical columns.
+# 4. Use \`.value_counts()\` on one of the categorical columns to see the distribution.
+`,    'w3_5-1': `# Intermediate: GroupBy Basics
+# Scenario: Employee HR System
 import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
-players = np.array(["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa"])
-round_scores = rng.integers(0, 101, size=(6, 5))
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
 
-# 1. Build a DataFrame with players as its index and columns round_1 through round_5.
-# 2. Add 'total', 'mean', 'best_round', and 'worst_round' columns.
-# 3. Add a 'rank' column, where rank 1 is the highest total (use df['total'].rank(ascending=False)).
-`,    'w3_7-1': `# Complex: Product Inventory Validation
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+# Introduce some missing/dirty data intentionally
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0 # invalid
+data["name"][7] = " Khas "
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Group the DataFrame by one of the categorical columns (department, sensor_id, category).
+# 3. Calculate the \`.mean()\` for the numerical columns within each group.
+# 4. Calculate the \`.count()\` for each group to see how many records belong to each.
+`,    'w3_5-2': `# Complex: Advanced GroupBy and Aggregation
+# Scenario: Employee HR System
 import pandas as pd
 import numpy as np
 
-inventory = pd.DataFrame({
-    "product_id": np.arange(101, 109),
-    "product": ["Tea", "Coffee", "Juice", "Milk", "Bread", "Rice", "Eggs", "Salt"],
-    "price": [4.5, 8.0, 3.2, 2.8, 1.5, 10.0, 6.5, 1.2],
-    "stock": [20, -3, 15, np.nan, 50, 10, 12, 200],
-    "reorder_level": [5, 5, 8, 10, 20, 3, 6, 25]
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
+
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+# Introduce some missing/dirty data intentionally
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0 # invalid
+data["name"][7] = " Khas "
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Group by the categorical column.
+# 3. Use the \`.agg()\` method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.
+# 4. Sort the resulting grouped table by the 'mean' value in descending order.
+# 5. Rename the multi-level columns if necessary, or just print the result.
+`,    'w3_6-0': `# Easy: Pivot Tables Basics
+# Scenario: E-Commerce Sales
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(99)
+
+data = {
+    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
+    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
+    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
+    "amount": rng.exponential(100, size=10).round(2),
+    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+}
+data["amount"][3] = np.nan
+data["status"][7] = "unknown"
+
+
+# 1. Create \`df\` from \`data\`.
+# 2. Use \`pd.pivot_table()\` to show the average numerical value (salary, temp, or amount) for each category (department, sensor_id, category).
+`,    'w3_6-1': `# Intermediate: Multi-dimensional Pivots
+# Scenario: Analyzing sales by Region and Year.
+import pandas as pd
+
+df = pd.DataFrame({
+    "Region": ["North", "North", "South", "South", "North"],
+    "Year": [2022, 2023, 2022, 2023, 2022],
+    "Sales": [100, 150, 200, 250, 50]
 })
 
-# 1. Replace missing or negative stock with 0.
-# 2. Add inventory_value = price * stock.
-# 3. Add a boolean column \`needs_reorder\` (stock <= reorder_level).
-# 4. Use np.clip to cap stock at 100 for a separate \`stock_capped\` column.
-`,    'w3_8-0': `# Practice: Mini Data Pipeline
+# 1. Create a pivot table with \`Region\` as the index, \`Year\` as columns, and \`Sales\` as values.
+# 2. Use aggfunc='sum' to combine the two North 2022 records.
+`,    'w3_6-2': `# Complex: Melt / Unpivot
+# Scenario: Converting wide data to long format.
 import pandas as pd
-import numpy as np
 
-raw_data = pd.DataFrame({
-    "user_id": [101, 102, 103, 104, 105, 105, 106, 107],
-    "name": ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Enkh", "Faraa", None],
-    "age": [16, 17, 150, 15, np.nan, np.nan, 18, 20],
-    "hours_online": [3.5, 7.0, -2.0, "five", 4.5, 4.5, np.nan, 6.0],
-    "subscription": ["free", "premium", "free", "basic", "premium", "premium", "basic", "free"]
+wide_df = pd.DataFrame({
+    "Student": ["Ari", "Bataa"],
+    "Math": [90, 85],
+    "Science": [88, 92],
+    "History": [75, 80]
 })
 
-# FINAL CHALLENGE:
-# 1. Convert hours_online to numeric.
-# 2. Replace negative hours and ages > 100 with np.nan.
-# 3. Fill missing ages and hours with their respective medians.
-# 4. Drop duplicates by user_id.
-# 5. Create 'daily_cost' based on subscription (free: 0, basic: 0.5, premium: 1.0) using np.select or map.
-`,    'w6_0-0': `# Easy Practice: Getting Started with Scikit-learn
+# 1. Use \`pd.melt()\` to convert this from wide format to long format.
+#    The resulting columns should be 'Student', 'Subject', and 'Score'.
+# 2. Sort the long DataFrame by 'Student'.
+`,    'w3_7-0': `# Easy: Concatenation
+# Scenario: Combine logs from two different servers.
+import pandas as pd
+
+df1 = pd.DataFrame({"id": [1, 2], "val": ["A", "B"]})
+df2 = pd.DataFrame({"id": [3, 4], "val": ["C", "D"]})
+
+# 1. Use pd.concat to stack df1 and df2 vertically.
+# 2. Ignore the index so the new DataFrame has a clean index from 0 to 3.
+`,    'w3_7-1': `# Intermediate: Merging (Inner Join)
+# Scenario: Link transaction data with customer profiles.
+import pandas as pd
+
+sales = pd.DataFrame({"cust_id": [101, 102, 103], "amount": [50, 100, 150]})
+customers = pd.DataFrame({"cust_id": [101, 103, 104], "name": ["Ari", "Bataa", "Caraa"]})
+
+# 1. Use pd.merge() to join \`sales\` and \`customers\` on \`cust_id\`.
+# 2. Print the result. Notice which \`cust_id\`s were dropped (inner join behavior).
+`,    'w3_7-2': `# Complex: Outer Joins and Indicators
+# Scenario: Reconcile two databases.
+import pandas as pd
+
+db_left = pd.DataFrame({"user": ["A", "B", "C"], "score1": [10, 20, 30]})
+db_right = pd.DataFrame({"user": ["B", "C", "D"], "score2": [40, 50, 60]})
+
+# 1. Perform an outer merge on \`user\`, setting \`indicator=True\`.
+# 2. Print the resulting DataFrame.
+# 3. Filter the DataFrame to show ONLY rows that were present in the left database but missing in the right database.
+`,    'w3_8-0': `# Easy: Datetime Conversion
+# Scenario: E-Commerce Sales
+import pandas as pd
+
+dates = pd.Series(["2026-01-01", "2026/02/01", "March 1st, 2026"])
+
+# 1. Use pd.to_datetime() to convert the varied string formats into consistent datetime objects.
+# 2. Extract the month from the datetime objects using \`.dt.month\`.
+`,    'w3_8-1': `# Intermediate: Date Ranges and Shifting
 import pandas as pd
 import numpy as np
 
-# Write your code below to practice the concepts from the textbook:
-`,    'w6_0-1': `# Complex Practice: Getting Started with Scikit-learn
+# 1. Create a datetime index of 14 consecutive days starting today using pd.date_range.
+# 2. Create a Series with this index and random integer values.
+# 3. Use \`.shift(1)\` to shift the values down by one day.
+# 4. Calculate the daily difference (current day - previous day).
+`,    'w3_8-2': `# Complex: Resampling
 import pandas as pd
 import numpy as np
 
-# Think of an edge case or dirty dataset and apply Getting Started with Scikit-learn to clean it.
-`,    'w6_1-0': `# Easy Practice: Pipeline Documentation
-import pandas as pd
+# 1. Create a datetime index of 100 consecutive HOURS.
+# 2. Create a DataFrame with this index and random values.
+# 3. Use \`.resample('D').mean()\` to aggregate the hourly data into DAILY averages.
+# 4. Print the resulting daily DataFrame.
+`,    'w6_0-0': `# Easy: Basic Pipeline
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+
+# 1. Create a Scikit-Learn Pipeline with two steps:
+#    - a StandardScaler named "scaler"
+#    - a LogisticRegression model named "model"
+# 2. Print the pipeline object.
+`,    'w6_0-1': `# Intermediate: Fitting a Pipeline
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
-# Write your code below to practice the concepts from the textbook:
-`,    'w6_1-1': `# Complex Practice: Pipeline Documentation
-import pandas as pd
+# Setup
+X = np.array([[1], [np.nan], [3], [4]])
+y = np.array([0, 0, 1, 1])
+
+# 1. Create a Pipeline with a SimpleImputer (strategy='mean') and a DecisionTreeClassifier.
+# 2. Call \`.fit(X, y)\` on the pipeline.
+# 3. Predict on a new array \`X_new = [[np.nan], [2]]\`.
+`,    'w6_0-2': `# Complex: Accessing Pipeline Steps
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.linear_model import LinearRegression
 import numpy as np
 
-# Think of an edge case or dirty dataset and apply Pipeline Documentation to clean it.
-`,    'w6_2-0': `# Easy Practice: ColumnTransformer Documentation
-import pandas as pd
+# Setup
+X = np.array([[10], [20], [30]])
+y = np.array([100, 200, 300])
+
+# 1. Create and fit a pipeline with MinMaxScaler and LinearRegression.
+# 2. Access the fitted LinearRegression model from inside the pipeline using the \`named_steps\` attribute.
+# 3. Print the \`.coef_\` of the fitted regression model.
+`,    'w6_1-0': `# Easy: Basic Pipeline
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+
+# 1. Create a Scikit-Learn Pipeline with two steps:
+#    - a StandardScaler named "scaler"
+#    - a LogisticRegression model named "model"
+# 2. Print the pipeline object.
+`,    'w6_1-1': `# Intermediate: Fitting a Pipeline
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
-# Write your code below to practice the concepts from the textbook:
-`,    'w6_2-1': `# Complex Practice: ColumnTransformer Documentation
-import pandas as pd
+# Setup
+X = np.array([[1], [np.nan], [3], [4]])
+y = np.array([0, 0, 1, 1])
+
+# 1. Create a Pipeline with a SimpleImputer (strategy='mean') and a DecisionTreeClassifier.
+# 2. Call \`.fit(X, y)\` on the pipeline.
+# 3. Predict on a new array \`X_new = [[np.nan], [2]]\`.
+`,    'w6_1-2': `# Complex: Accessing Pipeline Steps
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.linear_model import LinearRegression
 import numpy as np
 
-# Think of an edge case or dirty dataset and apply ColumnTransformer Documentation to clean it.
-`,    'w6_3-0': `# Easy Practice: Preprocessing Data
-import pandas as pd
+# Setup
+X = np.array([[10], [20], [30]])
+y = np.array([100, 200, 300])
+
+# 1. Create and fit a pipeline with MinMaxScaler and LinearRegression.
+# 2. Access the fitted LinearRegression model from inside the pipeline using the \`named_steps\` attribute.
+# 3. Print the \`.coef_\` of the fitted regression model.
+`,    'w6_2-0': `# Easy: Simple Imputation
+from sklearn.impute import SimpleImputer
 import numpy as np
 
-# Write your code below to practice the concepts from the textbook:
-`,    'w6_3-1': `# Complex Practice: Preprocessing Data
-import pandas as pd
+# Setup
+X = np.array([[1.0, 2.0], [np.nan, 3.0], [7.0, np.nan]])
+
+# 1. Instantiate a SimpleImputer to replace NaNs with the mean.
+# 2. Fit and transform the data.
+# 3. Print the transformed array.
+`,    'w6_2-1': `# Intermediate: Scaling and Encoding
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 import numpy as np
 
-# Think of an edge case or dirty dataset and apply Preprocessing Data to clean it.
-`,    'w6_4-0': `# Easy Practice: Train Test Split
+# Setup
+X_num = np.array([[100], [200], [300]])
+X_cat = np.array([["Red"], ["Blue"], ["Red"]])
+
+# 1. Fit and transform X_num using StandardScaler.
+# 2. Fit and transform X_cat using OneHotEncoder(sparse_output=False).
+# 3. Print both resulting arrays.
+`,    'w6_2-2': `# Complex: ColumnTransformer
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 import pandas as pd
+
+# Setup
+df = pd.DataFrame({
+    "age": [25, 30, 35],
+    "city": ["Paris", "London", "Paris"]
+})
+
+# 1. Create a ColumnTransformer that applies StandardScaler to "age" and OneHotEncoder to "city".
+# 2. Fit and transform the DataFrame.
+# 3. Print the resulting combined numpy array.
+`,    'w6_3-0': `# Easy: Simple Imputation
+from sklearn.impute import SimpleImputer
 import numpy as np
 
-# Write your code below to practice the concepts from the textbook:
-`,    'w6_4-1': `# Complex Practice: Train Test Split
-import pandas as pd
+# Setup
+X = np.array([[1.0, 2.0], [np.nan, 3.0], [7.0, np.nan]])
+
+# 1. Instantiate a SimpleImputer to replace NaNs with the mean.
+# 2. Fit and transform the data.
+# 3. Print the transformed array.
+`,    'w6_3-1': `# Intermediate: Scaling and Encoding
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 import numpy as np
 
-# Think of an edge case or dirty dataset and apply Train Test Split to clean it.
+# Setup
+X_num = np.array([[100], [200], [300]])
+X_cat = np.array([["Red"], ["Blue"], ["Red"]])
+
+# 1. Fit and transform X_num using StandardScaler.
+# 2. Fit and transform X_cat using OneHotEncoder(sparse_output=False).
+# 3. Print both resulting arrays.
+`,    'w6_3-2': `# Complex: ColumnTransformer
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+import pandas as pd
+
+# Setup
+df = pd.DataFrame({
+    "age": [25, 30, 35],
+    "city": ["Paris", "London", "Paris"]
+})
+
+# 1. Create a ColumnTransformer that applies StandardScaler to "age" and OneHotEncoder to "city".
+# 2. Fit and transform the DataFrame.
+# 3. Print the resulting combined numpy array.
+`,    'w6_4-0': `# Easy: Basic Train-Test Split
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+# Setup
+X = np.arange(100).reshape((50, 2))
+y = np.arange(50)
+
+# 1. Use train_test_split to split X and y into 80% training and 20% testing sets.
+# 2. Set random_state=42 for reproducibility.
+# 3. Print the shapes of X_train and X_test.
+`,    'w6_4-1': `# Intermediate: Stratified Splitting
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+# Setup
+X = np.random.rand(100, 5)
+y = np.array([0]*90 + [1]*10) # Highly imbalanced target
+
+# 1. Split the data 70/30.
+# 2. Use the \`stratify\` parameter to ensure the train and test sets have the same proportion of 0s and 1s as the original y.
+# 3. Verify the proportions using np.mean(y_train) and np.mean(y_test).
+`,    'w6_4-2': `# Complex: Splitting Pandas DataFrames
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+# Setup
+df = pd.DataFrame({
+    "feature1": np.random.randn(100),
+    "feature2": np.random.randn(100),
+    "target": np.random.choice(["A", "B", "C"], size=100)
+})
+
+# 1. Separate \`df\` into \`X\` (features) and \`y\` (target).
+# 2. Perform a train_test_split.
+# 3. Verify that the indices of \`X_train\` and \`y_train\` perfectly match.
 `
 };
 
