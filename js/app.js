@@ -6,6 +6,24 @@ let editors = {};
 
 let activeCellId = null;
 
+window.addEventListener('keydown', function(e) {
+    if (activeCellId) {
+        // Shift + Enter to RUN
+        if (e.shiftKey && e.key === 'Enter') {
+            e.preventDefault();
+            e.stopPropagation();
+            runActiveCell();
+        }
+        // Ctrl/Cmd + Enter to REVIEW
+        else if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleGlobalRabbit();
+        }
+    }
+}, true);
+
+
 
 
 function setActiveCell(cellId) {
@@ -3381,18 +3399,7 @@ function loadLesson(lessonId) {
                     theme: "monokai",
                     lineNumbers: true,
                     indentUnit: 4,
-                    matchBrackets: true,
-                    extraKeys: {
-                        "Shift-Enter": function(cm) {
-                            runActiveCell();
-                        },
-                        "Ctrl-Enter": function(cm) {
-                            toggleGlobalRabbit();
-                        },
-                        "Cmd-Enter": function(cm) {
-                            toggleGlobalRabbit();
-                        }
-                    }
+                    matchBrackets: true
                 });
                 
                 editors[cellId].on('focus', () => {
