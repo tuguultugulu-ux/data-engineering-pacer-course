@@ -59,276 +59,254 @@ const lessons = {
             <li><span class="badge">E</span> <strong>Evidence:</strong> Visuals, datasets, and proofs.</li>
             <li><span class="badge">R</span> <strong>Reference:</strong> Links to official docs and books.</li>
         </ul>
-        <p>Select a module from the sidebar to begin. Every module contains an interactive Jupyter-like cell where you can immediately practice what you learn.</p>
-        
-        <div class="resource-list">
-            <h3>Core Books & References</h3>
-            <ul>
-                <li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">Python Data Science Handbook</a> (NumPy, Pandas, Matplotlib, Scikit-Learn)</li>
-                <li><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/" target="_blank">Pandas Getting Started Tutorials</a></li>
-                <li>Practical Statistics for Data Scientists, 2nd edition — Bruce, Bruce, Gedeck</li>
-                <li><a href="https://developers.google.com/machine-learning/crash-course/linear-regression#linear_regression_equation" target="_blank">Google Machine Learning Crash Course</a></li>
-                <li><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">scikit-learn User Guide</a></li>
-                <li><a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git</a></li>
-            </ul>
-        </div>
+        <p>Select a module from the sidebar to begin. Every module contains deep textbook excerpts followed by interactive Jupyter-like cells to immediately practice what you learn.</p>
     `,
     'week1': `
         <h1>Phase 1: Strengthen Python and Git</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
         <div class="pacer-section">
-            <h3><span class="badge">C</span> Conceptual: Why Solidify Python First?</h3>
-            <p>Data engineering pipelines require robust, reusable code. Before diving into pandas or ML, you need to confidently write functions, handle exceptions (try/except), use pathlib for file paths, and understand Git for version control.</p>
+            <h3><span class="badge">R</span> Reference: Python Control Flow & Functions</h3>
+            <p><em>Adapted from the Python Data Science Handbook:</em> "While Python's flexibility is one of its greatest strengths, it requires discipline in data engineering. Writing reusable functions with clear type expectations and error handling (using <code>try/except</code>) is non-negotiable for production pipelines."</p>
+            <p><strong>Topic: Validating Data and Handling Errors</strong><br>
+            When building data pipelines, you cannot assume data is clean. You must aggressively validate inputs using <code>assert</code> statements or by raising exceptions like <code>ValueError</code>.</p>
         </div>
 
-        <div class="pacer-section">
-            <h3><span class="badge">P</span> Procedural: Building Data Utilities</h3>
-            <p>Your goal is to build reusable functions. For example, a function to validate a numeric range using assertions.</p>
-            <p><strong>Practice:</strong> Complete the function below. Then run the cell.</p>
-        </div>
-
-        <div class="notebook-cell" id="cell-week1">
+        <div class="notebook-cell" id="cell-w1-1">
             <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-week1"></div>
-            <div class="controls">
-                <button onclick="runCode('week1')">▶ Run Cell</button>
-                <button class="secondary" onclick="reviewCode('week1')">🔍 Code Rabbit Review</button>
-            </div>
-            <div class="output-container" id="output-week1"></div>
-            <div class="review-panel" id="review-week1"></div>
+            <div class="editor-container" id="editor-w1-1"></div>
+            <div class="controls"><button onclick="runCode('w1-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w1-1"></div>
+        </div>
+
+        <div class="pacer-section">
+            <h3><span class="badge">R</span> Reference: Git Basics</h3>
+            <p><em>Adapted from Pro Git (Chapter 2):</em> "Git thinks of its data more like a stream of snapshots. Every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot."</p>
+            <p><strong>Topic: Version Control</strong><br>
+            Always track your data engineering scripts using Git. Commands like <code>git status</code>, <code>git add</code>, and <code>git commit</code> form the daily loop of your work.</p>
         </div>
     `,
     'week2': `
-        <h1>Phase 2: NumPy for numerical data</h1>
+        <h1>Phase 2: NumPy for Numerical Data</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
-        <div class="pacer-section">
-            <h3><span class="badge">C</span> Conceptual: The Foundation of Data Science</h3>
-            <p>NumPy provides the high-performance multidimensional array object (ndarray). You need to understand shapes, indexing, masks, and broadcasting.</p>
-        </div>
         
         <div class="pacer-section">
-            <h3><span class="badge">P</span> Procedural: Creating and Filtering</h3>
-            <p>Use boolean masks to filter numerical data efficiently.</p>
+            <h3><span class="badge">R</span> Reference: The NumPy ndarray</h3>
+            <p><em>Adapted from the Python Data Science Handbook (Jake VanderPlas):</em> "At the core of nearly all data science tools in Python is the NumPy array. Python's default list type provides great flexibility, but it falls short when dealing with large amounts of numerical data. NumPy arrays contain values of a single type, allowing for efficient memory storage and vectorized operations."</p>
+            <p><strong>Topic: Array Attributes</strong><br>
+            Every array has attributes like <code>ndim</code> (the number of dimensions), <code>shape</code> (the size of each dimension), and <code>dtype</code> (the data type of the array).</p>
         </div>
 
-        <div class="notebook-cell" id="cell-week2">
+        <div class="notebook-cell" id="cell-w2-1">
             <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-week2"></div>
-            <div class="controls">
-                <button onclick="runCode('week2')">▶ Run Cell</button>
-                <button class="secondary" onclick="reviewCode('week2')">🔍 Code Rabbit Review</button>
-            </div>
-            <div class="output-container" id="output-week2"></div>
-            <div class="review-panel" id="review-week2"></div>
+            <div class="editor-container" id="editor-w2-1"></div>
+            <div class="controls"><button onclick="runCode('w2-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2-1"></div>
+        </div>
+
+        <div class="pacer-section">
+            <h3><span class="badge">C</span> Conceptual: Boolean Masks</h3>
+            <p><em>Adapted from the Python Data Science Handbook:</em> "Boolean masking is the process of using an array of boolean values (True/False) to extract, modify, or count values in another array. When applying a condition (like <code>x > 5</code>) to a NumPy array, it returns a mask. Passing this mask back into the array (<code>x[mask]</code>) selects only the valid elements."</p>
+        </div>
+
+        <div class="notebook-cell" id="cell-w2-2">
+            <div class="cell-header"><span>[ ] In: Python 3</span></div>
+            <div class="editor-container" id="editor-w2-2"></div>
+            <div class="controls"><button onclick="runCode('w2-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2-2"></div>
         </div>
     `,
     'week3': `
         <h1>Phase 3: Pandas and EDA</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
         <div class="pacer-section">
-            <h3><span class="badge">C</span> Conceptual: Tabular Data Mastery</h3>
-            <p>Pandas is built on top of NumPy and provides DataFrames. It is essential for data cleaning, EDA (Exploratory Data Analysis), and feature engineering.</p>
+            <h3><span class="badge">R</span> Reference: The DataFrame Object</h3>
+            <p><em>Adapted from the Pandas Getting Started Tutorials:</em> "A DataFrame is a 2-dimensional data structure that can store data of different types (including characters, integers, floating point values, categorical data and more) in columns. It is similar to a spreadsheet or a SQL table."</p>
+            <p><strong>Topic: Inspecting Data</strong><br>
+            The first thing you do after loading data via <code>pd.read_csv()</code> is run <code>df.info()</code> to see data types and missing values, and <code>df.describe()</code> for summary statistics.</p>
         </div>
-        <div class="pacer-section">
-            <h3><span class="badge">P</span> Procedural: Summary Statistics</h3>
-            <p>Use <code>df.info()</code>, <code>df.describe()</code>, and <code>df.isna().sum()</code> to audit your datasets immediately after loading.</p>
-        </div>
-        <div class="notebook-cell" id="cell-week3">
+
+        <div class="notebook-cell" id="cell-w3-1">
             <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-week3"></div>
-            <div class="controls">
-                <button onclick="runCode('week3')">▶ Run Cell</button>
-                <button class="secondary" onclick="reviewCode('week3')">🔍 Code Rabbit Review</button>
-            </div>
-            <div class="output-container" id="output-week3"></div>
-            <div class="review-panel" id="review-week3"></div>
+            <div class="editor-container" id="editor-w3-1"></div>
+            <div class="controls"><button onclick="runCode('w3-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3-1"></div>
+        </div>
+        
+        <div class="pacer-section">
+            <h3><span class="badge">P</span> Procedural: Handling Missing Data</h3>
+            <p><em>Adapted from the Python Data Science Handbook:</em> "The difference between data found in many tutorials and data in the real world is that real-world data is rarely clean. Pandas represents missing data using the floating-point <code>NaN</code> value. We handle these using <code>dropna()</code> to remove them, or <code>fillna()</code> to impute them."</p>
+        </div>
+
+        <div class="notebook-cell" id="cell-w3-2">
+            <div class="cell-header"><span>[ ] In: Python 3</span></div>
+            <div class="editor-container" id="editor-w3-2"></div>
+            <div class="controls"><button onclick="runCode('w3-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3-2"></div>
         </div>
     `,
     'week4': `
         <h1>Phase 4: Visualization and Statistics</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
         <div class="pacer-section">
-            <h3><span class="badge">E</span> Evidence: Visualizing Outliers</h3>
-            <p>Before throwing data into a model, you must *look* at it. A boxplot or histogram instantly reveals skewness and outliers that a simple mean might hide.</p>
+            <h3><span class="badge">R</span> Reference: Estimates of Location</h3>
+            <p><em>Adapted from Practical Statistics for Data Scientists (Bruce & Bruce):</em> "The mean is strongly influenced by outliers (extreme values). To create a robust estimate of location, we use the median, which is the middle number on a sorted list of the data. The median is more resilient to data-entry errors or rare valid events."</p>
         </div>
-        <div class="notebook-cell" id="cell-week4">
+
+        <div class="notebook-cell" id="cell-w4-1">
             <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-week4"></div>
-            <div class="controls">
-                <button onclick="runCode('week4')">▶ Run Cell</button>
-                <button class="secondary" onclick="reviewCode('week4')">🔍 Code Rabbit Review</button>
-            </div>
-            <div class="output-container" id="output-week4"></div>
-            <div class="review-panel" id="review-week4"></div>
+            <div class="editor-container" id="editor-w4-1"></div>
+            <div class="controls"><button onclick="runCode('w4-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4-1"></div>
         </div>
     `,
     'week5': `
         <h1>Phase 5: Build a Proper Data Pipeline</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
         <div class="pacer-section">
-            <h3><span class="badge">A</span> Analogous: Factory Assembly Line</h3>
-            <p>Think of a pipeline like a factory. Raw data comes in, it gets checked (validation), cleaned (imputation), and shaped (encoding) before it reaches the model. If the factory logic is scattered, data leakage occurs.</p>
+            <h3><span class="badge">R</span> Reference: Data Leakage</h3>
+            <p><em>Adapted from Google Machine Learning Crash Course:</em> "Data leakage occurs when information from outside the training dataset is used to create the model. This includes using target variables as features, or accidentally including test data in your training set. A pipeline must rigidly separate training data from validation/test data before any transformations are applied."</p>
         </div>
-        <div class="notebook-cell" id="cell-week5">
+
+        <div class="notebook-cell" id="cell-w5-1">
             <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-week5"></div>
-            <div class="controls">
-                <button onclick="runCode('week5')">▶ Run Cell</button>
-                <button class="secondary" onclick="reviewCode('week5')">🔍 Code Rabbit Review</button>
-            </div>
-            <div class="output-container" id="output-week5"></div>
-            <div class="review-panel" id="review-week5"></div>
+            <div class="editor-container" id="editor-w5-1"></div>
+            <div class="controls"><button onclick="runCode('w5-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w5-1"></div>
         </div>
     `,
     'week6': `
         <h1>Phase 6: Scikit-learn Pipelines</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
         <div class="pacer-section">
-            <h3><span class="badge">P</span> Procedural: ColumnTransformers</h3>
-            <p>Scikit-learn's Pipeline and ColumnTransformer ensure that training and testing data are processed identically, preventing the most common ML bug: data leakage.</p>
+            <h3><span class="badge">R</span> Reference: The Pipeline Object</h3>
+            <p><em>Adapted from the Scikit-learn User Guide:</em> "The Pipeline can be used to chain multiple estimators into one. This is useful as there is often a fixed sequence of steps in processing the data, for example feature selection, normalization and classification. The Pipeline prevents data leakage by ensuring that data transformations are fit only on the training data during cross-validation."</p>
         </div>
-        <div class="notebook-cell" id="cell-week6">
+
+        <div class="notebook-cell" id="cell-w6-1">
             <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-week6"></div>
-            <div class="controls">
-                <button onclick="runCode('week6')">▶ Run Cell</button>
-                <button class="secondary" onclick="reviewCode('week6')">🔍 Code Rabbit Review</button>
-            </div>
-            <div class="output-container" id="output-week6"></div>
-            <div class="review-panel" id="review-week6"></div>
-        </div>
-    `,
-    'resources': `
-        <h1>Resources & Final Practice</h1>
-        <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference</h3>
-            <ul>
-                <li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">Python Data Science Handbook</a></li>
-                <li><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/" target="_blank">Pandas Getting Started Tutorials</a></li>
-                <li><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">scikit-learn User Guide</a></li>
-                <li>Practical Statistics for Data Scientists, 2nd edition</li>
-            </ul>
-        </div>
-        <div class="notebook-cell" id="cell-resources">
-            <div class="cell-header"><span>[ ] In: Python 3 - Final Sandbox</span></div>
-            <div class="editor-container" id="editor-resources"></div>
-            <div class="controls">
-                <button onclick="runCode('resources')">▶ Run Cell</button>
-            </div>
-            <div class="output-container" id="output-resources"></div>
+            <div class="editor-container" id="editor-w6-1"></div>
+            <div class="controls"><button onclick="runCode('w6-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6-1"></div>
         </div>
     `
 };
 
 const initialCode = {
-    'week1': `def validate_numeric_range(val, min_val, max_val):
+    'w1-1': `def clean_age(value):
     """
-    Validates if a value is within the given range.
-    Raises ValueError if not.
+    Validates the age. If age is < 13 or > 100, raise a ValueError.
     """
-    # TODO: Write logic to check if val is outside [min_val, max_val]
-    # If it is, raise a ValueError
+    # TODO: Implement the validation logic based on the book's advice.
     pass
 
-# Test code
 try:
-    validate_numeric_range(50, 13, 100)
-    print("Passed valid age check!")
-    validate_numeric_range(12, 13, 100)
-except ValueError:
-    print("Correctly caught invalid age!")`,
+    clean_age(12)
+except ValueError as e:
+    print("Caught invalid age!")`,
+    
+    'w2-1': `import numpy as np
 
-    'week2': `import numpy as np
+# Practice: Array Attributes
+# TODO: Create a 2-dimensional NumPy array of shape (3, 4) filled with ones.
+# Hint: use np.ones()
+my_array = None
 
-# 10 rows, 3 columns of random integers
+print("Array:")
+print(my_array)
+if my_array is not None:
+    print("Shape:", my_array.shape)
+    print("Dimensions:", my_array.ndim)`,
+    
+    'w2-2': `import numpy as np
 rng = np.random.default_rng(42)
-X = rng.integers(0, 100, size=(10, 3))
+ages = rng.integers(0, 110, size=20)
+print("Original ages:", ages)
 
-print("Original Data:\\n", X)
-
-# TODO: Create a mask to select rows where column 0 is > 50
+# Practice: Boolean Masking
+# TODO: Create a mask for ages between 13 and 100 (inclusive)
 # mask = ...
-# filtered_X = X[mask]
+# valid_ages = ages[mask]
+# print("Valid ages:", valid_ages)`,
 
-# print("\\nFiltered Data:\\n", filtered_X)`,
-
-    'week3': `import pandas as pd
+    'w3-1': `import pandas as pd
 import numpy as np
 
-# Create synthetic dataset
-data = {
-    'customer_id': [1, 2, 3, 4, 5],
-    'age': [25, 45, np.nan, 34, 112], # Note the outlier and missing value
-    'monthly_spend': [50.5, 120.0, 80.0, np.nan, 200.0]
-}
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+        'Age': [25, np.nan, 35, 40],
+        'Salary': [50000, 60000, 70000, np.nan]}
 df = pd.DataFrame(data)
 
-# TODO: Use a pandas method to fill missing 'monthly_spend' with the median
-# df['monthly_spend'] = ...
-
-# TODO: Print the summary statistics of the dataframe
+# Practice: Inspecting Data
+# TODO: Print the summary statistics of the DataFrame using .describe()
 # ...
-print(df)`,
 
-    'week4': `# (Note: In this browser sandbox, plotting directly to the screen requires special setup.
-# Let's practice calculating the statistics needed for a boxplot instead.)
+# TODO: Print the info to see missing values using .info()
+# ...`,
+
+    'w3-2': `import pandas as pd
 import numpy as np
 
-data = np.array([12, 15, 14, 16, 18, 12, 110, 15, 14]) # 110 is an outlier
+data = {'Age': [25, np.nan, 35, 40], 'Salary': [50000, 60000, 70000, np.nan]}
+df = pd.DataFrame(data)
 
-# TODO: Calculate the 25th percentile (Q1) and 75th percentile (Q3)
-# q1 = ...
-# q3 = ...
-# iqr = q3 - q1
+# Practice: Imputation
+# TODO: Fill missing values in 'Salary' with the median salary.
+# median_salary = ...
+# df['Salary'] = df['Salary'].fillna(median_salary)
 
-# print(f"IQR is: {iqr}")`,
+# print(df)`,
 
-    'week5': `import pandas as pd
+    'w4-1': `import numpy as np
 
-def check_data_leakage(train_df, test_df):
-    """
-    Ensures no customer_id exists in both training and test sets.
-    """
-    # TODO: Find if any IDs intersect
-    # train_ids = set(...)
-    # test_ids = set(...)
-    # overlap = ...
-    # print(f"Number of overlapping IDs: {len(overlap)}")
-    pass
+salaries = np.array([45000, 50000, 55000, 48000, 60000, 1000000]) # Note the outlier
 
-# Mock data
-train = pd.DataFrame({'customer_id': [1, 2, 3, 4]})
-test = pd.DataFrame({'customer_id': [4, 5, 6]})
+# Practice: Mean vs Median
+# TODO: Calculate the mean and median of the salaries.
+# mean_sal = ...
+# median_sal = ...
 
-check_data_leakage(train, test)`,
+# print(f"Mean: {mean_sal}")
+# print(f"Median: {median_sal}")
+# Observe how the outlier pulls the mean up dramatically!`,
 
-    'week6': `from sklearn.pipeline import Pipeline
+    'w5-1': `import pandas as pd
+
+train = pd.DataFrame({'customer_id': [1, 2, 3, 4], 'feature': [10, 20, 30, 40]})
+test = pd.DataFrame({'customer_id': [4, 5, 6], 'feature': [40, 50, 60]})
+
+# Practice: Leakage Audit
+# TODO: Find if any customer_id exists in both train and test.
+# train_ids = set(train['customer_id'])
+# test_ids = set(test['customer_id'])
+# overlap = train_ids.intersection(test_ids)
+# print(f"Overlapping IDs: {overlap}")`,
+
+    'w6-1': `from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 
-# Sample data with missing values
 X_train = np.array([[1.0, 2.0], [np.nan, 3.0], [4.0, np.nan]])
 
-# TODO: Create a pipeline with a SimpleImputer (mean) and StandardScaler
-# pipeline = Pipeline([
-#     ...
+# Practice: The Pipeline Object
+# TODO: Create a pipeline with SimpleImputer(strategy='median') and StandardScaler()
+# pipe = Pipeline([
+#     ('imputer', ...),
+#     ('scaler', ...)
 # ])
 
-# transformed = pipeline.fit_transform(X_train)
-# print(transformed)`,
-
-    'resources': `# Sandbox for any code testing!
-import numpy as np
-import pandas as pd
-
-print("Ready to code!")`
+# transformed = pipe.fit_transform(X_train)
+# print("Transformed Data:")
+# print(transformed)`
 };
 
 function loadLesson(lessonId) {
     document.querySelectorAll('.sidebar a').forEach(el => el.classList.remove('active'));
-    
-    // Find the link that was clicked and make it active
     const links = document.querySelectorAll('.sidebar a');
     links.forEach(link => {
         if(link.getAttribute('onclick').includes(lessonId)) {
@@ -341,15 +319,15 @@ function loadLesson(lessonId) {
     
     updatePyodideStatus();
 
-    if (initialCode[lessonId]) {
-        // Wait for DOM to update
-        setTimeout(() => {
-            const editorEl = document.getElementById(`editor-${lessonId}`);
-            if(editorEl) {
-                // Clear any existing editor in this element (if any)
-                editorEl.innerHTML = '';
-                editors[lessonId] = CodeMirror(editorEl, {
-                    value: initialCode[lessonId],
+    // Initialize all code editors in the newly loaded HTML
+    setTimeout(() => {
+        const editorElements = document.querySelectorAll('.editor-container');
+        editorElements.forEach(editorEl => {
+            const cellId = editorEl.id.replace('editor-', '');
+            if(initialCode[cellId]) {
+                editorEl.innerHTML = ''; // clear any existing
+                editors[cellId] = CodeMirror(editorEl, {
+                    value: initialCode[cellId],
                     mode: "python",
                     theme: "monokai",
                     lineNumbers: true,
@@ -357,19 +335,19 @@ function loadLesson(lessonId) {
                     matchBrackets: true
                 });
             }
-        }, 50);
-    }
+        });
+    }, 50);
 }
 
-async function runCode(lessonId) {
+async function runCode(cellId) {
     if (!pyodideLoaded) {
         alert("Python environment is still loading. Please wait a moment and try again.");
         return;
     }
     
-    const code = editors[lessonId].getValue();
-    const outputContainer = document.getElementById(`output-${lessonId}`);
-    const header = document.querySelector(`#cell-${lessonId} .cell-header span`);
+    const code = editors[cellId].getValue();
+    const outputContainer = document.getElementById(`output-${cellId}`);
+    const header = document.querySelector(`#cell-${cellId} .cell-header span`);
     
     header.innerText = "[*] Running...";
     outputContainer.innerText = "Executing...";
@@ -398,49 +376,4 @@ async function runCode(lessonId) {
     } finally {
         header.innerText = "[✓] Finished";
     }
-}
-
-function reviewCode(lessonId) {
-    const code = editors[lessonId].getValue();
-    const reviewPanel = document.getElementById(`review-${lessonId}`);
-    reviewPanel.style.display = "block";
-    
-    let feedback = "<h4>🐇 Code Rabbit Review</h4><ul>";
-    
-    if (lessonId === 'week1') {
-        if (!code.includes("raise ValueError")) {
-            feedback += "<li>🔴 <strong>Bug:</strong> You forgot to <code>raise ValueError</code> inside the function.</li>";
-        } else {
-            feedback += "<li>🟢 <strong>Great job!</strong> ValueError raised correctly.</li>";
-        }
-    } else if (lessonId === 'week2') {
-        if (!code.includes("X[:, 0]")) {
-             feedback += "<li>🔴 <strong>Logic Error:</strong> Remember to slice the first column using <code>X[:, 0]</code>.</li>";
-        } else {
-             feedback += "<li>🟢 <strong>Excellent!</strong> Correct indexing.</li>";
-        }
-    } else if (lessonId === 'week3') {
-        if (!code.includes("fillna") && !code.includes("median()")) {
-             feedback += "<li>🟡 <strong>Tip:</strong> Use <code>df['monthly_spend'].fillna(df['monthly_spend'].median())</code></li>";
-        } else {
-             feedback += "<li>🟢 <strong>Nice!</strong> Handled missing values well.</li>";
-        }
-    } else if (lessonId === 'week4') {
-        if (!code.includes("np.percentile")) {
-            feedback += "<li>🟡 <strong>Tip:</strong> <code>np.percentile(data, 25)</code> is a great way to find quartiles.</li>";
-        }
-    } else if (lessonId === 'week5') {
-        if (!code.includes("set(")) {
-            feedback += "<li>🟡 <strong>Tip:</strong> Converting lists to sets and using the <code>&</code> operator or <code>.intersection()</code> is the fastest way to find overlapping IDs.</li>";
-        }
-    } else if (lessonId === 'week6') {
-        if (!code.includes("Pipeline")) {
-            feedback += "<li>🔴 <strong>Missing:</strong> Construct the pipeline using <code>Pipeline([('imputer', SimpleImputer()), ('scaler', StandardScaler())])</code></li>";
-        } else {
-            feedback += "<li>🟢 <strong>Pipeline built correctly!</strong></li>";
-        }
-    }
-    
-    feedback += "<li>💡 <em>General Advice:</em> Keep pushing forward! Code review helps build robust data engineering habits.</li></ul>";
-    reviewPanel.innerHTML = feedback;
 }
