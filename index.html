@@ -6,7 +6,7 @@
     <title>PACER Data Engineering Course</title>
     
     <!-- Modern Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=700">
+    <link rel="stylesheet" href="css/styles.css?v=800">
     
     <!-- CodeMirror (Editor & Monokai Theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -21,6 +21,14 @@
         <div class="sidebar-brand">
             <h2>PACER Data Engineering</h2>
             <p>10-Week End-to-End Curriculum</p>
+            <button class="sidebar-ai-btn" onclick="openAiModal()" id="sidebar-ai-btn" title="Configure Gemini / OpenAI API key">
+                <span class="ai-icon">🔑</span>
+                <span class="ai-text">
+                    <strong>AI Reviewer Setup</strong>
+                    <small id="sidebar-ai-status">⚡ Offline AST Mode</small>
+                </span>
+                <span class="ai-arrow">⚙️</span>
+            </button>
         </div>
         <ul id="nav-list" class="sidebar-nav">
             <!-- Dynamically populated from course-data.js -->
@@ -42,6 +50,9 @@
             <span id="active-cell-label">Click inside a code cell to begin</span>
         </div>
         <div class="footer-right">
+            <button class="footer-ai-btn" onclick="openAiModal()" title="Setup AI API Key">
+                ⚙️ AI Key Setup
+            </button>
             <span><kbd>Ctrl/Cmd + Enter</kbd> Run Code</span>
             <span><kbd>Ctrl + Space / Alt + R</kbd> Code Rabbit Review</span>
         </div>
@@ -97,10 +108,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 
     <!-- Application Modules -->
-    <script src="js/course-data.js?v=700"></script>
-    <script src="js/pyodide-engine.js?v=700"></script>
-    <script src="js/ai-reviewer.js?v=700"></script>
-    <script src="js/editor-manager.js?v=700"></script>
-    <script src="js/app.js?v=700"></script>
+    <script src="js/course-data.js?v=800"></script>
+    <script src="js/pyodide-engine.js?v=800"></script>
+    <script src="js/ai-reviewer.js?v=800"></script>
+    <script src="js/editor-manager.js?v=800"></script>
+    <script src="js/app.js?v=800"></script>
 </body>
 </html>

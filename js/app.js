@@ -30,6 +30,7 @@ function initApp() {
     // 3. Load initial lesson
     loadLesson('intro');
 
+    updateSidebarAiStatus();
     // 4. Bind AI Modal event listeners
     setupAiModal();
 }
@@ -344,6 +345,20 @@ function renderPracticeCard(practice) {
 }
 
 /* --- AI Settings Modal Handlers --- */
+
+function updateSidebarAiStatus() {
+    const statusEl = document.getElementById('sidebar-ai-status');
+    if (statusEl) {
+        if (AIReviewer.hasApiKey()) {
+            statusEl.innerText = '✨ ' + AIReviewer.getProvider().toUpperCase() + ' Active';
+            statusEl.style.color = '#34d399';
+        } else {
+            statusEl.innerText = '⚡ Offline AST Mode';
+            statusEl.style.color = '#93c5fd';
+        }
+    }
+}
+
 function setupAiModal() {
     // Backdrop click to close
     const modalBackdrop = document.getElementById('ai-modal-backdrop');
@@ -400,6 +415,7 @@ function saveAiSettings() {
         if (lessonId) loadLesson(lessonId);
     }
 
+    updateSidebarAiStatus();
     setTimeout(closeAiModal, 1000);
 }
 
