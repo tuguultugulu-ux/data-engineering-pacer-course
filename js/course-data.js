@@ -129,8 +129,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_00-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - 2. Introduction to NumPy**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `2. Introduction to NumPy` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -170,8 +170,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_01-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Understanding Data Types in Python**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Understanding Data Types in Python` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -211,8 +211,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_02-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - The Basics of NumPy Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `The Basics of NumPy Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -252,8 +252,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_03-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Computation on NumPy Arrays: Universal Functions**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Computation on NumPy Arrays: Universal Functions` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -293,8 +293,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_04-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Aggregations: Min, Max, and Everything In Between**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Aggregations: Min, Max, and Everything In Between` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Engagement Metrics\ndata = {\n    'post_id': [1, 2, 3, 4],\n    'likes': [100.0, 200.0, np.nan, 350.0],\n    'text': ['Hello', ' World ', 'Data Pipeline', 'Machine Learning']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -334,8 +334,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_05-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Computation on Arrays: Broadcasting**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Computation on Arrays: Broadcasting` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -375,8 +375,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_06-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Comparisons, Masks, and Boolean Logic**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Comparisons, Masks, and Boolean Logic` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Raw Employee HR Records\ndata = {\n    'emp_id': np.arange(1001, 1006),\n    'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'],\n    'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0],\n    'department': ['IT', 'HR', 'IT', 'Sales', 'HR']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -416,8 +416,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_07-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Fancy Indexing**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Fancy Indexing` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -457,8 +457,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_08-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Sorting Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Sorting Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -498,8 +498,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w2_09-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: NumPy - Structured Data: NumPy's Structured Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Structured Data: NumPy's Structured Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -539,8 +539,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_00-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - 4. Visualization with Matplotlib**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -580,8 +580,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_01-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Simple Line Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -621,8 +621,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_02-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Simple Scatter Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Player Leaderboard\ndata = {\n    'player': ['P1', 'P2', 'P3', 'P4'],\n    'score': [1000.0, 1500.0, np.nan, 3200.0],\n    'level': [1, 2, 3, 4]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -662,8 +662,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_03-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Visualizing Errors**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -703,8 +703,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_04-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Density and Contour Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -744,8 +744,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_05-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Histograms, Binnings, and Density**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -785,8 +785,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_06-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Plot Legends**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -826,8 +826,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_07-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Colorbars**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Player Leaderboard\ndata = {\n    'player': ['P1', 'P2', 'P3', 'P4'],\n    'score': [1000.0, 1500.0, np.nan, 3200.0],\n    'level': [1, 2, 3, 4]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -867,8 +867,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_08-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Multiple Subplots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -908,8 +908,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_09-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Text and Annotation**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -949,8 +949,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_10-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Ticks**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -990,8 +990,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_11-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Matplotlib: Configurations and Stylesheets**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1031,8 +1031,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_12-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Three-Dimensional Plotting in Matplotlib**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1072,8 +1072,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_13-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Geographic Data with Basemap**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1113,8 +1113,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_14-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Visualization with Seaborn**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1154,8 +1154,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w4_15-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Matplotlib - Further Resources**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1195,8 +1195,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_0-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - What kind of data does pandas handle?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `What kind of data does pandas handle?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1236,8 +1236,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_1-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How do I read and write tabular data?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I read and write tabular data?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1277,8 +1277,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_2-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How do I select a subset of a DataFrame?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I select a subset of a DataFrame?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1318,8 +1318,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_3-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How do I create plots in pandas?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I create plots in pandas?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1359,8 +1359,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_4-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How to create new columns derived from existing columns**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to create new columns derived from existing columns`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1400,8 +1400,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_5-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How to calculate summary statistics**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to calculate summary statistics`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1441,8 +1441,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_6-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How to reshape the layout of tables**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to reshape the layout of tables`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1482,8 +1482,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_7-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How to combine data from multiple tables**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to combine data from multiple tables`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1523,8 +1523,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w3_8-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Pandas - How to handle time series data with ease**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to handle time series data with ease`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
@@ -1573,8 +1573,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w6_0-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Scikit-Learn - Getting Started with Scikit-learn**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Getting Started with Scikit-learn` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your pipeline parameters and transformations!"
@@ -1614,8 +1614,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w6_1-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Scikit-Learn - Pipeline Documentation**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Pipeline Documentation` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Meteorological Observations\ndata = {\n    'day': [1, 2, 3, 4],\n    'wind_speed': [10.0, 15.0, np.nan, 25.0],\n    'rainfall': [0.0, 5.0, 10.0, 0.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your pipeline parameters and transformations!"
@@ -1655,8 +1655,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w6_2-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Scikit-Learn - ColumnTransformer Documentation**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `ColumnTransformer Documentation` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your pipeline parameters and transformations!"
@@ -1696,8 +1696,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w6_3-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Scikit-Learn - Preprocessing Data**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Preprocessing Data` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your pipeline parameters and transformations!"
@@ -1737,8 +1737,8 @@ var COURSE_DATA = {
         },
         {
           "id": "w6_4-3",
-          "level": "\ud83c\udfc6 Mastery Challenge",
-          "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
+          "level": "Practice",
+          "title": " Mastery Challenge",
           "markdown": "**Mastery Challenge: Scikit-Learn - Train Test Split**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Train Test Split` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
           "review": "Check your pipeline parameters and transformations!"
@@ -1747,39 +1747,39 @@ var COURSE_DATA = {
     },
     "w2_exam": {
       "id": "w2_exam",
-      "title": "\ud83c\udfc6 NumPy Final Exam",
+      "title": " NumPy Final Exam",
       "phase": "2",
       "isExam": true,
-      "examTitle": "\ud83c\udfc6 NumPy Final Phase Exam",
+      "examTitle": " NumPy Final Phase Exam",
       "description": "Build a 3D NumPy array simulation of climate data, execute advanced slicing, apply Ufuncs with broadcasting, perform boolean masked aggregations, and sort along specific axes without a single python loop.",
-      "starterCode": "# \ud83c\udfc6 NumPy Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
+      "starterCode": "#  NumPy Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
     },
     "w3_exam": {
       "id": "w3_exam",
-      "title": "\ud83c\udfc6 Pandas Final Exam",
+      "title": " Pandas Final Exam",
       "phase": "3",
       "isExam": true,
-      "examTitle": "\ud83c\udfc6 Pandas Final Phase Exam",
+      "examTitle": " Pandas Final Phase Exam",
       "description": "Load 3 disparate messy datasets. Clean all missing/incorrect data using conditional group-based imputation, string manipulations, and datetime conversions. Merge them correctly handling outer conditions, pivot the results for a business report, and compute advanced rolling aggregations.",
-      "starterCode": "# \ud83c\udfc6 Pandas Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
+      "starterCode": "#  Pandas Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
     },
     "w4_exam": {
       "id": "w4_exam",
-      "title": "\ud83c\udfc6 Matplotlib Final Exam",
+      "title": " Matplotlib Final Exam",
       "phase": "4",
       "isExam": true,
-      "examTitle": "\ud83c\udfc6 Matplotlib Final Phase Exam",
+      "examTitle": " Matplotlib Final Phase Exam",
       "description": "Construct a comprehensive 2x2 dashboard using GridSpec. Integrate a scatter plot with a mapped colorbar, a grouped bar chart, a time-series line plot with confidence intervals, and a 2D histogram. Apply custom styles, titles, legends, and specific annotations to key outliers.",
-      "starterCode": "# \ud83c\udfc6 Matplotlib Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
+      "starterCode": "#  Matplotlib Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
     },
     "w6_exam": {
       "id": "w6_exam",
-      "title": "\ud83c\udfc6 Scikit-Learn Final Exam",
+      "title": " Scikit-Learn Final Exam",
       "phase": "6",
       "isExam": true,
-      "examTitle": "\ud83c\udfc6 Scikit-Learn Final Phase Exam",
+      "examTitle": " Scikit-Learn Final Phase Exam",
       "description": "Construct a flawless end-to-end Machine Learning Pipeline using ColumnTransformer for mixed data types. Handle imputation, scaling, and one-hot encoding dynamically. Integrate an estimator, perform a GridSearch cross-validation to find the optimal hyperparameters, and print the test-set classification report.",
-      "starterCode": "# \ud83c\udfc6 Scikit-Learn Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
+      "starterCode": "#  Scikit-Learn Final Exam\n# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.\n"
     }
   }
 };

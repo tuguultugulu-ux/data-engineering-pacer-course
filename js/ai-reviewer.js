@@ -1,8 +1,9 @@
 /**
  * PACER Data Engineering - Code Rabbit AI Reviewer
- * Hybrid Review System:
+ * Production-Grade Architecture:
  * - Option 1: Live LLM Mentor Review (Gemini / OpenAI / Groq) with User's API Key
  * - Option 3: Intelligent In-Browser Python AST Analyzer & Static Linter (Fallback when no key)
+ * Zero Emojis, Strict Typographic Hierarchy
  */
 
 var AIReviewer = (function() {
@@ -68,14 +69,14 @@ var AIReviewer = (function() {
     }
 
     async function callLLM(provider, apiKey, problem, userCode, lastOutput) {
-        const systemPrompt = `You are Code Rabbit, an elite Senior Data Engineer & Python Mentor.
+        const systemPrompt = `You are Code Rabbit, a Senior Data Engineer and Python Mentor.
 Your role is to review a student's Python code for a specific Data Engineering challenge.
-Be encouraging, direct, and pedagogical.
+Do not use emojis. Be direct, precise, and pedagogical.
 Format your review with clear Markdown sections:
-1. 🎯 **Assessment & Correctness**: Did they solve the problem correctly?
-2. ⚡ **Vectorization & Performance**: Flag ANY unnecessary 'for' or 'while' loops in Pandas/NumPy. Verify if operations are vectorized.
-3. 💡 **Edge Cases & Clean Code**: Mention NaN handling, memory efficiency, indexing, or method chaining.
-4. 🛠️ **Suggested Solution / Improvement**: Give a concise, clean code snippet if they are stuck or can improve.`;
+1. **Assessment & Correctness**: Did they solve the problem correctly?
+2. **Vectorization & Performance**: Flag any unnecessary 'for' or 'while' loops in Pandas/NumPy. Verify if operations are vectorized.
+3. **Edge Cases & Clean Code**: Mention NaN handling, memory efficiency, indexing, or method chaining.
+4. **Suggested Solution / Improvement**: Provide a clean code snippet if they are stuck or can improve.`;
 
         const userPrompt = `### Problem Scenario:
 **Topic**: ${problem.title || 'Data Pipeline'}
@@ -159,14 +160,14 @@ Please review the student's code according to the requirements.`;
 
     async function runLocalASTAnalysis(problem, userCode, lastOutput) {
         if (!userCode || !userCode.trim()) {
-            return `### 🔍 Code Rabbit Local Inspector
+            return `### Code Rabbit Local Inspector
 *No code written yet in the editor.*
 
-**Hint for this problem:**
+**Curated Guidance:**
 ${problem.review || 'Inspect your DataFrame shapes and use vectorized operations.'}
 
 ---
-💡 *Want real-time AI mentoring? Click **⚙️ AI Settings** to add a free Gemini API key.*`;
+*Tip: Configure an AI API key in AI Settings to enable live generative code reviews.*`;
         }
 
         // Run in-browser AST analysis via Pyodide
@@ -212,30 +213,30 @@ __inspect_code_ast__(_cell_code_to_run)
             }
         }
 
-        let report = `### 🔍 Code Rabbit Local Code Inspection (Offline AST Mode)\n\n`;
+        let report = `### Local Code Inspection (AST Mode)\n\n`;
 
         if (astResult) {
             if (astResult.syntax_error) {
-                report += `🔴 **Syntax Alert**: \`${astResult.syntax_error}\`\n\n`;
+                report += `**Syntax Error**: \`${astResult.syntax_error}\`\n\n`;
             } else {
-                report += `🟢 **Python Syntax**: Valid AST Structure ✓\n\n`;
+                report += `**Python Syntax**: Valid AST Structure\n\n`;
                 if (astResult.loops && astResult.loops.length > 0) {
-                    report += `⚠️ **Vectorization Warning**: Detected Python loop (\`for\`/\`while\`) on line ${astResult.loops.join(', ')}.\n*In production data pipelines, replace row-by-row loops with vectorized Pandas/NumPy operations!*\n\n`;
+                    report += `**Vectorization Warning**: Detected Python loop (\`for\`/\`while\`) on line ${astResult.loops.join(', ')}.\n*In production data pipelines, replace row-by-row loops with vectorized Pandas/NumPy operations.*\n\n`;
                 } else {
-                    report += `⚡ **Vectorization Check**: Passed! No explicit \`for\` loops detected ✓\n\n`;
+                    report += `**Vectorization Check**: Passed (No explicit loops detected)\n\n`;
                 }
 
                 if (astResult.calls && astResult.calls.length > 0) {
-                    report += `📊 **Detected Method Calls**: \`${astResult.calls.slice(0, 6).join('`, `')}\`\n\n`;
+                    report += `**Detected Method Calls**: \`${astResult.calls.slice(0, 6).join('`, `')}\`\n\n`;
                 }
             }
         }
 
-        report += `### 💡 Curated Mentor Guidance:\n`;
-        report += `${problem.review || 'Inspect missing values and DataFrame shapes using `.info()` and `.shape` after every step.'}\n\n`;
+        report += `### Curated Mentor Guidance:\n`;
+        report += `${problem.review || 'Inspect missing values and DataFrame shapes using .info() and .shape after every step.'}\n\n`;
 
         report += `---\n`;
-        report += `💡 *Tip: Connect a **Google Gemini API Key** (Free) in **⚙️ AI Settings** at the top right to enable live interactive mentor feedback on your code!*`;
+        report += `*Tip: Connect a free Google Gemini or Groq API Key in AI Settings to enable live interactive mentor feedback.*`;
 
         return report;
     }

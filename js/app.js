@@ -1,6 +1,9 @@
 /**
  * PACER Data Engineering - Main Application
- * Coordinates navigation, lesson rendering, sidebar generation, AI modal, and runtime status.
+ * Modern Apple / Linear Aesthetic Architecture:
+ * - Dynamic Text Scramble Title Loading Animation
+ * - Zero Emojis (Clean SVG Micro-Icons & Typography)
+ * - Glassmorphic Submenu Accordions
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,22 +20,56 @@ function initApp() {
         const footerStatus = document.getElementById('footer-pyodide-status');
 
         if (topStatus) {
-            topStatus.innerText = statusText;
+            topStatus.innerHTML = `<span class="indicator-dot"></span><span>${statusText}</span>`;
             topStatus.className = isReady ? 'status-pill ready' : 'status-pill loading';
         }
         if (footerStatus) {
-            footerStatus.innerText = isReady ? 'Pyodide (Python 3.10) Ready ✓' : statusText;
+            footerStatus.innerHTML = isReady
+                ? `<span class="indicator-dot" style="background:#10b981; margin-right:6px;"></span>Python 3.10 Runtime Ready`
+                : `<span class="indicator-dot" style="background:#f59e0b; margin-right:6px;"></span>${statusText}`;
         }
     });
 
     PyodideEngine.init();
 
-    // 3. Load initial lesson
+    // 3. Update AI status in sidebar
+    updateSidebarAiStatus();
+
+    // 4. Load initial lesson
     loadLesson('intro');
 
-    updateSidebarAiStatus();
-    // 4. Bind AI Modal event listeners
+    // 5. Bind modal backdrop click
     setupAiModal();
+}
+
+/* --- Dynamic Text Decoding Animation --- */
+function scrambleText(element, finalString, duration = 300) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/-';
+    const length = finalString.length;
+    const start = performance.now();
+
+    function update(time) {
+        const elapsed = time - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const revealedCount = Math.floor(progress * length);
+
+        let output = finalString.slice(0, revealedCount);
+        for (let i = revealedCount; i < length; i++) {
+            if (finalString[i] === ' ' || finalString[i] === '\n') {
+                output += finalString[i];
+            } else {
+                output += chars[Math.floor(Math.random() * chars.length)];
+            }
+        }
+        element.textContent = output;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            element.textContent = finalString;
+        }
+    }
+    requestAnimationFrame(update);
 }
 
 function buildSidebar() {
@@ -43,12 +80,16 @@ function buildSidebar() {
 
     COURSE_DATA.phases.forEach(phase => {
         const li = document.createElement('li');
+        li.className = 'phase-item';
         li.id = 'phase-item-' + phase.id;
 
         const phaseTitle = document.createElement('a');
         phaseTitle.href = '#';
         phaseTitle.className = 'phase-title';
-        phaseTitle.innerText = phase.title;
+        phaseTitle.innerHTML = `
+            <span>${escapeHtml(phase.title)}</span>
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        `;
         phaseTitle.onclick = function(e) {
             e.preventDefault();
             togglePhase(phase.id);
@@ -56,6 +97,7 @@ function buildSidebar() {
         li.appendChild(phaseTitle);
 
         const ul = document.createElement('ul');
+        ul.className = 'phase-links';
         ul.id = 'phase-links-' + phase.id;
 
         // Find all lessons for this phase
@@ -67,12 +109,7 @@ function buildSidebar() {
             link.className = 'sub-link';
             link.setAttribute('data-lesson-id', lesson.id);
 
-            let prefix = '📖 ';
-            if (lesson.isOverview) prefix = '📋 ';
-            if (lesson.isExam) prefix = '🏆 ';
-            if (lesson.isExternal) prefix = '🔗 ';
-
-            link.innerText = prefix + lesson.title;
+            link.innerText = lesson.title;
 
             if (lesson.isExam) {
                 link.className += ' exam-link';
@@ -93,7 +130,7 @@ function buildSidebar() {
 }
 
 function togglePhase(phaseId) {
-    document.querySelectorAll('.sidebar > ul > li').forEach(li => {
+    document.querySelectorAll('.sidebar-nav > li').forEach(li => {
         if (li.id === 'phase-item-' + phaseId) {
             li.classList.toggle('active');
         } else {
@@ -110,9 +147,9 @@ function loadLesson(lessonId) {
     document.querySelectorAll('.sidebar a.sub-link').forEach(link => {
         if (link.getAttribute('data-lesson-id') === lessonId) {
             link.classList.add('active');
-            const parentLi = link.closest('li:has(ul)');
+            const parentLi = link.closest('.phase-item');
             if (parentLi) {
-                document.querySelectorAll('.sidebar > ul > li').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.sidebar-nav > li').forEach(l => l.classList.remove('active'));
                 parentLi.classList.add('active');
             }
         } else {
@@ -128,6 +165,12 @@ function loadLesson(lessonId) {
 
     // Render Lesson View
     contentContainer.innerHTML = renderLessonHtml(lesson);
+
+    // Apply title scramble effect
+    const h1 = contentContainer.querySelector('.lesson-header h1');
+    if (h1) {
+        scrambleText(h1, lesson.title || 'Lesson', 280);
+    }
 
     // Initialize CodeMirror editors in the newly rendered HTML
     EditorManager.initEditors(contentContainer);
@@ -150,10 +193,11 @@ function renderLessonHtml(lesson) {
                 <h1>${escapeHtml(lesson.title)}</h1>
             </div>
             <div class="external-resource-card">
-                <p>${escapeHtml(lesson.description)}</p>
-                <div style="text-align: center; margin-top: 25px;">
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">${escapeHtml(lesson.description)}</p>
+                <div style="margin-top: 25px;">
                     <a href="${lesson.externalUrl}" target="_blank" class="primary-btn-large">
-                        🔗 Open ${escapeHtml(lesson.bookTitle)} in New Tab
+                        <span>Open ${escapeHtml(lesson.bookTitle)} in New Tab</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
                 </div>
             </div>
@@ -163,32 +207,40 @@ function renderLessonHtml(lesson) {
     // 3. Final Phase Exam
     if (lesson.isExam) {
         return `
-            <div class="exam-header-banner">
-                <h1>${escapeHtml(lesson.examTitle)}</h1>
-                <p class="exam-subtitle">Holistic Phase Evaluation &mdash; Advanced Comprehensive Pipeline Challenge</p>
+            <div class="lesson-header">
+                <h1>${escapeHtml(lesson.examTitle || lesson.title)}</h1>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">Comprehensive Phase Evaluation &mdash; Advanced End-to-End Pipeline</p>
             </div>
 
-            <div class="exam-prompt-card">
-                <div class="exam-badge">🏆 Master-Level Challenge</div>
-                <p class="exam-description">${escapeHtml(lesson.description)}</p>
-                <div class="exam-notice">
-                    <em>This exam tests every single concept from the entire phase in one holistic, highly complex scenario. You have a blank slate. Write and execute your entire solution below.</em>
+            <div class="practice-card" style="margin-bottom: 24px; background: #ffffff; box-shadow: 0 0 0 1px var(--border-subtle); color: var(--text-primary);">
+                <div class="card-prompt" style="background: #ffffff; color: var(--text-primary); border-bottom: none;">
+                    <span class="level-tag complex" style="margin-bottom: 8px; display: inline-block;">Final Phase Exam</span>
+                    <p style="margin-top: 6px; font-size: 0.92rem; line-height: 1.6;">${escapeHtml(lesson.description)}</p>
+                    <p style="margin-top: 10px; font-size: 0.82rem; color: var(--text-secondary); font-style: italic;">
+                        This exam evaluates every core concept covered in this phase. You have a blank slate. Write and execute your entire solution below.
+                    </p>
                 </div>
             </div>
 
-            <div class="practice-card exam-card" id="card-${lesson.id}-0">
+            <div class="practice-card" id="card-${lesson.id}-0">
                 <div class="card-header">
                     <div class="card-title-group">
-                        <span class="level-pill mastery">Final Exam Execution</span>
-                        <h3 class="card-title">Full Pipeline Solution</h3>
+                        <span class="level-tag mastery">Exam Solution</span>
+                        <h3 class="card-title">main.py</h3>
                     </div>
                     <div class="card-actions">
                         <span class="status-badge idle" id="status-badge-${lesson.id}-0">Idle</span>
                         <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${lesson.id}-0')" title="Reset starter code">
-                            ↺ Reset
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            <span>Reset</span>
+                        </button>
+                        <button class="action-btn rabbit-btn" id="rabbit-btn-${lesson.id}-0" onclick="EditorManager.toggleRabbit('${lesson.id}-0')" title="Code Rabbit Review (Ctrl+Space)">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                            <span>Code Rabbit</span>
                         </button>
                         <button class="action-btn run-btn" onclick="EditorManager.runCell('${lesson.id}-0')" title="Execute code (Ctrl+Enter)">
-                            ▶ Run Solution
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            <span>Run</span>
                         </button>
                     </div>
                 </div>
@@ -197,14 +249,25 @@ function renderLessonHtml(lesson) {
                     <div class="editor-pane">
                         <div class="editor-container" data-cell-id="${lesson.id}-0"></div>
                     </div>
+                    <div class="review-panel hidden" id="rabbit-${lesson.id}-0">
+                        <div class="review-header">
+                            <span>Code Rabbit Review</span>
+                            <button class="close-panel-btn" onclick="EditorManager.toggleRabbit('${lesson.id}-0')">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            </button>
+                        </div>
+                        <div class="review-body">
+                            Review will appear here.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="console-wrapper">
                     <div class="console-header">
-                        <span>Console Output</span>
+                        <span>Terminal Output</span>
                     </div>
                     <div class="output-console" id="output-${lesson.id}-0">
-                        <span class="console-empty">Press <strong>Ctrl+Enter</strong> or click <strong>▶ Run Solution</strong> to execute.</span>
+                        <span class="console-empty">Press Ctrl+Enter or click Run to execute solution.</span>
                     </div>
                 </div>
             </div>
@@ -216,8 +279,8 @@ function renderLessonHtml(lesson) {
     if (lesson.practices && lesson.practices.length > 0) {
         practicesHtml = `
             <div class="practice-section-header">
-                <h2>💻 Hands-on Practice Modules</h2>
-                <p>Apply the concepts you just read in the official text above. Each problem features a unique industry dataset.</p>
+                <h2>Practice Challenges</h2>
+                <p>Apply the concepts you just read in the official text above. Each challenge uses a unique dataset.</p>
             </div>
             <div class="practice-list">
                 ${lesson.practices.map(p => renderPracticeCard(p)).join('')}
@@ -225,42 +288,36 @@ function renderLessonHtml(lesson) {
         `;
     }
 
-    const aiStatusText = AIReviewer.hasApiKey()
-        ? `✨ AI Active (${AIReviewer.getProvider().toUpperCase()})`
-        : `⚡ AST Inspector (Offline)`;
-
     return `
         <div class="lesson-header">
             <div class="lesson-title-row">
                 <h1>${escapeHtml(lesson.title)}</h1>
-                <div class="header-pills">
-                    <button class="ai-settings-btn" onclick="openAiModal()" title="Configure Gemini / OpenAI API key for live AI code reviews">
-                        ⚙️ AI Settings <span class="ai-status-indicator">${aiStatusText}</span>
-                    </button>
+                <div class="header-meta">
                     <div id="pyodide-status-pill" class="status-pill ${PyodideEngine.isReady() ? 'ready' : 'loading'}">
-                        ${PyodideEngine.getStatus()}
+                        <span class="indicator-dot"></span>
+                        <span>${PyodideEngine.getStatus()}</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="instruction-banner">
-            <div class="instruction-icon">🛠️</div>
-            <div class="instruction-content">
-                <strong>How to Practice:</strong> Write your Python code in the interactive editors below.
-                <div class="shortcut-pills">
-                    <span class="kbd-pill"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd>) to <strong>Run Code</strong></span>
-                    <span class="kbd-pill"><kbd>Ctrl</kbd> + <kbd>Space</kbd> (or <kbd>Alt</kbd> + <kbd>R</kbd>) for <strong>Code Rabbit Review</strong></span>
-                </div>
+            <div class="instruction-text">
+                Write Python code in the interactive editors. Vectorized operations are evaluated automatically.
+            </div>
+            <div class="shortcut-pills">
+                <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> Run</span>
+                <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Space</kbd> Review</span>
             </div>
         </div>
 
         ${lesson.bookUrl ? `
         <div class="book-card">
             <div class="book-header">
-                <span class="book-name">📖 ${escapeHtml(lesson.bookTitle || lesson.title)}</span>
+                <span class="book-name">${escapeHtml(lesson.bookTitle || lesson.title)}</span>
                 <a href="${lesson.bookUrl}" target="_blank" class="book-link" title="Open textbook in a new tab">
-                    Open in new tab ↗
+                    <span>Open in new tab</span>
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 </a>
             </div>
             <iframe class="book-frame" src="${lesson.bookUrl}"></iframe>
@@ -273,17 +330,17 @@ function renderLessonHtml(lesson) {
 
 function renderPracticeCard(practice) {
     let levelClass = 'easy';
-    let levelLabel = '🟢 Easy';
+    let levelLabel = 'Easy';
     const lowerLevel = (practice.level || '').toLowerCase();
     if (lowerLevel.includes('intermediate') || lowerLevel.includes('medium')) {
         levelClass = 'intermediate';
-        levelLabel = '🟡 Intermediate';
+        levelLabel = 'Intermediate';
     } else if (lowerLevel.includes('complex') || lowerLevel.includes('hard')) {
         levelClass = 'complex';
-        levelLabel = '🔴 Complex';
+        levelLabel = 'Complex';
     } else if (lowerLevel.includes('mastery') || lowerLevel.includes('challenge')) {
         levelClass = 'mastery';
-        levelLabel = '🏆 Mastery';
+        levelLabel = 'Mastery';
     }
 
     // Format markdown description
@@ -296,19 +353,22 @@ function renderPracticeCard(practice) {
         <div class="practice-card" id="card-${practice.id}">
             <div class="card-header">
                 <div class="card-title-group">
-                    <span class="level-pill ${levelClass}">${levelLabel}</span>
+                    <span class="level-tag ${levelClass}">${levelLabel}</span>
                     <h3 class="card-title">${escapeHtml(practice.title)}</h3>
                 </div>
                 <div class="card-actions">
                     <span class="status-badge idle" id="status-badge-${practice.id}">Idle</span>
                     <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${practice.id}')" title="Reset starter code">
-                        ↺ Reset
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                        <span>Reset</span>
                     </button>
-                    <button class="action-btn rabbit-btn" id="rabbit-btn-${practice.id}" onclick="EditorManager.toggleRabbit('${practice.id}')" title="Toggle hints & review (Ctrl+Space)">
-                        🔍 Code Rabbit
+                    <button class="action-btn rabbit-btn" id="rabbit-btn-${practice.id}" onclick="EditorManager.toggleRabbit('${practice.id}')" title="Toggle AI Code Review (Ctrl+Space)">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Code Rabbit</span>
                     </button>
                     <button class="action-btn run-btn" onclick="EditorManager.runCell('${practice.id}')" title="Execute code (Ctrl+Enter)">
-                        ▶ Run
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Run</span>
                     </button>
                 </div>
             </div>
@@ -323,21 +383,23 @@ function renderPracticeCard(practice) {
                 </div>
                 <div class="review-panel hidden" id="rabbit-${practice.id}">
                     <div class="review-header">
-                        <strong>🔍 Code Rabbit Review & Hints</strong>
-                        <button class="close-panel-btn" onclick="EditorManager.toggleRabbit('${practice.id}')">✕</button>
+                        <span>Code Rabbit Review</span>
+                        <button class="close-panel-btn" onclick="EditorManager.toggleRabbit('${practice.id}')">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        </button>
                     </div>
                     <div class="review-body">
-                        ${practice.review || 'Inspect your DataFrame with .info() and .shape to verify transformations.'}
+                        ${practice.review || 'Review insights will appear here.'}
                     </div>
                 </div>
             </div>
 
             <div class="console-wrapper">
                 <div class="console-header">
-                    <span>Console Output</span>
+                    <span>Terminal Output</span>
                 </div>
                 <div class="output-console" id="output-${practice.id}">
-                    <span class="console-empty">Press <strong>Ctrl+Enter</strong> or click <strong>▶ Run</strong> to execute your code.</span>
+                    <span class="console-empty">Press Ctrl+Enter or click Run to execute code.</span>
                 </div>
             </div>
         </div>
@@ -345,22 +407,20 @@ function renderPracticeCard(practice) {
 }
 
 /* --- AI Settings Modal Handlers --- */
-
 function updateSidebarAiStatus() {
     const statusEl = document.getElementById('sidebar-ai-status');
     if (statusEl) {
         if (AIReviewer.hasApiKey()) {
-            statusEl.innerText = '✨ ' + AIReviewer.getProvider().toUpperCase() + ' Active';
-            statusEl.style.color = '#34d399';
+            statusEl.innerText = AIReviewer.getProvider().toUpperCase() + ' Active';
+            statusEl.className = 'widget-status active';
         } else {
-            statusEl.innerText = '⚡ Offline AST Mode';
-            statusEl.style.color = '#93c5fd';
+            statusEl.innerText = 'Offline AST Mode';
+            statusEl.className = 'widget-status';
         }
     }
 }
 
 function setupAiModal() {
-    // Backdrop click to close
     const modalBackdrop = document.getElementById('ai-modal-backdrop');
     if (modalBackdrop) {
         modalBackdrop.onclick = function(e) {
@@ -399,24 +459,17 @@ function saveAiSettings() {
 
     AIReviewer.setApiKey(key);
     AIReviewer.setProvider(provider);
+    updateSidebarAiStatus();
 
     if (statusBox) {
         if (key) {
-            statusBox.innerHTML = `<span style="color: #15803d; font-weight: bold;">✓ ${provider.toUpperCase()} API Key saved successfully! Live AI review is now active.</span>`;
+            statusBox.innerHTML = `<span style="color: #34d399; font-size:0.8rem; font-family: var(--font-mono);">${provider.toUpperCase()} API key saved. Live AI review active.</span>`;
         } else {
-            statusBox.innerHTML = `<span style="color: #b45309; font-weight: bold;">Key removed. Reverted to offline Python AST inspector mode.</span>`;
+            statusBox.innerHTML = `<span style="color: #fbbf24; font-size:0.8rem; font-family: var(--font-mono);">Key removed. Operating in offline AST Mode.</span>`;
         }
     }
 
-    // Refresh lesson header status pills
-    const activeLink = document.querySelector('.sidebar a.sub-link.active');
-    if (activeLink) {
-        const lessonId = activeLink.getAttribute('data-lesson-id');
-        if (lessonId) loadLesson(lessonId);
-    }
-
-    updateSidebarAiStatus();
-    setTimeout(closeAiModal, 1000);
+    setTimeout(closeAiModal, 800);
 }
 
 async function testAiConnection() {
@@ -428,22 +481,22 @@ async function testAiConnection() {
     const provider = providerSelect ? providerSelect.value : 'gemini';
 
     if (!key) {
-        if (statusBox) statusBox.innerHTML = `<span style="color: #b91c1c;">Please enter an API key to test.</span>`;
+        if (statusBox) statusBox.innerHTML = `<span style="color: #f87171; font-size:0.8rem; font-family: var(--font-mono);">Please enter an API key to test.</span>`;
         return;
     }
 
-    if (statusBox) statusBox.innerHTML = `<span style="color: #1d4ed8;">⏳ Testing connection to ${provider.toUpperCase()}...</span>`;
+    if (statusBox) statusBox.innerHTML = `<span style="color: #60a5fa; font-size:0.8rem; font-family: var(--font-mono);">Testing connection to ${provider.toUpperCase()}...</span>`;
 
     try {
-        const testProblem = { title: "Test Problem", markdown: "Return sum of a and b", review: "" };
-        const testRes = await AIReviewer.reviewCode(testProblem, "def add(a, b): return a + b", "3");
+        const testProblem = { title: "Test", markdown: "Test requirement", review: "" };
+        const testRes = await AIReviewer.reviewCode(testProblem, "def f(): pass", "");
         if (testRes.mode === 'ai') {
-            if (statusBox) statusBox.innerHTML = `<span style="color: #15803d; font-weight: bold;">✓ Success! Connected to ${provider.toUpperCase()} API.</span>`;
+            if (statusBox) statusBox.innerHTML = `<span style="color: #34d399; font-size:0.8rem; font-family: var(--font-mono);">Success: Connected to ${provider.toUpperCase()} API.</span>`;
         } else {
-            throw new Error(testRes.error || "Failed to reach AI provider.");
+            throw new Error(testRes.error || "Failed to connect to AI provider.");
         }
     } catch (err) {
-        if (statusBox) statusBox.innerHTML = `<span style="color: #b91c1c; font-weight: bold;">✗ Error: ${escapeHtml(err.message)}</span>`;
+        if (statusBox) statusBox.innerHTML = `<span style="color: #f87171; font-size:0.8rem; font-family: var(--font-mono);">Error: ${escapeHtml(err.message)}</span>`;
     }
 }
 
@@ -452,7 +505,7 @@ function clearAiSettings() {
     const keyInput = document.getElementById('ai-api-key-input');
     const statusBox = document.getElementById('ai-modal-status');
     if (keyInput) keyInput.value = '';
-    if (statusBox) statusBox.innerHTML = `<span style="color: #b45309;">Key cleared. Operating in offline AST Mode.</span>`;
+    if (statusBox) statusBox.innerHTML = `<span style="color: #fbbf24; font-size:0.8rem; font-family: var(--font-mono);">Key cleared.</span>`;
     saveAiSettings();
 }
 

@@ -6,7 +6,7 @@
     <title>PACER Data Engineering Course</title>
     
     <!-- Modern Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=800">
+    <link rel="stylesheet" href="css/styles.css?v=900">
     
     <!-- CodeMirror (Editor & Monokai Theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -16,19 +16,21 @@
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
 </head>
 <body>
-    <!-- Navigation Sidebar -->
+    <!-- Frosted Midnight Glass Navigation Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <h2>PACER Data Engineering</h2>
-            <p>10-Week End-to-End Curriculum</p>
-            <button class="sidebar-ai-btn" onclick="openAiModal()" id="sidebar-ai-btn" title="Configure Gemini / OpenAI API key">
-                <span class="ai-icon">🔑</span>
-                <span class="ai-text">
-                    <strong>AI Reviewer Setup</strong>
-                    <small id="sidebar-ai-status">⚡ Offline AST Mode</small>
-                </span>
-                <span class="ai-arrow">⚙️</span>
-            </button>
+            <h2><span class="brand-dot"></span>PACER Data Engineering</h2>
+            <p>10-Week Mastery Curriculum</p>
+            
+            <div class="sidebar-ai-widget" onclick="openAiModal()" title="Configure Gemini / OpenAI API key">
+                <div class="widget-info">
+                    <span class="widget-title">AI Reviewer Setup</span>
+                    <span class="widget-status" id="sidebar-ai-status">Offline AST Mode</span>
+                </div>
+                <div class="widget-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+            </div>
         </div>
         <ul id="nav-list" class="sidebar-nav">
             <!-- Dynamically populated from course-data.js -->
@@ -42,62 +44,62 @@
         </div>
     </main>
 
-    <!-- Global Fixed Action Footer -->
+    <!-- Floating Glass Action Dock / Footer -->
     <footer class="global-footer">
-        <div class="footer-left">
-            <span id="footer-pyodide-status">Initializing Python...</span>
-            <span style="margin: 0 8px; opacity: 0.4;">|</span>
-            <span id="active-cell-label">Click inside a code cell to begin</span>
+        <div class="footer-left" id="footer-pyodide-status">
+            <span class="indicator-dot" style="background:#f59e0b; margin-right:6px;"></span>
+            <span>Initializing Python runtime...</span>
+            <span style="margin: 0 10px; opacity: 0.3;">/</span>
+            <span id="active-cell-label">Click an editor cell to begin</span>
         </div>
         <div class="footer-right">
-            <button class="footer-ai-btn" onclick="openAiModal()" title="Setup AI API Key">
-                ⚙️ AI Key Setup
-            </button>
-            <span><kbd>Ctrl/Cmd + Enter</kbd> Run Code</span>
-            <span><kbd>Ctrl + Space / Alt + R</kbd> Code Rabbit Review</span>
+            <span><kbd>Ctrl</kbd>+<kbd>Enter</kbd> Run Code</span>
+            <span><kbd>Ctrl</kbd>+<kbd>Space</kbd> AI Review</span>
         </div>
     </footer>
 
-    <!-- AI Settings Modal -->
+    <!-- AI Settings Modal (Frosted Glass Overlay) -->
     <div id="ai-modal-backdrop" class="modal-backdrop" style="display: none;">
         <div class="modal-card">
             <div class="modal-header">
-                <h3>🔑 Code Rabbit AI Reviewer Setup</h3>
-                <button class="modal-close-btn" onclick="closeAiModal()">✕</button>
+                <h3>Code Rabbit AI Reviewer Configuration</h3>
+                <button class="modal-close-btn" onclick="closeAiModal()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
             </div>
             <div class="modal-body">
-                <p style="font-size: 0.88rem; color: #475569; margin-bottom: 15px; line-height: 1.5;">
-                    Connect your free AI API key to get personalized, live mentor code reviews directly on your Python code. (If no key is provided, Code Rabbit runs in <strong>Offline AST Inspector Mode</strong>).
+                <p style="font-size: 0.84rem; color: var(--midnight-muted); margin-bottom: 16px; line-height: 1.55;">
+                    Connect your API key to enable live generative code reviews on your Python submissions. If left blank, Code Rabbit operates in <strong>Offline AST Inspector Mode</strong>.
                 </p>
 
                 <div class="form-group">
-                    <label for="ai-provider-select"><strong>Select AI Provider:</strong></label>
+                    <label for="ai-provider-select">AI Provider</label>
                     <select id="ai-provider-select" class="form-control">
-                        <option value="gemini">Google Gemini (gemini-1.5-flash) - FREE (Recommended)</option>
-                        <option value="groq">Groq (llama-3.3-70b) - FREE & Superfast</option>
+                        <option value="gemini">Google Gemini (gemini-1.5-flash) - Free (Recommended)</option>
+                        <option value="groq">Groq (llama-3.3-70b) - Free & Fast</option>
                         <option value="openai">OpenAI (gpt-4o-mini)</option>
                     </select>
                 </div>
 
                 <div class="form-group" style="margin-top: 14px;">
-                    <label for="ai-api-key-input"><strong>API Key:</strong></label>
-                    <input type="password" id="ai-api-key-input" class="form-control" placeholder="Paste your API key here (e.g. AIzaSy...)">
+                    <label for="ai-api-key-input">API Key</label>
+                    <input type="password" id="ai-api-key-input" class="form-control" placeholder="Paste your API key (e.g. AIzaSy...)">
                 </div>
 
-                <div class="provider-help-box" id="provider-help-box" style="margin-top: 14px; font-size: 0.82rem; background: #f8fafc; padding: 12px 14px; border-radius: 6px; color: #334155; border: 1px solid #e2e8f0; line-height: 1.5;">
-                    📌 <strong>Get a Free Google Gemini API Key:</strong><br>
-                    Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #2563eb; font-weight: bold;">Google AI Studio ↗</a> to create a free API key (no billing or credit card required).
+                <div style="margin-top: 14px; font-size: 0.78rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--midnight-border); padding: 12px 14px; border-radius: var(--radius-md); color: var(--midnight-muted); line-height: 1.55;">
+                    <strong style="color: #ffffff;">Free Google Gemini API Key:</strong><br>
+                    Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: var(--accent); font-weight: 500;">Google AI Studio</a> to generate a key in seconds (no credit card required).
                     <br><br>
-                    🔒 <em>Your key is stored strictly in your browser's local storage and only communicates directly with the AI provider.</em>
+                    <em>Your API key is stored strictly in your browser local storage and only communicates directly with the selected AI endpoint.</em>
                 </div>
 
-                <div id="ai-modal-status" style="margin-top: 14px; font-size: 0.88rem; min-height: 20px;"></div>
+                <div id="ai-modal-status" style="margin-top: 14px; font-size: 0.82rem; min-height: 18px;"></div>
             </div>
             <div class="modal-footer">
-                <button class="action-btn secondary-btn" onclick="clearAiSettings()">🗑️ Clear</button>
+                <button class="action-btn secondary-btn" onclick="clearAiSettings()">Clear</button>
                 <div style="display: flex; gap: 8px;">
-                    <button class="action-btn" style="background: #3b82f6; color: white;" onclick="testAiConnection()">🧪 Test Key</button>
-                    <button class="action-btn run-btn" onclick="saveAiSettings()">💾 Save Key</button>
+                    <button class="action-btn secondary-btn" onclick="testAiConnection()">Test Connection</button>
+                    <button class="action-btn run-btn" onclick="saveAiSettings()">Save Key</button>
                 </div>
             </div>
         </div>
@@ -108,10 +110,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 
     <!-- Application Modules -->
-    <script src="js/course-data.js?v=800"></script>
-    <script src="js/pyodide-engine.js?v=800"></script>
-    <script src="js/ai-reviewer.js?v=800"></script>
-    <script src="js/editor-manager.js?v=800"></script>
-    <script src="js/app.js?v=800"></script>
+    <script src="js/course-data.js?v=900"></script>
+    <script src="js/pyodide-engine.js?v=900"></script>
+    <script src="js/ai-reviewer.js?v=900"></script>
+    <script src="js/editor-manager.js?v=900"></script>
+    <script src="js/app.js?v=900"></script>
 </body>
 </html>

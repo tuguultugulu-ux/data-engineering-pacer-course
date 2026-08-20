@@ -1,6 +1,9 @@
 /**
  * PACER Data Engineering - Editor & Execution Manager
- * Manages CodeMirror instances, UI interactions, hotkeys, and dynamic Code Rabbit reviews.
+ * Production-Grade Architecture:
+ * - CodeMirror 5 with Monokai theme & sub-pixel focus borders
+ * - Dynamic AI / AST review drawer with clean typography
+ * - Zero Emojis (SVG Micro-Icons & Clean Status Badges)
  */
 
 var EditorManager = (function() {
@@ -17,7 +20,7 @@ var EditorManager = (function() {
                     title: l.examTitle,
                     markdown: l.description,
                     code: l.starterCode,
-                    review: "This is a comprehensive final phase exam. Construct the complete pipeline from scratch!"
+                    review: "This is a comprehensive final phase exam. Construct the complete pipeline from scratch."
                 };
             }
             if (l.practices) {
@@ -40,15 +43,15 @@ var EditorManager = (function() {
         activeCellId = cellId;
         const footerLabel = document.getElementById('active-cell-label');
         if (footerLabel) {
-            footerLabel.innerHTML = 'Target: <strong style="color: #60a5fa;">' + cellId + '</strong> - Ready to execute';
+            footerLabel.innerHTML = `Target: <span style="color: #60a5fa; font-family: var(--font-mono);">${cellId}</span>`;
         }
 
-        // Highlight the active editor card
+        // Highlight active editor
         document.querySelectorAll('.CodeMirror').forEach(el => {
-            el.style.borderColor = '#334155';
+            el.style.borderColor = 'transparent';
         });
         if (editors[cellId]) {
-            editors[cellId].getWrapperElement().style.borderColor = '#3b82f6';
+            editors[cellId].getWrapperElement().style.borderColor = '#0071e3';
         }
     }
 
@@ -107,12 +110,12 @@ var EditorManager = (function() {
 
         if (statusBadge) {
             statusBadge.className = 'status-badge running';
-            statusBadge.innerText = '⏳ Running...';
+            statusBadge.innerText = 'Running...';
         }
 
         if (outputEl) {
             outputEl.className = 'output-console running';
-            outputEl.innerHTML = '<span class="console-loading">⏳ Executing Python in WebAssembly environment...</span>';
+            outputEl.innerHTML = '<span class="console-loading">Executing Python runtime...</span>';
         }
 
         const res = await PyodideEngine.execute(code);
@@ -120,10 +123,10 @@ var EditorManager = (function() {
         if (statusBadge) {
             if (res.success) {
                 statusBadge.className = 'status-badge success';
-                statusBadge.innerText = '✓ Success';
+                statusBadge.innerText = 'Success';
             } else {
                 statusBadge.className = 'status-badge error';
-                statusBadge.innerText = '✗ Error';
+                statusBadge.innerText = 'Error';
             }
         }
 
@@ -133,12 +136,12 @@ var EditorManager = (function() {
                 parts.push(escapeHtml(res.stdout));
             }
             if (res.stderr) {
-                parts.push('<div class="console-error">[Error / Traceback]:\n' + escapeHtml(res.stderr) + '</div>');
+                parts.push('<div class="console-error">[Traceback]:\n' + escapeHtml(res.stderr) + '</div>');
             }
 
             let finalHtml = parts.join('\n\n');
             if (!finalHtml.trim()) {
-                finalHtml = '<span class="console-empty">✓ Code executed successfully (no output produced).</span>';
+                finalHtml = '<span class="console-empty">Code executed successfully (no output produced).</span>';
             }
 
             outputEl.className = res.success ? 'output-console success' : 'output-console error';
@@ -160,13 +163,12 @@ var EditorManager = (function() {
                 panel.classList.remove('hidden');
                 if (btn) btn.classList.add('active');
 
-                // Trigger live review analysis if we have an editor
+                // Trigger review analysis
                 if (editors[cellId] && body) {
                     body.innerHTML = `
-                        <div style="text-align: center; padding: 25px 10px; color: #92400e;">
-                            <div style="font-size: 1.5rem; margin-bottom: 8px;">🐰</div>
-                            <strong>Code Rabbit is reviewing your code...</strong>
-                            <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Checking syntax, vectorization, and data pipeline logic</div>
+                        <div style="text-align: center; padding: 28px 10px; color: var(--midnight-muted);">
+                            <div style="font-size: 0.84rem; font-weight: 500; color: #ffffff; margin-bottom: 4px;">Analyzing Code...</div>
+                            <div style="font-size: 0.74rem; font-family: var(--font-mono);">Inspecting syntax, vectorization, and data pipeline logic</div>
                         </div>
                     `;
 
@@ -179,9 +181,9 @@ var EditorManager = (function() {
                     
                     let badgeHtml = '';
                     if (reviewRes.mode === 'ai') {
-                        badgeHtml = `<div style="display:inline-block; font-size: 0.72rem; background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:bold; margin-bottom:10px;">✨ Live AI Mentor Review (${reviewRes.provider.toUpperCase()})</div><br>`;
+                        badgeHtml = `<div style="display:inline-block; font-size: 0.68rem; font-family:var(--font-mono); background:rgba(16,185,129,0.15); color:#34d399; padding:2px 6px; border-radius:4px; font-weight:500; margin-bottom:12px;">Live AI Review (${reviewRes.provider.toUpperCase()})</div><br>`;
                     } else {
-                        badgeHtml = `<div style="display:inline-block; font-size: 0.72rem; background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:bold; margin-bottom:10px;">⚡ Offline AST Inspector Mode</div><br>`;
+                        badgeHtml = `<div style="display:inline-block; font-size: 0.68rem; font-family:var(--font-mono); background:rgba(245,158,11,0.15); color:#fbbf24; padding:2px 6px; border-radius:4px; font-weight:500; margin-bottom:12px;">Offline AST Inspector Mode</div><br>`;
                     }
 
                     body.innerHTML = badgeHtml + formatMarkdown(reviewRes.content);
@@ -228,8 +230,8 @@ var EditorManager = (function() {
         });
 
         // Headers
-        html = html.replace(/^### (.*$)/gim, '<h4 style="margin: 12px 0 6px; color: #78350f; font-size: 0.95rem;">$1</h4>');
-        html = html.replace(/^## (.*$)/gim, '<h3 style="margin: 14px 0 8px; color: #78350f; font-size: 1.05rem;">$1</h3>');
+        html = html.replace(/^### (.*$)/gim, '<h4 style="margin: 12px 0 6px; color: #ffffff; font-size: 0.88rem; font-weight:600;">$1</h4>');
+        html = html.replace(/^## (.*$)/gim, '<h3 style="margin: 14px 0 8px; color: #ffffff; font-size: 0.95rem; font-weight:600;">$1</h3>');
 
         // Bold & Italic
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -242,7 +244,7 @@ var EditorManager = (function() {
         html = html.replace(/^\s*-\s+(.*$)/gim, '<li style="margin-left: 15px; margin-bottom: 4px;">$1</li>');
         html = html.replace(/^\s*(\d+)\.\s+(.*$)/gim, '<li style="margin-left: 15px; margin-bottom: 4px;">$2</li>');
 
-        // Line breaks (convert remaining \n to <br> outside <pre>)
+        // Line breaks
         const parts = html.split(/(<pre[\s\S]*?<\/pre>)/);
         for (let i = 0; i < parts.length; i++) {
             if (!parts[i].startsWith('<pre')) {
