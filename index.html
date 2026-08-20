@@ -31,6 +31,9 @@
         .overview-content table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
         .overview-content th, .overview-content td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         .overview-content th { background-color: #f8f9fa; color: #333; }
+        
+        .external-link-btn { display: inline-block; padding: 15px 30px; font-size: 1.2rem; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 8px; margin: 20px 0; text-align: center; }
+        .external-link-btn:hover { background-color: #2980b9; }
     </style>
 </head>
 <body>
@@ -70,20 +73,15 @@
                 <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 3: Pandas</a>
                 <ul id="phase3-links">
                     <li><a href="#" class="sub-link" onclick="loadLesson('p3_overview')">Phase 3: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_00')">3. Data Manipulation with Pandas (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_01')">Introducing Pandas Objects (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_02')">Data Indexing and Selection (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_03')">Operating on Data in Pandas (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_04')">Handling Missing Data (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_05')">Hierarchical Indexing (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_06')">Combining Datasets: Concat and Append (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_07')">Combining Datasets: Merge and Join (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_08')">Aggregation and Grouping (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_09')">Pivot Tables (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_10')">Vectorized String Operations (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_11')">Working with Time Series (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_12')">High-Performance Pandas: eval() and query() (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_13')">Further Resources (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_0')">What kind of data does pandas handle? (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_1')">How do I read and write tabular data? (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_2')">How do I select a subset of a DataFrame? (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_3')">How do I create plots in pandas? (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_4')">How to create new columns derived from existing columns (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_5')">How to calculate summary statistics (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_6')">How to reshape the layout of tables (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_7')">How to combine data from multiple tables (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_8')">How to handle time series data with ease (Book)</a></li>
                 </ul>
             </li>
             <li>
@@ -112,28 +110,18 @@
                 <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 5: Data Pipeline</a>
                 <ul id="phase5-links">
                     <li><a href="#" class="sub-link" onclick="loadLesson('p5_overview')">Phase 5: Project & Goals</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('p5_monitoring')">Google ML: Monitoring (Book)</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 6: Scikit-learn</a>
                 <ul id="phase6-links">
                     <li><a href="#" class="sub-link" onclick="loadLesson('p6_overview')">Phase 6: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_00')">5. Machine Learning (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_01')">What Is Machine Learning? (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_02')">Introducing Scikit-Learn (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_03')">Hyperparameters and Model Validation (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_04')">Feature Engineering (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_05')">In Depth: Naive Bayes Classification (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_06')">In Depth: Linear Regression (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_07')">In-Depth: Support Vector Machines (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_08')">In-Depth: Decision Trees and Random Forests (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_09')">In Depth: Principal Component Analysis (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_10')">In-Depth: Manifold Learning (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_11')">In Depth: k-Means Clustering (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_12')">In Depth: Gaussian Mixture Models (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_13')">In-Depth: Kernel Density Estimation (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_14')">Application: A Face Detection Pipeline (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_15')">Further Machine Learning Resources (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_0')">Getting Started with Scikit-learn (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_1')">Pipeline Documentation (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_2')">ColumnTransformer Documentation (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_3')">Preprocessing Data (Book)</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_4')">Train Test Split (Book)</a></li>
                 </ul>
             </li>
         </ul>
@@ -149,6 +137,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
-    <script src="js/app.js?v=21"></script>
+    <script src="js/app.js?v=30"></script>
 </body>
 </html>
