@@ -73,21 +73,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_00-0">
-            <div class="cell-header"><span>[ ] Practice 1: 2. Introduction to NumPy</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: 2. Introduction to NumPy</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong>\n1. Implement the basic functionality of 2. Introduction to NumPy.
+            </div>
             <div class="editor-container" id="editor-w2_00-0"></div>
             <div class="controls"><button onclick="runCode('w2_00-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_00-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_00-1">
-            <div class="cell-header"><span>[ ] Practice 2: 2. Introduction to NumPy</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: 2. Introduction to NumPy</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong>\n1. Handle edge cases for 2. Introduction to NumPy.
+            </div>
             <div class="editor-container" id="editor-w2_00-1"></div>
             <div class="controls"><button onclick="runCode('w2_00-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_00-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_00-2">
-            <div class="cell-header"><span>[ ] Practice 3: 2. Introduction to NumPy</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: 2. Introduction to NumPy</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong>\n1. Combine 2. Introduction to NumPy with boolean masks.
+            </div>
             <div class="editor-container" id="editor-w2_00-2"></div>
             <div class="controls"><button onclick="runCode('w2_00-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_00-2"></div>
@@ -105,21 +114,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_01-0">
-            <div class="cell-header"><span>[ ] Practice 1: Understanding Data Types in Python</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Array Creation and Inspection</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
+            </div>
             <div class="editor-container" id="editor-w2_01-0"></div>
             <div class="controls"><button onclick="runCode('w2_01-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_01-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_01-1">
-            <div class="cell-header"><span>[ ] Practice 2: Understanding Data Types in Python</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Indexing and Slicing</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
+            </div>
             <div class="editor-container" id="editor-w2_01-1"></div>
             <div class="controls"><button onclick="runCode('w2_01-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_01-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_01-2">
-            <div class="cell-header"><span>[ ] Practice 3: Understanding Data Types in Python</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Reshaping and Copies</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
+            </div>
             <div class="editor-container" id="editor-w2_01-2"></div>
             <div class="controls"><button onclick="runCode('w2_01-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_01-2"></div>
@@ -137,21 +155,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_02-0">
-            <div class="cell-header"><span>[ ] Practice 1: The Basics of NumPy Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Array Creation and Inspection</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
+            </div>
             <div class="editor-container" id="editor-w2_02-0"></div>
             <div class="controls"><button onclick="runCode('w2_02-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_02-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_02-1">
-            <div class="cell-header"><span>[ ] Practice 2: The Basics of NumPy Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Indexing and Slicing</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
+            </div>
             <div class="editor-container" id="editor-w2_02-1"></div>
             <div class="controls"><button onclick="runCode('w2_02-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_02-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_02-2">
-            <div class="cell-header"><span>[ ] Practice 3: The Basics of NumPy Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Reshaping and Copies</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
+            </div>
             <div class="editor-container" id="editor-w2_02-2"></div>
             <div class="controls"><button onclick="runCode('w2_02-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_02-2"></div>
@@ -169,21 +196,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_03-0">
-            <div class="cell-header"><span>[ ] Practice 1: Computation on NumPy Arrays: Universal Functions</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Vectorized Arithmetic</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
+            </div>
             <div class="editor-container" id="editor-w2_03-0"></div>
             <div class="controls"><button onclick="runCode('w2_03-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_03-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_03-1">
-            <div class="cell-header"><span>[ ] Practice 2: Computation on NumPy Arrays: Universal Functions</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Ufuncs and Broadcasting</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
+            </div>
             <div class="editor-container" id="editor-w2_03-1"></div>
             <div class="controls"><button onclick="runCode('w2_03-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_03-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_03-2">
-            <div class="cell-header"><span>[ ] Practice 3: Computation on NumPy Arrays: Universal Functions</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Advanced Ufuncs</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
+            </div>
             <div class="editor-container" id="editor-w2_03-2"></div>
             <div class="controls"><button onclick="runCode('w2_03-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_03-2"></div>
@@ -201,21 +237,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_04-0">
-            <div class="cell-header"><span>[ ] Practice 1: Aggregations: Min, Max, and Everything In Between</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Simple Aggregations</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Find the min, max, and mean of the scores.<br>2. Find the index of the highest score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argmax</code>.<br>3. Find the median score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.median</code>.
+            </div>
             <div class="editor-container" id="editor-w2_04-0"></div>
             <div class="controls"><button onclick="runCode('w2_04-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_04-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_04-1">
-            <div class="cell-header"><span>[ ] Practice 2: Aggregations: Min, Max, and Everything In Between</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Axis Aggregations</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Calculate the mean score for each student (axis=1). Notice what NaN does.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmean</code> to calculate the mean score for each student while ignoring NaNs.<br>3. Find the maximum score achieved on each exam (axis=0) using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmax</code>.
+            </div>
             <div class="editor-container" id="editor-w2_04-1"></div>
             <div class="controls"><button onclick="runCode('w2_04-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_04-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_04-2">
-            <div class="cell-header"><span>[ ] Practice 3: Aggregations: Min, Max, and Everything In Between</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Multi-dimensional Aggregations</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Find the total sum of all elements.<br>2. Find the maximum value for each week (reduce across days and hours).<br>3. Find the average value for each hour of the day (average across weeks and days).<br>4. Verify the shape of the result from step 3 is (8,).
+            </div>
             <div class="editor-container" id="editor-w2_04-2"></div>
             <div class="controls"><button onclick="runCode('w2_04-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_04-2"></div>
@@ -233,21 +278,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_05-0">
-            <div class="cell-header"><span>[ ] Practice 1: Computation on Arrays: Broadcasting</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Vectorized Arithmetic</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
+            </div>
             <div class="editor-container" id="editor-w2_05-0"></div>
             <div class="controls"><button onclick="runCode('w2_05-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_05-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_05-1">
-            <div class="cell-header"><span>[ ] Practice 2: Computation on Arrays: Broadcasting</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Ufuncs and Broadcasting</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
+            </div>
             <div class="editor-container" id="editor-w2_05-1"></div>
             <div class="controls"><button onclick="runCode('w2_05-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_05-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_05-2">
-            <div class="cell-header"><span>[ ] Practice 3: Computation on Arrays: Broadcasting</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Advanced Ufuncs</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
+            </div>
             <div class="editor-container" id="editor-w2_05-2"></div>
             <div class="controls"><button onclick="runCode('w2_05-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_05-2"></div>
@@ -265,21 +319,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_06-0">
-            <div class="cell-header"><span>[ ] Practice 1: Comparisons, Masks, and Boolean Logic</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Boolean Masks</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Create a boolean mask for ages >= 18.<br>2. Print the mask itself.<br>3. Use the mask to extract and print only the adult ages.
+            </div>
             <div class="editor-container" id="editor-w2_06-0"></div>
             <div class="controls"><button onclick="runCode('w2_06-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_06-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_06-1">
-            <div class="cell-header"><span>[ ] Practice 2: Comparisons, Masks, and Boolean Logic</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Compound Logic</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Create a mask for temperatures that are "comfortable": between 15 and 25 inclusive.<br>2. Use the mask to extract the comfortable temperatures.<br>3. Count how many comfortable temperatures there are using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.count_nonzero()</code>.<br>4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).
+            </div>
             <div class="editor-container" id="editor-w2_06-1"></div>
             <div class="controls"><button onclick="runCode('w2_06-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_06-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_06-2">
-            <div class="cell-header"><span>[ ] Practice 3: Comparisons, Masks, and Boolean Logic</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: np.where and Conditional Assignment</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where</code> to create a new array: if value > 120, set to "High", else "Normal".<br>2. Replace all values in the original array that are negative with 0 (using boolean indexing).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.clip</code> to restrict the array values to a minimum of 50 and maximum of 150.
+            </div>
             <div class="editor-container" id="editor-w2_06-2"></div>
             <div class="controls"><button onclick="runCode('w2_06-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_06-2"></div>
@@ -297,21 +360,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_07-0">
-            <div class="cell-header"><span>[ ] Practice 1: Fancy Indexing</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Fancy Indexing 1D</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">indices</code> list to extract elements "A", "D", and "F" in one operation.<br>2. Create a new index array <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">[5, 5, 5]</code> and use it to extract "F" three times.
+            </div>
             <div class="editor-container" id="editor-w2_07-0"></div>
             <div class="controls"><button onclick="runCode('w2_07-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_07-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_07-1">
-            <div class="cell-header"><span>[ ] Practice 2: Fancy Indexing</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Fancy Indexing 2D</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.<br>2. Extract the entire 1st and 3rd rows using fancy indexing.<br>3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.
+            </div>
             <div class="editor-container" id="editor-w2_07-1"></div>
             <div class="controls"><button onclick="runCode('w2_07-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_07-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_07-2">
-            <div class="cell-header"><span>[ ] Practice 3: Fancy Indexing</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Combined Indexing</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.<br>2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.<br>3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.
+            </div>
             <div class="editor-container" id="editor-w2_07-2"></div>
             <div class="controls"><button onclick="runCode('w2_07-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_07-2"></div>
@@ -329,21 +401,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_08-0">
-            <div class="cell-header"><span>[ ] Practice 1: Sorting Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Basic Sorting</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sort()</code> to return a sorted copy of the data.<br>2. Call the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.sort()</code> method on the array to sort it in-place.<br>3. Verify the array is sorted.
+            </div>
             <div class="editor-container" id="editor-w2_08-0"></div>
             <div class="controls"><button onclick="runCode('w2_08-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_08-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_08-1">
-            <div class="cell-header"><span>[ ] Practice 2: Sorting Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: argsort</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argsort()</code> on the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">scores</code> array to get the sorted indices.<br>2. Use those indices to print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">names</code> array in order of lowest to highest score.<br>3. Reverse the indices to print the names from highest to lowest score.
+            </div>
             <div class="editor-container" id="editor-w2_08-1"></div>
             <div class="controls"><button onclick="runCode('w2_08-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_08-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_08-2">
-            <div class="cell-header"><span>[ ] Practice 3: Sorting Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Multi-dimensional Sorting</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Sort each column of the matrix independently (axis=0).<br>2. Sort each row of the matrix independently (axis=1).<br>3. Sort the entire matrix ROWS based entirely on the values in the 2nd column. (Hint: Use argsort on the 2nd column, then fancy index the rows).
+            </div>
             <div class="editor-container" id="editor-w2_08-2"></div>
             <div class="controls"><button onclick="runCode('w2_08-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_08-2"></div>
@@ -361,21 +442,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w2_09-0">
-            <div class="cell-header"><span>[ ] Practice 1: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong>\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.
+            </div>
             <div class="editor-container" id="editor-w2_09-0"></div>
             <div class="controls"><button onclick="runCode('w2_09-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_09-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_09-1">
-            <div class="cell-header"><span>[ ] Practice 2: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong>\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.
+            </div>
             <div class="editor-container" id="editor-w2_09-1"></div>
             <div class="controls"><button onclick="runCode('w2_09-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_09-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w2_09-2">
-            <div class="cell-header"><span>[ ] Practice 3: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Structured Data: NumPy's Structured Arrays</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong>\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.
+            </div>
             <div class="editor-container" id="editor-w2_09-2"></div>
             <div class="controls"><button onclick="runCode('w2_09-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_09-2"></div>
@@ -393,21 +483,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_00-0">
-            <div class="cell-header"><span>[ ] Practice 1: 4. Visualization with Matplotlib</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: 4. Visualization with Matplotlib</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for 4. Visualization with Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_00-0"></div>
             <div class="controls"><button onclick="runCode('w4_00-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_00-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_00-1">
-            <div class="cell-header"><span>[ ] Practice 2: 4. Visualization with Matplotlib</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: 4. Visualization with Matplotlib</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_00-1"></div>
             <div class="controls"><button onclick="runCode('w4_00-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_00-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_00-2">
-            <div class="cell-header"><span>[ ] Practice 3: 4. Visualization with Matplotlib</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: 4. Visualization with Matplotlib</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_00-2"></div>
             <div class="controls"><button onclick="runCode('w4_00-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_00-2"></div>
@@ -425,21 +524,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_01-0">
-            <div class="cell-header"><span>[ ] Practice 1: Simple Line Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Simple Line Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Simple Line Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_01-0"></div>
             <div class="controls"><button onclick="runCode('w4_01-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_01-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_01-1">
-            <div class="cell-header"><span>[ ] Practice 2: Simple Line Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Simple Line Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_01-1"></div>
             <div class="controls"><button onclick="runCode('w4_01-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_01-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_01-2">
-            <div class="cell-header"><span>[ ] Practice 3: Simple Line Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Simple Line Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_01-2"></div>
             <div class="controls"><button onclick="runCode('w4_01-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_01-2"></div>
@@ -457,21 +565,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_02-0">
-            <div class="cell-header"><span>[ ] Practice 1: Simple Scatter Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Simple Scatter Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Simple Scatter Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_02-0"></div>
             <div class="controls"><button onclick="runCode('w4_02-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_02-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_02-1">
-            <div class="cell-header"><span>[ ] Practice 2: Simple Scatter Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Simple Scatter Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_02-1"></div>
             <div class="controls"><button onclick="runCode('w4_02-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_02-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_02-2">
-            <div class="cell-header"><span>[ ] Practice 3: Simple Scatter Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Simple Scatter Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_02-2"></div>
             <div class="controls"><button onclick="runCode('w4_02-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_02-2"></div>
@@ -489,21 +606,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_03-0">
-            <div class="cell-header"><span>[ ] Practice 1: Visualizing Errors</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Visualizing Errors</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Visualizing Errors. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_03-0"></div>
             <div class="controls"><button onclick="runCode('w4_03-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_03-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_03-1">
-            <div class="cell-header"><span>[ ] Practice 2: Visualizing Errors</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Visualizing Errors</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_03-1"></div>
             <div class="controls"><button onclick="runCode('w4_03-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_03-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_03-2">
-            <div class="cell-header"><span>[ ] Practice 3: Visualizing Errors</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Visualizing Errors</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_03-2"></div>
             <div class="controls"><button onclick="runCode('w4_03-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_03-2"></div>
@@ -521,21 +647,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_04-0">
-            <div class="cell-header"><span>[ ] Practice 1: Density and Contour Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Density and Contour Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Density and Contour Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_04-0"></div>
             <div class="controls"><button onclick="runCode('w4_04-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_04-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_04-1">
-            <div class="cell-header"><span>[ ] Practice 2: Density and Contour Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Density and Contour Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_04-1"></div>
             <div class="controls"><button onclick="runCode('w4_04-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_04-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_04-2">
-            <div class="cell-header"><span>[ ] Practice 3: Density and Contour Plots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Density and Contour Plots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_04-2"></div>
             <div class="controls"><button onclick="runCode('w4_04-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_04-2"></div>
@@ -553,21 +688,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_05-0">
-            <div class="cell-header"><span>[ ] Practice 1: Histograms, Binnings, and Density</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Histograms, Binnings, and Density</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Histograms, Binnings, and Density. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_05-0"></div>
             <div class="controls"><button onclick="runCode('w4_05-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_05-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_05-1">
-            <div class="cell-header"><span>[ ] Practice 2: Histograms, Binnings, and Density</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Histograms, Binnings, and Density</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_05-1"></div>
             <div class="controls"><button onclick="runCode('w4_05-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_05-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_05-2">
-            <div class="cell-header"><span>[ ] Practice 3: Histograms, Binnings, and Density</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Histograms, Binnings, and Density</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_05-2"></div>
             <div class="controls"><button onclick="runCode('w4_05-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_05-2"></div>
@@ -585,21 +729,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_06-0">
-            <div class="cell-header"><span>[ ] Practice 1: Customizing Plot Legends</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Customizing Plot Legends</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Customizing Plot Legends. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_06-0"></div>
             <div class="controls"><button onclick="runCode('w4_06-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_06-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_06-1">
-            <div class="cell-header"><span>[ ] Practice 2: Customizing Plot Legends</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Customizing Plot Legends</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_06-1"></div>
             <div class="controls"><button onclick="runCode('w4_06-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_06-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_06-2">
-            <div class="cell-header"><span>[ ] Practice 3: Customizing Plot Legends</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Customizing Plot Legends</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_06-2"></div>
             <div class="controls"><button onclick="runCode('w4_06-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_06-2"></div>
@@ -617,21 +770,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_07-0">
-            <div class="cell-header"><span>[ ] Practice 1: Customizing Colorbars</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Customizing Colorbars</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Customizing Colorbars. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_07-0"></div>
             <div class="controls"><button onclick="runCode('w4_07-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_07-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_07-1">
-            <div class="cell-header"><span>[ ] Practice 2: Customizing Colorbars</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Customizing Colorbars</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_07-1"></div>
             <div class="controls"><button onclick="runCode('w4_07-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_07-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_07-2">
-            <div class="cell-header"><span>[ ] Practice 3: Customizing Colorbars</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Customizing Colorbars</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_07-2"></div>
             <div class="controls"><button onclick="runCode('w4_07-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_07-2"></div>
@@ -649,21 +811,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_08-0">
-            <div class="cell-header"><span>[ ] Practice 1: Multiple Subplots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Multiple Subplots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Multiple Subplots. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_08-0"></div>
             <div class="controls"><button onclick="runCode('w4_08-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_08-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_08-1">
-            <div class="cell-header"><span>[ ] Practice 2: Multiple Subplots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Multiple Subplots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_08-1"></div>
             <div class="controls"><button onclick="runCode('w4_08-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_08-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_08-2">
-            <div class="cell-header"><span>[ ] Practice 3: Multiple Subplots</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Multiple Subplots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_08-2"></div>
             <div class="controls"><button onclick="runCode('w4_08-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_08-2"></div>
@@ -681,21 +852,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_09-0">
-            <div class="cell-header"><span>[ ] Practice 1: Text and Annotation</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Text and Annotation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Text and Annotation. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_09-0"></div>
             <div class="controls"><button onclick="runCode('w4_09-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_09-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_09-1">
-            <div class="cell-header"><span>[ ] Practice 2: Text and Annotation</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Text and Annotation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_09-1"></div>
             <div class="controls"><button onclick="runCode('w4_09-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_09-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_09-2">
-            <div class="cell-header"><span>[ ] Practice 3: Text and Annotation</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Text and Annotation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_09-2"></div>
             <div class="controls"><button onclick="runCode('w4_09-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_09-2"></div>
@@ -713,21 +893,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_10-0">
-            <div class="cell-header"><span>[ ] Practice 1: Customizing Ticks</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Customizing Ticks</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Customizing Ticks. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_10-0"></div>
             <div class="controls"><button onclick="runCode('w4_10-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_10-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_10-1">
-            <div class="cell-header"><span>[ ] Practice 2: Customizing Ticks</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Customizing Ticks</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_10-1"></div>
             <div class="controls"><button onclick="runCode('w4_10-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_10-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_10-2">
-            <div class="cell-header"><span>[ ] Practice 3: Customizing Ticks</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Customizing Ticks</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_10-2"></div>
             <div class="controls"><button onclick="runCode('w4_10-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_10-2"></div>
@@ -745,21 +934,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_11-0">
-            <div class="cell-header"><span>[ ] Practice 1: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Customizing Matplotlib: Configurations and Stylesheets. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_11-0"></div>
             <div class="controls"><button onclick="runCode('w4_11-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_11-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_11-1">
-            <div class="cell-header"><span>[ ] Practice 2: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_11-1"></div>
             <div class="controls"><button onclick="runCode('w4_11-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_11-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_11-2">
-            <div class="cell-header"><span>[ ] Practice 3: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Customizing Matplotlib: Configurations and Stylesheets</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_11-2"></div>
             <div class="controls"><button onclick="runCode('w4_11-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_11-2"></div>
@@ -777,21 +975,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_12-0">
-            <div class="cell-header"><span>[ ] Practice 1: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Three-Dimensional Plotting in Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_12-0"></div>
             <div class="controls"><button onclick="runCode('w4_12-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_12-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_12-1">
-            <div class="cell-header"><span>[ ] Practice 2: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_12-1"></div>
             <div class="controls"><button onclick="runCode('w4_12-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_12-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_12-2">
-            <div class="cell-header"><span>[ ] Practice 3: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Three-Dimensional Plotting in Matplotlib</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_12-2"></div>
             <div class="controls"><button onclick="runCode('w4_12-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_12-2"></div>
@@ -809,21 +1016,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_13-0">
-            <div class="cell-header"><span>[ ] Practice 1: Geographic Data with Basemap</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Geographic Data with Basemap</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Geographic Data with Basemap. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_13-0"></div>
             <div class="controls"><button onclick="runCode('w4_13-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_13-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_13-1">
-            <div class="cell-header"><span>[ ] Practice 2: Geographic Data with Basemap</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Geographic Data with Basemap</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_13-1"></div>
             <div class="controls"><button onclick="runCode('w4_13-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_13-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_13-2">
-            <div class="cell-header"><span>[ ] Practice 3: Geographic Data with Basemap</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Geographic Data with Basemap</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_13-2"></div>
             <div class="controls"><button onclick="runCode('w4_13-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_13-2"></div>
@@ -841,21 +1057,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_14-0">
-            <div class="cell-header"><span>[ ] Practice 1: Visualization with Seaborn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Visualization with Seaborn</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Visualization with Seaborn. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_14-0"></div>
             <div class="controls"><button onclick="runCode('w4_14-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_14-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_14-1">
-            <div class="cell-header"><span>[ ] Practice 2: Visualization with Seaborn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Visualization with Seaborn</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_14-1"></div>
             <div class="controls"><button onclick="runCode('w4_14-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_14-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_14-2">
-            <div class="cell-header"><span>[ ] Practice 3: Visualization with Seaborn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Visualization with Seaborn</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_14-2"></div>
             <div class="controls"><button onclick="runCode('w4_14-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_14-2"></div>
@@ -873,21 +1098,30 @@ const lessons = {
         <p>Apply what you just read in the textbook chapter above.</p>
         
         <div class="notebook-cell" id="cell-w4_15-0">
-            <div class="cell-header"><span>[ ] Practice 1: Further Resources</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Further Resources</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the plotting basics for Further Resources. (Note: Plots don't render in the browser sandbox, but write the correct code).
+            </div>
             <div class="editor-container" id="editor-w4_15-0"></div>
             <div class="controls"><button onclick="runCode('w4_15-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_15-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_15-1">
-            <div class="cell-header"><span>[ ] Practice 2: Further Resources</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Further Resources</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Add labels, titles, and legends.
+            </div>
             <div class="editor-container" id="editor-w4_15-1"></div>
             <div class="controls"><button onclick="runCode('w4_15-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_15-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w4_15-2">
-            <div class="cell-header"><span>[ ] Practice 3: Further Resources</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Further Resources</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create multiple subplots.
+            </div>
             <div class="editor-container" id="editor-w4_15-2"></div>
             <div class="controls"><button onclick="runCode('w4_15-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_15-2"></div>
@@ -903,21 +1137,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_0-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Series Construction</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Convert the 'name' list from the data dict into a Pandas Series named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">name_series</code>.<br>2. Print the first 3 elements of the Series.<br>3. Create a Series for 'salary' and find its mean.
+            </div>
             <div class="editor-container" id="editor-w3_0-0"></div>
             <div class="controls"><button onclick="runCode('w3_0-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_0-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_0-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: DataFrame Construction</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Convert the entire <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> dictionary into a Pandas DataFrame named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.shape</code>, <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.columns</code>, and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.dtypes</code>.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.head()</code> to show the first 4 rows.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.info()</code> to inspect missing values.
+            </div>
             <div class="editor-container" id="editor-w3_0-1"></div>
             <div class="controls"><button onclick="runCode('w3_0-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_0-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_0-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: DataFrame Operations</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Set the index of the DataFrame to be the ID column.<br>3. Select only the numerical columns.<br>4. Sort the DataFrame by the last column in descending order.<br>5. Extract the top 3 rows into a new DataFrame.
+            </div>
             <div class="editor-container" id="editor-w3_0-2"></div>
             <div class="controls"><button onclick="runCode('w3_0-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_0-2"></div>
@@ -933,21 +1176,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_1-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: CSV Writing</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Save the DataFrame to a CSV string using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.to_csv(index=False)</code>.<br>3. Print the resulting CSV string.
+            </div>
             <div class="editor-container" id="editor-w3_1-0"></div>
             <div class="controls"><button onclick="runCode('w3_1-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_1-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_1-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: CSV Reading and Inspection</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">io.StringIO(csv_text)</code> to read the CSV into a DataFrame.<br>2. Inspect the dtypes. Notice that 'value' is an object (string) because of "invalid".<br>3. Convert 'value' to numeric using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.to_numeric(..., errors='coerce')</code>.<br>4. Check the dtypes again and print the missing value count.
+            </div>
             <div class="editor-container" id="editor-w3_1-1"></div>
             <div class="controls"><button onclick="runCode('w3_1-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_1-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_1-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: JSON Round-Trip</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Export the DataFrame to JSON using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">to_json(orient='records')</code>.<br>3. Read the JSON string back into a new DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code>.<br>4. Assert or verify that the shape and columns of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code> match the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>5. Explain in a comment why orient='records' is often preferred for web APIs.
+            </div>
             <div class="editor-container" id="editor-w3_1-2"></div>
             <div class="controls"><button onclick="runCode('w3_1-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_1-2"></div>
@@ -963,21 +1215,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_2-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Selecting Columns</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Select just the first column (e.g. name or timestamp) as a Series.<br>3. Select the first column AND the last column as a DataFrame (use a list of columns).
+            </div>
             <div class="editor-container" id="editor-w3_2-0"></div>
             <div class="controls"><button onclick="runCode('w3_2-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_2-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_2-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: loc vs iloc</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Change the index to be non-sequential (e.g., <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.index = [10, 20, 30...]</code>).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.iloc</code> to select the exactly 3rd row (integer position).<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select rows based on a specific label from your new index.<br>5. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select the 3rd row BUT only the first two columns.
+            </div>
             <div class="editor-container" id="editor-w3_2-1"></div>
             <div class="controls"><button onclick="runCode('w3_2-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_2-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_2-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Boolean Filtering</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.<br>3. Filter for rows where a categorical column equals a specific value, AND a numerical column is not null.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.isin()</code> to filter for rows matching two different categorical values.<br>5. Reset the index of the final filtered DataFrame.
+            </div>
             <div class="editor-container" id="editor-w3_2-2"></div>
             <div class="controls"><button onclick="runCode('w3_2-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_2-2"></div>
@@ -993,21 +1254,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_3-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: How do I create plots in pandas?</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the basics for How do I create plots in pandas?.
+            </div>
             <div class="editor-container" id="editor-w3_3-0"></div>
             <div class="controls"><button onclick="runCode('w3_3-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_3-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_3-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: How do I create plots in pandas?</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Apply advanced concepts for How do I create plots in pandas?.
+            </div>
             <div class="editor-container" id="editor-w3_3-1"></div>
             <div class="controls"><button onclick="runCode('w3_3-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_3-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_3-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: How do I create plots in pandas?</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create a mini pipeline using How do I create plots in pandas?.
+            </div>
             <div class="editor-container" id="editor-w3_3-2"></div>
             <div class="controls"><button onclick="runCode('w3_3-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_3-2"></div>
@@ -1023,21 +1293,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_4-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Creating New Columns</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a new column that is exactly double the value of an existing numerical column.<br>3. Create a static column called <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data_source</code> and set all its values to "System A".
+            </div>
             <div class="editor-container" id="editor-w3_4-0"></div>
             <div class="controls"><button onclick="runCode('w3_4-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_4-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_4-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Vectorized Logic</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a boolean column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> which is True if the numerical column is greater than its mean.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where()</code> to create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">status_label</code>: if <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> is True, set to "Priority", else "Standard".
+            </div>
             <div class="editor-container" id="editor-w3_4-1"></div>
             <div class="controls"><button onclick="runCode('w3_4-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_4-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_4-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Complex Feature Engineering</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df = pd.DataFrame(data)</code>.<br>2. Clean the numerical column (fill NaNs).<br>3. Create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">normalized_score</code>: subtract the min and divide by (max - min) for the numerical column.<br>4. Create a categorical column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">band</code> using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.cut()</code> to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.
+            </div>
             <div class="editor-container" id="editor-w3_4-2"></div>
             <div class="controls"><button onclick="runCode('w3_4-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_4-2"></div>
@@ -1053,21 +1332,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_5-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Summary Statistics</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.describe()</code> to print summary statistics for all numeric columns.<br>3. Find the exact median of the numerical columns.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.value_counts()</code> on one of the categorical columns to see the distribution.
+            </div>
             <div class="editor-container" id="editor-w3_5-0"></div>
             <div class="controls"><button onclick="runCode('w3_5-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_5-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_5-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: GroupBy Basics</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group the DataFrame by one of the categorical columns.<br>3. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.mean()</code> for the numerical columns within each group.<br>4. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.count()</code> for each group to see how many records belong to each.
+            </div>
             <div class="editor-container" id="editor-w3_5-1"></div>
             <div class="controls"><button onclick="runCode('w3_5-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_5-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_5-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Advanced GroupBy and Aggregation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group by the categorical column.<br>3. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.agg()</code> method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.<br>4. Sort the resulting grouped table by the 'mean' value in descending order.
+            </div>
             <div class="editor-container" id="editor-w3_5-2"></div>
             <div class="controls"><button onclick="runCode('w3_5-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_5-2"></div>
@@ -1083,21 +1371,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_6-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Pivot Tables Basics</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.pivot_table()</code> to show the average numerical value for each category (e.g. department, sensor_id).
+            </div>
             <div class="editor-container" id="editor-w3_6-0"></div>
             <div class="controls"><button onclick="runCode('w3_6-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_6-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_6-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Multi-dimensional Pivots</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Analyzing sales by Region and Year.</strong><br>1. Create a pivot table with <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Region</code> as the index, <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Year</code> as columns, and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Sales</code> as values.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">aggfunc='sum'</code> to combine the two North 2022 records.
+            </div>
             <div class="editor-container" id="editor-w3_6-1"></div>
             <div class="controls"><button onclick="runCode('w3_6-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_6-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_6-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Melt / Unpivot</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Converting wide data to long format.</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.melt()</code> to convert this from wide format to long format. The resulting columns should be 'Student', 'Subject', and 'Score'.<br>2. Sort the long DataFrame by 'Student'.
+            </div>
             <div class="editor-container" id="editor-w3_6-2"></div>
             <div class="controls"><button onclick="runCode('w3_6-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_6-2"></div>
@@ -1113,21 +1410,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_7-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Concatenation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Combine logs from two servers.</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.concat</code> to stack <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df1</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df2</code> vertically.<br>2. Ignore the index so the new DataFrame has a clean index from 0 to 3.
+            </div>
             <div class="editor-container" id="editor-w3_7-0"></div>
             <div class="controls"><button onclick="runCode('w3_7-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_7-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_7-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Merging (Inner Join)</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Link transactions with profiles.</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.merge()</code> to join <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sales</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">customers</code> on <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">cust_id</code>.<br>2. Print the result. Notice which <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">cust_id</code>s were dropped (inner join behavior).
+            </div>
             <div class="editor-container" id="editor-w3_7-1"></div>
             <div class="controls"><button onclick="runCode('w3_7-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_7-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_7-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Outer Joins and Indicators</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Reconcile two databases.</strong><br>1. Perform an outer merge on <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">user</code>, setting <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">indicator=True</code>.<br>2. Print the resulting DataFrame.<br>3. Filter the DataFrame to show ONLY rows that were present in the left database but missing in the right database.
+            </div>
             <div class="editor-container" id="editor-w3_7-2"></div>
             <div class="controls"><button onclick="runCode('w3_7-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_7-2"></div>
@@ -1143,21 +1449,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w3_8-0">
-            <div class="cell-header"><span>[ ] Practice 1: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: How to handle time series data with ease</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the basics for How to handle time series data with ease.
+            </div>
             <div class="editor-container" id="editor-w3_8-0"></div>
             <div class="controls"><button onclick="runCode('w3_8-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_8-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_8-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: How to handle time series data with ease</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Apply advanced concepts for How to handle time series data with ease.
+            </div>
             <div class="editor-container" id="editor-w3_8-1"></div>
             <div class="controls"><button onclick="runCode('w3_8-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_8-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w3_8-2">
-            <div class="cell-header"><span>[ ] Practice 3: Pandas</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: How to handle time series data with ease</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Create a mini pipeline using How to handle time series data with ease.
+            </div>
             <div class="editor-container" id="editor-w3_8-2"></div>
             <div class="controls"><button onclick="runCode('w3_8-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_8-2"></div>
@@ -1180,21 +1495,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w6_0-0">
-            <div class="cell-header"><span>[ ] Practice 1: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Getting Started with Scikit-learn</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the basics for Getting Started with Scikit-learn.
+            </div>
             <div class="editor-container" id="editor-w6_0-0"></div>
             <div class="controls"><button onclick="runCode('w6_0-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_0-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_0-1">
-            <div class="cell-header"><span>[ ] Practice 2: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Getting Started with Scikit-learn</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Apply advanced concepts for Getting Started with Scikit-learn.
+            </div>
             <div class="editor-container" id="editor-w6_0-1"></div>
             <div class="controls"><button onclick="runCode('w6_0-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_0-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_0-2">
-            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Getting Started with Scikit-learn</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Combine Getting Started with Scikit-learn with pipelines.
+            </div>
             <div class="editor-container" id="editor-w6_0-2"></div>
             <div class="controls"><button onclick="runCode('w6_0-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_0-2"></div>
@@ -1210,21 +1534,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w6_1-0">
-            <div class="cell-header"><span>[ ] Practice 1: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Pipeline Documentation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the basics for Pipeline Documentation.
+            </div>
             <div class="editor-container" id="editor-w6_1-0"></div>
             <div class="controls"><button onclick="runCode('w6_1-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_1-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_1-1">
-            <div class="cell-header"><span>[ ] Practice 2: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Pipeline Documentation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Apply advanced concepts for Pipeline Documentation.
+            </div>
             <div class="editor-container" id="editor-w6_1-1"></div>
             <div class="controls"><button onclick="runCode('w6_1-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_1-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_1-2">
-            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Pipeline Documentation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Combine Pipeline Documentation with pipelines.
+            </div>
             <div class="editor-container" id="editor-w6_1-2"></div>
             <div class="controls"><button onclick="runCode('w6_1-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_1-2"></div>
@@ -1240,21 +1573,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w6_2-0">
-            <div class="cell-header"><span>[ ] Practice 1: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: ColumnTransformer Documentation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the basics for ColumnTransformer Documentation.
+            </div>
             <div class="editor-container" id="editor-w6_2-0"></div>
             <div class="controls"><button onclick="runCode('w6_2-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_2-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_2-1">
-            <div class="cell-header"><span>[ ] Practice 2: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: ColumnTransformer Documentation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Apply advanced concepts for ColumnTransformer Documentation.
+            </div>
             <div class="editor-container" id="editor-w6_2-1"></div>
             <div class="controls"><button onclick="runCode('w6_2-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_2-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_2-2">
-            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: ColumnTransformer Documentation</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Combine ColumnTransformer Documentation with pipelines.
+            </div>
             <div class="editor-container" id="editor-w6_2-2"></div>
             <div class="controls"><button onclick="runCode('w6_2-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_2-2"></div>
@@ -1270,21 +1612,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w6_3-0">
-            <div class="cell-header"><span>[ ] Practice 1: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Preprocessing Data</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Implement the basics for Preprocessing Data.
+            </div>
             <div class="editor-container" id="editor-w6_3-0"></div>
             <div class="controls"><button onclick="runCode('w6_3-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_3-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_3-1">
-            <div class="cell-header"><span>[ ] Practice 2: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Preprocessing Data</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Apply advanced concepts for Preprocessing Data.
+            </div>
             <div class="editor-container" id="editor-w6_3-1"></div>
             <div class="controls"><button onclick="runCode('w6_3-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_3-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_3-2">
-            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Preprocessing Data</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                1. Combine Preprocessing Data with pipelines.
+            </div>
             <div class="editor-container" id="editor-w6_3-2"></div>
             <div class="controls"><button onclick="runCode('w6_3-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_3-2"></div>
@@ -1300,21 +1651,30 @@ const lessons = {
         </div>
         
         <div class="notebook-cell" id="cell-w6_4-0">
-            <div class="cell-header"><span>[ ] Practice 1: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Basic Train-Test Split</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Model Validation</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">train_test_split</code> to split X and y into 80% training and 20% testing sets.<br>2. Set <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">random_state=42</code> for reproducibility.<br>3. Print the shapes of X_train and X_test.
+            </div>
             <div class="editor-container" id="editor-w6_4-0"></div>
             <div class="controls"><button onclick="runCode('w6_4-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_4-0"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_4-1">
-            <div class="cell-header"><span>[ ] Practice 2: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Stratified Splitting</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: Imbalanced Target</strong><br>1. Split the data 70/30.<br>2. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">stratify</code> parameter to ensure the train and test sets have the same proportion of 0s and 1s as the original y.<br>3. Verify the proportions using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.mean(y_train)</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.mean(y_test)</code>.
+            </div>
             <div class="editor-container" id="editor-w6_4-1"></div>
             <div class="controls"><button onclick="runCode('w6_4-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_4-1"></div>
         </div>
         
         <div class="notebook-cell" id="cell-w6_4-2">
-            <div class="cell-header"><span>[ ] Practice 3: Scikit-learn</span></div>
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Splitting Pandas DataFrames</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Scenario: DataFrame Pipelines</strong><br>1. Separate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> into <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">X</code> (features) and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">y</code> (target).<br>2. Perform a train_test_split.<br>3. Verify that the indices of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">X_train</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">y_train</code> perfectly match.
+            </div>
             <div class="editor-container" id="editor-w6_4-2"></div>
             <div class="controls"><button onclick="runCode('w6_4-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_4-2"></div>
@@ -1324,777 +1684,7 @@ const lessons = {
 };
 
 const initialCode = {
-    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `# Easy: 2. Introduction to NumPy
-# Scenario: E-Commerce Sales
-import numpy as np
-
-# 1. Write a basic implementation of the core concept from the reading.
-# 2. Print the result.
-`,    'w2_00-1': `# Intermediate: 2. Introduction to NumPy
-# Scenario: E-Commerce Sales
-import numpy as np
-
-# 1. Create a 2D array and apply the concept across axes.
-`,    'w2_00-2': `# Complex: 2. Introduction to NumPy
-# Scenario: E-Commerce Sales
-import numpy as np
-
-# 1. Combine this concept with a boolean mask and argsort.
-`,    'w2_01-0': `# Easy: Understanding Array Types
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-prices = [10.5, 20.0, "30.5", 40.0, 50.5]
-
-# 1. Convert \`prices\` to a NumPy array of type float32.
-# 2. Print the shape, ndim, dtype, and itemsize of the array.
-# 3. Create a 3x3 array of zeros of type int8.
-`,    'w2_01-1': `# Intermediate: Indexing and Slicing
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(2026)
-matrix = rng.integers(1, 100, size=(5, 5))
-
-# 1. Print the original 5x5 matrix.
-# 2. Extract the first row and the last column.
-# 3. Extract a 2x2 sub-matrix from the top-right corner.
-# 4. Reverse the order of the rows in the matrix.
-`,    'w2_01-2': `# Complex: Reshaping and Copies
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-raw_stream = np.arange(1, 37)
-
-# 1. Reshape \`raw_stream\` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).
-# 2. Extract the data for the second day (index 1).
-# 3. Create a completely independent copy (not a view) of the first day's data.
-# 4. Modify a value in the copy and prove the original \`raw_stream\` is unchanged.
-`,    'w2_02-0': `# Easy: Understanding Array Types
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-prices = [10.5, 20.0, "30.5", 40.0, 50.5]
-
-# 1. Convert \`prices\` to a NumPy array of type float32.
-# 2. Print the shape, ndim, dtype, and itemsize of the array.
-# 3. Create a 3x3 array of zeros of type int8.
-`,    'w2_02-1': `# Intermediate: Indexing and Slicing
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(2026)
-matrix = rng.integers(1, 100, size=(5, 5))
-
-# 1. Print the original 5x5 matrix.
-# 2. Extract the first row and the last column.
-# 3. Extract a 2x2 sub-matrix from the top-right corner.
-# 4. Reverse the order of the rows in the matrix.
-`,    'w2_02-2': `# Complex: Reshaping and Copies
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-raw_stream = np.arange(1, 37)
-
-# 1. Reshape \`raw_stream\` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).
-# 2. Extract the data for the second day (index 1).
-# 3. Create a completely independent copy (not a view) of the first day's data.
-# 4. Modify a value in the copy and prove the original \`raw_stream\` is unchanged.
-`,    'w2_03-0': `# Easy: Vectorized Arithmetic
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-base_values = np.array([100, 200, 300, 400, 500])
-multiplier = 1.15
-
-# 1. Multiply all base_values by the multiplier without using loops.
-# 2. Add 50 to the result.
-# 3. Round the final values to 1 decimal place using np.round.
-`,    'w2_03-1': `# Intermediate: Ufuncs and Broadcasting
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-matrix = np.array([[10, 20], [30, 40], [50, 60]]) # shape (3,2)
-vector = np.array([1, 2]) # shape (2,)
-
-# 1. Add the vector to the matrix (Broadcasting).
-# 2. Compute the natural logarithm (np.log) of the resulting matrix.
-# 3. Explain in a comment how broadcasting matched the shapes.
-`,    'w2_03-2': `# Complex: Advanced Ufuncs
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(42)
-x = rng.uniform(1, 10, size=100)
-
-# 1. Use np.power to square every element in x.
-# 2. Use np.sin and np.cos to compute sin(x)^2 + cos(x)^2.
-# 3. Assert or verify that all results in step 2 are exactly (or extremely close to) 1.0.
-# 4. Find the sum of all elements using np.add.reduce.
-`,    'w2_04-0': `# Easy: Simple Aggregations
-# Scenario: E-Commerce Sales
-import numpy as np
-
-# Data Setup
-scores = np.array([75, 88, 92, 60, 100, 85, 77, 95])
-
-# 1. Find the min, max, and mean of the scores.
-# 2. Find the index of the highest score using np.argmax.
-# 3. Find the median score using np.median.
-`,    'w2_04-1': `# Intermediate: Axis Aggregations
-# Scenario: E-Commerce Sales
-import numpy as np
-
-# Data Setup
-# Rows are students, columns are 3 different exams
-results = np.array([
-    [85, 90, 88],
-    [70, 75, np.nan],
-    [95, 98, 100],
-    [60, np.nan, 62]
-])
-
-# 1. Calculate the mean score for each student (axis=1). Notice what NaN does.
-# 2. Use np.nanmean to calculate the mean score for each student while ignoring NaNs.
-# 3. Find the maximum score achieved on each exam (axis=0) using np.nanmax.
-`,    'w2_04-2': `# Complex: Multi-dimensional Aggregations
-# Scenario: E-Commerce Sales
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(99)
-# shape (4 weeks, 5 days, 8 hours)
-data_3d = rng.integers(10, 50, size=(4, 5, 8))
-
-# 1. Find the total sum of all elements.
-# 2. Find the maximum value for each week (reduce across days and hours).
-# 3. Find the average value for each hour of the day (average across weeks and days).
-# 4. Verify the shape of the result from step 3 is (8,).
-`,    'w2_05-0': `# Easy: Vectorized Arithmetic
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-base_values = np.array([100, 200, 300, 400, 500])
-multiplier = 1.15
-
-# 1. Multiply all base_values by the multiplier without using loops.
-# 2. Add 50 to the result.
-# 3. Round the final values to 1 decimal place using np.round.
-`,    'w2_05-1': `# Intermediate: Ufuncs and Broadcasting
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-matrix = np.array([[10, 20], [30, 40], [50, 60]]) # shape (3,2)
-vector = np.array([1, 2]) # shape (2,)
-
-# 1. Add the vector to the matrix (Broadcasting).
-# 2. Compute the natural logarithm (np.log) of the resulting matrix.
-# 3. Explain in a comment how broadcasting matched the shapes.
-`,    'w2_05-2': `# Complex: Advanced Ufuncs
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(42)
-x = rng.uniform(1, 10, size=100)
-
-# 1. Use np.power to square every element in x.
-# 2. Use np.sin and np.cos to compute sin(x)^2 + cos(x)^2.
-# 3. Assert or verify that all results in step 2 are exactly (or extremely close to) 1.0.
-# 4. Find the sum of all elements using np.add.reduce.
-`,    'w2_06-0': `# Easy: Boolean Masks
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-ages = np.array([12, 18, 25, 30, 15, 45, 10, 60])
-
-# 1. Create a boolean mask for ages >= 18.
-# 2. Print the mask itself.
-# 3. Use the mask to extract and print only the adult ages.
-`,    'w2_06-1': `# Intermediate: Compound Logic
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(42)
-temps = rng.integers(-10, 40, size=20)
-
-# 1. Create a mask for temperatures that are "comfortable": between 15 and 25 inclusive.
-# 2. Use the mask to extract the comfortable temperatures.
-# 3. Count how many comfortable temperatures there are using np.sum() or np.count_nonzero().
-# 4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).
-`,    'w2_06-2': `# Complex: np.where and Conditional Assignment
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(2026)
-values = rng.normal(100, 20, size=50)
-
-# 1. Use np.where to create a new array: if value > 120, set to "High", else "Normal".
-# 2. Replace all values in the original array that are negative with 0 (using boolean indexing).
-# 3. Use np.clip to restrict the array values to a minimum of 50 and maximum of 150.
-# 4. Print the final cleaned array.
-`,    'w2_07-0': `# Easy: Fancy Indexing 1D
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-items = np.array(["A", "B", "C", "D", "E", "F", "G"])
-indices = [0, 3, 5]
-
-# 1. Use the \`indices\` list to extract elements "A", "D", and "F" in one operation.
-# 2. Create a new index array \`[5, 5, 5]\` and use it to extract "F" three times.
-`,    'w2_07-1': `# Intermediate: Fancy Indexing 2D
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-matrix = np.arange(25).reshape(5, 5)
-
-# 1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.
-# 2. Extract the entire 1st and 3rd rows using fancy indexing.
-# 3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.
-`,    'w2_07-2': `# Complex: Combined Indexing
-# Scenario: Employee HR System
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(123)
-data = rng.integers(0, 100, size=(6, 6))
-
-# 1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.
-# 2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.
-# 3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.
-`,    'w2_08-0': `# Easy: Basic Sorting
-# Scenario: IoT Sensor Network
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(42)
-unsorted_data = rng.integers(1, 100, size=10)
-
-# 1. Use np.sort() to return a sorted copy of the data.
-# 2. Call the .sort() method on the array to sort it in-place.
-# 3. Verify the array is sorted.
-`,    'w2_08-1': `# Intermediate: argsort
-# Scenario: IoT Sensor Network
-import numpy as np
-
-# Data Setup
-names = np.array(["Ari", "Bataa", "Caraa", "Davaa"])
-scores = np.array([85, 92, 78, 88])
-
-# 1. Use np.argsort() on the \`scores\` array to get the sorted indices.
-# 2. Use those indices to print the \`names\` array in order of lowest to highest score.
-# 3. Reverse the indices to print the names from highest to lowest score.
-`,    'w2_08-2': `# Complex: Multi-dimensional Sorting
-# Scenario: IoT Sensor Network
-import numpy as np
-
-# Data Setup
-rng = np.random.default_rng(2026)
-matrix = rng.integers(0, 50, size=(5, 4))
-
-# 1. Sort each column of the matrix independently (axis=0).
-# 2. Sort each row of the matrix independently (axis=1).
-# 3. Given the matrix, sort the entire matrix ROWS based entirely on the values in the 2nd column.
-#    (Hint: Use argsort on the 2nd column, then fancy index the rows).
-`,    'w2_09-0': `# Easy: Structured Data: NumPy's Structured Arrays
-# Scenario: IoT Sensor Network
-import numpy as np
-
-# 1. Write a basic implementation of the core concept from the reading.
-# 2. Print the result.
-`,    'w2_09-1': `# Intermediate: Structured Data: NumPy's Structured Arrays
-# Scenario: IoT Sensor Network
-import numpy as np
-
-# 1. Create a 2D array and apply the concept across axes.
-`,    'w2_09-2': `# Complex: Structured Data: NumPy's Structured Arrays
-# Scenario: IoT Sensor Network
-import numpy as np
-
-# 1. Combine this concept with a boolean mask and argsort.
-`,    'w4_00-0': `# Easy: Matplotlib Basics
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_00-1': `# Intermediate: Subplots
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_00-2': `# Complex: Customizations
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_01-0': `# Easy: Matplotlib Basics
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_01-1': `# Intermediate: Subplots
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_01-2': `# Complex: Customizations
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_02-0': `# Easy: Matplotlib Basics
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_02-1': `# Intermediate: Subplots
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_02-2': `# Complex: Customizations
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_03-0': `# Easy: Matplotlib Basics
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_03-1': `# Intermediate: Subplots
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_03-2': `# Complex: Customizations
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_04-0': `# Easy: Matplotlib Basics
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_04-1': `# Intermediate: Subplots
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_04-2': `# Complex: Customizations
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_05-0': `# Easy: Matplotlib Basics
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_05-1': `# Intermediate: Subplots
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_05-2': `# Complex: Customizations
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_06-0': `# Easy: Matplotlib Basics
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_06-1': `# Intermediate: Subplots
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_06-2': `# Complex: Customizations
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_07-0': `# Easy: Matplotlib Basics
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_07-1': `# Intermediate: Subplots
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_07-2': `# Complex: Customizations
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_08-0': `# Easy: Matplotlib Basics
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_08-1': `# Intermediate: Subplots
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_08-2': `# Complex: Customizations
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_09-0': `# Easy: Matplotlib Basics
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_09-1': `# Intermediate: Subplots
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_09-2': `# Complex: Customizations
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_10-0': `# Easy: Matplotlib Basics
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_10-1': `# Intermediate: Subplots
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_10-2': `# Complex: Customizations
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_11-0': `# Easy: Matplotlib Basics
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_11-1': `# Intermediate: Subplots
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_11-2': `# Complex: Customizations
-# Scenario: IoT Sensor Network
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_12-0': `# Easy: Matplotlib Basics
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_12-1': `# Intermediate: Subplots
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_12-2': `# Complex: Customizations
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_13-0': `# Easy: Matplotlib Basics
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_13-1': `# Intermediate: Subplots
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_13-2': `# Complex: Customizations
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_14-0': `# Easy: Matplotlib Basics
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_14-1': `# Intermediate: Subplots
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_14-2': `# Complex: Customizations
-# Scenario: Employee HR System
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w4_15-0': `# Easy: Matplotlib Basics
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display in this terminal sandbox, but write the correct code.
-# 1. Create x = np.arange(10) and y = x ** 2
-# 2. Write the code to plot x vs y.
-# 3. Add a title and x/y labels.
-print("Write the plotting code!")
-`,    'w4_15-1': `# Intermediate: Subplots
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Use plt.subplots(1, 2) to create a figure with two side-by-side axes.
-# 2. Plot sin(x) on the first axis and cos(x) on the second axis.
-print("Write the plotting code!")
-`,    'w4_15-2': `# Complex: Customizations
-# Scenario: E-Commerce Sales
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Note: Plots won't display.
-# 1. Create a scatter plot of 100 random points.
-# 2. Color the points based on a third array of random values.
-# 3. Add a colorbar and a legend.
-print("Write the plotting code!")
-`,    'w3_0-0': `# Easy: Series construction
-# Scenario: Employee HR System
-import pandas as pd
+    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `import numpy as np\n\n# Code:\n`,    'w2_00-1': `import numpy as np\n\n# Code:\n`,    'w2_00-2': `import numpy as np\n\n# Code:\n`,    'w2_01-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_01-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_01-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_02-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_02-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_02-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_03-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_03-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_03-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_04-0': `import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n# Write your code here:\n`,    'w2_04-1': `import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n# Write your code here:\n`,    'w2_04-2': `import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n# Write your code here:\n`,    'w2_05-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_05-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_05-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_06-0': `import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n# Write your code here:\n`,    'w2_06-1': `import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n# Write your code here:\n`,    'w2_06-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n# Write your code here:\n`,    'w2_07-0': `import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n# Write your code here:\n`,    'w2_07-1': `import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n# Write your code here:\n`,    'w2_07-2': `import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n# Write your code here:\n`,    'w2_08-0': `import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n# Write your code here:\n`,    'w2_08-1': `import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n# Write your code here:\n`,    'w2_08-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n# Write your code here:\n`,    'w2_09-0': `import numpy as np\n\n# Code:\n`,    'w2_09-1': `import numpy as np\n\n# Code:\n`,    'w2_09-2': `import numpy as np\n\n# Code:\n`,    'w4_00-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w3_0-0': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
@@ -2109,18 +1699,9 @@ data = {
     "hire_year": rng.integers(2015, 2024, size=10),
     "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-# Introduce some missing/dirty data intentionally
 data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0 # invalid
-data["name"][7] = " Khas "
-
-
-# 1. Convert the 'name' list from the data dict into a Pandas Series named \`name_series\`.
-# 2. Print the first 3 elements of the Series.
-# 3. Create a Series for 'salary' and find its mean.
-`,    'w3_0-1': `# Intermediate: DataFrame Construction
-# Scenario: Employee HR System
-import pandas as pd
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_0-1': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
@@ -2135,19 +1716,9 @@ data = {
     "hire_year": rng.integers(2015, 2024, size=10),
     "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-# Introduce some missing/dirty data intentionally
 data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0 # invalid
-data["name"][7] = " Khas "
-
-
-# 1. Convert the entire \`data\` dictionary into a Pandas DataFrame named \`df\`.
-# 2. Print the \`.shape\`, \`.columns\`, and \`.dtypes\`.
-# 3. Use \`.head()\` to show the first 4 rows.
-# 4. Use \`.info()\` to inspect missing values.
-`,    'w3_0-2': `# Complex: DataFrame Operations
-# Scenario: Employee HR System
-import pandas as pd
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_0-2': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
@@ -2162,20 +1733,9 @@ data = {
     "hire_year": rng.integers(2015, 2024, size=10),
     "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-# Introduce some missing/dirty data intentionally
 data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0 # invalid
-data["name"][7] = " Khas "
-
-
-# 1. Convert \`data\` to a DataFrame \`df\`.
-# 2. Set the index of the DataFrame to be the \`emp_id\` or \`order_id\` (whichever exists).
-# 3. Select only the numerical columns.
-# 4. Sort the DataFrame by the last column in descending order.
-# 5. Extract the top 3 rows into a new DataFrame.
-`,    'w3_1-0': `# Easy: CSV Writing
-# Scenario: IoT Sensor Network
-import pandas as pd
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_1-0': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(42)
@@ -2189,31 +1749,8 @@ data = {
     "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
 data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0 # impossible humidity
-
-
-# 1. Convert \`data\` to a DataFrame \`df\`.
-# 2. Save the DataFrame to a CSV string using \`df.to_csv(index=False)\`.
-#    (We use strings here since we don't have a real filesystem in this sandbox).
-# 3. Print the resulting CSV string.
-`,    'w3_1-1': `# Intermediate: CSV Reading and Inspection
-# Scenario: IoT Sensor Network
-import pandas as pd
-import io
-
-csv_text = """id,name,value,date
-1,Ari,10.5,2026-01-01
-2,Bataa,,2026-01-02
-3,Caraa,invalid,2026-01-03
-4,Davaa,15.2,2026-01-04"""
-
-# 1. Use io.StringIO(csv_text) to read the CSV into a DataFrame.
-# 2. Inspect the dtypes. Notice that 'value' is an object (string) because of "invalid".
-# 3. Convert 'value' to numeric using pd.to_numeric(..., errors='coerce').
-# 4. Check the dtypes again and print the missing value count.
-`,    'w3_1-2': `# Complex: JSON Round-Trip
-# Scenario: IoT Sensor Network
-import pandas as pd
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_1-1': `import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n# Write your code here:\n`,    'w3_1-2': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(42)
@@ -2227,84 +1764,8 @@ data = {
     "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
 data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0 # impossible humidity
-
-
-# 1. Convert \`data\` to a DataFrame \`df\`.
-# 2. Export the DataFrame to JSON using \`to_json(orient='records')\`.
-# 3. Read the JSON string back into a new DataFrame \`df_json\`.
-# 4. Assert or verify that the shape and columns of \`df_json\` match the original \`df\`.
-# 5. Explain in a comment why orient='records' is often preferred for web APIs.
-`,    'w3_2-0': `# Easy: Selecting Columns
-# Scenario: E-Commerce Sales
-import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(99)
-
-data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
-}
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Select just the first column (e.g. name or timestamp) as a Series.
-# 3. Select the first column AND the last column as a DataFrame (use a list of columns).
-`,    'w3_2-1': `# Intermediate: loc vs iloc
-# Scenario: E-Commerce Sales
-import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(99)
-
-data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
-}
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Change the index to be completely random strings or non-sequential integers.
-# 3. Use \`.iloc\` to select the exactly 3rd row (integer position).
-# 4. Use \`.loc\` to select rows based on a specific label from your new index.
-# 5. Use \`.loc\` to select the 3rd row BUT only the first two columns.
-`,    'w3_2-2': `# Complex: Boolean Filtering
-# Scenario: E-Commerce Sales
-import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(99)
-
-data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
-}
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.
-# 3. Filter for rows where a categorical column (dept, sensor_id, category) equals a specific value, AND a numerical column is not null.
-# 4. Use \`.isin()\` to filter for rows matching two different categorical values.
-# 5. Reset the index of the final filtered DataFrame.
-`,    'w3_3-0': `# Easy Practice: How do I create plots in pandas?
-# Scenario: IoT Sensor Network
-import pandas as pd
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_2-0': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(42)
@@ -2318,14 +1779,8 @@ data = {
     "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
 data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0 # impossible humidity
-
-
-# 1. Load the data.
-# 2. Apply a basic function related to 'How do I create plots in pandas?'.
-`,    'w3_3-1': `# Intermediate Practice: How do I create plots in pandas?
-# Scenario: IoT Sensor Network
-import pandas as pd
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_2-1': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(42)
@@ -2339,13 +1794,8 @@ data = {
     "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
 data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0 # impossible humidity
-
-
-# 1. Use the data to solve a multi-step problem for 'How do I create plots in pandas?'.
-`,    'w3_3-2': `# Complex Practice: How do I create plots in pandas?
-# Scenario: IoT Sensor Network
-import pandas as pd
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_2-2': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(42)
@@ -2359,78 +1809,98 @@ data = {
     "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
 data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0 # impossible humidity
-
-
-# 1. Combine How do I create plots in pandas? with grouping, missing data handling, and sorting.
-`,    'w3_4-0': `# Easy: Creating New Columns
-# Scenario: E-Commerce Sales
-import pandas as pd
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_3-0': `import pandas as pd
 import numpy as np
 
-rng = np.random.default_rng(99)
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
 
 data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Create a new column that is exactly double the value of an existing numerical column.
-# 3. Create a static column called \`data_source\` and set all its values to "System A".
-`,    'w3_4-1': `# Intermediate: Vectorized Logic
-# Scenario: E-Commerce Sales
-import pandas as pd
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_3-1': `import pandas as pd
 import numpy as np
 
-rng = np.random.default_rng(99)
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
 
 data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Create a boolean column \`is_high_value\` which is True if the numerical column is greater than its mean.
-# 3. Use \`np.where()\` to create a column \`status_label\`: if \`is_high_value\` is True, set to "Priority", else "Standard".
-`,    'w3_4-2': `# Complex: Complex Feature Engineering
-# Scenario: E-Commerce Sales
-import pandas as pd
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_3-2': `import pandas as pd
 import numpy as np
 
-rng = np.random.default_rng(99)
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
 
 data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
 }
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_4-0': `import pandas as pd
+import numpy as np
 
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
 
-# 1. Create \`df = pd.DataFrame(data)\`.
-# 2. Clean the numerical column (fill NaNs).
-# 3. Create a column \`normalized_score\`: subtract the min and divide by (max - min) for the numerical column.
-# 4. Create a categorical column \`band\` using \`pd.cut()\` to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.
-# 5. Verify the distributions of your new bins using \`.value_counts()\`.
-`,    'w3_5-0': `# Easy: Summary Statistics
-# Scenario: Employee HR System
-import pandas as pd
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_4-1': `import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
+
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_4-2': `import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(42)
+times = pd.date_range("2026-01-01", periods=10, freq="H")
+
+data = {
+    "timestamp": times,
+    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
+    "temp_c": rng.normal(20, 5, size=10).round(1),
+    "humidity": rng.integers(30, 90, size=10).astype(float),
+    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
+}
+data["temp_c"][4] = np.nan
+data["humidity"][8] = 150.0
+\n# Write your code here:\n`,    'w3_5-0': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
@@ -2445,19 +1915,9 @@ data = {
     "hire_year": rng.integers(2015, 2024, size=10),
     "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-# Introduce some missing/dirty data intentionally
 data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0 # invalid
-data["name"][7] = " Khas "
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Use \`.describe()\` to print summary statistics for all numeric columns.
-# 3. Find the exact median of the numerical columns.
-# 4. Use \`.value_counts()\` on one of the categorical columns to see the distribution.
-`,    'w3_5-1': `# Intermediate: GroupBy Basics
-# Scenario: Employee HR System
-import pandas as pd
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_5-1': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
@@ -2472,19 +1932,9 @@ data = {
     "hire_year": rng.integers(2015, 2024, size=10),
     "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-# Introduce some missing/dirty data intentionally
 data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0 # invalid
-data["name"][7] = " Khas "
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Group the DataFrame by one of the categorical columns (department, sensor_id, category).
-# 3. Calculate the \`.mean()\` for the numerical columns within each group.
-# 4. Calculate the \`.count()\` for each group to see how many records belong to each.
-`,    'w3_5-2': `# Complex: Advanced GroupBy and Aggregation
-# Scenario: Employee HR System
-import pandas as pd
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_5-2': `import pandas as pd
 import numpy as np
 
 rng = np.random.default_rng(2026)
@@ -2499,295 +1949,77 @@ data = {
     "hire_year": rng.integers(2015, 2024, size=10),
     "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-# Introduce some missing/dirty data intentionally
 data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0 # invalid
-data["name"][7] = " Khas "
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Group by the categorical column.
-# 3. Use the \`.agg()\` method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.
-# 4. Sort the resulting grouped table by the 'mean' value in descending order.
-# 5. Rename the multi-level columns if necessary, or just print the result.
-`,    'w3_6-0': `# Easy: Pivot Tables Basics
-# Scenario: E-Commerce Sales
-import pandas as pd
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_6-0': `import pandas as pd
 import numpy as np
 
-rng = np.random.default_rng(99)
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
 
 data = {
-    "order_id": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"],
-    "customer": ["Ari", "Bataa", "Ari", "Davaa", "Enkh", "Ari", "Ganaa", "Enkh", "Ider", "Jargal"],
-    "category": ["Electronics", "Clothing", "Electronics", "Books", "Clothing", "Books", "Electronics", "Books", "Clothing", "Electronics"],
-    "amount": rng.exponential(100, size=10).round(2),
-    "status": rng.choice(["completed", "pending", "cancelled"], size=10)
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
 }
-data["amount"][3] = np.nan
-data["status"][7] = "unknown"
-
-
-# 1. Create \`df\` from \`data\`.
-# 2. Use \`pd.pivot_table()\` to show the average numerical value (salary, temp, or amount) for each category (department, sensor_id, category).
-`,    'w3_6-1': `# Intermediate: Multi-dimensional Pivots
-# Scenario: Analyzing sales by Region and Year.
-import pandas as pd
-
-df = pd.DataFrame({
-    "Region": ["North", "North", "South", "South", "North"],
-    "Year": [2022, 2023, 2022, 2023, 2022],
-    "Sales": [100, 150, 200, 250, 50]
-})
-
-# 1. Create a pivot table with \`Region\` as the index, \`Year\` as columns, and \`Sales\` as values.
-# 2. Use aggfunc='sum' to combine the two North 2022 records.
-`,    'w3_6-2': `# Complex: Melt / Unpivot
-# Scenario: Converting wide data to long format.
-import pandas as pd
-
-wide_df = pd.DataFrame({
-    "Student": ["Ari", "Bataa"],
-    "Math": [90, 85],
-    "Science": [88, 92],
-    "History": [75, 80]
-})
-
-# 1. Use \`pd.melt()\` to convert this from wide format to long format.
-#    The resulting columns should be 'Student', 'Subject', and 'Score'.
-# 2. Sort the long DataFrame by 'Student'.
-`,    'w3_7-0': `# Easy: Concatenation
-# Scenario: Combine logs from two different servers.
-import pandas as pd
-
-df1 = pd.DataFrame({"id": [1, 2], "val": ["A", "B"]})
-df2 = pd.DataFrame({"id": [3, 4], "val": ["C", "D"]})
-
-# 1. Use pd.concat to stack df1 and df2 vertically.
-# 2. Ignore the index so the new DataFrame has a clean index from 0 to 3.
-`,    'w3_7-1': `# Intermediate: Merging (Inner Join)
-# Scenario: Link transaction data with customer profiles.
-import pandas as pd
-
-sales = pd.DataFrame({"cust_id": [101, 102, 103], "amount": [50, 100, 150]})
-customers = pd.DataFrame({"cust_id": [101, 103, 104], "name": ["Ari", "Bataa", "Caraa"]})
-
-# 1. Use pd.merge() to join \`sales\` and \`customers\` on \`cust_id\`.
-# 2. Print the result. Notice which \`cust_id\`s were dropped (inner join behavior).
-`,    'w3_7-2': `# Complex: Outer Joins and Indicators
-# Scenario: Reconcile two databases.
-import pandas as pd
-
-db_left = pd.DataFrame({"user": ["A", "B", "C"], "score1": [10, 20, 30]})
-db_right = pd.DataFrame({"user": ["B", "C", "D"], "score2": [40, 50, 60]})
-
-# 1. Perform an outer merge on \`user\`, setting \`indicator=True\`.
-# 2. Print the resulting DataFrame.
-# 3. Filter the DataFrame to show ONLY rows that were present in the left database but missing in the right database.
-`,    'w3_8-0': `# Easy: Datetime Conversion
-# Scenario: E-Commerce Sales
-import pandas as pd
-
-dates = pd.Series(["2026-01-01", "2026/02/01", "March 1st, 2026"])
-
-# 1. Use pd.to_datetime() to convert the varied string formats into consistent datetime objects.
-# 2. Extract the month from the datetime objects using \`.dt.month\`.
-`,    'w3_8-1': `# Intermediate: Date Ranges and Shifting
-import pandas as pd
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_6-1': `import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n# Write your code here:\n`,    'w3_6-2': `import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n# Write your code here:\n`,    'w3_7-0': `import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n# Write your code here:\n`,    'w3_7-1': `import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n# Write your code here:\n`,    'w3_7-2': `import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n# Write your code here:\n`,    'w3_8-0': `import pandas as pd
 import numpy as np
 
-# 1. Create a datetime index of 14 consecutive days starting today using pd.date_range.
-# 2. Create a Series with this index and random integer values.
-# 3. Use \`.shift(1)\` to shift the values down by one day.
-# 4. Calculate the daily difference (current day - previous day).
-`,    'w3_8-2': `# Complex: Resampling
-import pandas as pd
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
+
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_8-1': `import pandas as pd
 import numpy as np
 
-# 1. Create a datetime index of 100 consecutive HOURS.
-# 2. Create a DataFrame with this index and random values.
-# 3. Use \`.resample('D').mean()\` to aggregate the hourly data into DAILY averages.
-# 4. Print the resulting daily DataFrame.
-`,    'w6_0-0': `# Easy: Basic Pipeline
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
 
-# 1. Create a Scikit-Learn Pipeline with two steps:
-#    - a StandardScaler named "scaler"
-#    - a LogisticRegression model named "model"
-# 2. Print the pipeline object.
-`,    'w6_0-1': `# Intermediate: Fitting a Pipeline
-from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.tree import DecisionTreeClassifier
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w3_8-2': `import pandas as pd
 import numpy as np
 
-# Setup
-X = np.array([[1], [np.nan], [3], [4]])
-y = np.array([0, 0, 1, 1])
+rng = np.random.default_rng(2026)
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
+depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
 
-# 1. Create a Pipeline with a SimpleImputer (strategy='mean') and a DecisionTreeClassifier.
-# 2. Call \`.fit(X, y)\` on the pipeline.
-# 3. Predict on a new array \`X_new = [[np.nan], [2]]\`.
-`,    'w6_0-2': `# Complex: Accessing Pipeline Steps
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.linear_model import LinearRegression
-import numpy as np
-
-# Setup
-X = np.array([[10], [20], [30]])
-y = np.array([100, 200, 300])
-
-# 1. Create and fit a pipeline with MinMaxScaler and LinearRegression.
-# 2. Access the fitted LinearRegression model from inside the pipeline using the \`named_steps\` attribute.
-# 3. Print the \`.coef_\` of the fitted regression model.
-`,    'w6_1-0': `# Easy: Basic Pipeline
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-
-# 1. Create a Scikit-Learn Pipeline with two steps:
-#    - a StandardScaler named "scaler"
-#    - a LogisticRegression model named "model"
-# 2. Print the pipeline object.
-`,    'w6_1-1': `# Intermediate: Fitting a Pipeline
-from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.tree import DecisionTreeClassifier
-import numpy as np
-
-# Setup
-X = np.array([[1], [np.nan], [3], [4]])
-y = np.array([0, 0, 1, 1])
-
-# 1. Create a Pipeline with a SimpleImputer (strategy='mean') and a DecisionTreeClassifier.
-# 2. Call \`.fit(X, y)\` on the pipeline.
-# 3. Predict on a new array \`X_new = [[np.nan], [2]]\`.
-`,    'w6_1-2': `# Complex: Accessing Pipeline Steps
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.linear_model import LinearRegression
-import numpy as np
-
-# Setup
-X = np.array([[10], [20], [30]])
-y = np.array([100, 200, 300])
-
-# 1. Create and fit a pipeline with MinMaxScaler and LinearRegression.
-# 2. Access the fitted LinearRegression model from inside the pipeline using the \`named_steps\` attribute.
-# 3. Print the \`.coef_\` of the fitted regression model.
-`,    'w6_2-0': `# Easy: Simple Imputation
-from sklearn.impute import SimpleImputer
-import numpy as np
-
-# Setup
-X = np.array([[1.0, 2.0], [np.nan, 3.0], [7.0, np.nan]])
-
-# 1. Instantiate a SimpleImputer to replace NaNs with the mean.
-# 2. Fit and transform the data.
-# 3. Print the transformed array.
-`,    'w6_2-1': `# Intermediate: Scaling and Encoding
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-import numpy as np
-
-# Setup
-X_num = np.array([[100], [200], [300]])
-X_cat = np.array([["Red"], ["Blue"], ["Red"]])
-
-# 1. Fit and transform X_num using StandardScaler.
-# 2. Fit and transform X_cat using OneHotEncoder(sparse_output=False).
-# 3. Print both resulting arrays.
-`,    'w6_2-2': `# Complex: ColumnTransformer
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-import pandas as pd
-
-# Setup
-df = pd.DataFrame({
-    "age": [25, 30, 35],
-    "city": ["Paris", "London", "Paris"]
-})
-
-# 1. Create a ColumnTransformer that applies StandardScaler to "age" and OneHotEncoder to "city".
-# 2. Fit and transform the DataFrame.
-# 3. Print the resulting combined numpy array.
-`,    'w6_3-0': `# Easy: Simple Imputation
-from sklearn.impute import SimpleImputer
-import numpy as np
-
-# Setup
-X = np.array([[1.0, 2.0], [np.nan, 3.0], [7.0, np.nan]])
-
-# 1. Instantiate a SimpleImputer to replace NaNs with the mean.
-# 2. Fit and transform the data.
-# 3. Print the transformed array.
-`,    'w6_3-1': `# Intermediate: Scaling and Encoding
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-import numpy as np
-
-# Setup
-X_num = np.array([[100], [200], [300]])
-X_cat = np.array([["Red"], ["Blue"], ["Red"]])
-
-# 1. Fit and transform X_num using StandardScaler.
-# 2. Fit and transform X_cat using OneHotEncoder(sparse_output=False).
-# 3. Print both resulting arrays.
-`,    'w6_3-2': `# Complex: ColumnTransformer
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-import pandas as pd
-
-# Setup
-df = pd.DataFrame({
-    "age": [25, 30, 35],
-    "city": ["Paris", "London", "Paris"]
-})
-
-# 1. Create a ColumnTransformer that applies StandardScaler to "age" and OneHotEncoder to "city".
-# 2. Fit and transform the DataFrame.
-# 3. Print the resulting combined numpy array.
-`,    'w6_4-0': `# Easy: Basic Train-Test Split
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split
-
-# Setup
-X = np.arange(100).reshape((50, 2))
-y = np.arange(50)
-
-# 1. Use train_test_split to split X and y into 80% training and 20% testing sets.
-# 2. Set random_state=42 for reproducibility.
-# 3. Print the shapes of X_train and X_test.
-`,    'w6_4-1': `# Intermediate: Stratified Splitting
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split
-
-# Setup
-X = np.random.rand(100, 5)
-y = np.array([0]*90 + [1]*10) # Highly imbalanced target
-
-# 1. Split the data 70/30.
-# 2. Use the \`stratify\` parameter to ensure the train and test sets have the same proportion of 0s and 1s as the original y.
-# 3. Verify the proportions using np.mean(y_train) and np.mean(y_test).
-`,    'w6_4-2': `# Complex: Splitting Pandas DataFrames
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split
-
-# Setup
-df = pd.DataFrame({
-    "feature1": np.random.randn(100),
-    "feature2": np.random.randn(100),
-    "target": np.random.choice(["A", "B", "C"], size=100)
-})
-
-# 1. Separate \`df\` into \`X\` (features) and \`y\` (target).
-# 2. Perform a train_test_split.
-# 3. Verify that the indices of \`X_train\` and \`y_train\` perfectly match.
-`
+data = {
+    "emp_id": np.arange(1001, 1011),
+    "name": names,
+    "department": depts,
+    "salary": rng.integers(1000, 5000, size=10).astype(float),
+    "hire_year": rng.integers(2015, 2024, size=10),
+    "performance_score": rng.normal(75, 10, size=10).round(1)
+}
+data["salary"][2] = np.nan
+data["performance_score"][5] = -10.0
+\n# Write your code here:\n`,    'w6_0-0': `import sklearn\n\n# Code:\n`,    'w6_0-1': `import sklearn\n\n# Code:\n`,    'w6_0-2': `import sklearn\n\n# Code:\n`,    'w6_1-0': `import sklearn\n\n# Code:\n`,    'w6_1-1': `import sklearn\n\n# Code:\n`,    'w6_1-2': `import sklearn\n\n# Code:\n`,    'w6_2-0': `import sklearn\n\n# Code:\n`,    'w6_2-1': `import sklearn\n\n# Code:\n`,    'w6_2-2': `import sklearn\n\n# Code:\n`,    'w6_3-0': `import sklearn\n\n# Code:\n`,    'w6_3-1': `import sklearn\n\n# Code:\n`,    'w6_3-2': `import sklearn\n\n# Code:\n`,    'w6_4-0': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n`,    'w6_4-1': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n`,    'w6_4-2': `from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n`
 };
 
 function loadLesson(lessonId) {
