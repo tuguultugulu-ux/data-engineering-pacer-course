@@ -74,13 +74,21 @@ function togglePhase(element) {
 
 async function initPyodide() {
     try {
-        pyodideReadyPromise = loadPyodide({
+        pyodideStatus = "Initializing Python runtime...";
+        updatePyodideStatus();
+        
+        pyodideInstance = await loadPyodide({
             indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
         });
-        pyodideInstance = await pyodideReadyPromise;
-        pyodideStatus = "Loading Data Science packages (NumPy, Pandas, etc.)...";
+        
+        pyodideStatus = "Loading core packages (NumPy, Pandas)...";
         updatePyodideStatus();
-        await pyodideInstance.loadPackage(['numpy', 'pandas', 'scikit-learn']);
+        
+        try {
+            await pyodideInstance.loadPackage(['numpy', 'pandas']);
+        } catch (pkgErr) {
+            console.warn("Preloading packages failed, will load on import:", pkgErr);
+        }
         
         await pyodideInstance.runPythonAsync(`
 import sys, io, ast, traceback
@@ -123,7 +131,8 @@ def __run_user_code__(code_str):
         pyodideStatus = "Python Environment Ready ✓";
         updatePyodideStatus();
     } catch (err) {
-        pyodideStatus = "Error loading Python.";
+        console.error("Pyodide init error:", err);
+        pyodideStatus = "Error loading Python: " + (err.message || err);
         updatePyodideStatus();
     }
 }
@@ -4149,6 +4158,11 @@ async function runCode(cellId) {
     outputContainer.style.border = "1px solid #3498db";
     
     try {
+        try {
+            await pyodideInstance.loadPackagesFromImports(code);
+        } catch (e) {
+            console.warn("loadPackagesFromImports warning:", e);
+        }
         pyodideInstance.globals.set('_current_cell_code', code);
         const res = await pyodideInstance.runPythonAsync(`__run_user_code__(_current_cell_code)`);
         const [stdout, stderr] = res.toJs();
