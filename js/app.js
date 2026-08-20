@@ -22,6 +22,8 @@ window.addEventListener('keydown', function(e) {
 });
 
 
+
+
 function setActiveCell(cellId) {
     activeCellId = cellId;
     document.getElementById('active-cell-label').innerHTML = 'Target: <strong style="color: #3498db;">' + cellId + '</strong> - Ready to execute';
