@@ -108,9 +108,12 @@ const lessons = {
                 <strong>Scenario: Restaurant Orders</strong>\n1. Implement the basic functionality of 2. Introduction to NumPy.
             </div>
             <div class="editor-container" id="editor-w2_00-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_00-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_00-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_00-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_00-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_00-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -125,9 +128,12 @@ const lessons = {
                 <strong>Scenario: Restaurant Orders</strong>\n1. Handle edge cases for 2. Introduction to NumPy.
             </div>
             <div class="editor-container" id="editor-w2_00-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_00-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_00-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_00-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_00-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_00-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -142,9 +148,12 @@ const lessons = {
                 <strong>Scenario: Restaurant Orders</strong>\n1. Combine 2. Introduction to NumPy with boolean masks.
             </div>
             <div class="editor-container" id="editor-w2_00-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_00-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_00-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_00-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_00-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_00-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -159,9 +168,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - 2. Introduction to NumPy</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">2. Introduction to NumPy</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_00-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_00-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_00-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_00-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_00-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_00-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -197,9 +209,12 @@ const lessons = {
                 <strong>Scenario: Music Library</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
             </div>
             <div class="editor-container" id="editor-w2_01-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_01-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_01-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_01-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_01-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_01-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -214,9 +229,12 @@ const lessons = {
                 <strong>Scenario: Music Library</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
             </div>
             <div class="editor-container" id="editor-w2_01-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_01-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_01-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_01-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_01-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_01-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -231,9 +249,12 @@ const lessons = {
                 <strong>Scenario: Music Library</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
             </div>
             <div class="editor-container" id="editor-w2_01-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_01-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_01-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_01-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_01-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_01-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -248,9 +269,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Understanding Data Types in Python</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Understanding Data Types in Python</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_01-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_01-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_01-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_01-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_01-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_01-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -286,9 +310,12 @@ const lessons = {
                 <strong>Scenario: Zoo Animal Diet</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
             </div>
             <div class="editor-container" id="editor-w2_02-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_02-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_02-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_02-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_02-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_02-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -303,9 +330,12 @@ const lessons = {
                 <strong>Scenario: Zoo Animal Diet</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
             </div>
             <div class="editor-container" id="editor-w2_02-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_02-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_02-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_02-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_02-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_02-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -320,9 +350,12 @@ const lessons = {
                 <strong>Scenario: Zoo Animal Diet</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
             </div>
             <div class="editor-container" id="editor-w2_02-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_02-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_02-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_02-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_02-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_02-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -337,9 +370,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - The Basics of NumPy Arrays</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">The Basics of NumPy Arrays</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_02-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_02-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_02-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_02-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_02-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_02-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -375,9 +411,12 @@ const lessons = {
                 <strong>Scenario: Social Media Posts</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
             </div>
             <div class="editor-container" id="editor-w2_03-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_03-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_03-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_03-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_03-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_03-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -392,9 +431,12 @@ const lessons = {
                 <strong>Scenario: Social Media Posts</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
             </div>
             <div class="editor-container" id="editor-w2_03-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_03-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_03-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_03-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_03-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_03-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -409,9 +451,12 @@ const lessons = {
                 <strong>Scenario: Social Media Posts</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
             </div>
             <div class="editor-container" id="editor-w2_03-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_03-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_03-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_03-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_03-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_03-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -426,9 +471,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Computation on NumPy Arrays: Universal Functions</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Computation on NumPy Arrays: Universal Functions</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_03-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_03-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_03-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_03-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_03-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_03-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -464,9 +512,12 @@ const lessons = {
                 <strong>Scenario: Streaming Service Views</strong><br>1. Find the min, max, and mean of the scores.<br>2. Find the index of the highest score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argmax</code>.<br>3. Find the median score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.median</code>.
             </div>
             <div class="editor-container" id="editor-w2_04-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_04-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_04-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_04-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_04-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_04-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -481,9 +532,12 @@ const lessons = {
                 <strong>Scenario: Streaming Service Views</strong><br>1. Calculate the mean score for each student (axis=1). Notice what NaN does.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmean</code> to calculate the mean score for each student while ignoring NaNs.<br>3. Find the maximum score achieved on each exam (axis=0) using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmax</code>.
             </div>
             <div class="editor-container" id="editor-w2_04-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_04-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_04-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_04-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_04-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_04-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -498,9 +552,12 @@ const lessons = {
                 <strong>Scenario: Streaming Service Views</strong><br>1. Find the total sum of all elements.<br>2. Find the maximum value for each week (reduce across days and hours).<br>3. Find the average value for each hour of the day (average across weeks and days).<br>4. Verify the shape of the result from step 3 is (8,).
             </div>
             <div class="editor-container" id="editor-w2_04-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_04-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_04-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_04-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_04-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_04-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -515,9 +572,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Aggregations: Min, Max, and Everything In Between</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Aggregations: Min, Max, and Everything In Between</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_04-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_04-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_04-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_04-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_04-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_04-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -553,9 +613,12 @@ const lessons = {
                 <strong>Scenario: Gym Memberships</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
             </div>
             <div class="editor-container" id="editor-w2_05-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_05-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_05-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_05-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_05-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_05-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -570,9 +633,12 @@ const lessons = {
                 <strong>Scenario: Gym Memberships</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
             </div>
             <div class="editor-container" id="editor-w2_05-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_05-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_05-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_05-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_05-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_05-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -587,9 +653,12 @@ const lessons = {
                 <strong>Scenario: Gym Memberships</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
             </div>
             <div class="editor-container" id="editor-w2_05-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_05-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_05-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_05-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_05-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_05-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -604,9 +673,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Computation on Arrays: Broadcasting</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Computation on Arrays: Broadcasting</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_05-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_05-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_05-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_05-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_05-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_05-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -642,9 +714,12 @@ const lessons = {
                 <strong>Scenario: Bank Loan Approvals</strong><br>1. Create a boolean mask for ages >= 18.<br>2. Print the mask itself.<br>3. Use the mask to extract and print only the adult ages.
             </div>
             <div class="editor-container" id="editor-w2_06-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_06-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_06-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_06-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_06-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_06-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -659,9 +734,12 @@ const lessons = {
                 <strong>Scenario: Bank Loan Approvals</strong><br>1. Create a mask for temperatures that are "comfortable": between 15 and 25 inclusive.<br>2. Use the mask to extract the comfortable temperatures.<br>3. Count how many comfortable temperatures there are using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.count_nonzero()</code>.<br>4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).
             </div>
             <div class="editor-container" id="editor-w2_06-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_06-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_06-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_06-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_06-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_06-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -676,9 +754,12 @@ const lessons = {
                 <strong>Scenario: Bank Loan Approvals</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where</code> to create a new array: if value > 120, set to "High", else "Normal".<br>2. Replace all values in the original array that are negative with 0 (using boolean indexing).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.clip</code> to restrict the array values to a minimum of 50 and maximum of 150.
             </div>
             <div class="editor-container" id="editor-w2_06-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_06-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_06-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_06-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_06-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_06-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -693,9 +774,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Comparisons, Masks, and Boolean Logic</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Comparisons, Masks, and Boolean Logic</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_06-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_06-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_06-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_06-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_06-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_06-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -731,9 +815,12 @@ const lessons = {
                 <strong>Scenario: Hotel Bookings</strong><br>1. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">indices</code> list to extract elements "A", "D", and "F" in one operation.<br>2. Create a new index array <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">[5, 5, 5]</code> and use it to extract "F" three times.
             </div>
             <div class="editor-container" id="editor-w2_07-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_07-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_07-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_07-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_07-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_07-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -748,9 +835,12 @@ const lessons = {
                 <strong>Scenario: Hotel Bookings</strong><br>1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.<br>2. Extract the entire 1st and 3rd rows using fancy indexing.<br>3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.
             </div>
             <div class="editor-container" id="editor-w2_07-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_07-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_07-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_07-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_07-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_07-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -765,9 +855,12 @@ const lessons = {
                 <strong>Scenario: Hotel Bookings</strong><br>1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.<br>2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.<br>3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.
             </div>
             <div class="editor-container" id="editor-w2_07-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_07-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_07-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_07-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_07-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_07-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -782,9 +875,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Fancy Indexing</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Fancy Indexing</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_07-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_07-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_07-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_07-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_07-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_07-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -820,9 +916,12 @@ const lessons = {
                 <strong>Scenario: Retail Store Stock</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sort()</code> to return a sorted copy of the data.<br>2. Call the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.sort()</code> method on the array to sort it in-place.<br>3. Verify the array is sorted.
             </div>
             <div class="editor-container" id="editor-w2_08-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_08-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_08-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_08-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_08-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_08-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -837,9 +936,12 @@ const lessons = {
                 <strong>Scenario: Retail Store Stock</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argsort()</code> on the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">scores</code> array to get the sorted indices.<br>2. Use those indices to print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">names</code> array in order of lowest to highest score.<br>3. Reverse the indices to print the names from highest to lowest score.
             </div>
             <div class="editor-container" id="editor-w2_08-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_08-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_08-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_08-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_08-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_08-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -854,9 +956,12 @@ const lessons = {
                 <strong>Scenario: Retail Store Stock</strong><br>1. Sort each column of the matrix independently (axis=0).<br>2. Sort each row of the matrix independently (axis=1).<br>3. Sort the entire matrix ROWS based entirely on the values in the 2nd column. (Hint: Use argsort on the 2nd column, then fancy index the rows).
             </div>
             <div class="editor-container" id="editor-w2_08-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_08-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_08-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_08-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_08-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_08-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -871,9 +976,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Sorting Arrays</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Sorting Arrays</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_08-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_08-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_08-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_08-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_08-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_08-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -909,9 +1017,12 @@ const lessons = {
                 <strong>Scenario: Hospital Pharmacy</strong>\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.
             </div>
             <div class="editor-container" id="editor-w2_09-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_09-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_09-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_09-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_09-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_09-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -926,9 +1037,12 @@ const lessons = {
                 <strong>Scenario: Hospital Pharmacy</strong>\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.
             </div>
             <div class="editor-container" id="editor-w2_09-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_09-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_09-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_09-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_09-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_09-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -943,9 +1057,12 @@ const lessons = {
                 <strong>Scenario: Hospital Pharmacy</strong>\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.
             </div>
             <div class="editor-container" id="editor-w2_09-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_09-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_09-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_09-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_09-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_09-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -960,9 +1077,12 @@ const lessons = {
                 <strong>Mastery Challenge: NumPy - Structured Data: NumPy's Structured Arrays</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Structured Data: NumPy's Structured Arrays</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
             </div>
             <div class="editor-container" id="editor-w2_09-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_09-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w2_09-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_09-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_09-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_09-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -998,9 +1118,12 @@ const lessons = {
                 1. Implement the plotting basics for 4. Visualization with Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_00-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_00-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_00-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_00-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_00-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_00-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1015,9 +1138,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_00-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_00-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_00-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_00-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_00-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_00-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1032,9 +1158,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_00-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_00-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_00-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_00-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_00-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_00-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1049,9 +1178,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - 4. Visualization with Matplotlib</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_00-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_00-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_00-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_00-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_00-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_00-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1087,9 +1219,12 @@ const lessons = {
                 1. Implement the plotting basics for Simple Line Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_01-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_01-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_01-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_01-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_01-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_01-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1104,9 +1239,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_01-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_01-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_01-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_01-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_01-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_01-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1121,9 +1259,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_01-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_01-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_01-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_01-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_01-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_01-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1138,9 +1279,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Simple Line Plots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_01-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_01-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_01-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_01-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_01-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_01-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1176,9 +1320,12 @@ const lessons = {
                 1. Implement the plotting basics for Simple Scatter Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_02-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_02-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_02-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_02-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_02-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_02-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1193,9 +1340,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_02-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_02-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_02-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_02-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_02-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_02-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1210,9 +1360,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_02-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_02-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_02-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_02-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_02-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_02-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1227,9 +1380,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Simple Scatter Plots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_02-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_02-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_02-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_02-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_02-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_02-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1265,9 +1421,12 @@ const lessons = {
                 1. Implement the plotting basics for Visualizing Errors. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_03-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_03-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_03-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_03-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_03-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_03-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1282,9 +1441,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_03-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_03-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_03-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_03-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_03-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_03-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1299,9 +1461,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_03-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_03-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_03-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_03-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_03-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_03-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1316,9 +1481,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Visualizing Errors</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_03-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_03-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_03-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_03-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_03-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_03-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1354,9 +1522,12 @@ const lessons = {
                 1. Implement the plotting basics for Density and Contour Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_04-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_04-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_04-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_04-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_04-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_04-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1371,9 +1542,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_04-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_04-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_04-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_04-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_04-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_04-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1388,9 +1562,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_04-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_04-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_04-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_04-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_04-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_04-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1405,9 +1582,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Density and Contour Plots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_04-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_04-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_04-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_04-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_04-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_04-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1443,9 +1623,12 @@ const lessons = {
                 1. Implement the plotting basics for Histograms, Binnings, and Density. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_05-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_05-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_05-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_05-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_05-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_05-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1460,9 +1643,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_05-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_05-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_05-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_05-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_05-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_05-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1477,9 +1663,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_05-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_05-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_05-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_05-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_05-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_05-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1494,9 +1683,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Histograms, Binnings, and Density</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_05-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_05-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_05-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_05-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_05-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_05-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1532,9 +1724,12 @@ const lessons = {
                 1. Implement the plotting basics for Customizing Plot Legends. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_06-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_06-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_06-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_06-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_06-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_06-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1549,9 +1744,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_06-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_06-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_06-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_06-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_06-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_06-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1566,9 +1764,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_06-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_06-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_06-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_06-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_06-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_06-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1583,9 +1784,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Customizing Plot Legends</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_06-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_06-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_06-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_06-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_06-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_06-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1621,9 +1825,12 @@ const lessons = {
                 1. Implement the plotting basics for Customizing Colorbars. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_07-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_07-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_07-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_07-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_07-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_07-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1638,9 +1845,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_07-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_07-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_07-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_07-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_07-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_07-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1655,9 +1865,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_07-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_07-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_07-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_07-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_07-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_07-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1672,9 +1885,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Customizing Colorbars</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_07-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_07-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_07-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_07-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_07-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_07-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1710,9 +1926,12 @@ const lessons = {
                 1. Implement the plotting basics for Multiple Subplots. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_08-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_08-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_08-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_08-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_08-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_08-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1727,9 +1946,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_08-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_08-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_08-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_08-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_08-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_08-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1744,9 +1966,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_08-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_08-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_08-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_08-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_08-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_08-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1761,9 +1986,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Multiple Subplots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_08-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_08-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_08-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_08-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_08-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_08-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1799,9 +2027,12 @@ const lessons = {
                 1. Implement the plotting basics for Text and Annotation. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_09-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_09-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_09-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_09-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_09-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_09-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1816,9 +2047,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_09-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_09-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_09-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_09-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_09-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_09-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1833,9 +2067,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_09-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_09-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_09-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_09-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_09-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_09-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1850,9 +2087,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Text and Annotation</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_09-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_09-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_09-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_09-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_09-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_09-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1888,9 +2128,12 @@ const lessons = {
                 1. Implement the plotting basics for Customizing Ticks. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_10-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_10-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_10-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_10-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_10-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_10-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1905,9 +2148,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_10-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_10-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_10-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_10-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_10-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_10-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1922,9 +2168,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_10-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_10-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_10-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_10-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_10-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_10-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1939,9 +2188,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Customizing Ticks</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_10-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_10-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_10-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_10-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_10-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_10-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1977,9 +2229,12 @@ const lessons = {
                 1. Implement the plotting basics for Customizing Matplotlib: Configurations and Stylesheets. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_11-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_11-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_11-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_11-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_11-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_11-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -1994,9 +2249,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_11-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_11-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_11-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_11-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_11-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_11-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2011,9 +2269,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_11-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_11-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_11-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_11-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_11-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_11-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2028,9 +2289,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Customizing Matplotlib: Configurations and Stylesheets</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_11-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_11-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_11-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_11-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_11-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_11-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2066,9 +2330,12 @@ const lessons = {
                 1. Implement the plotting basics for Three-Dimensional Plotting in Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_12-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_12-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_12-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_12-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_12-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_12-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2083,9 +2350,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_12-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_12-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_12-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_12-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_12-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_12-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2100,9 +2370,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_12-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_12-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_12-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_12-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_12-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_12-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2117,9 +2390,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Three-Dimensional Plotting in Matplotlib</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_12-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_12-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_12-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_12-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_12-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_12-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2155,9 +2431,12 @@ const lessons = {
                 1. Implement the plotting basics for Geographic Data with Basemap. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_13-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_13-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_13-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_13-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_13-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_13-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2172,9 +2451,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_13-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_13-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_13-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_13-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_13-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_13-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2189,9 +2471,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_13-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_13-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_13-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_13-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_13-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_13-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2206,9 +2491,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Geographic Data with Basemap</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_13-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_13-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_13-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_13-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_13-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_13-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2244,9 +2532,12 @@ const lessons = {
                 1. Implement the plotting basics for Visualization with Seaborn. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_14-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_14-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_14-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_14-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_14-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_14-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2261,9 +2552,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_14-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_14-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_14-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_14-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_14-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_14-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2278,9 +2572,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_14-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_14-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_14-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_14-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_14-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_14-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2295,9 +2592,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Visualization with Seaborn</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_14-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_14-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_14-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_14-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_14-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_14-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2333,9 +2633,12 @@ const lessons = {
                 1. Implement the plotting basics for Further Resources. (Note: Plots don't render in the browser sandbox, but write the correct code).
             </div>
             <div class="editor-container" id="editor-w4_15-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_15-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_15-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_15-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_15-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_15-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2350,9 +2653,12 @@ const lessons = {
                 1. Add labels, titles, and legends.
             </div>
             <div class="editor-container" id="editor-w4_15-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_15-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_15-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_15-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_15-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_15-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2367,9 +2673,12 @@ const lessons = {
                 1. Create multiple subplots.
             </div>
             <div class="editor-container" id="editor-w4_15-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_15-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_15-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_15-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_15-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_15-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2384,9 +2693,12 @@ const lessons = {
                 <strong>Mastery Challenge: Matplotlib - Further Resources</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
             </div>
             <div class="editor-container" id="editor-w4_15-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_15-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w4_15-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_15-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_15-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_15-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2420,9 +2732,12 @@ const lessons = {
                 <strong>Scenario: Marketing Campaign ROI</strong><br>1. Convert the 'name' list from the data dict into a Pandas Series named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">name_series</code>.<br>2. Print the first 3 elements of the Series.<br>3. Create a Series for 'salary' and find its mean.
             </div>
             <div class="editor-container" id="editor-w3_0-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_0-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_0-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_0-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_0-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_0-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2437,9 +2752,12 @@ const lessons = {
                 <strong>Scenario: Marketing Campaign ROI</strong><br>1. Convert the entire <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> dictionary into a Pandas DataFrame named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.shape</code>, <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.columns</code>, and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.dtypes</code>.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.head()</code> to show the first 4 rows.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.info()</code> to inspect missing values.
             </div>
             <div class="editor-container" id="editor-w3_0-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_0-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_0-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_0-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_0-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_0-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2454,9 +2772,12 @@ const lessons = {
                 <strong>Scenario: Marketing Campaign ROI</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Set the index of the DataFrame to be the ID column.<br>3. Select only the numerical columns.<br>4. Sort the DataFrame by the last column in descending order.<br>5. Extract the top 3 rows into a new DataFrame.
             </div>
             <div class="editor-container" id="editor-w3_0-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_0-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_0-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_0-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_0-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_0-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2471,9 +2792,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - What kind of data does pandas handle?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">What kind of data does pandas handle?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_0-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_0-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_0-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_0-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_0-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_0-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2507,9 +2831,12 @@ const lessons = {
                 <strong>Scenario: Bank Loan Approvals</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Save the DataFrame to a CSV string using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.to_csv(index=False)</code>.<br>3. Print the resulting CSV string.
             </div>
             <div class="editor-container" id="editor-w3_1-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_1-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_1-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_1-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_1-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_1-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2524,9 +2851,12 @@ const lessons = {
                 <strong>Scenario: Bank Loan Approvals</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">io.StringIO(csv_text)</code> to read the CSV into a DataFrame.<br>2. Inspect the dtypes. Notice that 'value' is an object (string) because of "invalid".<br>3. Convert 'value' to numeric using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.to_numeric(..., errors='coerce')</code>.<br>4. Check the dtypes again and print the missing value count.
             </div>
             <div class="editor-container" id="editor-w3_1-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_1-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_1-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_1-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_1-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_1-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2541,9 +2871,12 @@ const lessons = {
                 <strong>Scenario: Bank Loan Approvals</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Export the DataFrame to JSON using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">to_json(orient='records')</code>.<br>3. Read the JSON string back into a new DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code>.<br>4. Assert or verify that the shape and columns of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code> match the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>5. Explain in a comment why orient='records' is often preferred for web APIs.
             </div>
             <div class="editor-container" id="editor-w3_1-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_1-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_1-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_1-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_1-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_1-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2558,9 +2891,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How do I read and write tabular data?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How do I read and write tabular data?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_1-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_1-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_1-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_1-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_1-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_1-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2594,9 +2930,12 @@ const lessons = {
                 <strong>Scenario: Social Media Posts</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Select just the first column (e.g. name or timestamp) as a Series.<br>3. Select the first column AND the last column as a DataFrame (use a list of columns).
             </div>
             <div class="editor-container" id="editor-w3_2-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_2-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_2-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_2-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_2-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_2-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2611,9 +2950,12 @@ const lessons = {
                 <strong>Scenario: Social Media Posts</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Change the index to be non-sequential (e.g., <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.index = [10, 20, 30...]</code>).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.iloc</code> to select the exactly 3rd row (integer position).<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select rows based on a specific label from your new index.<br>5. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select the 3rd row BUT only the first two columns.
             </div>
             <div class="editor-container" id="editor-w3_2-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_2-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_2-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_2-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_2-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_2-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2628,9 +2970,12 @@ const lessons = {
                 <strong>Scenario: Social Media Posts</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.<br>3. Filter for rows where a categorical column equals a specific value, AND a numerical column is not null.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.isin()</code> to filter for rows matching two different categorical values.<br>5. Reset the index of the final filtered DataFrame.
             </div>
             <div class="editor-container" id="editor-w3_2-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_2-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_2-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_2-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_2-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_2-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2645,9 +2990,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How do I select a subset of a DataFrame?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How do I select a subset of a DataFrame?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_2-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_2-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_2-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_2-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_2-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_2-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2681,9 +3029,12 @@ const lessons = {
                 1. Implement the basics for How do I create plots in pandas?.
             </div>
             <div class="editor-container" id="editor-w3_3-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_3-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_3-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_3-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_3-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_3-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2698,9 +3049,12 @@ const lessons = {
                 1. Apply advanced concepts for How do I create plots in pandas?.
             </div>
             <div class="editor-container" id="editor-w3_3-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_3-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_3-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_3-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_3-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_3-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2715,9 +3069,12 @@ const lessons = {
                 1. Create a mini pipeline using How do I create plots in pandas?.
             </div>
             <div class="editor-container" id="editor-w3_3-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_3-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_3-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_3-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_3-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_3-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2732,9 +3089,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How do I create plots in pandas?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How do I create plots in pandas?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_3-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_3-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_3-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_3-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_3-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_3-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2768,9 +3128,12 @@ const lessons = {
                 <strong>Scenario: Crypto Portfolio</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a new column that is exactly double the value of an existing numerical column.<br>3. Create a static column called <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data_source</code> and set all its values to "System A".
             </div>
             <div class="editor-container" id="editor-w3_4-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_4-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_4-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_4-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_4-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_4-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2785,9 +3148,12 @@ const lessons = {
                 <strong>Scenario: Crypto Portfolio</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a boolean column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> which is True if the numerical column is greater than its mean.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where()</code> to create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">status_label</code>: if <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> is True, set to "Priority", else "Standard".
             </div>
             <div class="editor-container" id="editor-w3_4-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_4-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_4-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_4-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_4-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_4-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2802,9 +3168,12 @@ const lessons = {
                 <strong>Scenario: Crypto Portfolio</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df = pd.DataFrame(data)</code>.<br>2. Clean the numerical column (fill NaNs).<br>3. Create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">normalized_score</code>: subtract the min and divide by (max - min) for the numerical column.<br>4. Create a categorical column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">band</code> using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.cut()</code> to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.
             </div>
             <div class="editor-container" id="editor-w3_4-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_4-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_4-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_4-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_4-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_4-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2819,9 +3188,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How to create new columns derived from existing columns</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to create new columns derived from existing columns</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_4-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_4-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_4-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_4-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_4-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_4-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2855,9 +3227,12 @@ const lessons = {
                 <strong>Scenario: Music Library</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.describe()</code> to print summary statistics for all numeric columns.<br>3. Find the exact median of the numerical columns.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.value_counts()</code> on one of the categorical columns to see the distribution.
             </div>
             <div class="editor-container" id="editor-w3_5-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_5-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_5-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_5-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_5-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_5-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2872,9 +3247,12 @@ const lessons = {
                 <strong>Scenario: Music Library</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group the DataFrame by one of the categorical columns.<br>3. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.mean()</code> for the numerical columns within each group.<br>4. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.count()</code> for each group to see how many records belong to each.
             </div>
             <div class="editor-container" id="editor-w3_5-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_5-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_5-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_5-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_5-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_5-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2889,9 +3267,12 @@ const lessons = {
                 <strong>Scenario: Music Library</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group by the categorical column.<br>3. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.agg()</code> method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.<br>4. Sort the resulting grouped table by the 'mean' value in descending order.
             </div>
             <div class="editor-container" id="editor-w3_5-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_5-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_5-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_5-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_5-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_5-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2906,9 +3287,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How to calculate summary statistics</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to calculate summary statistics</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_5-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_5-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_5-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_5-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_5-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_5-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2942,9 +3326,12 @@ const lessons = {
                 <strong>Scenario: Library Book Loans</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.pivot_table()</code> to show the average numerical value for each category (e.g. department, sensor_id).
             </div>
             <div class="editor-container" id="editor-w3_6-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_6-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_6-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_6-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_6-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_6-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2959,9 +3346,12 @@ const lessons = {
                 <strong>Scenario: Analyzing sales by Region and Year.</strong><br>1. Create a pivot table with <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Region</code> as the index, <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Year</code> as columns, and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Sales</code> as values.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">aggfunc='sum'</code> to combine the two North 2022 records.
             </div>
             <div class="editor-container" id="editor-w3_6-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_6-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_6-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_6-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_6-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_6-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2976,9 +3366,12 @@ const lessons = {
                 <strong>Scenario: Converting wide data to long format.</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.melt()</code> to convert this from wide format to long format. The resulting columns should be 'Student', 'Subject', and 'Score'.<br>2. Sort the long DataFrame by 'Student'.
             </div>
             <div class="editor-container" id="editor-w3_6-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_6-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_6-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_6-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_6-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_6-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -2993,9 +3386,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How to reshape the layout of tables</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to reshape the layout of tables</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_6-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_6-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_6-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_6-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_6-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_6-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3029,9 +3425,12 @@ const lessons = {
                 <strong>Scenario: Combine logs from two servers.</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.concat</code> to stack <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df1</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df2</code> vertically.<br>2. Ignore the index so the new DataFrame has a clean index from 0 to 3.
             </div>
             <div class="editor-container" id="editor-w3_7-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_7-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_7-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_7-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_7-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_7-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3046,9 +3445,12 @@ const lessons = {
                 <strong>Scenario: Link transactions with profiles.</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.merge()</code> to join <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sales</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">customers</code> on <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">cust_id</code>.<br>2. Print the result. Notice which <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">cust_id</code>s were dropped (inner join behavior).
             </div>
             <div class="editor-container" id="editor-w3_7-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_7-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_7-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_7-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_7-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_7-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3063,9 +3465,12 @@ const lessons = {
                 <strong>Scenario: Reconcile two databases.</strong><br>1. Perform an outer merge on <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">user</code>, setting <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">indicator=True</code>.<br>2. Print the resulting DataFrame.<br>3. Filter the DataFrame to show ONLY rows that were present in the left database but missing in the right database.
             </div>
             <div class="editor-container" id="editor-w3_7-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_7-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_7-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_7-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_7-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_7-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3080,9 +3485,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How to combine data from multiple tables</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to combine data from multiple tables</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_7-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_7-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_7-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_7-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_7-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_7-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3116,9 +3524,12 @@ const lessons = {
                 1. Implement the basics for How to handle time series data with ease.
             </div>
             <div class="editor-container" id="editor-w3_8-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_8-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_8-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_8-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_8-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_8-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3133,9 +3544,12 @@ const lessons = {
                 1. Apply advanced concepts for How to handle time series data with ease.
             </div>
             <div class="editor-container" id="editor-w3_8-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_8-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_8-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_8-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_8-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_8-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3150,9 +3564,12 @@ const lessons = {
                 1. Create a mini pipeline using How to handle time series data with ease.
             </div>
             <div class="editor-container" id="editor-w3_8-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_8-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_8-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_8-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_8-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_8-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3167,9 +3584,12 @@ const lessons = {
                 <strong>Mastery Challenge: Pandas - How to handle time series data with ease</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to handle time series data with ease</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
             </div>
             <div class="editor-container" id="editor-w3_8-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_8-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w3_8-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_8-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_8-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_8-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3210,9 +3630,12 @@ const lessons = {
                 1. Implement the basics for Getting Started with Scikit-learn.
             </div>
             <div class="editor-container" id="editor-w6_0-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_0-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_0-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_0-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_0-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_0-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3227,9 +3650,12 @@ const lessons = {
                 1. Apply advanced concepts for Getting Started with Scikit-learn.
             </div>
             <div class="editor-container" id="editor-w6_0-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_0-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_0-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_0-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_0-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_0-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3244,9 +3670,12 @@ const lessons = {
                 1. Combine Getting Started with Scikit-learn with pipelines.
             </div>
             <div class="editor-container" id="editor-w6_0-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_0-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_0-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_0-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_0-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_0-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3261,9 +3690,12 @@ const lessons = {
                 <strong>Mastery Challenge: Scikit-Learn - Getting Started with Scikit-learn</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Getting Started with Scikit-learn</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
             </div>
             <div class="editor-container" id="editor-w6_0-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_0-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_0-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_0-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_0-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_0-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3297,9 +3729,12 @@ const lessons = {
                 1. Implement the basics for Pipeline Documentation.
             </div>
             <div class="editor-container" id="editor-w6_1-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_1-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_1-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_1-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_1-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_1-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3314,9 +3749,12 @@ const lessons = {
                 1. Apply advanced concepts for Pipeline Documentation.
             </div>
             <div class="editor-container" id="editor-w6_1-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_1-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_1-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_1-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_1-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_1-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3331,9 +3769,12 @@ const lessons = {
                 1. Combine Pipeline Documentation with pipelines.
             </div>
             <div class="editor-container" id="editor-w6_1-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_1-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_1-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_1-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_1-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_1-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3348,9 +3789,12 @@ const lessons = {
                 <strong>Mastery Challenge: Scikit-Learn - Pipeline Documentation</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline Documentation</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
             </div>
             <div class="editor-container" id="editor-w6_1-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_1-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_1-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_1-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_1-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_1-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3384,9 +3828,12 @@ const lessons = {
                 1. Implement the basics for ColumnTransformer Documentation.
             </div>
             <div class="editor-container" id="editor-w6_2-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_2-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_2-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_2-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_2-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_2-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3401,9 +3848,12 @@ const lessons = {
                 1. Apply advanced concepts for ColumnTransformer Documentation.
             </div>
             <div class="editor-container" id="editor-w6_2-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_2-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_2-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_2-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_2-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_2-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3418,9 +3868,12 @@ const lessons = {
                 1. Combine ColumnTransformer Documentation with pipelines.
             </div>
             <div class="editor-container" id="editor-w6_2-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_2-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_2-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_2-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_2-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_2-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3435,9 +3888,12 @@ const lessons = {
                 <strong>Mastery Challenge: Scikit-Learn - ColumnTransformer Documentation</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer Documentation</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
             </div>
             <div class="editor-container" id="editor-w6_2-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_2-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_2-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_2-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_2-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_2-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3471,9 +3927,12 @@ const lessons = {
                 1. Implement the basics for Preprocessing Data.
             </div>
             <div class="editor-container" id="editor-w6_3-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_3-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_3-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_3-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_3-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_3-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3488,9 +3947,12 @@ const lessons = {
                 1. Apply advanced concepts for Preprocessing Data.
             </div>
             <div class="editor-container" id="editor-w6_3-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_3-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_3-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_3-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_3-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_3-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3505,9 +3967,12 @@ const lessons = {
                 1. Combine Preprocessing Data with pipelines.
             </div>
             <div class="editor-container" id="editor-w6_3-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_3-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_3-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_3-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_3-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_3-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3522,9 +3987,12 @@ const lessons = {
                 <strong>Mastery Challenge: Scikit-Learn - Preprocessing Data</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Preprocessing Data</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
             </div>
             <div class="editor-container" id="editor-w6_3-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_3-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_3-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_3-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_3-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_3-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3558,9 +4026,12 @@ const lessons = {
                 <strong>Scenario: Model Validation</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">train_test_split</code> to split X and y into 80% training and 20% testing sets.<br>2. Set <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">random_state=42</code> for reproducibility.<br>3. Print the shapes of X_train and X_test.
             </div>
             <div class="editor-container" id="editor-w6_4-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_4-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_4-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_4-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_4-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_4-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3575,9 +4046,12 @@ const lessons = {
                 <strong>Scenario: Imbalanced Target</strong><br>1. Split the data 70/30.<br>2. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">stratify</code> parameter to ensure the train and test sets have the same proportion of 0s and 1s as the original y.<br>3. Verify the proportions using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.mean(y_train)</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.mean(y_test)</code>.
             </div>
             <div class="editor-container" id="editor-w6_4-1"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_4-1')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_4-1')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_4-1')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_4-1')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_4-1" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3592,9 +4066,12 @@ const lessons = {
                 <strong>Scenario: DataFrame Pipelines</strong><br>1. Separate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> into <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">X</code> (features) and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">y</code> (target).<br>2. Perform a train_test_split.<br>3. Verify that the indices of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">X_train</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">y_train</code> perfectly match.
             </div>
             <div class="editor-container" id="editor-w6_4-2"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_4-2')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_4-2')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_4-2')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_4-2')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_4-2" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3609,9 +4086,12 @@ const lessons = {
                 <strong>Mastery Challenge: Scikit-Learn - Train Test Split</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Train Test Split</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
             </div>
             <div class="editor-container" id="editor-w6_4-3"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_4-3')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Run Cell</button>
-                <button onclick="toggleRabbit('w6_4-3')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_4-3')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_4-3')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Run Cell</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_4-3" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3633,9 +4113,12 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_exam-0">
             <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
             <div class="editor-container" id="editor-w2_exam-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w2_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Submit Exam</button>
-                <button onclick="toggleRabbit('w2_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w2_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w2_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Submit Exam</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w2_exam-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3656,9 +4139,12 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_exam-0">
             <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
             <div class="editor-container" id="editor-w3_exam-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w3_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Submit Exam</button>
-                <button onclick="toggleRabbit('w3_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w3_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w3_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Submit Exam</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w3_exam-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3679,9 +4165,12 @@ const lessons = {
         <div class="notebook-cell" id="cell-w4_exam-0">
             <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
             <div class="editor-container" id="editor-w4_exam-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w4_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Submit Exam</button>
-                <button onclick="toggleRabbit('w4_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w4_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w4_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Submit Exam</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w4_exam-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>
@@ -3702,9 +4191,12 @@ const lessons = {
         <div class="notebook-cell" id="cell-w6_exam-0">
             <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
             <div class="editor-container" id="editor-w6_exam-0"></div>
-            <div class="controls" style="display: flex; gap: 10px;">
-                <button onclick="runCode('w6_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">▶ Submit Exam</button>
-                <button onclick="toggleRabbit('w6_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">🔍 Code Rabbit Review</button>
+            <div class="cell-footer" style="background-color: #f8f9fa; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px;">
+                <span style="color: #6c757d; font-size: 0.85em; font-family: monospace;">Environment: Pyodide (Python 3.10)</span>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="toggleRabbit('w6_exam-0')" style="background-color: #f39c12; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">🔍 Code Rabbit Review</button>
+                    <button onclick="runCode('w6_exam-0')" style="background-color: var(--success-color); color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.9em;">▶ Submit Exam</button>
+                </div>
             </div>
             <div class="review-panel" id="rabbit-w6_exam-0" style="display: none; background: #fff3cd; padding: 15px; margin-top: 10px; border-left: 4px solid #f39c12;">
                 <strong>🔍 Code Rabbit says:</strong><br>

@@ -34,6 +34,24 @@
         
         .external-link-btn { display: inline-block; padding: 15px 30px; font-size: 1.2rem; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 8px; margin: 20px 0; text-align: center; }
         .external-link-btn:hover { background-color: #2980b9; }
+    
+        .CodeMirror {
+            border: 1px solid #ddd !important;
+            border-bottom: none !important;
+            border-radius: 6px 6px 0 0 !important;
+            font-size: 14px;
+        }
+        .output-container {
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            margin-top: 10px;
+        }
+        .notebook-cell {
+            border: none;
+            margin-bottom: 40px;
+        }
+
     </style>
 </head>
 <body>
@@ -141,6 +159,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
-    <script src="js/app.js?v=150"></script>
+    <script src="js/app.js?v=160"></script>
 </body>
 </html>
