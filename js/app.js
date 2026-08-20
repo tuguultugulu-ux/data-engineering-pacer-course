@@ -59,58 +59,59 @@ const lessons = {
             <li><span class="badge">E</span> <strong>Evidence:</strong> Visuals, datasets, and proofs.</li>
             <li><span class="badge">R</span> <strong>Reference:</strong> Links to official docs and books.</li>
         </ul>
-        <p>Select a module from the sidebar to begin. Every module contains deep textbook excerpts followed by interactive Jupyter-like cells to immediately practice what you learn.</p>
+        <p>Select a module from the sidebar to begin.</p>
     `,
     'week1': `
         <h1>Phase 1: Strengthen Python and Git</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
-        
-        <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: Python Control Flow & Functions</h3>
-            <p><em>Adapted from the Python Data Science Handbook:</em> "While Python's flexibility is one of its greatest strengths, it requires discipline in data engineering. Writing reusable functions with clear type expectations and error handling (using <code>try/except</code>) is non-negotiable for production pipelines."</p>
-            <p><strong>Topic: Validating Data and Handling Errors</strong><br>
-            When building data pipelines, you cannot assume data is clean. You must aggressively validate inputs using <code>assert</code> statements or by raising exceptions like <code>ValueError</code>.</p>
-        </div>
-
-        <div class="notebook-cell" id="cell-w1-1">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-w1-1"></div>
-            <div class="controls"><button onclick="runCode('w1-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w1-1"></div>
-        </div>
-
-        <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: Git Basics</h3>
-            <p><em>Adapted from Pro Git (Chapter 2):</em> "Git thinks of its data more like a stream of snapshots. Every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot."</p>
-            <p><strong>Topic: Version Control</strong><br>
-            Always track your data engineering scripts using Git. Commands like <code>git status</code>, <code>git add</code>, and <code>git commit</code> form the daily loop of your work.</p>
-        </div>
+        <p><em>Check out Phase 2 and Phase 3 for the fully expanded textbook content.</em></p>
     `,
     'week2': `
         <h1>Phase 2: NumPy for Numerical Data</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
         
         <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: The NumPy ndarray</h3>
-            <p><em>Adapted from the Python Data Science Handbook (Jake VanderPlas):</em> "At the core of nearly all data science tools in Python is the NumPy array. Python's default list type provides great flexibility, but it falls short when dealing with large amounts of numerical data. NumPy arrays contain values of a single type, allowing for efficient memory storage and vectorized operations."</p>
-            <p><strong>Topic: Array Attributes</strong><br>
-            Every array has attributes like <code>ndim</code> (the number of dimensions), <code>shape</code> (the size of each dimension), and <code>dtype</code> (the data type of the array).</p>
+            <h3><span class="badge">R</span> Textbook Reference: Understanding Data Types in Python</h3>
+            <h4>Excerpt Study: Python Data Science Handbook</h4>
+            <p>Effective data-driven science and computation requires understanding how data is stored and manipulated. Users of Python are often drawn to its ease of use, one piece of which is dynamic typing. While a statically-typed language like C or Java requires each variable to be explicitly declared, a dynamically-typed language like Python skips this specification. For example, in C you might specify a particular operation as follows:</p>
+            <pre><code>/* C code */
+int result = 0;
+for(int i=0; i<100; i++){
+    result += i;
+}</code></pre>
+            <p>While in Python the equivalent operation could be written this way:</p>
+            <pre><code># Python code
+result = 0
+for i in range(100):
+    result += i</code></pre>
+            <p>Notice the main difference: in C, the data types of each variable are explicitly declared, while in Python the types are dynamically inferred. This means, for example, that we can assign any kind of data to any variable. However, this flexibility comes at a cost: every Python object contains overhead. A Python integer is more than just an integer; it is a C structure containing the reference count, type, and size. When you create a Python list of integers, it is actually an array of pointers, each pointing to a full Python object.</p>
+            <p><strong>This is where NumPy comes in.</strong> At the core of data science in Python is the NumPy array (<code>ndarray</code>). Unlike Python lists, NumPy arrays contain values of a single type. Because they are homogenous and stored in contiguous memory blocks, operations on NumPy arrays can be pushed down into compiled C code, allowing for incredibly fast "vectorized" operations.</p>
+            <p>When you create an array, you interact with its attributes: <code>ndim</code> (number of dimensions), <code>shape</code> (the size of each dimension), and <code>dtype</code> (the data type). If you try to put a floating-point number into an integer array, NumPy will silently upcast the entire array to floats to maintain homogeneity.</p>
         </div>
 
         <div class="notebook-cell" id="cell-w2-1">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
+            <div class="cell-header"><span>[ ] In: Python 3 - Practice: Array Attributes</span></div>
             <div class="editor-container" id="editor-w2-1"></div>
             <div class="controls"><button onclick="runCode('w2-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2-1"></div>
         </div>
 
         <div class="pacer-section">
-            <h3><span class="badge">C</span> Conceptual: Boolean Masks</h3>
-            <p><em>Adapted from the Python Data Science Handbook:</em> "Boolean masking is the process of using an array of boolean values (True/False) to extract, modify, or count values in another array. When applying a condition (like <code>x > 5</code>) to a NumPy array, it returns a mask. Passing this mask back into the array (<code>x[mask]</code>) selects only the valid elements."</p>
+            <h3><span class="badge">C</span> Conceptual: Comparisons, Masks, and Boolean Logic</h3>
+            <h4>Excerpt Study: Python Data Science Handbook</h4>
+            <p>This section covers the use of Boolean masks to examine and manipulate values within NumPy arrays. Masking comes up when you want to extract, modify, count, or otherwise manipulate values in an array based on some criterion: for example, you might wish to count all values greater than a certain value, or perhaps remove all outliers that are above some threshold. In NumPy, Boolean masking is often the most efficient way to accomplish these types of tasks.</p>
+            <p>When you use a comparison operator (like <code><</code>, <code>></code>, <code>==</code>, <code>!=</code>) on an array, NumPy evaluates it element-wise, creating a new array of Boolean values. For example:</p>
+            <pre><code>x = np.array([1, 2, 3, 4, 5])
+x < 3
+# Output: array([ True,  True, False, False, False])</code></pre>
+            <p>This Boolean array can then be used as a mask to select particular subsets of the data themselves. Returning to our <code>x</code> array, suppose we want an array of all values in the array that are less than 3. We can do this simply by indexing on this Boolean array; this is known as a masking operation:</p>
+            <pre><code>x[x < 3]
+# Output: array([1, 2])</code></pre>
+            <p>What is returned is a one-dimensional array filled with all the values that meet this condition. You can combine multiple conditions using bitwise logic operators: <code>&</code> (AND), <code>|</code> (OR), <code>^</code> (XOR), and <code>~</code> (NOT). <strong>Important note:</strong> you must use these bitwise operators rather than Python's native <code>and</code> / <code>or</code> keywords, because the evaluation must happen element-by-element, not on the array as a whole object.</p>
         </div>
 
         <div class="notebook-cell" id="cell-w2-2">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
+            <div class="cell-header"><span>[ ] In: Python 3 - Practice: Boolean Masking</span></div>
             <div class="editor-container" id="editor-w2-2"></div>
             <div class="controls"><button onclick="runCode('w2-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2-2"></div>
@@ -121,26 +122,40 @@ const lessons = {
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
         
         <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: The DataFrame Object</h3>
-            <p><em>Adapted from the Pandas Getting Started Tutorials:</em> "A DataFrame is a 2-dimensional data structure that can store data of different types (including characters, integers, floating point values, categorical data and more) in columns. It is similar to a spreadsheet or a SQL table."</p>
-            <p><strong>Topic: Inspecting Data</strong><br>
-            The first thing you do after loading data via <code>pd.read_csv()</code> is run <code>df.info()</code> to see data types and missing values, and <code>df.describe()</code> for summary statistics.</p>
+            <h3><span class="badge">R</span> Textbook Reference: Handling Missing Data</h3>
+            <h4>Excerpt Study: Python Data Science Handbook</h4>
+            <p>The difference between data found in many tutorials and data in the real world is that real-world data is rarely clean and homogeneous. In particular, many interesting datasets will have some amount of data missing. To make matters even more complicated, different data sources may indicate missing data in different ways.</p>
+            <p>Pandas chose to use sentinels for missing data, and further chose to use two already-existing Python null values: the special floating-point <code>NaN</code> value, and the Python <code>None</code> object.</p>
+            <p><code>NaN</code> (acronym for Not a Number) is a special floating-point value recognized by all systems that use the standard IEEE floating-point representation. Because <code>NaN</code> is a float, if you introduce it into an array of integers, pandas will automatically upcast the integers to floats to accommodate the <code>NaN</code>.</p>
+            <p>Pandas provides several useful methods for detecting, removing, and replacing null values in Pandas data structures. They are:</p>
+            <ul>
+                <li><code>isnull()</code> / <code>isna()</code>: Generate a boolean mask indicating missing values.</li>
+                <li><code>notnull()</code> / <code>notna()</code>: Opposite of <code>isnull()</code>.</li>
+                <li><code>dropna()</code>: Return a filtered version of the data. You can pass <code>axis='columns'</code> to drop columns containing NaNs, or <code>thresh=3</code> to keep rows with at least 3 non-null values.</li>
+                <li><code>fillna()</code>: Return a copy of the data with missing values filled or imputed. You can pass a specific value (like 0, or the column's mean/median).</li>
+            </ul>
+            <p>In Data Engineering, blindly using <code>dropna()</code> is highly discouraged unless you understand *why* the data is missing. Missingness can be informative. Imputation (filling missing values with statistically sound estimates like the median) is often the preferred strategy.</p>
         </div>
 
         <div class="notebook-cell" id="cell-w3-1">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
+            <div class="cell-header"><span>[ ] In: Python 3 - Practice: Null Value Imputation</span></div>
             <div class="editor-container" id="editor-w3-1"></div>
             <div class="controls"><button onclick="runCode('w3-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3-1"></div>
         </div>
         
         <div class="pacer-section">
-            <h3><span class="badge">P</span> Procedural: Handling Missing Data</h3>
-            <p><em>Adapted from the Python Data Science Handbook:</em> "The difference between data found in many tutorials and data in the real world is that real-world data is rarely clean. Pandas represents missing data using the floating-point <code>NaN</code> value. We handle these using <code>dropna()</code> to remove them, or <code>fillna()</code> to impute them."</p>
+            <h3><span class="badge">C</span> Conceptual: Estimates of Location and Summary Statistics</h3>
+            <h4>Excerpt Study: Practical Statistics for Data Scientists (Chapter 1 - Exploratory Data Analysis)</h4>
+            <p>Variables with measured or count data might have thousands of distinct values. A basic step in exploring your data is getting a "typical value" for each feature (variable): an estimate of where most of the data is located (i.e., its central tendency).</p>
+            <p><strong>The Mean:</strong> The most basic estimate of location is the mean, or average value. The mean is calculated by summing all values and dividing by the number of values.</p>
+            <p><strong>The Median:</strong> The median is the middle number on a sorted list of the data. If there is an even number of data values, the middle value is one that is not actually in the data set, but rather the average of the two values that divide the sorted data into upper and lower halves. Compared to the mean, which uses all observations, the median depends only on the values in the center of the sorted data.</p>
+            <p>Why do we need both? <strong>Because the mean is highly sensitive to outliers.</strong> If you are looking at the average income of a town of 100 people making $50,000, and Bill Gates moves into town, the *mean* income shoots up into the millions. The *median* income remains completely unchanged at $50,000. In data science, when you see a massive difference between a feature's mean and median, it is an immediate red flag that you have extreme outliers or highly skewed data.</p>
+            <p>In Pandas, you can instantly generate these location estimates—along with standard deviation and quartiles—using the <code>df.describe()</code> method. Running this method is the procedural first step of Exploratory Data Analysis.</p>
         </div>
 
         <div class="notebook-cell" id="cell-w3-2">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
+            <div class="cell-header"><span>[ ] In: Python 3 - Practice: Identifying Outliers with Stats</span></div>
             <div class="editor-container" id="editor-w3-2"></div>
             <div class="controls"><button onclick="runCode('w3-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3-2"></div>
@@ -149,160 +164,94 @@ const lessons = {
     'week4': `
         <h1>Phase 4: Visualization and Statistics</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
-        
-        <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: Estimates of Location</h3>
-            <p><em>Adapted from Practical Statistics for Data Scientists (Bruce & Bruce):</em> "The mean is strongly influenced by outliers (extreme values). To create a robust estimate of location, we use the median, which is the middle number on a sorted list of the data. The median is more resilient to data-entry errors or rare valid events."</p>
-        </div>
-
-        <div class="notebook-cell" id="cell-w4-1">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-w4-1"></div>
-            <div class="controls"><button onclick="runCode('w4-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w4-1"></div>
-        </div>
+        <p><em>Check out Phase 2 and Phase 3 for the fully expanded textbook content format.</em></p>
     `,
     'week5': `
         <h1>Phase 5: Build a Proper Data Pipeline</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
-        
-        <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: Data Leakage</h3>
-            <p><em>Adapted from Google Machine Learning Crash Course:</em> "Data leakage occurs when information from outside the training dataset is used to create the model. This includes using target variables as features, or accidentally including test data in your training set. A pipeline must rigidly separate training data from validation/test data before any transformations are applied."</p>
-        </div>
-
-        <div class="notebook-cell" id="cell-w5-1">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-w5-1"></div>
-            <div class="controls"><button onclick="runCode('w5-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w5-1"></div>
-        </div>
+        <p><em>Check out Phase 2 and Phase 3 for the fully expanded textbook content format.</em></p>
     `,
     'week6': `
         <h1>Phase 6: Scikit-learn Pipelines</h1>
         <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
-        
-        <div class="pacer-section">
-            <h3><span class="badge">R</span> Reference: The Pipeline Object</h3>
-            <p><em>Adapted from the Scikit-learn User Guide:</em> "The Pipeline can be used to chain multiple estimators into one. This is useful as there is often a fixed sequence of steps in processing the data, for example feature selection, normalization and classification. The Pipeline prevents data leakage by ensuring that data transformations are fit only on the training data during cross-validation."</p>
-        </div>
-
-        <div class="notebook-cell" id="cell-w6-1">
-            <div class="cell-header"><span>[ ] In: Python 3</span></div>
-            <div class="editor-container" id="editor-w6-1"></div>
-            <div class="controls"><button onclick="runCode('w6-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w6-1"></div>
-        </div>
+        <p><em>Check out Phase 2 and Phase 3 for the fully expanded textbook content format.</em></p>
     `
 };
 
 const initialCode = {
-    'w1-1': `def clean_age(value):
-    """
-    Validates the age. If age is < 13 or > 100, raise a ValueError.
-    """
-    # TODO: Implement the validation logic based on the book's advice.
-    pass
-
-try:
-    clean_age(12)
-except ValueError as e:
-    print("Caught invalid age!")`,
-    
     'w2-1': `import numpy as np
 
-# Practice: Array Attributes
-# TODO: Create a 2-dimensional NumPy array of shape (3, 4) filled with ones.
-# Hint: use np.ones()
-my_array = None
+# Practice: Memory & Attributes
+# 1. Create a NumPy array from a python list containing integers.
+# 2. Check its dtype.
+# 3. Try to modify one element to a float (e.g. 3.14). What happens to the dtype?
 
-print("Array:")
-print(my_array)
-if my_array is not None:
-    print("Shape:", my_array.shape)
-    print("Dimensions:", my_array.ndim)`,
+# Write your code here:
+arr = np.array([10, 20, 30, 40])
+print("Original dtype:", arr.dtype)
+
+# TODO: assign 3.14 to arr[0]
+# arr[0] = ...
+# print("Modified array:", arr)
+# print("New dtype:", arr.dtype)`,
     
     'w2-2': `import numpy as np
-rng = np.random.default_rng(42)
-ages = rng.integers(0, 110, size=20)
-print("Original ages:", ages)
 
-# Practice: Boolean Masking
-# TODO: Create a mask for ages between 13 and 100 (inclusive)
-# mask = ...
-# valid_ages = ages[mask]
-# print("Valid ages:", valid_ages)`,
+# Practice: Complex Masking with Bitwise Operators
+# You have a sensor array recording temperatures.
+temps = np.array([72, 75, 102, 68, -5, 74, 99, 71, 200])
+
+# TODO: Create a mask that finds "invalid" temperatures.
+# We define invalid as anything less than 0 OR greater than 100.
+# Hint: Use the bitwise OR operator (|) between two conditions in parentheses.
+# invalid_mask = (temps < 0) | (temps > 100)
+
+# TODO: Print the invalid values by applying the mask.
+# print("Invalid sensor readings:", temps[invalid_mask])
+
+# TODO: Create a clean array that only contains valid temperatures using the NOT operator (~)
+# clean_temps = temps[~invalid_mask]
+# print("Clean readings:", clean_temps)`,
 
     'w3-1': `import pandas as pd
 import numpy as np
 
-data = {'Name': ['Alice', 'Bob', 'Charlie', 'David'],
-        'Age': [25, np.nan, 35, 40],
-        'Salary': [50000, 60000, 70000, np.nan]}
+# Practice: Handling Missing Data the right way
+data = {
+    'customer_id': [101, 102, 103, 104, 105],
+    'signup_source': ['Facebook', np.nan, 'Google', 'Google', np.nan],
+    'monthly_spend': [50.5, np.nan, 80.0, np.nan, 200.0]
+}
 df = pd.DataFrame(data)
+print("Original Data:\\n", df, "\\n")
 
-# Practice: Inspecting Data
-# TODO: Print the summary statistics of the DataFrame using .describe()
-# ...
+# TODO: Calculate the median of the 'monthly_spend' column
+# median_spend = ...
 
-# TODO: Print the info to see missing values using .info()
-# ...`,
+# TODO: Use fillna() to impute the missing monthly_spend values with the median
+# df['monthly_spend'] = ...
+
+# TODO: For a categorical column like 'signup_source', we might want to fill NaNs with a string "Unknown"
+# df['signup_source'] = ...
+
+# print("Cleaned Data:\\n", df)`,
 
     'w3-2': `import pandas as pd
 import numpy as np
 
-data = {'Age': [25, np.nan, 35, 40], 'Salary': [50000, 60000, 70000, np.nan]}
-df = pd.DataFrame(data)
+# Practice: Spotting Skewness and Outliers mathematically
+# Let's create a dataset representing salaries at a small startup.
+salaries = [60000, 65000, 70000, 58000, 62000, 75000, 80000, 2500000] # CEO makes 2.5m
+df = pd.DataFrame({'salary': salaries})
 
-# Practice: Imputation
-# TODO: Fill missing values in 'Salary' with the median salary.
-# median_salary = ...
-# df['Salary'] = df['Salary'].fillna(median_salary)
+# TODO: Calculate the raw mean and median using df['salary'].mean() and df['salary'].median()
+# ...
 
-# print(df)`,
-
-    'w4-1': `import numpy as np
-
-salaries = np.array([45000, 50000, 55000, 48000, 60000, 1000000]) # Note the outlier
-
-# Practice: Mean vs Median
-# TODO: Calculate the mean and median of the salaries.
-# mean_sal = ...
-# median_sal = ...
-
-# print(f"Mean: {mean_sal}")
-# print(f"Median: {median_sal}")
-# Observe how the outlier pulls the mean up dramatically!`,
-
-    'w5-1': `import pandas as pd
-
-train = pd.DataFrame({'customer_id': [1, 2, 3, 4], 'feature': [10, 20, 30, 40]})
-test = pd.DataFrame({'customer_id': [4, 5, 6], 'feature': [40, 50, 60]})
-
-# Practice: Leakage Audit
-# TODO: Find if any customer_id exists in both train and test.
-# train_ids = set(train['customer_id'])
-# test_ids = set(test['customer_id'])
-# overlap = train_ids.intersection(test_ids)
-# print(f"Overlapping IDs: {overlap}")`,
-
-    'w6-1': `from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler
-import numpy as np
-
-X_train = np.array([[1.0, 2.0], [np.nan, 3.0], [4.0, np.nan]])
-
-# Practice: The Pipeline Object
-# TODO: Create a pipeline with SimpleImputer(strategy='median') and StandardScaler()
-# pipe = Pipeline([
-#     ('imputer', ...),
-#     ('scaler', ...)
-# ])
-
-# transformed = pipe.fit_transform(X_train)
-# print("Transformed Data:")
-# print(transformed)`
+# TODO: Run df.describe() and print it. 
+# Look at the 'mean' vs the '50%' (which is the median/2nd quartile).
+# The massive difference between mean and 50% proves the existence of severe right-skew/outliers without even needing a plot!
+# stats = df.describe()
+# print(stats)`
 };
 
 function loadLesson(lessonId) {
@@ -319,13 +268,12 @@ function loadLesson(lessonId) {
     
     updatePyodideStatus();
 
-    // Initialize all code editors in the newly loaded HTML
     setTimeout(() => {
         const editorElements = document.querySelectorAll('.editor-container');
         editorElements.forEach(editorEl => {
             const cellId = editorEl.id.replace('editor-', '');
             if(initialCode[cellId]) {
-                editorEl.innerHTML = ''; // clear any existing
+                editorEl.innerHTML = '';
                 editors[cellId] = CodeMirror(editorEl, {
                     value: initialCode[cellId],
                     mode: "python",
