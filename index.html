@@ -6,40 +6,114 @@
     <title>Data Engineering PACER Course</title>
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- CodeMirror for Jupyter-like editor -->
+    <!-- CodeMirror -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
     
-    <!-- Pyodide for running Python in browser -->
+    <!-- Pyodide -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <style>
+        .sidebar ul ul { padding-left: 20px; font-size: 0.9em; display: none; }
+        .sidebar li.active ul { display: block; }
+        .sidebar a.sub-link { color: #bdc3c7; }
+        .sidebar a.sub-link.active { color: var(--accent-color); font-weight: bold; }
+        .phase-title { cursor: pointer; color: white; display: block; padding: 5px 0; font-weight: bold; }
+    </style>
 </head>
 <body>
-
     <div class="sidebar">
         <h2>Data Engineering Roadmap</h2>
         <ul id="nav-list">
-            <li><a href="#" class="active" onclick="loadLesson('intro')">Introduction & Syllabus</a></li>
-            <li><a href="#" onclick="loadLesson('week1')">Phase 1: Strengthen Python & Git</a></li>
-            <li><a href="#" onclick="loadLesson('week2')">Phase 2: NumPy for numerical data</a></li>
-            <li><a href="#" onclick="loadLesson('week3')">Phase 3: Pandas and EDA</a></li>
-            <li><a href="#" onclick="loadLesson('week4')">Phase 4: Visualization and statistics</a></li>
-            <li><a href="#" onclick="loadLesson('week5')">Phase 5: Build a proper data pipeline</a></li>
-            <li><a href="#" onclick="loadLesson('week6')">Phase 6: Scikit-learn pipelines</a></li>
-            <li><a href="#" onclick="loadLesson('resources')">Resources & References</a></li>
+            <li><a href="#" class="phase-title" onclick="togglePhase(this)">Introduction</a></li>
+            <li class="active">
+                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 2: NumPy</a>
+                <ul id="phase2-links">
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_00')">2. Introduction to NumPy</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_01')">Understanding Data Types in Python</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_02')">The Basics of NumPy Arrays</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_03')">Computation on NumPy Arrays: Universal Functions</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_04')">Aggregations: Min, Max, and Everything In Between</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_05')">Computation on Arrays: Broadcasting</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_06')">Comparisons, Masks, and Boolean Logic</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_07')">Fancy Indexing</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_08')">Sorting Arrays</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_09')">Structured Data: NumPy's Structured Arrays</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 3: Pandas</a>
+                <ul id="phase3-links">
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_00')">3. Data Manipulation with Pandas</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_01')">Introducing Pandas Objects</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_02')">Data Indexing and Selection</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_03')">Operating on Data in Pandas</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_04')">Handling Missing Data</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_05')">Hierarchical Indexing</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_06')">Combining Datasets: Concat and Append</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_07')">Combining Datasets: Merge and Join</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_08')">Aggregation and Grouping</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_09')">Pivot Tables</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_10')">Vectorized String Operations</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_11')">Working with Time Series</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_12')">High-Performance Pandas: eval() and query()</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_13')">Further Resources</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 4: Matplotlib</a>
+                <ul id="phase4-links">
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_00')">4. Visualization with Matplotlib</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_01')">Simple Line Plots</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_02')">Simple Scatter Plots</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_03')">Visualizing Errors</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_04')">Density and Contour Plots</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_05')">Histograms, Binnings, and Density</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_06')">Customizing Plot Legends</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_07')">Customizing Colorbars</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_08')">Multiple Subplots</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_09')">Text and Annotation</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_10')">Customizing Ticks</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_11')">Customizing Matplotlib: Configurations and Stylesheets</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_12')">Three-Dimensional Plotting in Matplotlib</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_13')">Geographic Data with Basemap</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_14')">Visualization with Seaborn</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_15')">Further Resources</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 5: Machine Learning</a>
+                <ul id="phase5-links">
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_00')">5. Machine Learning</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_01')">What Is Machine Learning?</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_02')">Introducing Scikit-Learn</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_03')">Hyperparameters and Model Validation</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_04')">Feature Engineering</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_05')">In Depth: Naive Bayes Classification</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_06')">In Depth: Linear Regression</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_07')">In-Depth: Support Vector Machines</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_08')">In-Depth: Decision Trees and Random Forests</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_09')">In Depth: Principal Component Analysis</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_10')">In-Depth: Manifold Learning</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_11')">In Depth: k-Means Clustering</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_12')">In Depth: Gaussian Mixture Models</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_13')">In-Depth: Kernel Density Estimation</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_14')">Application: A Face Detection Pipeline</a></li>
+                    <li><a href="#" class="sub-link" onclick="loadLesson('w5_15')">Further Machine Learning Resources</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 
     <div class="main-content">
         <div class="container" id="content-container">
-            <!-- Dynamic Content Loaded Here -->
             <h1>Welcome to the PACER Data Engineering Course</h1>
-            <p>Loading course environment...</p>
+            <p>Loading environment...</p>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
-    <script src="js/app.js?v=4"></script>
+    <script src="js/app.js?v=11"></script>
 </body>
 </html>
