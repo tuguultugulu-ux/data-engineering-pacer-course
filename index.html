@@ -37,21 +37,27 @@
     
         .CodeMirror {
             border: 1px solid #ddd !important;
-            
             border-radius: 6px !important;
             font-size: 14px;
         }
         .output-container {
             border: 1px solid #ddd;
-            border-top: none;
             border-radius: 6px;
             margin-top: 10px;
+            padding: 12px 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            min-height: 40px;
+            background-color: #fdfdfd;
         }
         .notebook-cell {
             border: none;
             margin-bottom: 40px;
         }
-
+        body {
+            margin: 0;
+            padding-bottom: 70px;
+        }
     </style>
 </head>
 <body>
@@ -89,7 +95,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 3: Pandas</a>
+                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 3: Pandas & EDA</a>
                 <ul id="phase3-links">
                     <li><a href="#" class="sub-link" onclick="loadLesson('p3_overview')">Phase 3: Project & Goals</a></li>
                     <li><a href="#" class="sub-link" onclick="loadLesson('w3_0')">What kind of data does pandas handle? (Book)</a></li>
@@ -153,7 +159,6 @@
         <div class="container" id="content-container">
             <h1>Welcome to the PACER Data Engineering Course</h1>
             <p>Loading environment...</p>
-
         </div>
     </div>
 
@@ -162,16 +167,15 @@
         <div style="color: #ecf0f1; font-family: monospace; font-size: 0.95em;">
             <span id="active-cell-label">Environment: Pyodide (Python 3.10) - Select a cell to run</span>
         </div>
-        <div style="display: flex; gap: 25px; color: #bdc3c7; font-size: 0.9em; font-family: sans-serif;">
-            <span><kbd style="background: #34495e; padding: 2px 6px; border-radius: 3px; border: 1px solid #7f8c8d; color: white;">Ctrl/Cmd + Enter</kbd> Run Code</span>
-            <span><kbd style="background: #34495e; padding: 2px 6px; border-radius: 3px; border: 1px solid #7f8c8d; color: white;">Ctrl + Space (or Alt + R)</kbd> Code Rabbit Review</span>
+        <div style="display: flex; gap: 20px; color: #bdc3c7; font-size: 0.9em; font-family: sans-serif; align-items: center;">
+            <span><kbd style="background: #34495e; padding: 3px 7px; border-radius: 3px; border: 1px solid #7f8c8d; color: white; font-weight: bold;">Ctrl/Cmd + Enter</kbd> Run Code</span>
+            <span><kbd style="background: #34495e; padding: 3px 7px; border-radius: 3px; border: 1px solid #7f8c8d; color: white; font-weight: bold;">Ctrl + Space / Alt + R</kbd> Code Rabbit Review</span>
         </div>
     </div>
-
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
-    <script src="js/app.js?v=320"></script>
+    <script src="js/app.js?v=330"></script>
 </body>
 </html>
