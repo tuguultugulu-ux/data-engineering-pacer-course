@@ -4090,13 +4090,28 @@ function loadLesson(lessonId) {
                     indentUnit: 4,
                     matchBrackets: true,
                     extraKeys: {
+                        "Ctrl-Enter": function(cm) {
+                            runCode(cellId);
+                        },
+                        "Cmd-Enter": function(cm) {
+                            runCode(cellId);
+                        },
                         "Shift-Enter": function(cm) {
                             runCode(cellId);
                         },
-                        "Ctrl-Enter": function(cm) {
+                        "Alt-Enter": function(cm) {
+                            runCode(cellId);
+                        },
+                        "Ctrl-Space": function(cm) {
                             toggleRabbit(cellId);
                         },
-                        "Cmd-Enter": function(cm) {
+                        "Alt-R": function(cm) {
+                            toggleRabbit(cellId);
+                        },
+                        "Shift-Ctrl-Enter": function(cm) {
+                            toggleRabbit(cellId);
+                        },
+                        "Shift-Cmd-Enter": function(cm) {
                             toggleRabbit(cellId);
                         }
                     }
