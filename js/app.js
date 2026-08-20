@@ -52,10 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleRabbit(cellId) {
     const rabbitPanel = document.getElementById('rabbit-' + cellId);
-    if (rabbitPanel.style.display === 'none' || rabbitPanel.style.display === '') {
-        rabbitPanel.style.display = 'block';
-    } else {
-        rabbitPanel.style.display = 'none';
+    if (rabbitPanel) {
+        if (rabbitPanel.style.display === 'none' || rabbitPanel.style.display === '') {
+            rabbitPanel.style.display = 'block';
+            if (editors[cellId]) {
+                setTimeout(() => editors[cellId].refresh(), 50);
+            }
+        } else {
+            rabbitPanel.style.display = 'none';
+            if (editors[cellId]) {
+                setTimeout(() => editors[cellId].refresh(), 50);
+            }
+        }
     }
 }
 
@@ -73,6 +81,44 @@ async function initPyodide() {
         pyodideStatus = "Loading Data Science packages (NumPy, Pandas, etc.)...";
         updatePyodideStatus();
         await pyodideInstance.loadPackage(['numpy', 'pandas', 'scikit-learn']);
+        
+        await pyodideInstance.runPythonAsync(`
+import sys, io, ast, traceback
+
+def __run_user_code__(code_str):
+    _stdout = io.StringIO()
+    _stderr = io.StringIO()
+    _old_stdout, _old_stderr = sys.stdout, sys.stderr
+    sys.stdout, sys.stderr = _stdout, _stderr
+    _result_str = ""
+    try:
+        parsed = ast.parse(code_str)
+        if parsed.body:
+            last_expr = None
+            if isinstance(parsed.body[-1], ast.Expr):
+                last_expr = parsed.body.pop()
+            
+            if parsed.body:
+                exec(compile(parsed, "<cell>", "exec"), globals())
+            
+            if last_expr is not None:
+                val = eval(compile(ast.Expression(last_expr.value), "<cell>", "eval"), globals())
+                if val is not None:
+                    _result_str = str(val)
+    except Exception as e:
+        _stderr.write(traceback.format_exc())
+    finally:
+        sys.stdout, sys.stderr = _old_stdout, _old_stderr
+    
+    out = _stdout.getvalue()
+    err = _stderr.getvalue()
+    if _result_str:
+        if out and not out.endswith('\n'):
+            out += '\n'
+        out += _result_str
+    return out, err
+`);
+
         pyodideLoaded = true;
         pyodideStatus = "Python Environment Ready ✓";
         updatePyodideStatus();
@@ -105,8 +151,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -129,8 +175,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -222,8 +268,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -315,8 +361,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -408,8 +454,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -501,8 +547,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -594,8 +640,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -687,8 +733,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -780,8 +826,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -873,8 +919,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -966,8 +1012,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1059,8 +1105,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1152,8 +1198,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1245,8 +1291,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1338,8 +1384,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1431,8 +1477,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1524,8 +1570,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1617,8 +1663,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1710,8 +1756,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1803,8 +1849,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1896,8 +1942,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -1989,8 +2035,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2082,8 +2128,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2175,8 +2221,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2268,8 +2314,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2361,8 +2407,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2454,8 +2500,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2547,8 +2593,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2638,8 +2684,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2729,8 +2775,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2820,8 +2866,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -2911,8 +2957,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3002,8 +3048,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3093,8 +3139,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3184,8 +3230,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3275,8 +3321,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3373,8 +3419,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3464,8 +3510,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3555,8 +3601,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3646,8 +3692,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -3737,8 +3783,8 @@ const lessons = {
         <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
             <h4 style="margin-top: 0;">🛠️ How to Practice in this Environment:</h4>
             <ul style="margin-bottom: 0;">
-                <li><strong>Run Code:</strong> Write your Python code in the editor. Press <kbd>Shift</kbd> + <kbd>Enter</kbd> on your keyboard to execute it.</li>
-                <li><strong>Code Rabbit Review:</strong> If you get stuck, press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to magically summon Code Rabbit's hints and solutions for that specific problem!</li>
+                <li><strong>Run Code:</strong> Write your Python code in the editor boxes below. Click <strong>▶ Run Cell</strong> to execute it. The output will appear below the cell.</li>
+                <li><strong>Code Rabbit Review:</strong> If you get stuck or want feedback, click the <strong>🔍 Code Rabbit Review</strong> button to see tips, hints, and expected solutions for that specific problem.</li>
                 <li><strong>Environment:</strong> The environment pre-loads <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code>. It runs entirely in your browser!</li>
             </ul>
         </div>
@@ -4045,13 +4091,13 @@ function loadLesson(lessonId) {
                     matchBrackets: true,
                     extraKeys: {
                         "Shift-Enter": function(cm) {
-                            runActiveCell();
+                            runCode(cellId);
                         },
                         "Ctrl-Enter": function(cm) {
-                            toggleGlobalRabbit();
+                            toggleRabbit(cellId);
                         },
                         "Cmd-Enter": function(cm) {
-                            toggleGlobalRabbit();
+                            toggleRabbit(cellId);
                         }
                     }
                 });
@@ -4074,28 +4120,44 @@ async function runCode(cellId) {
         alert("Python environment is still loading. Please wait a moment and try again.");
         return;
     }
-    const code = editors[cellId].getValue();
+    const code = editors[cellId] ? editors[cellId].getValue() : '';
     const outputContainer = document.getElementById('output-' + cellId);
+    if (!outputContainer) return;
+    
     const header = document.querySelector('#cell-' + cellId + ' .cell-header span');
-    header.innerText = "[*] Running...";
-    outputContainer.innerText = "Executing...";
+    const originalHeaderText = header ? header.innerText.replace(' [*] Running...', '').replace(' [✓] Finished', '') : '';
+    if (header) header.innerText = originalHeaderText + " [*] Running...";
+    
+    outputContainer.innerText = "⏳ Running code...";
+    outputContainer.style.color = "#7f8c8d";
+    outputContainer.style.backgroundColor = "#f8f9fa";
+    outputContainer.style.border = "1px solid #3498db";
+    
     try {
-        await pyodideInstance.runPythonAsync(`
-import sys, io
-sys.stdout = io.StringIO()
-sys.stderr = io.StringIO()
-`);
-        await pyodideInstance.runPythonAsync(code);
-        const stdout = await pyodideInstance.runPythonAsync("sys.stdout.getvalue()");
-        const stderr = await pyodideInstance.runPythonAsync("sys.stderr.getvalue()");
-        let outText = stdout;
-        if(stderr) outText += "\n[STDERR]:\n" + stderr;
-        outputContainer.innerText = outText || "Executed successfully (no output).";
-        outputContainer.style.color = stderr ? "var(--warning-color)" : "var(--text-color)";
+        pyodideInstance.globals.set('_current_cell_code', code);
+        const res = await pyodideInstance.runPythonAsync(`__run_user_code__(_current_cell_code)`);
+        const [stdout, stderr] = res.toJs();
+        
+        let outText = stdout ? stdout.trimEnd() : '';
+        if (stderr) {
+            if (outText) outText += "\n\n";
+            outText += "[Error / Traceback]:\n" + stderr.trimEnd();
+        }
+        
+        if (!outText) {
+            outText = "✓ Code executed successfully (no output).";
+        }
+        
+        outputContainer.innerText = outText;
+        outputContainer.style.color = stderr ? "#c0392b" : "#2c3e50";
+        outputContainer.style.backgroundColor = stderr ? "#fdf2e9" : "#ffffff";
+        outputContainer.style.border = stderr ? "1px solid #e74c3c" : "1px solid #2ecc71";
     } catch (err) {
-        outputContainer.innerText = err;
-        outputContainer.style.color = "red";
+        outputContainer.innerText = "Execution Error: " + err;
+        outputContainer.style.color = "#c0392b";
+        outputContainer.style.backgroundColor = "#fdf2e9";
+        outputContainer.style.border = "1px solid #e74c3c";
     } finally {
-        header.innerText = "[✓] Finished";
+        if (header) header.innerText = originalHeaderText + " [✓] Finished";
     }
 }
