@@ -4,6 +4,10 @@
  * - Dynamic Text Scramble Title Loading Animation
  * - Zero Emojis (Clean SVG Micro-Icons & Typography)
  * - Complete Bilingual Localization Engine (English / Mongolian)
+ * - Automated Unit Test Runner & Assertion Verification
+ * - Interactive DataFrame & Variable Scope Inspector
+ * - Production Reference Solution & Diff Viewer
+ * - Execution Profiler & Progress Dashboard
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,8 +43,11 @@ function initApp() {
 
     PyodideEngine.init();
 
-    // 3. Update AI status in sidebar
+    // 3. Update AI and Progress UI
     updateSidebarAiStatus();
+    if (typeof ProgressTracker !== 'undefined') {
+        ProgressTracker.updateProgressUI();
+    }
 
     // 4. Load initial lesson
     loadLesson(currentLessonId);
@@ -60,6 +67,9 @@ function changeLanguage(lang) {
     // Rebuild UI in new language
     buildSidebar();
     updateSidebarAiStatus();
+    if (typeof ProgressTracker !== 'undefined') {
+        ProgressTracker.updateProgressUI();
+    }
     loadLesson(currentLessonId);
 }
 
@@ -263,10 +273,14 @@ function renderLessonHtml(lesson) {
                         <h3 class="card-title">main.py</h3>
                     </div>
                     <div class="card-actions">
-                        <span class="status-badge idle" id="status-badge-${lesson.id}-0">${I18n.t('pressRunExam').split(' ')[0]}</span>
+                        <span class="status-badge idle" id="status-badge-${lesson.id}-0">Idle</span>
                         <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${lesson.id}-0')" title="${I18n.t('resetBtn')}">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                             <span>${I18n.t('resetBtn')}</span>
+                        </button>
+                        <button class="action-btn test-btn" onclick="EditorManager.runTests('${lesson.id}-0')" title="${I18n.t('runTestsBtn')}">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>${I18n.t('runTestsBtn')}</span>
                         </button>
                         <button class="action-btn rabbit-btn" id="rabbit-btn-${lesson.id}-0" onclick="EditorManager.toggleRabbit('${lesson.id}-0')" title="${I18n.t('codeRabbitReview')} (Ctrl+Space)">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -278,6 +292,8 @@ function renderLessonHtml(lesson) {
                         </button>
                     </div>
                 </div>
+
+                <div id="inspector-box-${lesson.id}-0" class="inspector-box hidden"></div>
 
                 <div class="editor-review-split">
                     <div class="editor-pane">
@@ -299,6 +315,7 @@ function renderLessonHtml(lesson) {
                 <div class="console-wrapper">
                     <div class="console-header">
                         <span>${I18n.t('terminalOutput')}</span>
+                        <div id="console-meta-${lesson.id}-0"></div>
                     </div>
                     <div class="output-console" id="output-${lesson.id}-0">
                         <span class="console-empty">${I18n.t('pressRunExam')}</span>
@@ -396,6 +413,16 @@ function renderPracticeCard(practice) {
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                         <span>${I18n.t('resetBtn')}</span>
                     </button>
+                    <button class="action-btn secondary-btn" id="sol-btn-${practice.id}" onclick="EditorManager.toggleSolution('${practice.id}')" title="${I18n.t('showSolution')}">
+                        <span>${I18n.t('showSolution')}</span>
+                    </button>
+                    <button class="action-btn secondary-btn" onclick="EditorManager.toggleDataInspector('${practice.id}')" title="${I18n.t('dataInspector')}">
+                        <span>${I18n.t('dataInspector')}</span>
+                    </button>
+                    <button class="action-btn test-btn" onclick="EditorManager.runTests('${practice.id}')" title="${I18n.t('runTestsBtn')}">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>${I18n.t('runTestsBtn')}</span>
+                    </button>
                     <button class="action-btn rabbit-btn" id="rabbit-btn-${practice.id}" onclick="EditorManager.toggleRabbit('${practice.id}')" title="${I18n.t('codeRabbitReview')} (Ctrl+Space)">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                         <span>${I18n.t('rabbitBtn')}</span>
@@ -410,6 +437,9 @@ function renderPracticeCard(practice) {
             <div class="card-prompt">
                 ${descHtml}
             </div>
+
+            <div id="solution-box-${practice.id}" class="solution-box hidden"></div>
+            <div id="inspector-box-${practice.id}" class="inspector-box hidden"></div>
 
             <div class="editor-review-split">
                 <div class="editor-pane">
@@ -431,6 +461,7 @@ function renderPracticeCard(practice) {
             <div class="console-wrapper">
                 <div class="console-header">
                     <span>${I18n.t('terminalOutput')}</span>
+                    <div id="console-meta-${practice.id}"></div>
                 </div>
                 <div class="output-console" id="output-${practice.id}">
                     <span class="console-empty">${I18n.t('pressRun')}</span>
