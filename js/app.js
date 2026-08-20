@@ -344,7 +344,7 @@ function loadLesson(lessonId) {
     if (initialCode[lessonId]) {
         // Wait for DOM to update
         setTimeout(() => {
-            const editorEl = document.getElementById(\`editor-\${lessonId}\`);
+            const editorEl = document.getElementById(`editor-${lessonId}`);
             if(editorEl) {
                 // Clear any existing editor in this element (if any)
                 editorEl.innerHTML = '';
@@ -368,19 +368,19 @@ async function runCode(lessonId) {
     }
     
     const code = editors[lessonId].getValue();
-    const outputContainer = document.getElementById(\`output-\${lessonId}\`);
-    const header = document.querySelector(\`#cell-\${lessonId} .cell-header span\`);
+    const outputContainer = document.getElementById(`output-${lessonId}`);
+    const header = document.querySelector(`#cell-${lessonId} .cell-header span`);
     
     header.innerText = "[*] Running...";
     outputContainer.innerText = "Executing...";
     
     try {
-        await pyodideInstance.runPythonAsync(\`
+        await pyodideInstance.runPythonAsync(`
             import sys
             import io
             sys.stdout = io.StringIO()
             sys.stderr = io.StringIO()
-        \`);
+        `);
         
         await pyodideInstance.runPythonAsync(code);
         
@@ -402,7 +402,7 @@ async function runCode(lessonId) {
 
 function reviewCode(lessonId) {
     const code = editors[lessonId].getValue();
-    const reviewPanel = document.getElementById(\`review-\${lessonId}\`);
+    const reviewPanel = document.getElementById(`review-${lessonId}`);
     reviewPanel.style.display = "block";
     
     let feedback = "<h4>🐇 Code Rabbit Review</h4><ul>";
