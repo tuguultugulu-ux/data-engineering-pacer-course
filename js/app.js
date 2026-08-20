@@ -3,12 +3,14 @@
  * Modern Apple / Linear Aesthetic Architecture:
  * - Dynamic Text Scramble Title Loading Animation
  * - Zero Emojis (Clean SVG Micro-Icons & Typography)
- * - Glassmorphic Submenu Accordions
+ * - Complete Bilingual Localization Engine (English / Mongolian)
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     initApp();
 });
+
+let currentLessonId = 'intro';
 
 function initApp() {
     // 1. Build sidebar
@@ -24,9 +26,14 @@ function initApp() {
             topStatus.className = isReady ? 'status-pill ready' : 'status-pill loading';
         }
         if (footerStatus) {
-            footerStatus.innerHTML = isReady
-                ? `<span class="indicator-dot" style="background:#10b981; margin-right:6px;"></span>Python 3.10 Runtime Ready`
-                : `<span class="indicator-dot" style="background:#f59e0b; margin-right:6px;"></span>${statusText}`;
+            const label = isReady ? I18n.t('pyodideReady') : statusText;
+            const color = isReady ? '#10b981' : '#f59e0b';
+            footerStatus.innerHTML = `
+                <span class="indicator-dot" style="background:${color}; margin-right:6px;"></span>
+                <span>${label}</span>
+                <span style="margin: 0 10px; opacity: 0.3;">/</span>
+                <span id="active-cell-label">${I18n.t('clickCell')}</span>
+            `;
         }
     });
 
@@ -36,10 +43,24 @@ function initApp() {
     updateSidebarAiStatus();
 
     // 4. Load initial lesson
-    loadLesson('intro');
+    loadLesson(currentLessonId);
 
     // 5. Bind modal backdrop click
     setupAiModal();
+}
+
+function changeLanguage(lang) {
+    I18n.setLang(lang);
+    
+    // Update language switch buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // Rebuild UI in new language
+    buildSidebar();
+    updateSidebarAiStatus();
+    loadLesson(currentLessonId);
 }
 
 /* --- Dynamic Text Decoding Animation --- */
@@ -74,6 +95,12 @@ function scrambleText(element, finalString, duration = 300) {
 
 function buildSidebar() {
     const navList = document.getElementById('nav-list');
+    const brandTitleEl = document.getElementById('sidebar-brand-title');
+    const brandSubEl = document.getElementById('sidebar-brand-subtitle');
+
+    if (brandTitleEl) brandTitleEl.innerText = I18n.t('brandTitle');
+    if (brandSubEl) brandSubEl.innerText = I18n.t('brandSubtitle');
+
     if (!navList || !window.COURSE_DATA) return;
 
     navList.innerHTML = '';
@@ -83,11 +110,13 @@ function buildSidebar() {
         li.className = 'phase-item';
         li.id = 'phase-item-' + phase.id;
 
+        const localizedPhaseTitle = I18n.getPhaseTitle(phase.id, phase.title);
+
         const phaseTitle = document.createElement('a');
         phaseTitle.href = '#';
         phaseTitle.className = 'phase-title';
         phaseTitle.innerHTML = `
-            <span>${escapeHtml(phase.title)}</span>
+            <span>${escapeHtml(localizedPhaseTitle)}</span>
             <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         `;
         phaseTitle.onclick = function(e) {
@@ -109,7 +138,8 @@ function buildSidebar() {
             link.className = 'sub-link';
             link.setAttribute('data-lesson-id', lesson.id);
 
-            link.innerText = lesson.title;
+            const localizedLessonTitle = I18n.getLessonTitle(lesson.id, lesson.title);
+            link.innerText = localizedLessonTitle;
 
             if (lesson.isExam) {
                 link.className += ' exam-link';
@@ -140,6 +170,7 @@ function togglePhase(phaseId) {
 }
 
 function loadLesson(lessonId) {
+    currentLessonId = lessonId;
     const lesson = COURSE_DATA.lessons[lessonId];
     if (!lesson) return;
 
@@ -168,8 +199,9 @@ function loadLesson(lessonId) {
 
     // Apply title scramble effect
     const h1 = contentContainer.querySelector('.lesson-header h1');
+    const localizedTitle = I18n.getLessonTitle(lesson.id, lesson.title);
     if (h1) {
-        scrambleText(h1, lesson.title || 'Lesson', 280);
+        scrambleText(h1, localizedTitle || 'Lesson', 280);
     }
 
     // Initialize CodeMirror editors in the newly rendered HTML
@@ -177,6 +209,8 @@ function loadLesson(lessonId) {
 }
 
 function renderLessonHtml(lesson) {
+    const localizedTitle = I18n.getLessonTitle(lesson.id, lesson.title);
+
     // 1. Overview page
     if (lesson.isOverview) {
         return `
@@ -190,13 +224,13 @@ function renderLessonHtml(lesson) {
     if (lesson.isExternal) {
         return `
             <div class="lesson-header">
-                <h1>${escapeHtml(lesson.title)}</h1>
+                <h1>${escapeHtml(localizedTitle)}</h1>
             </div>
             <div class="external-resource-card">
                 <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">${escapeHtml(lesson.description)}</p>
                 <div style="margin-top: 25px;">
                     <a href="${lesson.externalUrl}" target="_blank" class="primary-btn-large">
-                        <span>Open ${escapeHtml(lesson.bookTitle)} in New Tab</span>
+                        <span>${I18n.t('openNewTab')} (${escapeHtml(lesson.bookTitle)})</span>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
                 </div>
@@ -208,16 +242,16 @@ function renderLessonHtml(lesson) {
     if (lesson.isExam) {
         return `
             <div class="lesson-header">
-                <h1>${escapeHtml(lesson.examTitle || lesson.title)}</h1>
-                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">Comprehensive Phase Evaluation &mdash; Advanced End-to-End Pipeline</p>
+                <h1>${escapeHtml(localizedTitle)}</h1>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">${I18n.t('examTitleSub')}</p>
             </div>
 
             <div class="practice-card" style="margin-bottom: 24px; background: #ffffff; box-shadow: 0 0 0 1px var(--border-subtle); color: var(--text-primary);">
                 <div class="card-prompt" style="background: #ffffff; color: var(--text-primary); border-bottom: none;">
-                    <span class="level-tag complex" style="margin-bottom: 8px; display: inline-block;">Final Phase Exam</span>
+                    <span class="level-tag complex" style="margin-bottom: 8px; display: inline-block;">${I18n.t('examCardTitle')}</span>
                     <p style="margin-top: 6px; font-size: 0.92rem; line-height: 1.6;">${escapeHtml(lesson.description)}</p>
                     <p style="margin-top: 10px; font-size: 0.82rem; color: var(--text-secondary); font-style: italic;">
-                        This exam evaluates every core concept covered in this phase. You have a blank slate. Write and execute your entire solution below.
+                        ${I18n.t('examNotice')}
                     </p>
                 </div>
             </div>
@@ -225,22 +259,22 @@ function renderLessonHtml(lesson) {
             <div class="practice-card" id="card-${lesson.id}-0">
                 <div class="card-header">
                     <div class="card-title-group">
-                        <span class="level-tag mastery">Exam Solution</span>
+                        <span class="level-tag mastery">${I18n.t('levelMastery')}</span>
                         <h3 class="card-title">main.py</h3>
                     </div>
                     <div class="card-actions">
-                        <span class="status-badge idle" id="status-badge-${lesson.id}-0">Idle</span>
-                        <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${lesson.id}-0')" title="Reset starter code">
+                        <span class="status-badge idle" id="status-badge-${lesson.id}-0">${I18n.t('pressRunExam').split(' ')[0]}</span>
+                        <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${lesson.id}-0')" title="${I18n.t('resetBtn')}">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                            <span>Reset</span>
+                            <span>${I18n.t('resetBtn')}</span>
                         </button>
-                        <button class="action-btn rabbit-btn" id="rabbit-btn-${lesson.id}-0" onclick="EditorManager.toggleRabbit('${lesson.id}-0')" title="Code Rabbit Review (Ctrl+Space)">
+                        <button class="action-btn rabbit-btn" id="rabbit-btn-${lesson.id}-0" onclick="EditorManager.toggleRabbit('${lesson.id}-0')" title="${I18n.t('codeRabbitReview')} (Ctrl+Space)">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                            <span>Code Rabbit</span>
+                            <span>${I18n.t('rabbitBtn')}</span>
                         </button>
-                        <button class="action-btn run-btn" onclick="EditorManager.runCell('${lesson.id}-0')" title="Execute code (Ctrl+Enter)">
+                        <button class="action-btn run-btn" onclick="EditorManager.runCell('${lesson.id}-0')" title="${I18n.t('runBtn')} (Ctrl+Enter)">
                             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                            <span>Run</span>
+                            <span>${I18n.t('runBtn')}</span>
                         </button>
                     </div>
                 </div>
@@ -251,23 +285,23 @@ function renderLessonHtml(lesson) {
                     </div>
                     <div class="review-panel hidden" id="rabbit-${lesson.id}-0">
                         <div class="review-header">
-                            <span>Code Rabbit Review</span>
+                            <span>${I18n.t('codeRabbitReview')}</span>
                             <button class="close-panel-btn" onclick="EditorManager.toggleRabbit('${lesson.id}-0')">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                             </button>
                         </div>
                         <div class="review-body">
-                            Review will appear here.
+                            ${I18n.t('pressRunExam')}
                         </div>
                     </div>
                 </div>
 
                 <div class="console-wrapper">
                     <div class="console-header">
-                        <span>Terminal Output</span>
+                        <span>${I18n.t('terminalOutput')}</span>
                     </div>
                     <div class="output-console" id="output-${lesson.id}-0">
-                        <span class="console-empty">Press Ctrl+Enter or click Run to execute solution.</span>
+                        <span class="console-empty">${I18n.t('pressRunExam')}</span>
                     </div>
                 </div>
             </div>
@@ -279,8 +313,8 @@ function renderLessonHtml(lesson) {
     if (lesson.practices && lesson.practices.length > 0) {
         practicesHtml = `
             <div class="practice-section-header">
-                <h2>Practice Challenges</h2>
-                <p>Apply the concepts you just read in the official text above. Each challenge uses a unique dataset.</p>
+                <h2>${I18n.t('practiceHeader')}</h2>
+                <p>${I18n.t('practiceSub')}</p>
             </div>
             <div class="practice-list">
                 ${lesson.practices.map(p => renderPracticeCard(p)).join('')}
@@ -291,7 +325,7 @@ function renderLessonHtml(lesson) {
     return `
         <div class="lesson-header">
             <div class="lesson-title-row">
-                <h1>${escapeHtml(lesson.title)}</h1>
+                <h1>${escapeHtml(localizedTitle)}</h1>
                 <div class="header-meta">
                     <div id="pyodide-status-pill" class="status-pill ${PyodideEngine.isReady() ? 'ready' : 'loading'}">
                         <span class="indicator-dot"></span>
@@ -303,20 +337,20 @@ function renderLessonHtml(lesson) {
 
         <div class="instruction-banner">
             <div class="instruction-text">
-                Write Python code in the interactive editors. Vectorized operations are evaluated automatically.
+                ${I18n.getLang() === 'mn' ? 'Кодоо интерактив талбарт бичнэ үү. Векторжуулсан үйлдлүүд автоматаар үнэлэгдэнэ.' : 'Write Python code in the interactive editors. Vectorized operations are evaluated automatically.'}
             </div>
             <div class="shortcut-pills">
-                <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> Run</span>
-                <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Space</kbd> Review</span>
+                <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> ${I18n.t('shortcutRun')}</span>
+                <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Space</kbd> ${I18n.t('shortcutReview')}</span>
             </div>
         </div>
 
         ${lesson.bookUrl ? `
         <div class="book-card">
             <div class="book-header">
-                <span class="book-name">${escapeHtml(lesson.bookTitle || lesson.title)}</span>
-                <a href="${lesson.bookUrl}" target="_blank" class="book-link" title="Open textbook in a new tab">
-                    <span>Open in new tab</span>
+                <span class="book-name">${escapeHtml(lesson.bookTitle || localizedTitle)}</span>
+                <a href="${lesson.bookUrl}" target="_blank" class="book-link" title="${I18n.t('openNewTab')}">
+                    <span>${I18n.t('openNewTab')}</span>
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 </a>
             </div>
@@ -330,17 +364,17 @@ function renderLessonHtml(lesson) {
 
 function renderPracticeCard(practice) {
     let levelClass = 'easy';
-    let levelLabel = 'Easy';
+    let levelLabel = I18n.t('levelEasy');
     const lowerLevel = (practice.level || '').toLowerCase();
     if (lowerLevel.includes('intermediate') || lowerLevel.includes('medium')) {
         levelClass = 'intermediate';
-        levelLabel = 'Intermediate';
+        levelLabel = I18n.t('levelIntermediate');
     } else if (lowerLevel.includes('complex') || lowerLevel.includes('hard')) {
         levelClass = 'complex';
-        levelLabel = 'Complex';
+        levelLabel = I18n.t('levelComplex');
     } else if (lowerLevel.includes('mastery') || lowerLevel.includes('challenge')) {
         levelClass = 'mastery';
-        levelLabel = 'Mastery';
+        levelLabel = I18n.t('levelMastery');
     }
 
     // Format markdown description
@@ -358,17 +392,17 @@ function renderPracticeCard(practice) {
                 </div>
                 <div class="card-actions">
                     <span class="status-badge idle" id="status-badge-${practice.id}">Idle</span>
-                    <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${practice.id}')" title="Reset starter code">
+                    <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${practice.id}')" title="${I18n.t('resetBtn')}">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                        <span>Reset</span>
+                        <span>${I18n.t('resetBtn')}</span>
                     </button>
-                    <button class="action-btn rabbit-btn" id="rabbit-btn-${practice.id}" onclick="EditorManager.toggleRabbit('${practice.id}')" title="Toggle AI Code Review (Ctrl+Space)">
+                    <button class="action-btn rabbit-btn" id="rabbit-btn-${practice.id}" onclick="EditorManager.toggleRabbit('${practice.id}')" title="${I18n.t('codeRabbitReview')} (Ctrl+Space)">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Code Rabbit</span>
+                        <span>${I18n.t('rabbitBtn')}</span>
                     </button>
-                    <button class="action-btn run-btn" onclick="EditorManager.runCell('${practice.id}')" title="Execute code (Ctrl+Enter)">
+                    <button class="action-btn run-btn" onclick="EditorManager.runCell('${practice.id}')" title="${I18n.t('runBtn')} (Ctrl+Enter)">
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                        <span>Run</span>
+                        <span>${I18n.t('runBtn')}</span>
                     </button>
                 </div>
             </div>
@@ -383,23 +417,23 @@ function renderPracticeCard(practice) {
                 </div>
                 <div class="review-panel hidden" id="rabbit-${practice.id}">
                     <div class="review-header">
-                        <span>Code Rabbit Review</span>
+                        <span>${I18n.t('codeRabbitReview')}</span>
                         <button class="close-panel-btn" onclick="EditorManager.toggleRabbit('${practice.id}')">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                         </button>
                     </div>
                     <div class="review-body">
-                        ${practice.review || 'Review insights will appear here.'}
+                        ${practice.review || I18n.t('pressRun')}
                     </div>
                 </div>
             </div>
 
             <div class="console-wrapper">
                 <div class="console-header">
-                    <span>Terminal Output</span>
+                    <span>${I18n.t('terminalOutput')}</span>
                 </div>
                 <div class="output-console" id="output-${practice.id}">
-                    <span class="console-empty">Press Ctrl+Enter or click Run to execute code.</span>
+                    <span class="console-empty">${I18n.t('pressRun')}</span>
                 </div>
             </div>
         </div>
@@ -409,12 +443,14 @@ function renderPracticeCard(practice) {
 /* --- AI Settings Modal Handlers --- */
 function updateSidebarAiStatus() {
     const statusEl = document.getElementById('sidebar-ai-status');
+    const titleEl = document.getElementById('sidebar-ai-title');
+    if (titleEl) titleEl.innerText = I18n.t('aiSetupTitle');
     if (statusEl) {
         if (AIReviewer.hasApiKey()) {
-            statusEl.innerText = AIReviewer.getProvider().toUpperCase() + ' Active';
+            statusEl.innerText = AIReviewer.getProvider().toUpperCase() + I18n.t('aiActiveSuffix');
             statusEl.className = 'widget-status active';
         } else {
-            statusEl.innerText = 'Offline AST Mode';
+            statusEl.innerText = I18n.t('aiOfflineStatus');
             statusEl.className = 'widget-status';
         }
     }
@@ -463,9 +499,9 @@ function saveAiSettings() {
 
     if (statusBox) {
         if (key) {
-            statusBox.innerHTML = `<span style="color: #34d399; font-size:0.8rem; font-family: var(--font-mono);">${provider.toUpperCase()} API key saved. Live AI review active.</span>`;
+            statusBox.innerHTML = `<span style="color: #34d399; font-size:0.8rem; font-family: var(--font-mono);">${provider.toUpperCase()} ${I18n.getLang() === 'mn' ? 'түлхүүр хадгалагдлаа. AI горим идэвхтэй.' : 'API key saved. Live AI review active.'}</span>`;
         } else {
-            statusBox.innerHTML = `<span style="color: #fbbf24; font-size:0.8rem; font-family: var(--font-mono);">Key removed. Operating in offline AST Mode.</span>`;
+            statusBox.innerHTML = `<span style="color: #fbbf24; font-size:0.8rem; font-family: var(--font-mono);">${I18n.getLang() === 'mn' ? 'Түлхүүр арилгагдлаа. Офлайн AST горим.' : 'Key removed. Operating in offline AST Mode.'}</span>`;
         }
     }
 
@@ -481,22 +517,22 @@ async function testAiConnection() {
     const provider = providerSelect ? providerSelect.value : 'gemini';
 
     if (!key) {
-        if (statusBox) statusBox.innerHTML = `<span style="color: #f87171; font-size:0.8rem; font-family: var(--font-mono);">Please enter an API key to test.</span>`;
+        if (statusBox) statusBox.innerHTML = `<span style="color: #f87171; font-size:0.8rem; font-family: var(--font-mono);">${I18n.getLang() === 'mn' ? 'Шалгах API түлхүүрээ оруулна уу.' : 'Please enter an API key to test.'}</span>`;
         return;
     }
 
-    if (statusBox) statusBox.innerHTML = `<span style="color: #60a5fa; font-size:0.8rem; font-family: var(--font-mono);">Testing connection to ${provider.toUpperCase()}...</span>`;
+    if (statusBox) statusBox.innerHTML = `<span style="color: #60a5fa; font-size:0.8rem; font-family: var(--font-mono);">${provider.toUpperCase()} ${I18n.getLang() === 'mn' ? 'холболтыг шалгаж байна...' : 'Testing connection...'}</span>`;
 
     try {
         const testProblem = { title: "Test", markdown: "Test requirement", review: "" };
         const testRes = await AIReviewer.reviewCode(testProblem, "def f(): pass", "");
         if (testRes.mode === 'ai') {
-            if (statusBox) statusBox.innerHTML = `<span style="color: #34d399; font-size:0.8rem; font-family: var(--font-mono);">Success: Connected to ${provider.toUpperCase()} API.</span>`;
+            if (statusBox) statusBox.innerHTML = `<span style="color: #34d399; font-size:0.8rem; font-family: var(--font-mono);">${I18n.getLang() === 'mn' ? 'Амжилттай: ' + provider.toUpperCase() + ' холбогдлоо.' : 'Success: Connected to ' + provider.toUpperCase() + ' API.'}</span>`;
         } else {
             throw new Error(testRes.error || "Failed to connect to AI provider.");
         }
     } catch (err) {
-        if (statusBox) statusBox.innerHTML = `<span style="color: #f87171; font-size:0.8rem; font-family: var(--font-mono);">Error: ${escapeHtml(err.message)}</span>`;
+        if (statusBox) statusBox.innerHTML = `<span style="color: #f87171; font-size:0.8rem; font-family: var(--font-mono);">${I18n.getLang() === 'mn' ? 'Алдаа: ' : 'Error: '}${escapeHtml(err.message)}</span>`;
     }
 }
 
@@ -505,7 +541,7 @@ function clearAiSettings() {
     const keyInput = document.getElementById('ai-api-key-input');
     const statusBox = document.getElementById('ai-modal-status');
     if (keyInput) keyInput.value = '';
-    if (statusBox) statusBox.innerHTML = `<span style="color: #fbbf24; font-size:0.8rem; font-family: var(--font-mono);">Key cleared.</span>`;
+    if (statusBox) statusBox.innerHTML = `<span style="color: #fbbf24; font-size:0.8rem; font-family: var(--font-mono);">${I18n.getLang() === 'mn' ? 'Түлхүүр арилгагдлаа.' : 'Key cleared.'}</span>`;
     saveAiSettings();
 }
 

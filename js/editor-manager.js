@@ -2,7 +2,7 @@
  * PACER Data Engineering - Editor & Execution Manager
  * Production-Grade Architecture:
  * - CodeMirror 5 with Monokai theme & sub-pixel focus borders
- * - Dynamic AI / AST review drawer with clean typography
+ * - Dynamic AI / AST review drawer with full bilingual (EN/MN) localization
  * - Zero Emojis (SVG Micro-Icons & Clean Status Badges)
  */
 
@@ -17,10 +17,10 @@ var EditorManager = (function() {
             if (l.isExam && (l.id === cellId || (l.id + '-0') === cellId)) {
                 return {
                     id: cellId,
-                    title: l.examTitle,
+                    title: I18n.getLessonTitle(l.id, l.examTitle || l.title),
                     markdown: l.description,
                     code: l.starterCode,
-                    review: "This is a comprehensive final phase exam. Construct the complete pipeline from scratch."
+                    review: I18n.t('examNotice')
                 };
             }
             if (l.practices) {
@@ -43,7 +43,7 @@ var EditorManager = (function() {
         activeCellId = cellId;
         const footerLabel = document.getElementById('active-cell-label');
         if (footerLabel) {
-            footerLabel.innerHTML = `Target: <span style="color: #60a5fa; font-family: var(--font-mono);">${cellId}</span>`;
+            footerLabel.innerHTML = `${I18n.t('targetLabel')}<span style="color: #60a5fa; font-family: var(--font-mono);">${cellId}</span>`;
         }
 
         // Highlight active editor
@@ -110,12 +110,12 @@ var EditorManager = (function() {
 
         if (statusBadge) {
             statusBadge.className = 'status-badge running';
-            statusBadge.innerText = 'Running...';
+            statusBadge.innerText = I18n.t('running');
         }
 
         if (outputEl) {
             outputEl.className = 'output-console running';
-            outputEl.innerHTML = '<span class="console-loading">Executing Python runtime...</span>';
+            outputEl.innerHTML = `<span class="console-loading">${I18n.t('executing')}</span>`;
         }
 
         const res = await PyodideEngine.execute(code);
@@ -123,10 +123,10 @@ var EditorManager = (function() {
         if (statusBadge) {
             if (res.success) {
                 statusBadge.className = 'status-badge success';
-                statusBadge.innerText = 'Success';
+                statusBadge.innerText = I18n.t('success');
             } else {
                 statusBadge.className = 'status-badge error';
-                statusBadge.innerText = 'Error';
+                statusBadge.innerText = I18n.t('error');
             }
         }
 
@@ -141,7 +141,7 @@ var EditorManager = (function() {
 
             let finalHtml = parts.join('\n\n');
             if (!finalHtml.trim()) {
-                finalHtml = '<span class="console-empty">Code executed successfully (no output produced).</span>';
+                finalHtml = `<span class="console-empty">${I18n.t('emptyOutput')}</span>`;
             }
 
             outputEl.className = res.success ? 'output-console success' : 'output-console error';
@@ -167,8 +167,8 @@ var EditorManager = (function() {
                 if (editors[cellId] && body) {
                     body.innerHTML = `
                         <div style="text-align: center; padding: 28px 10px; color: var(--midnight-muted);">
-                            <div style="font-size: 0.84rem; font-weight: 500; color: #ffffff; margin-bottom: 4px;">Analyzing Code...</div>
-                            <div style="font-size: 0.74rem; font-family: var(--font-mono);">Inspecting syntax, vectorization, and data pipeline logic</div>
+                            <div style="font-size: 0.84rem; font-weight: 500; color: #ffffff; margin-bottom: 4px;">${I18n.t('analyzingCode')}</div>
+                            <div style="font-size: 0.74rem; font-family: var(--font-mono);">${I18n.t('inspectingAst')}</div>
                         </div>
                     `;
 
@@ -181,9 +181,9 @@ var EditorManager = (function() {
                     
                     let badgeHtml = '';
                     if (reviewRes.mode === 'ai') {
-                        badgeHtml = `<div style="display:inline-block; font-size: 0.68rem; font-family:var(--font-mono); background:rgba(16,185,129,0.15); color:#34d399; padding:2px 6px; border-radius:4px; font-weight:500; margin-bottom:12px;">Live AI Review (${reviewRes.provider.toUpperCase()})</div><br>`;
+                        badgeHtml = `<div style="display:inline-block; font-size: 0.68rem; font-family:var(--font-mono); background:rgba(16,185,129,0.15); color:#34d399; padding:2px 6px; border-radius:4px; font-weight:500; margin-bottom:12px;">${I18n.t('liveAiReviewBadge')} (${reviewRes.provider.toUpperCase()})</div><br>`;
                     } else {
-                        badgeHtml = `<div style="display:inline-block; font-size: 0.68rem; font-family:var(--font-mono); background:rgba(245,158,11,0.15); color:#fbbf24; padding:2px 6px; border-radius:4px; font-weight:500; margin-bottom:12px;">Offline AST Inspector Mode</div><br>`;
+                        badgeHtml = `<div style="display:inline-block; font-size: 0.68rem; font-family:var(--font-mono); background:rgba(245,158,11,0.15); color:#fbbf24; padding:2px 6px; border-radius:4px; font-weight:500; margin-bottom:12px;">${I18n.t('offlineAstBadge')}</div><br>`;
                     }
 
                     body.innerHTML = badgeHtml + formatMarkdown(reviewRes.content);

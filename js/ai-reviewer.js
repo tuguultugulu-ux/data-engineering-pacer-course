@@ -3,6 +3,7 @@
  * Production-Grade Architecture:
  * - Option 1: Live LLM Mentor Review (Gemini / OpenAI / Groq) with User's API Key
  * - Option 3: Intelligent In-Browser Python AST Analyzer & Static Linter (Fallback when no key)
+ * - Full Bilingual Support (English / Mongolian)
  * Zero Emojis, Strict Typographic Hierarchy
  */
 
@@ -69,7 +70,17 @@ var AIReviewer = (function() {
     }
 
     async function callLLM(provider, apiKey, problem, userCode, lastOutput) {
-        const systemPrompt = `You are Code Rabbit, a Senior Data Engineer and Python Mentor.
+        const isMn = (typeof I18n !== 'undefined' && I18n.getLang() === 'mn');
+
+        const systemPrompt = isMn
+            ? `Та бол Code Rabbit хэмээх туршлагатай Өгөгдлийн Ахлах Инженер бөгөөд багш юм.
+Оюутны бичсэн Python кодыг Монгол хэлээр нягтлан шалгаж, заавар зөвлөгөө өгнө үү. Эможи бүү ашигла.
+Хариуг дараах бүтэцтэйгээр Монгол хэлээр бичнэ үү:
+1. **Зөв Эсэх ба Үнэлгээ**: Даалгаврын шаардлагыг зөв биелүүлсэн эсэх.
+2. **Векторжуулалт ба Хурд**: Pandas/NumPy дээр шаардлагагүй 'for', 'while' давталт ашигласан эсэхийг шалгах.
+3. **Онцгой Тохиолдол ба Цэвэр Код**: NaN утга боловсруулалт, санах ойн хэмнэлт, индекс.
+4. **Сайжруулах Зөвлөмж ба Код**: Товч, оновчтой кодын жишээ.`
+            : `You are Code Rabbit, a Senior Data Engineer and Python Mentor.
 Your role is to review a student's Python code for a specific Data Engineering challenge.
 Do not use emojis. Be direct, precise, and pedagogical.
 Format your review with clear Markdown sections:
@@ -78,7 +89,24 @@ Format your review with clear Markdown sections:
 3. **Edge Cases & Clean Code**: Mention NaN handling, memory efficiency, indexing, or method chaining.
 4. **Suggested Solution / Improvement**: Provide a clean code snippet if they are stuck or can improve.`;
 
-        const userPrompt = `### Problem Scenario:
+        const userPrompt = isMn
+            ? `### Даалгавар:
+**Сэдэв**: ${problem.title || 'Өгөгдлийн Пайплайн'}
+**Шаардлага**:
+${problem.markdown || 'Шаардлагыг биелүүлнэ үү.'}
+
+### Оюутны Бичсэн Код:
+\`\`\`python
+${userCode || '# Код бичигдээгүй байна'}
+\`\`\`
+
+### Терминалын Гаралт:
+\`\`\`
+${lastOutput || 'Гаралт байхгүй.'}
+\`\`\`
+
+Дээрх шаардлагын дагуу оюутны кодыг нягтлан зөвлөгөө өгнө үү.`
+            : `### Problem Scenario:
 **Topic**: ${problem.title || 'Data Pipeline'}
 **Requirements**:
 ${problem.markdown || 'Solve the prompt requirements.'}
@@ -159,15 +187,12 @@ Please review the student's code according to the requirements.`;
     }
 
     async function runLocalASTAnalysis(problem, userCode, lastOutput) {
+        const isMn = (typeof I18n !== 'undefined' && I18n.getLang() === 'mn');
+
         if (!userCode || !userCode.trim()) {
-            return `### Code Rabbit Local Inspector
-*No code written yet in the editor.*
-
-**Curated Guidance:**
-${problem.review || 'Inspect your DataFrame shapes and use vectorized operations.'}
-
----
-*Tip: Configure an AI API key in AI Settings to enable live generative code reviews.*`;
+            return isMn
+                ? `### Code Rabbit Офлайн Шалгагч\n*Код бичих талбарт код бичигдээгүй байна.*\n\n**Зөвлөмж:**\n${problem.review || 'DataFrame-ийн хэлбэр болон багануудыг шалгана уу.'}\n\n---\n*Зөвлөгөө: Бодит AI дүгнэлт авахын тулд Тохиргоо хэсгээс үнэгүй Gemini API түлхүүрээ холбоно уу.*`
+                : `### Code Rabbit Local Inspector\n*No code written yet in the editor.*\n\n**Curated Guidance:**\n${problem.review || 'Inspect your DataFrame shapes and use vectorized operations.'}\n\n---\n*Tip: Configure an AI API key in AI Settings to enable live generative code reviews.*`;
         }
 
         // Run in-browser AST analysis via Pyodide
@@ -213,30 +238,32 @@ __inspect_code_ast__(_cell_code_to_run)
             }
         }
 
-        let report = `### Local Code Inspection (AST Mode)\n\n`;
+        let report = isMn ? `### Офлайн Код Шалгалт (AST Горим)\n\n` : `### Local Code Inspection (AST Mode)\n\n`;
 
         if (astResult) {
             if (astResult.syntax_error) {
-                report += `**Syntax Error**: \`${astResult.syntax_error}\`\n\n`;
+                report += isMn ? `**Синтаксын Алдаа**: \`${astResult.syntax_error}\`\n\n` : `**Syntax Error**: \`${astResult.syntax_error}\`\n\n`;
             } else {
-                report += `**Python Syntax**: Valid AST Structure\n\n`;
+                report += isMn ? `**Python Синтакс**: Зөв AST бүтэцтэй\n\n` : `**Python Syntax**: Valid AST Structure\n\n`;
                 if (astResult.loops && astResult.loops.length > 0) {
-                    report += `**Vectorization Warning**: Detected Python loop (\`for\`/\`while\`) on line ${astResult.loops.join(', ')}.\n*In production data pipelines, replace row-by-row loops with vectorized Pandas/NumPy operations.*\n\n`;
+                    report += isMn
+                        ? `**Векторжуулалтын Сануулга**: ${astResult.loops.join(', ')}-р мөрөнд давталт (\`for\`/\`while\`) илэрлээ.\n*Өгөгдлийн пайплайнд мөр дагасан давталтыг Pandas/NumPy-ийн векторжуулсан үйлдлээр солино уу.*\n\n`
+                        : `**Vectorization Warning**: Detected Python loop (\`for\`/\`while\`) on line ${astResult.loops.join(', ')}.\n*In production data pipelines, replace row-by-row loops with vectorized Pandas/NumPy operations.*\n\n`;
                 } else {
-                    report += `**Vectorization Check**: Passed (No explicit loops detected)\n\n`;
+                    report += isMn ? `**Векторжуулалт**: Амжилттай (Ил давталт илрээгүй)\n\n` : `**Vectorization Check**: Passed (No explicit loops detected)\n\n`;
                 }
 
                 if (astResult.calls && astResult.calls.length > 0) {
-                    report += `**Detected Method Calls**: \`${astResult.calls.slice(0, 6).join('`, `')}\`\n\n`;
+                    report += isMn ? `**Дуудагдсан функцууд**: \`${astResult.calls.slice(0, 6).join('`, `')}\`\n\n` : `**Detected Method Calls**: \`${astResult.calls.slice(0, 6).join('`, `')}\`\n\n`;
                 }
             }
         }
 
-        report += `### Curated Mentor Guidance:\n`;
-        report += `${problem.review || 'Inspect missing values and DataFrame shapes using .info() and .shape after every step.'}\n\n`;
+        report += isMn ? `### Багшийн Зөвлөмж:\n` : `### Curated Mentor Guidance:\n`;
+        report += `${problem.review || (isMn ? 'DataFrame-ийн хэлбэр болон дутуу утгуудыг .info() болон .shape ашиглан шалгана уу.' : 'Inspect missing values and DataFrame shapes using .info() and .shape after every step.')}\n\n`;
 
         report += `---\n`;
-        report += `*Tip: Connect a free Google Gemini or Groq API Key in AI Settings to enable live interactive mentor feedback.*`;
+        report += isMn ? `*Зөвлөгөө: Google Gemini эсвэл Groq API түлхүүр холбож бодит интерактив дүгнэлт авна уу.*` : `*Tip: Connect a free Google Gemini or Groq API Key in AI Settings to enable live interactive mentor feedback.*`;
 
         return report;
     }

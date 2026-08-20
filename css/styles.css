@@ -1045,3 +1045,42 @@ kbd {
     overflow-x: auto;
     font-family: var(--font-mono);
 }
+
+/* Language Switcher Segmented Control */
+.brand-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lang-switch-container {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--midnight-border);
+    border-radius: var(--radius-sm);
+    padding: 2px;
+    gap: 2px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--midnight-muted);
+    font-size: 0.68rem;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    padding: 2px 7px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+.lang-btn:hover {
+    color: #ffffff;
+}
+
+.lang-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+}
