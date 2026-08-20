@@ -12,11 +12,13 @@ var EditorManager = (function() {
         for (let key in COURSE_DATA.lessons) {
             const l = COURSE_DATA.lessons[key];
             if (l.isExam && (l.id === cellId || (l.id + '-0') === cellId)) {
-                return l.starterCode || '';
+                return (l.starterCode || '').replace(/\\n/g, '\n');
             }
             if (l.practices) {
                 const p = l.practices.find(item => item.id === cellId);
-                if (p) return p.code || '';
+                if (p && p.code) {
+                    return p.code.replace(/\\n/g, '\n');
+                }
             }
         }
         return '';
