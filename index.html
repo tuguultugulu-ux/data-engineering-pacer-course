@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Engineering PACER Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- CodeMirror for Jupyter-like editor -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    
+    <!-- Pyodide for running Python in browser -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Data Engineering Roadmap</h2>
+        <ul id="nav-list">
+            <li><a href="#" class="active" onclick="loadLesson('intro')">Introduction & Syllabus</a></li>
+            <li><a href="#" onclick="loadLesson('week1')">Phase 1: Strengthen Python & Git</a></li>
+            <li><a href="#" onclick="loadLesson('week2')">Phase 2: NumPy for numerical data</a></li>
+            <li><a href="#" onclick="loadLesson('week3')">Phase 3: Pandas and EDA</a></li>
+            <li><a href="#" onclick="loadLesson('week4')">Phase 4: Visualization and statistics</a></li>
+            <li><a href="#" onclick="loadLesson('week5')">Phase 5: Build a proper data pipeline</a></li>
+            <li><a href="#" onclick="loadLesson('week6')">Phase 6: Scikit-learn pipelines</a></li>
+            <li><a href="#" onclick="loadLesson('resources')">Resources & References</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="container" id="content-container">
+            <!-- Dynamic Content Loaded Here -->
+            <h1>Welcome to the PACER Data Engineering Course</h1>
+            <p>Loading course environment...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
