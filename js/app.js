@@ -188,7 +188,7 @@ function renderLessonHtml(lesson) {
 
                 <div class="editor-review-split">
                     <div class="editor-pane">
-                        <div class="editor-container" data-cell-id="${lesson.id}-0" data-initial-code="${escapeHtmlAttr(lesson.starterCode)}"></div>
+                        <div class="editor-container" data-cell-id="${lesson.id}-0" ></div>
                     </div>
                 </div>
 
@@ -300,7 +300,7 @@ function renderPracticeCard(practice) {
 
             <div class="editor-review-split">
                 <div class="editor-pane">
-                    <div class="editor-container" data-cell-id="${practice.id}" data-initial-code="${escapeHtmlAttr(practice.code)}"></div>
+                    <div class="editor-container" data-cell-id="${practice.id}" ></div>
                 </div>
                 <div class="review-panel hidden" id="rabbit-${practice.id}">
                     <div class="review-header">

@@ -107,24 +107,24 @@ var COURSE_DATA = {
           "id": "w2_00-0",
           "level": "Easy",
           "title": "Easy: 2. Introduction to NumPy",
-          "markdown": "**Scenario: Restaurant Orders**\\n1. Implement the basic functionality of 2. Introduction to NumPy.",
-          "code": "import numpy as np\\n\\n# Code:\\n",
+          "markdown": "**Scenario: Restaurant Orders**\n1. Implement the basic functionality of 2. Introduction to NumPy.",
+          "code": "import numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
           "id": "w2_00-1",
           "level": "Intermediate",
           "title": "Intermediate: 2. Introduction to NumPy",
-          "markdown": "**Scenario: Restaurant Orders**\\n1. Handle edge cases for 2. Introduction to NumPy.",
-          "code": "import numpy as np\\n\\n# Code:\\n",
+          "markdown": "**Scenario: Restaurant Orders**\n1. Handle edge cases for 2. Introduction to NumPy.",
+          "code": "import numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
           "id": "w2_00-2",
           "level": "Complex",
           "title": "Complex: 2. Introduction to NumPy",
-          "markdown": "**Scenario: Restaurant Orders**\\n1. Combine 2. Introduction to NumPy with boolean masks.",
-          "code": "import numpy as np\\n\\n# Code:\\n",
+          "markdown": "**Scenario: Restaurant Orders**\n1. Combine 2. Introduction to NumPy with boolean masks.",
+          "code": "import numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -132,7 +132,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - 2. Introduction to NumPy**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `2. Introduction to NumPy` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'table': [1, 2, 3], 'bill': [50.0, 100.0, np.nan], 'tip': [5.0, 15.0, 0.0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'table': [1, 2, 3], 'bill': [50.0, 100.0, np.nan], 'tip': [5.0, 15.0, 0.0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -149,7 +149,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Array Creation and Inspection",
           "markdown": "**Scenario: Music Library**\nYou are collecting raw numerical readings.\n1. Convert `prices` to a NumPy array of type float32.\n2. Print the shape, ndim, dtype, and itemsize of the array.\n3. Create a 3x3 array of zeros of type int8.",
-          "code": "import numpy as np\\n\\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -157,7 +157,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Indexing and Slicing",
           "markdown": "**Scenario: Music Library**\nYou have a 2D matrix of data that needs segmentation.\n1. Print the original 5x5 matrix.\n2. Extract the first row and the last column.\n3. Extract a 2x2 sub-matrix from the top-right corner.\n4. Reverse the order of the rows in the matrix.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(2026)\\nmatrix = rng.integers(1, 100, size=(5, 5))\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -165,7 +165,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Reshaping and Copies",
           "markdown": "**Scenario: Music Library**\nYou are streaming hourly data that must be structured.\n1. Reshape `raw_stream` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).\n2. Extract the data for the second day (index 1).\n3. Create a completely independent copy (not a view) of the first day's data.\n4. Modify a value in the copy and prove the original `raw_stream` is unchanged.",
-          "code": "import numpy as np\\n\\nraw_stream = np.arange(1, 37)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -173,7 +173,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Understanding Data Types in Python**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Understanding Data Types in Python` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -190,7 +190,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Array Creation and Inspection",
           "markdown": "**Scenario: Zoo Animal Diet**\nYou are collecting raw numerical readings.\n1. Convert `prices` to a NumPy array of type float32.\n2. Print the shape, ndim, dtype, and itemsize of the array.\n3. Create a 3x3 array of zeros of type int8.",
-          "code": "import numpy as np\\n\\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -198,7 +198,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Indexing and Slicing",
           "markdown": "**Scenario: Zoo Animal Diet**\nYou have a 2D matrix of data that needs segmentation.\n1. Print the original 5x5 matrix.\n2. Extract the first row and the last column.\n3. Extract a 2x2 sub-matrix from the top-right corner.\n4. Reverse the order of the rows in the matrix.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(2026)\\nmatrix = rng.integers(1, 100, size=(5, 5))\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -206,7 +206,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Reshaping and Copies",
           "markdown": "**Scenario: Zoo Animal Diet**\nYou are streaming hourly data that must be structured.\n1. Reshape `raw_stream` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).\n2. Extract the data for the second day (index 1).\n3. Create a completely independent copy (not a view) of the first day's data.\n4. Modify a value in the copy and prove the original `raw_stream` is unchanged.",
-          "code": "import numpy as np\\n\\nraw_stream = np.arange(1, 37)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -214,7 +214,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - The Basics of NumPy Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `The Basics of NumPy Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'animal': ['Lion', 'Elephant', 'Monkey'], 'food_kg': [10, 50, np.nan], 'enclosure': ['A', 'B', 'C']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'animal': ['Lion', 'Elephant', 'Monkey'], 'food_kg': [10, 50, np.nan], 'enclosure': ['A', 'B', 'C']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -231,7 +231,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Vectorized Arithmetic",
           "markdown": "**Scenario: Social Media Posts**\n1. Multiply all `base_values` by the `multiplier` without using loops.\n2. Add 50 to the result.\n3. Round the final values to 1 decimal place using `np.round`.",
-          "code": "import numpy as np\\n\\nbase_values = np.array([100, 200, 300, 400, 500])\\nmultiplier = 1.15\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -239,7 +239,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Ufuncs and Broadcasting",
           "markdown": "**Scenario: Social Media Posts**\n1. Add the vector to the matrix (Broadcasting).\n2. Compute the natural logarithm (`np.log`) of the resulting matrix.\n3. Explain in a comment how broadcasting matched the shapes.",
-          "code": "import numpy as np\\n\\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\\nvector = np.array([1, 2])\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -247,7 +247,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Advanced Ufuncs",
           "markdown": "**Scenario: Social Media Posts**\n1. Use `np.power` to square every element in x.\n2. Use `np.sin` and `np.cos` to compute `sin(x)^2 + cos(x)^2`.\n3. Verify that all results in step 2 are exactly (or close to) 1.0.\n4. Find the sum of all elements using `np.add.reduce`.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(42)\\nx = rng.uniform(1, 10, size=100)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -255,7 +255,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Computation on NumPy Arrays: Universal Functions**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Computation on NumPy Arrays: Universal Functions` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -272,7 +272,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Simple Aggregations",
           "markdown": "**Scenario: Streaming Service Views**\n1. Find the min, max, and mean of the scores.\n2. Find the index of the highest score using `np.argmax`.\n3. Find the median score using `np.median`.",
-          "code": "import numpy as np\\n\\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -280,7 +280,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Axis Aggregations",
           "markdown": "**Scenario: Streaming Service Views**\n1. Calculate the mean score for each student (axis=1). Notice what NaN does.\n2. Use `np.nanmean` to calculate the mean score for each student while ignoring NaNs.\n3. Find the maximum score achieved on each exam (axis=0) using `np.nanmax`.",
-          "code": "import numpy as np\\n\\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -288,7 +288,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Multi-dimensional Aggregations",
           "markdown": "**Scenario: Streaming Service Views**\n1. Find the total sum of all elements.\n2. Find the maximum value for each week (reduce across days and hours).\n3. Find the average value for each hour of the day (average across weeks and days).\n4. Verify the shape of the result from step 3 is (8,).",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(99)\\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -296,7 +296,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Aggregations: Min, Max, and Everything In Between**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Aggregations: Min, Max, and Everything In Between` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'user': ['U1', 'U2', 'U3'], 'minutes_watched': [120, 240, np.nan], 'plan': ['Free', 'Paid', 'Free']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'user': ['U1', 'U2', 'U3'], 'minutes_watched': [120, 240, np.nan], 'plan': ['Free', 'Paid', 'Free']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -313,7 +313,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Vectorized Arithmetic",
           "markdown": "**Scenario: Gym Memberships**\n1. Multiply all `base_values` by the `multiplier` without using loops.\n2. Add 50 to the result.\n3. Round the final values to 1 decimal place using `np.round`.",
-          "code": "import numpy as np\\n\\nbase_values = np.array([100, 200, 300, 400, 500])\\nmultiplier = 1.15\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -321,7 +321,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Ufuncs and Broadcasting",
           "markdown": "**Scenario: Gym Memberships**\n1. Add the vector to the matrix (Broadcasting).\n2. Compute the natural logarithm (`np.log`) of the resulting matrix.\n3. Explain in a comment how broadcasting matched the shapes.",
-          "code": "import numpy as np\\n\\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\\nvector = np.array([1, 2])\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -329,7 +329,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Advanced Ufuncs",
           "markdown": "**Scenario: Gym Memberships**\n1. Use `np.power` to square every element in x.\n2. Use `np.sin` and `np.cos` to compute `sin(x)^2 + cos(x)^2`.\n3. Verify that all results in step 2 are exactly (or close to) 1.0.\n4. Find the sum of all elements using `np.add.reduce`.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(42)\\nx = rng.uniform(1, 10, size=100)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -337,7 +337,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Computation on Arrays: Broadcasting**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Computation on Arrays: Broadcasting` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'member': ['M1', 'M2', 'M3'], 'visits': [10, 20, np.nan], 'plan': ['Basic', 'Premium', 'Basic']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'member': ['M1', 'M2', 'M3'], 'visits': [10, 20, np.nan], 'plan': ['Basic', 'Premium', 'Basic']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -354,7 +354,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Boolean Masks",
           "markdown": "**Scenario: Bank Loan Approvals**\n1. Create a boolean mask for ages >= 18.\n2. Print the mask itself.\n3. Use the mask to extract and print only the adult ages.",
-          "code": "import numpy as np\\n\\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -362,7 +362,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Compound Logic",
           "markdown": "**Scenario: Bank Loan Approvals**\n1. Create a mask for temperatures that are \"comfortable\": between 15 and 25 inclusive.\n2. Use the mask to extract the comfortable temperatures.\n3. Count how many comfortable temperatures there are using `np.count_nonzero()`.\n4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(42)\\ntemps = rng.integers(-10, 40, size=20)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -370,7 +370,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: np.where and Conditional Assignment",
           "markdown": "**Scenario: Bank Loan Approvals**\n1. Use `np.where` to create a new array: if value > 120, set to \"High\", else \"Normal\".\n2. Replace all values in the original array that are negative with 0 (using boolean indexing).\n3. Use `np.clip` to restrict the array values to a minimum of 50 and maximum of 150.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(2026)\\nvalues = rng.normal(100, 20, size=50)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -378,7 +378,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Comparisons, Masks, and Boolean Logic**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Comparisons, Masks, and Boolean Logic` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -395,7 +395,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Fancy Indexing 1D",
           "markdown": "**Scenario: Hotel Bookings**\n1. Use the `indices` list to extract elements \"A\", \"D\", and \"F\" in one operation.\n2. Create a new index array `[5, 5, 5]` and use it to extract \"F\" three times.",
-          "code": "import numpy as np\\n\\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\\nindices = [0, 3, 5]\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -403,7 +403,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Fancy Indexing 2D",
           "markdown": "**Scenario: Hotel Bookings**\n1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.\n2. Extract the entire 1st and 3rd rows using fancy indexing.\n3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.",
-          "code": "import numpy as np\\n\\nmatrix = np.arange(25).reshape(5, 5)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -411,7 +411,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Combined Indexing",
           "markdown": "**Scenario: Hotel Bookings**\n1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.\n2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.\n3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(123)\\ndata = rng.integers(0, 100, size=(6, 6))\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -419,7 +419,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Fancy Indexing**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Fancy Indexing` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'booking_id': ['B1', 'B2', 'B3'], 'nights': [2, 5, np.nan], 'price_per_night': [100, 150, 200]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'booking_id': ['B1', 'B2', 'B3'], 'nights': [2, 5, np.nan], 'price_per_night': [100, 150, 200]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -436,7 +436,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Basic Sorting",
           "markdown": "**Scenario: Retail Store Stock**\n1. Use `np.sort()` to return a sorted copy of the data.\n2. Call the `.sort()` method on the array to sort it in-place.\n3. Verify the array is sorted.",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(42)\\nunsorted = rng.integers(1, 100, size=10)\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -444,7 +444,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: argsort",
           "markdown": "**Scenario: Retail Store Stock**\n1. Use `np.argsort()` on the `scores` array to get the sorted indices.\n2. Use those indices to print the `names` array in order of lowest to highest score.\n3. Reverse the indices to print the names from highest to lowest score.",
-          "code": "import numpy as np\\n\\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\\nscores = np.array([85, 92, 78, 88])\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -452,7 +452,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Multi-dimensional Sorting",
           "markdown": "**Scenario: Retail Store Stock**\n1. Sort each column of the matrix independently (axis=0).\n2. Sort each row of the matrix independently (axis=1).\n3. Sort the entire matrix ROWS based entirely on the values in the 2nd column. (Hint: Use argsort on the 2nd column, then fancy index the rows).",
-          "code": "import numpy as np\\n\\nrng = np.random.default_rng(2026)\\nmatrix = rng.integers(0, 50, size=(5, 4))\\n\\n# Write your code here:\\n",
+          "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -460,7 +460,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Sorting Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Sorting Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'item': ['Shoes', 'Shirts', 'Pants'], 'stock': [50, 100, np.nan], 'price': [60, 25, 40]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'item': ['Shoes', 'Shirts', 'Pants'], 'stock': [50, 100, np.nan], 'price': [60, 25, 40]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -476,24 +476,24 @@ var COURSE_DATA = {
           "id": "w2_09-0",
           "level": "Easy",
           "title": "Easy: Structured Data: NumPy's Structured Arrays",
-          "markdown": "**Scenario: Hospital Pharmacy**\\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.",
-          "code": "import numpy as np\\n\\n# Code:\\n",
+          "markdown": "**Scenario: Hospital Pharmacy**\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.",
+          "code": "import numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
           "id": "w2_09-1",
           "level": "Intermediate",
           "title": "Intermediate: Structured Data: NumPy's Structured Arrays",
-          "markdown": "**Scenario: Hospital Pharmacy**\\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.",
-          "code": "import numpy as np\\n\\n# Code:\\n",
+          "markdown": "**Scenario: Hospital Pharmacy**\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.",
+          "code": "import numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
           "id": "w2_09-2",
           "level": "Complex",
           "title": "Complex: Structured Data: NumPy's Structured Arrays",
-          "markdown": "**Scenario: Hospital Pharmacy**\\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.",
-          "code": "import numpy as np\\n\\n# Code:\\n",
+          "markdown": "**Scenario: Hospital Pharmacy**\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.",
+          "code": "import numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -501,7 +501,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: NumPy - Structured Data: NumPy's Structured Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Structured Data: NumPy's Structured Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'drug': ['D1', 'D2', 'D3'], 'doses': [1000, 2000, np.nan], 'cost': [5000, 10000, 15000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'drug': ['D1', 'D2', 'D3'], 'doses': [1000, 2000, np.nan], 'cost': [5000, 10000, 15000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -518,7 +518,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: 4. Visualization with Matplotlib",
           "markdown": "1. Implement the plotting basics for 4. Visualization with Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -526,7 +526,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: 4. Visualization with Matplotlib",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -534,7 +534,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: 4. Visualization with Matplotlib",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -542,7 +542,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - 4. Visualization with Matplotlib**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -559,7 +559,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Simple Line Plots",
           "markdown": "1. Implement the plotting basics for Simple Line Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -567,7 +567,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Simple Line Plots",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -575,7 +575,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Simple Line Plots",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -583,7 +583,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Simple Line Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -600,7 +600,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Simple Scatter Plots",
           "markdown": "1. Implement the plotting basics for Simple Scatter Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -608,7 +608,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Simple Scatter Plots",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -616,7 +616,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Simple Scatter Plots",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -624,7 +624,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Simple Scatter Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'date': ['01', '02', '03'], 'steps': [10000, 5000, np.nan], 'calories': [2500, 1800, 2000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'date': ['01', '02', '03'], 'steps': [10000, 5000, np.nan], 'calories': [2500, 1800, 2000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -641,7 +641,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Visualizing Errors",
           "markdown": "1. Implement the plotting basics for Visualizing Errors. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -649,7 +649,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Visualizing Errors",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -657,7 +657,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Visualizing Errors",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -665,7 +665,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Visualizing Errors**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'emp_id': np.arange(1001, 1006), 'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'], 'salary': [1500, 2000, np.nan, 2500, 1800]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'emp_id': np.arange(1001, 1006), 'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'], 'salary': [1500, 2000, np.nan, 2500, 1800]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -682,7 +682,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Density and Contour Plots",
           "markdown": "1. Implement the plotting basics for Density and Contour Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -690,7 +690,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Density and Contour Plots",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -698,7 +698,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Density and Contour Plots",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -706,7 +706,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Density and Contour Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'member': ['M1', 'M2', 'M3'], 'visits': [10, 20, np.nan], 'plan': ['Basic', 'Premium', 'Basic']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'member': ['M1', 'M2', 'M3'], 'visits': [10, 20, np.nan], 'plan': ['Basic', 'Premium', 'Basic']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -723,7 +723,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Histograms, Binnings, and Density",
           "markdown": "1. Implement the plotting basics for Histograms, Binnings, and Density. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -731,7 +731,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Histograms, Binnings, and Density",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -739,7 +739,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Histograms, Binnings, and Density",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -747,7 +747,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Histograms, Binnings, and Density**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'animal': ['Lion', 'Elephant', 'Monkey'], 'food_kg': [10, 50, np.nan], 'enclosure': ['A', 'B', 'C']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'animal': ['Lion', 'Elephant', 'Monkey'], 'food_kg': [10, 50, np.nan], 'enclosure': ['A', 'B', 'C']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -764,7 +764,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Customizing Plot Legends",
           "markdown": "1. Implement the plotting basics for Customizing Plot Legends. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -772,7 +772,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Customizing Plot Legends",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -780,7 +780,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Customizing Plot Legends",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -788,7 +788,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Plot Legends**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'player': ['P1', 'P2', 'P3'], 'score': [1000, 1500, np.nan], 'level': [1, 2, 3]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'player': ['P1', 'P2', 'P3'], 'score': [1000, 1500, np.nan], 'level': [1, 2, 3]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -805,7 +805,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Customizing Colorbars",
           "markdown": "1. Implement the plotting basics for Customizing Colorbars. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -813,7 +813,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Customizing Colorbars",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -821,7 +821,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Customizing Colorbars",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -829,7 +829,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Colorbars**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'drug': ['D1', 'D2', 'D3'], 'doses': [1000, 2000, np.nan], 'cost': [5000, 10000, 15000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'drug': ['D1', 'D2', 'D3'], 'doses': [1000, 2000, np.nan], 'cost': [5000, 10000, 15000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -846,7 +846,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Multiple Subplots",
           "markdown": "1. Implement the plotting basics for Multiple Subplots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -854,7 +854,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Multiple Subplots",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -862,7 +862,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Multiple Subplots",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -870,7 +870,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Multiple Subplots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'table': [1, 2, 3], 'bill': [50.0, 100.0, np.nan], 'tip': [5.0, 15.0, 0.0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'table': [1, 2, 3], 'bill': [50.0, 100.0, np.nan], 'tip': [5.0, 15.0, 0.0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -887,7 +887,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Text and Annotation",
           "markdown": "1. Implement the plotting basics for Text and Annotation. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -895,7 +895,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Text and Annotation",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -903,7 +903,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Text and Annotation",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -911,7 +911,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Text and Annotation**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -928,7 +928,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Customizing Ticks",
           "markdown": "1. Implement the plotting basics for Customizing Ticks. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -936,7 +936,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Customizing Ticks",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -944,7 +944,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Customizing Ticks",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -952,7 +952,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Ticks**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -969,7 +969,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Customizing Matplotlib: Configurations and Stylesheets",
           "markdown": "1. Implement the plotting basics for Customizing Matplotlib: Configurations and Stylesheets. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -977,7 +977,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Customizing Matplotlib: Configurations and Stylesheets",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -985,7 +985,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Customizing Matplotlib: Configurations and Stylesheets",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -993,7 +993,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Customizing Matplotlib: Configurations and Stylesheets**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'flight': ['F1', 'F2', 'F3'], 'delay_mins': [15, 0, np.nan], 'airline': ['AirA', 'AirB', 'AirA']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'flight': ['F1', 'F2', 'F3'], 'delay_mins': [15, 0, np.nan], 'airline': ['AirA', 'AirB', 'AirA']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1010,7 +1010,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Three-Dimensional Plotting in Matplotlib",
           "markdown": "1. Implement the plotting basics for Three-Dimensional Plotting in Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1018,7 +1018,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Three-Dimensional Plotting in Matplotlib",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1026,7 +1026,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Three-Dimensional Plotting in Matplotlib",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1034,7 +1034,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Three-Dimensional Plotting in Matplotlib**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'emp_id': np.arange(1001, 1006), 'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'], 'salary': [1500, 2000, np.nan, 2500, 1800]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'emp_id': np.arange(1001, 1006), 'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'], 'salary': [1500, 2000, np.nan, 2500, 1800]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1051,7 +1051,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Geographic Data with Basemap",
           "markdown": "1. Implement the plotting basics for Geographic Data with Basemap. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1059,7 +1059,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Geographic Data with Basemap",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1067,7 +1067,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Geographic Data with Basemap",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1075,7 +1075,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Geographic Data with Basemap**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1092,7 +1092,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Visualization with Seaborn",
           "markdown": "1. Implement the plotting basics for Visualization with Seaborn. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1100,7 +1100,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Visualization with Seaborn",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1108,7 +1108,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Visualization with Seaborn",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1116,7 +1116,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Visualization with Seaborn**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1133,7 +1133,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Further Resources",
           "markdown": "1. Implement the plotting basics for Further Resources. (Note: Plots don't render in the browser sandbox, but write the correct code).",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1141,7 +1141,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Further Resources",
           "markdown": "1. Add labels, titles, and legends.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1149,7 +1149,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Further Resources",
           "markdown": "1. Create multiple subplots.",
-          "code": "import matplotlib.pyplot as plt\\nimport numpy as np\\n\\n# Code:\\n",
+          "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1157,7 +1157,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Matplotlib - Further Resources**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'item': ['Shoes', 'Shirts', 'Pants'], 'stock': [50, 100, np.nan], 'price': [60, 25, 40]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'item': ['Shoes', 'Shirts', 'Pants'], 'stock': [50, 100, np.nan], 'price': [60, 25, 40]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1174,7 +1174,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Series Construction",
           "markdown": "**Scenario: Marketing Campaign ROI**\n1. Convert the 'name' list from the data dict into a Pandas Series named `name_series`.\n2. Print the first 3 elements of the Series.\n3. Create a Series for 'salary' and find its mean.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1182,7 +1182,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: DataFrame Construction",
           "markdown": "**Scenario: Marketing Campaign ROI**\n1. Convert the entire `data` dictionary into a Pandas DataFrame named `df`.\n2. Print the `.shape`, `.columns`, and `.dtypes`.\n3. Use `.head()` to show the first 4 rows.\n4. Use `.info()` to inspect missing values.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1190,7 +1190,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: DataFrame Operations",
           "markdown": "**Scenario: Marketing Campaign ROI**\n1. Convert `data` to a DataFrame `df`.\n2. Set the index of the DataFrame to be the ID column.\n3. Select only the numerical columns.\n4. Sort the DataFrame by the last column in descending order.\n5. Extract the top 3 rows into a new DataFrame.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1198,7 +1198,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - What kind of data does pandas handle?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `What kind of data does pandas handle?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1215,7 +1215,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: CSV Writing",
           "markdown": "**Scenario: Bank Loan Approvals**\n1. Convert `data` to a DataFrame `df`.\n2. Save the DataFrame to a CSV string using `df.to_csv(index=False)`.\n3. Print the resulting CSV string.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1223,7 +1223,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: CSV Reading and Inspection",
           "markdown": "**Scenario: Bank Loan Approvals**\n1. Use `io.StringIO(csv_text)` to read the CSV into a DataFrame.\n2. Inspect the dtypes. Notice that 'value' is an object (string) because of \"invalid\".\n3. Convert 'value' to numeric using `pd.to_numeric(..., errors='coerce')`.\n4. Check the dtypes again and print the missing value count.",
-          "code": "import pandas as pd\\nimport io\\n\\ncsv_text = '''id,name,value,date\\n1,Ari,10.5,2026-01-01\\n2,Bataa,,2026-01-02\\n3,Caraa,invalid,2026-01-03\\n4,Davaa,15.2,2026-01-04'''\\n\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1231,7 +1231,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: JSON Round-Trip",
           "markdown": "**Scenario: Bank Loan Approvals**\n1. Convert `data` to a DataFrame `df`.\n2. Export the DataFrame to JSON using `to_json(orient='records')`.\n3. Read the JSON string back into a new DataFrame `df_json`.\n4. Assert or verify that the shape and columns of `df_json` match the original `df`.\n5. Explain in a comment why orient='records' is often preferred for web APIs.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1239,7 +1239,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How do I read and write tabular data?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I read and write tabular data?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1256,7 +1256,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Selecting Columns",
           "markdown": "**Scenario: Social Media Posts**\n1. Create `df` from `data`.\n2. Select just the first column (e.g. name or timestamp) as a Series.\n3. Select the first column AND the last column as a DataFrame (use a list of columns).",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1264,7 +1264,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: loc vs iloc",
           "markdown": "**Scenario: Social Media Posts**\n1. Create `df` from `data`.\n2. Change the index to be non-sequential (e.g., `df.index = [10, 20, 30...]`).\n3. Use `.iloc` to select the exactly 3rd row (integer position).\n4. Use `.loc` to select rows based on a specific label from your new index.\n5. Use `.loc` to select the 3rd row BUT only the first two columns.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1272,7 +1272,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Boolean Filtering",
           "markdown": "**Scenario: Social Media Posts**\n1. Create `df` from `data`.\n2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.\n3. Filter for rows where a categorical column equals a specific value, AND a numerical column is not null.\n4. Use `.isin()` to filter for rows matching two different categorical values.\n5. Reset the index of the final filtered DataFrame.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1280,7 +1280,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How do I select a subset of a DataFrame?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I select a subset of a DataFrame?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1297,7 +1297,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: How do I create plots in pandas?",
           "markdown": "1. Implement the basics for How do I create plots in pandas?.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1305,7 +1305,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: How do I create plots in pandas?",
           "markdown": "1. Apply advanced concepts for How do I create plots in pandas?.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1313,7 +1313,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: How do I create plots in pandas?",
           "markdown": "1. Create a mini pipeline using How do I create plots in pandas?.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1321,7 +1321,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How do I create plots in pandas?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I create plots in pandas?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1338,7 +1338,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Creating New Columns",
           "markdown": "**Scenario: Crypto Portfolio**\n1. Create `df` from `data`.\n2. Create a new column that is exactly double the value of an existing numerical column.\n3. Create a static column called `data_source` and set all its values to \"System A\".",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1346,7 +1346,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Vectorized Logic",
           "markdown": "**Scenario: Crypto Portfolio**\n1. Create `df` from `data`.\n2. Create a boolean column `is_high_value` which is True if the numerical column is greater than its mean.\n3. Use `np.where()` to create a column `status_label`: if `is_high_value` is True, set to \"Priority\", else \"Standard\".",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1354,7 +1354,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Complex Feature Engineering",
           "markdown": "**Scenario: Crypto Portfolio**\n1. Create `df = pd.DataFrame(data)`.\n2. Clean the numerical column (fill NaNs).\n3. Create a column `normalized_score`: subtract the min and divide by (max - min) for the numerical column.\n4. Create a categorical column `band` using `pd.cut()` to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1362,7 +1362,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How to create new columns derived from existing columns**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to create new columns derived from existing columns`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1379,7 +1379,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Summary Statistics",
           "markdown": "**Scenario: Music Library**\n1. Create `df` from `data`.\n2. Use `.describe()` to print summary statistics for all numeric columns.\n3. Find the exact median of the numerical columns.\n4. Use `.value_counts()` on one of the categorical columns to see the distribution.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1387,7 +1387,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: GroupBy Basics",
           "markdown": "**Scenario: Music Library**\n1. Create `df` from `data`.\n2. Group the DataFrame by one of the categorical columns.\n3. Calculate the `.mean()` for the numerical columns within each group.\n4. Calculate the `.count()` for each group to see how many records belong to each.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1395,7 +1395,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Advanced GroupBy and Aggregation",
           "markdown": "**Scenario: Music Library**\n1. Create `df` from `data`.\n2. Group by the categorical column.\n3. Use the `.agg()` method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.\n4. Sort the resulting grouped table by the 'mean' value in descending order.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1403,7 +1403,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How to calculate summary statistics**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to calculate summary statistics`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1420,7 +1420,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Pivot Tables Basics",
           "markdown": "**Scenario: Library Book Loans**\n1. Create `df` from `data`.\n2. Use `pd.pivot_table()` to show the average numerical value for each category (e.g. department, sensor_id).",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1428,7 +1428,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Multi-dimensional Pivots",
           "markdown": "**Scenario: Analyzing sales by Region and Year.**\n1. Create a pivot table with `Region` as the index, `Year` as columns, and `Sales` as values.\n2. Use `aggfunc='sum'` to combine the two North 2022 records.",
-          "code": "import pandas as pd\\n\\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\\n\\n# Write your code here:\\n",
+          "code": "import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1436,7 +1436,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Melt / Unpivot",
           "markdown": "**Scenario: Converting wide data to long format.**\n1. Use `pd.melt()` to convert this from wide format to long format. The resulting columns should be 'Student', 'Subject', and 'Score'.\n2. Sort the long DataFrame by 'Student'.",
-          "code": "import pandas as pd\\n\\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\\n\\n# Write your code here:\\n",
+          "code": "import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1444,7 +1444,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How to reshape the layout of tables**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to reshape the layout of tables`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1461,7 +1461,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Concatenation",
           "markdown": "**Scenario: Combine logs from two servers.**\n1. Use `pd.concat` to stack `df1` and `df2` vertically.\n2. Ignore the index so the new DataFrame has a clean index from 0 to 3.",
-          "code": "import pandas as pd\\n\\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\\n\\n# Write your code here:\\n",
+          "code": "import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1469,7 +1469,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Merging (Inner Join)",
           "markdown": "**Scenario: Link transactions with profiles.**\n1. Use `pd.merge()` to join `sales` and `customers` on `cust_id`.\n2. Print the result. Notice which `cust_id`s were dropped (inner join behavior).",
-          "code": "import pandas as pd\\n\\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\\n\\n# Write your code here:\\n",
+          "code": "import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1477,7 +1477,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Outer Joins and Indicators",
           "markdown": "**Scenario: Reconcile two databases.**\n1. Perform an outer merge on `user`, setting `indicator=True`.\n2. Print the resulting DataFrame.\n3. Filter the DataFrame to show ONLY rows that were present in the left database but missing in the right database.",
-          "code": "import pandas as pd\\n\\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\\n\\n# Write your code here:\\n",
+          "code": "import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1485,7 +1485,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How to combine data from multiple tables**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to combine data from multiple tables`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1502,7 +1502,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: How to handle time series data with ease",
           "markdown": "1. Implement the basics for How to handle time series data with ease.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1510,7 +1510,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: How to handle time series data with ease",
           "markdown": "1. Apply advanced concepts for How to handle time series data with ease.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1518,7 +1518,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: How to handle time series data with ease",
           "markdown": "1. Create a mini pipeline using How to handle time series data with ease.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\\n# Write your code here:\\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         },
         {
@@ -1526,7 +1526,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Pandas - How to handle time series data with ease**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to handle time series data with ease`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your DataFrame shapes and missing value counts using .info()!"
         }
       ]
@@ -1552,7 +1552,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Getting Started with Scikit-learn",
           "markdown": "1. Implement the basics for Getting Started with Scikit-learn.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1560,7 +1560,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Getting Started with Scikit-learn",
           "markdown": "1. Apply advanced concepts for Getting Started with Scikit-learn.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1568,7 +1568,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Getting Started with Scikit-learn",
           "markdown": "1. Combine Getting Started with Scikit-learn with pipelines.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1576,7 +1576,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Scikit-Learn - Getting Started with Scikit-learn**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Getting Started with Scikit-learn` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'vin': ['V1', 'V2', 'V3'], 'mileage': [10000, 50000, np.nan], 'price': [20000, 15000, 10000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'vin': ['V1', 'V2', 'V3'], 'mileage': [10000, 50000, np.nan], 'price': [20000, 15000, 10000]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your pipeline parameters and transformations!"
         }
       ]
@@ -1593,7 +1593,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Pipeline Documentation",
           "markdown": "1. Implement the basics for Pipeline Documentation.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1601,7 +1601,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Pipeline Documentation",
           "markdown": "1. Apply advanced concepts for Pipeline Documentation.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1609,7 +1609,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Pipeline Documentation",
           "markdown": "1. Combine Pipeline Documentation with pipelines.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1617,7 +1617,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Scikit-Learn - Pipeline Documentation**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Pipeline Documentation` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your pipeline parameters and transformations!"
         }
       ]
@@ -1634,7 +1634,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: ColumnTransformer Documentation",
           "markdown": "1. Implement the basics for ColumnTransformer Documentation.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1642,7 +1642,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: ColumnTransformer Documentation",
           "markdown": "1. Apply advanced concepts for ColumnTransformer Documentation.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1650,7 +1650,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: ColumnTransformer Documentation",
           "markdown": "1. Combine ColumnTransformer Documentation with pipelines.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1658,7 +1658,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Scikit-Learn - ColumnTransformer Documentation**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `ColumnTransformer Documentation` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10, 15, np.nan, 25], 'rainfall': [0, 5, 10, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10, 15, np.nan, 25], 'rainfall': [0, 5, 10, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your pipeline parameters and transformations!"
         }
       ]
@@ -1675,7 +1675,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Preprocessing Data",
           "markdown": "1. Implement the basics for Preprocessing Data.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1683,7 +1683,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Preprocessing Data",
           "markdown": "1. Apply advanced concepts for Preprocessing Data.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1691,7 +1691,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Preprocessing Data",
           "markdown": "1. Combine Preprocessing Data with pipelines.",
-          "code": "import sklearn\\n\\n# Code:\\n",
+          "code": "import sklearn\n\n# Code:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1699,7 +1699,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Scikit-Learn - Preprocessing Data**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Preprocessing Data` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your pipeline parameters and transformations!"
         }
       ]
@@ -1716,7 +1716,7 @@ var COURSE_DATA = {
           "level": "Easy",
           "title": "Easy: Basic Train-Test Split",
           "markdown": "**Scenario: Model Validation**\n1. Use `train_test_split` to split X and y into 80% training and 20% testing sets.\n2. Set `random_state=42` for reproducibility.\n3. Print the shapes of X_train and X_test.",
-          "code": "from sklearn.model_selection import train_test_split\\nimport numpy as np\\n\\nX = np.arange(100).reshape((50, 2))\\ny = np.arange(50)\\n\\n# Write your code here:\\n",
+          "code": "from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1724,7 +1724,7 @@ var COURSE_DATA = {
           "level": "Intermediate",
           "title": "Intermediate: Stratified Splitting",
           "markdown": "**Scenario: Imbalanced Target**\n1. Split the data 70/30.\n2. Use the `stratify` parameter to ensure the train and test sets have the same proportion of 0s and 1s as the original y.\n3. Verify the proportions using `np.mean(y_train)` and `np.mean(y_test)`.",
-          "code": "from sklearn.model_selection import train_test_split\\nimport numpy as np\\n\\nX = np.random.rand(100, 5)\\ny = np.array([0]*90 + [1]*10)\\n\\n# Write your code here:\\n",
+          "code": "from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1732,7 +1732,7 @@ var COURSE_DATA = {
           "level": "Complex",
           "title": "Complex: Splitting Pandas DataFrames",
           "markdown": "**Scenario: DataFrame Pipelines**\n1. Separate `df` into `X` (features) and `y` (target).\n2. Perform a train_test_split.\n3. Verify that the indices of `X_train` and `y_train` perfectly match.",
-          "code": "from sklearn.model_selection import train_test_split\\nimport pandas as pd\\nimport numpy as np\\n\\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\\n\\n# Write your code here:\\n",
+          "code": "from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n",
           "review": "Check your pipeline parameters and transformations!"
         },
         {
@@ -1740,7 +1740,7 @@ var COURSE_DATA = {
           "level": "\ud83c\udfc6 Mastery Challenge",
           "title": "\ud83c\udfc6 Mastery Challenge: Final Test",
           "markdown": "**Mastery Challenge: Scikit-Learn - Train Test Split**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Train Test Split` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import pandas as pd\\nimport numpy as np\\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
+          "code": "import pandas as pd\nimport numpy as np\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}\n# NO LOOPS ALLOWED. Write your mastery pipeline below:\n",
           "review": "Check your pipeline parameters and transformations!"
         }
       ]

@@ -7,6 +7,21 @@ var EditorManager = (function() {
     let editors = {};
     let activeCellId = null;
 
+    function getInitialCode(cellId) {
+        if (!window.COURSE_DATA || !COURSE_DATA.lessons) return '';
+        for (let key in COURSE_DATA.lessons) {
+            const l = COURSE_DATA.lessons[key];
+            if (l.isExam && (l.id === cellId || (l.id + '-0') === cellId)) {
+                return l.starterCode || '';
+            }
+            if (l.practices) {
+                const p = l.practices.find(item => item.id === cellId);
+                if (p) return p.code || '';
+            }
+        }
+        return '';
+    }
+
     function setActiveCell(cellId) {
         activeCellId = cellId;
         const footerLabel = document.getElementById('active-cell-label');
@@ -30,7 +45,7 @@ var EditorManager = (function() {
         const editorContainers = container.querySelectorAll('.editor-container');
         editorContainers.forEach((el, index) => {
             const cellId = el.getAttribute('data-cell-id');
-            const initialCode = el.getAttribute('data-initial-code') || '';
+            const initialCode = getInitialCode(cellId);
 
             el.innerHTML = '';
             const cm = CodeMirror(el, {
