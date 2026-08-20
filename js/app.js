@@ -2080,6 +2080,70 @@ const lessons = {
             <div class="output-container" id="output-w6_4-3"></div>
         </div>
         
+    `,    'w2_exam': `
+        <h1>🏆 NumPy Final Phase Exam</h1>
+        <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
+        <div style="background-color: #fff3cd; color: #856404; padding: 20px; border: 1px solid #ffeeba; border-left: 5px solid #f1c40f; margin-bottom: 30px; font-size: 1.1em; line-height: 1.6;">
+            <strong>The Ultimate NumPy Challenge</strong><br><br>
+            Build a 3D NumPy array simulation of climate data, execute advanced slicing, apply Ufuncs with broadcasting, perform boolean masked aggregations, and sort along specific axes without a single python loop.<br><br>
+            <em>This exam tests every single concept from the entire phase in one holistic, massively complex problem. You have no starter code and no hints. Only those who have truly mastered every concept in this phase will be able to pass this exam. Good luck.</em>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_exam-0">
+            <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
+            <div class="editor-container" id="editor-w2_exam-0"></div>
+            <div class="controls"><button onclick="runCode('w2_exam-0')">▶ Submit Exam</button></div>
+            <div class="output-container" id="output-w2_exam-0"></div>
+        </div>
+    `,    'w3_exam': `
+        <h1>🏆 Pandas Final Phase Exam</h1>
+        <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
+        <div style="background-color: #fff3cd; color: #856404; padding: 20px; border: 1px solid #ffeeba; border-left: 5px solid #f1c40f; margin-bottom: 30px; font-size: 1.1em; line-height: 1.6;">
+            <strong>The Ultimate Pandas Challenge</strong><br><br>
+            Load 3 disparate messy datasets. Clean all missing/incorrect data using conditional group-based imputation, string manipulations, and datetime conversions. Merge them correctly handling outer conditions, pivot the results for a business report, and compute advanced rolling aggregations.<br><br>
+            <em>This exam tests every single concept from the entire phase in one holistic, massively complex problem. You have no starter code and no hints. Only those who have truly mastered every concept in this phase will be able to pass this exam. Good luck.</em>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_exam-0">
+            <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
+            <div class="editor-container" id="editor-w3_exam-0"></div>
+            <div class="controls"><button onclick="runCode('w3_exam-0')">▶ Submit Exam</button></div>
+            <div class="output-container" id="output-w3_exam-0"></div>
+        </div>
+    `,    'w4_exam': `
+        <h1>🏆 Matplotlib Final Phase Exam</h1>
+        <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
+        <div style="background-color: #fff3cd; color: #856404; padding: 20px; border: 1px solid #ffeeba; border-left: 5px solid #f1c40f; margin-bottom: 30px; font-size: 1.1em; line-height: 1.6;">
+            <strong>The Ultimate Matplotlib Challenge</strong><br><br>
+            Construct a comprehensive 2x2 dashboard using GridSpec. Integrate a scatter plot with a mapped colorbar, a grouped bar chart, a time-series line plot with confidence intervals, and a 2D histogram. Apply custom styles, titles, legends, and specific annotations to key outliers.<br><br>
+            <em>This exam tests every single concept from the entire phase in one holistic, massively complex problem. You have no starter code and no hints. Only those who have truly mastered every concept in this phase will be able to pass this exam. Good luck.</em>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_exam-0">
+            <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
+            <div class="editor-container" id="editor-w4_exam-0"></div>
+            <div class="controls"><button onclick="runCode('w4_exam-0')">▶ Submit Exam</button></div>
+            <div class="output-container" id="output-w4_exam-0"></div>
+        </div>
+    `,    'w6_exam': `
+        <h1>🏆 Scikit-Learn Final Phase Exam</h1>
+        <div style="margin-bottom: 20px; font-weight: bold;" id="pyodide-status"></div>
+        
+        <div style="background-color: #fff3cd; color: #856404; padding: 20px; border: 1px solid #ffeeba; border-left: 5px solid #f1c40f; margin-bottom: 30px; font-size: 1.1em; line-height: 1.6;">
+            <strong>The Ultimate Scikit-Learn Challenge</strong><br><br>
+            Construct a flawless end-to-end Machine Learning Pipeline using ColumnTransformer for mixed data types. Handle imputation, scaling, and one-hot encoding dynamically. Integrate an estimator, perform a GridSearch cross-validation to find the optimal hyperparameters, and print the test-set classification report.<br><br>
+            <em>This exam tests every single concept from the entire phase in one holistic, massively complex problem. You have no starter code and no hints. Only those who have truly mastered every concept in this phase will be able to pass this exam. Good luck.</em>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w6_exam-0">
+            <div class="cell-header" style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>[ ] Final Exam Execution</span></div>
+            <div class="editor-container" id="editor-w6_exam-0"></div>
+            <div class="controls"><button onclick="runCode('w6_exam-0')">▶ Submit Exam</button></div>
+            <div class="output-container" id="output-w6_exam-0"></div>
+        </div>
     `
 };
 
@@ -2164,6 +2228,14 @@ const initialCode = {
 # NO LOOPS ALLOWED. Write your mastery pipeline below:
 `,    'w6_4-0': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n`,    'w6_4-1': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n`,    'w6_4-2': `from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n`,    'w6_4-3': `import pandas as pd\nimport numpy as np\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}
 # NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_exam-0': `# 🏆 NumPy Final Exam
+# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.
+`,    'w3_exam-0': `# 🏆 Pandas Final Exam
+# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.
+`,    'w4_exam-0': `# 🏆 Matplotlib Final Exam
+# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.
+`,    'w6_exam-0': `# 🏆 Scikit-Learn Final Exam
+# You have a blank slate. Integrate every concept you learned in this phase to solve the prompt above.
 `
 };
 
