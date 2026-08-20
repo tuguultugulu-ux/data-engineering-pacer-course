@@ -75,7 +75,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_00-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: 2. Introduction to NumPy</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong>\n1. Implement the basic functionality of 2. Introduction to NumPy.
+                <strong>Scenario: Restaurant Orders</strong>\n1. Implement the basic functionality of 2. Introduction to NumPy.
             </div>
             <div class="editor-container" id="editor-w2_00-0"></div>
             <div class="controls"><button onclick="runCode('w2_00-0')">▶ Run Cell</button></div>
@@ -85,7 +85,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_00-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: 2. Introduction to NumPy</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong>\n1. Handle edge cases for 2. Introduction to NumPy.
+                <strong>Scenario: Restaurant Orders</strong>\n1. Handle edge cases for 2. Introduction to NumPy.
             </div>
             <div class="editor-container" id="editor-w2_00-1"></div>
             <div class="controls"><button onclick="runCode('w2_00-1')">▶ Run Cell</button></div>
@@ -95,7 +95,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_00-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: 2. Introduction to NumPy</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong>\n1. Combine 2. Introduction to NumPy with boolean masks.
+                <strong>Scenario: Restaurant Orders</strong>\n1. Combine 2. Introduction to NumPy with boolean masks.
             </div>
             <div class="editor-container" id="editor-w2_00-2"></div>
             <div class="controls"><button onclick="runCode('w2_00-2')">▶ Run Cell</button></div>
@@ -116,7 +116,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_01-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Array Creation and Inspection</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
+                <strong>Scenario: Music Library</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
             </div>
             <div class="editor-container" id="editor-w2_01-0"></div>
             <div class="controls"><button onclick="runCode('w2_01-0')">▶ Run Cell</button></div>
@@ -126,7 +126,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_01-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Indexing and Slicing</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
+                <strong>Scenario: Music Library</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
             </div>
             <div class="editor-container" id="editor-w2_01-1"></div>
             <div class="controls"><button onclick="runCode('w2_01-1')">▶ Run Cell</button></div>
@@ -136,7 +136,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_01-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Reshaping and Copies</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
+                <strong>Scenario: Music Library</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
             </div>
             <div class="editor-container" id="editor-w2_01-2"></div>
             <div class="controls"><button onclick="runCode('w2_01-2')">▶ Run Cell</button></div>
@@ -157,7 +157,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_02-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Array Creation and Inspection</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
+                <strong>Scenario: Zoo Animal Diet</strong><br>You are collecting raw numerical readings.<br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">prices</code> to a NumPy array of type float32.<br>2. Print the shape, ndim, dtype, and itemsize of the array.<br>3. Create a 3x3 array of zeros of type int8.
             </div>
             <div class="editor-container" id="editor-w2_02-0"></div>
             <div class="controls"><button onclick="runCode('w2_02-0')">▶ Run Cell</button></div>
@@ -167,7 +167,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_02-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Indexing and Slicing</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
+                <strong>Scenario: Zoo Animal Diet</strong><br>You have a 2D matrix of data that needs segmentation.<br>1. Print the original 5x5 matrix.<br>2. Extract the first row and the last column.<br>3. Extract a 2x2 sub-matrix from the top-right corner.<br>4. Reverse the order of the rows in the matrix.
             </div>
             <div class="editor-container" id="editor-w2_02-1"></div>
             <div class="controls"><button onclick="runCode('w2_02-1')">▶ Run Cell</button></div>
@@ -177,7 +177,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_02-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Reshaping and Copies</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
+                <strong>Scenario: Zoo Animal Diet</strong><br>You are streaming hourly data that must be structured.<br>1. Reshape <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).<br>2. Extract the data for the second day (index 1).<br>3. Create a completely independent copy (not a view) of the first day's data.<br>4. Modify a value in the copy and prove the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">raw_stream</code> is unchanged.
             </div>
             <div class="editor-container" id="editor-w2_02-2"></div>
             <div class="controls"><button onclick="runCode('w2_02-2')">▶ Run Cell</button></div>
@@ -198,7 +198,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_03-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Vectorized Arithmetic</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
+                <strong>Scenario: Social Media Posts</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
             </div>
             <div class="editor-container" id="editor-w2_03-0"></div>
             <div class="controls"><button onclick="runCode('w2_03-0')">▶ Run Cell</button></div>
@@ -208,7 +208,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_03-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Ufuncs and Broadcasting</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
+                <strong>Scenario: Social Media Posts</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
             </div>
             <div class="editor-container" id="editor-w2_03-1"></div>
             <div class="controls"><button onclick="runCode('w2_03-1')">▶ Run Cell</button></div>
@@ -218,7 +218,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_03-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Advanced Ufuncs</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
+                <strong>Scenario: Social Media Posts</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
             </div>
             <div class="editor-container" id="editor-w2_03-2"></div>
             <div class="controls"><button onclick="runCode('w2_03-2')">▶ Run Cell</button></div>
@@ -239,7 +239,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_04-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Simple Aggregations</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Find the min, max, and mean of the scores.<br>2. Find the index of the highest score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argmax</code>.<br>3. Find the median score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.median</code>.
+                <strong>Scenario: Streaming Service Views</strong><br>1. Find the min, max, and mean of the scores.<br>2. Find the index of the highest score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argmax</code>.<br>3. Find the median score using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.median</code>.
             </div>
             <div class="editor-container" id="editor-w2_04-0"></div>
             <div class="controls"><button onclick="runCode('w2_04-0')">▶ Run Cell</button></div>
@@ -249,7 +249,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_04-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Axis Aggregations</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Calculate the mean score for each student (axis=1). Notice what NaN does.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmean</code> to calculate the mean score for each student while ignoring NaNs.<br>3. Find the maximum score achieved on each exam (axis=0) using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmax</code>.
+                <strong>Scenario: Streaming Service Views</strong><br>1. Calculate the mean score for each student (axis=1). Notice what NaN does.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmean</code> to calculate the mean score for each student while ignoring NaNs.<br>3. Find the maximum score achieved on each exam (axis=0) using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.nanmax</code>.
             </div>
             <div class="editor-container" id="editor-w2_04-1"></div>
             <div class="controls"><button onclick="runCode('w2_04-1')">▶ Run Cell</button></div>
@@ -259,7 +259,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_04-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Multi-dimensional Aggregations</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Find the total sum of all elements.<br>2. Find the maximum value for each week (reduce across days and hours).<br>3. Find the average value for each hour of the day (average across weeks and days).<br>4. Verify the shape of the result from step 3 is (8,).
+                <strong>Scenario: Streaming Service Views</strong><br>1. Find the total sum of all elements.<br>2. Find the maximum value for each week (reduce across days and hours).<br>3. Find the average value for each hour of the day (average across weeks and days).<br>4. Verify the shape of the result from step 3 is (8,).
             </div>
             <div class="editor-container" id="editor-w2_04-2"></div>
             <div class="controls"><button onclick="runCode('w2_04-2')">▶ Run Cell</button></div>
@@ -280,7 +280,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_05-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Vectorized Arithmetic</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
+                <strong>Scenario: Gym Memberships</strong><br>1. Multiply all <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">base_values</code> by the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">multiplier</code> without using loops.<br>2. Add 50 to the result.<br>3. Round the final values to 1 decimal place using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.round</code>.
             </div>
             <div class="editor-container" id="editor-w2_05-0"></div>
             <div class="controls"><button onclick="runCode('w2_05-0')">▶ Run Cell</button></div>
@@ -290,7 +290,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_05-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Ufuncs and Broadcasting</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
+                <strong>Scenario: Gym Memberships</strong><br>1. Add the vector to the matrix (Broadcasting).<br>2. Compute the natural logarithm (<code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.log</code>) of the resulting matrix.<br>3. Explain in a comment how broadcasting matched the shapes.
             </div>
             <div class="editor-container" id="editor-w2_05-1"></div>
             <div class="controls"><button onclick="runCode('w2_05-1')">▶ Run Cell</button></div>
@@ -300,7 +300,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_05-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Advanced Ufuncs</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
+                <strong>Scenario: Gym Memberships</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.power</code> to square every element in x.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sin</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.cos</code> to compute <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">sin(x)^2 + cos(x)^2</code>.<br>3. Verify that all results in step 2 are exactly (or close to) 1.0.<br>4. Find the sum of all elements using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.add.reduce</code>.
             </div>
             <div class="editor-container" id="editor-w2_05-2"></div>
             <div class="controls"><button onclick="runCode('w2_05-2')">▶ Run Cell</button></div>
@@ -321,7 +321,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_06-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Boolean Masks</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Create a boolean mask for ages >= 18.<br>2. Print the mask itself.<br>3. Use the mask to extract and print only the adult ages.
+                <strong>Scenario: Bank Loan Approvals</strong><br>1. Create a boolean mask for ages >= 18.<br>2. Print the mask itself.<br>3. Use the mask to extract and print only the adult ages.
             </div>
             <div class="editor-container" id="editor-w2_06-0"></div>
             <div class="controls"><button onclick="runCode('w2_06-0')">▶ Run Cell</button></div>
@@ -331,7 +331,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_06-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Compound Logic</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Create a mask for temperatures that are "comfortable": between 15 and 25 inclusive.<br>2. Use the mask to extract the comfortable temperatures.<br>3. Count how many comfortable temperatures there are using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.count_nonzero()</code>.<br>4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).
+                <strong>Scenario: Bank Loan Approvals</strong><br>1. Create a mask for temperatures that are "comfortable": between 15 and 25 inclusive.<br>2. Use the mask to extract the comfortable temperatures.<br>3. Count how many comfortable temperatures there are using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.count_nonzero()</code>.<br>4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).
             </div>
             <div class="editor-container" id="editor-w2_06-1"></div>
             <div class="controls"><button onclick="runCode('w2_06-1')">▶ Run Cell</button></div>
@@ -341,7 +341,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_06-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: np.where and Conditional Assignment</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where</code> to create a new array: if value > 120, set to "High", else "Normal".<br>2. Replace all values in the original array that are negative with 0 (using boolean indexing).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.clip</code> to restrict the array values to a minimum of 50 and maximum of 150.
+                <strong>Scenario: Bank Loan Approvals</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where</code> to create a new array: if value > 120, set to "High", else "Normal".<br>2. Replace all values in the original array that are negative with 0 (using boolean indexing).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.clip</code> to restrict the array values to a minimum of 50 and maximum of 150.
             </div>
             <div class="editor-container" id="editor-w2_06-2"></div>
             <div class="controls"><button onclick="runCode('w2_06-2')">▶ Run Cell</button></div>
@@ -362,7 +362,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_07-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Fancy Indexing 1D</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">indices</code> list to extract elements "A", "D", and "F" in one operation.<br>2. Create a new index array <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">[5, 5, 5]</code> and use it to extract "F" three times.
+                <strong>Scenario: Hotel Bookings</strong><br>1. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">indices</code> list to extract elements "A", "D", and "F" in one operation.<br>2. Create a new index array <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">[5, 5, 5]</code> and use it to extract "F" three times.
             </div>
             <div class="editor-container" id="editor-w2_07-0"></div>
             <div class="controls"><button onclick="runCode('w2_07-0')">▶ Run Cell</button></div>
@@ -372,7 +372,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_07-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Fancy Indexing 2D</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.<br>2. Extract the entire 1st and 3rd rows using fancy indexing.<br>3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.
+                <strong>Scenario: Hotel Bookings</strong><br>1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.<br>2. Extract the entire 1st and 3rd rows using fancy indexing.<br>3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.
             </div>
             <div class="editor-container" id="editor-w2_07-1"></div>
             <div class="controls"><button onclick="runCode('w2_07-1')">▶ Run Cell</button></div>
@@ -382,7 +382,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_07-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Combined Indexing</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.<br>2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.<br>3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.
+                <strong>Scenario: Hotel Bookings</strong><br>1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.<br>2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.<br>3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.
             </div>
             <div class="editor-container" id="editor-w2_07-2"></div>
             <div class="controls"><button onclick="runCode('w2_07-2')">▶ Run Cell</button></div>
@@ -403,7 +403,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_08-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Basic Sorting</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sort()</code> to return a sorted copy of the data.<br>2. Call the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.sort()</code> method on the array to sort it in-place.<br>3. Verify the array is sorted.
+                <strong>Scenario: Retail Store Stock</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.sort()</code> to return a sorted copy of the data.<br>2. Call the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.sort()</code> method on the array to sort it in-place.<br>3. Verify the array is sorted.
             </div>
             <div class="editor-container" id="editor-w2_08-0"></div>
             <div class="controls"><button onclick="runCode('w2_08-0')">▶ Run Cell</button></div>
@@ -413,7 +413,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_08-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: argsort</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argsort()</code> on the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">scores</code> array to get the sorted indices.<br>2. Use those indices to print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">names</code> array in order of lowest to highest score.<br>3. Reverse the indices to print the names from highest to lowest score.
+                <strong>Scenario: Retail Store Stock</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.argsort()</code> on the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">scores</code> array to get the sorted indices.<br>2. Use those indices to print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">names</code> array in order of lowest to highest score.<br>3. Reverse the indices to print the names from highest to lowest score.
             </div>
             <div class="editor-container" id="editor-w2_08-1"></div>
             <div class="controls"><button onclick="runCode('w2_08-1')">▶ Run Cell</button></div>
@@ -423,7 +423,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_08-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Multi-dimensional Sorting</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Sort each column of the matrix independently (axis=0).<br>2. Sort each row of the matrix independently (axis=1).<br>3. Sort the entire matrix ROWS based entirely on the values in the 2nd column. (Hint: Use argsort on the 2nd column, then fancy index the rows).
+                <strong>Scenario: Retail Store Stock</strong><br>1. Sort each column of the matrix independently (axis=0).<br>2. Sort each row of the matrix independently (axis=1).<br>3. Sort the entire matrix ROWS based entirely on the values in the 2nd column. (Hint: Use argsort on the 2nd column, then fancy index the rows).
             </div>
             <div class="editor-container" id="editor-w2_08-2"></div>
             <div class="controls"><button onclick="runCode('w2_08-2')">▶ Run Cell</button></div>
@@ -444,7 +444,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_09-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Structured Data: NumPy's Structured Arrays</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong>\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.
+                <strong>Scenario: Hospital Pharmacy</strong>\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.
             </div>
             <div class="editor-container" id="editor-w2_09-0"></div>
             <div class="controls"><button onclick="runCode('w2_09-0')">▶ Run Cell</button></div>
@@ -454,7 +454,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_09-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Structured Data: NumPy's Structured Arrays</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong>\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.
+                <strong>Scenario: Hospital Pharmacy</strong>\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.
             </div>
             <div class="editor-container" id="editor-w2_09-1"></div>
             <div class="controls"><button onclick="runCode('w2_09-1')">▶ Run Cell</button></div>
@@ -464,7 +464,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w2_09-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Structured Data: NumPy's Structured Arrays</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong>\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.
+                <strong>Scenario: Hospital Pharmacy</strong>\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.
             </div>
             <div class="editor-container" id="editor-w2_09-2"></div>
             <div class="controls"><button onclick="runCode('w2_09-2')">▶ Run Cell</button></div>
@@ -1139,7 +1139,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_0-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Series Construction</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Convert the 'name' list from the data dict into a Pandas Series named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">name_series</code>.<br>2. Print the first 3 elements of the Series.<br>3. Create a Series for 'salary' and find its mean.
+                <strong>Scenario: Marketing Campaign ROI</strong><br>1. Convert the 'name' list from the data dict into a Pandas Series named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">name_series</code>.<br>2. Print the first 3 elements of the Series.<br>3. Create a Series for 'salary' and find its mean.
             </div>
             <div class="editor-container" id="editor-w3_0-0"></div>
             <div class="controls"><button onclick="runCode('w3_0-0')">▶ Run Cell</button></div>
@@ -1149,7 +1149,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_0-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: DataFrame Construction</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Convert the entire <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> dictionary into a Pandas DataFrame named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.shape</code>, <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.columns</code>, and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.dtypes</code>.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.head()</code> to show the first 4 rows.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.info()</code> to inspect missing values.
+                <strong>Scenario: Marketing Campaign ROI</strong><br>1. Convert the entire <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> dictionary into a Pandas DataFrame named <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Print the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.shape</code>, <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.columns</code>, and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.dtypes</code>.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.head()</code> to show the first 4 rows.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.info()</code> to inspect missing values.
             </div>
             <div class="editor-container" id="editor-w3_0-1"></div>
             <div class="controls"><button onclick="runCode('w3_0-1')">▶ Run Cell</button></div>
@@ -1159,7 +1159,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_0-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: DataFrame Operations</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Set the index of the DataFrame to be the ID column.<br>3. Select only the numerical columns.<br>4. Sort the DataFrame by the last column in descending order.<br>5. Extract the top 3 rows into a new DataFrame.
+                <strong>Scenario: Marketing Campaign ROI</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Set the index of the DataFrame to be the ID column.<br>3. Select only the numerical columns.<br>4. Sort the DataFrame by the last column in descending order.<br>5. Extract the top 3 rows into a new DataFrame.
             </div>
             <div class="editor-container" id="editor-w3_0-2"></div>
             <div class="controls"><button onclick="runCode('w3_0-2')">▶ Run Cell</button></div>
@@ -1178,7 +1178,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_1-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: CSV Writing</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Save the DataFrame to a CSV string using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.to_csv(index=False)</code>.<br>3. Print the resulting CSV string.
+                <strong>Scenario: Bank Loan Approvals</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Save the DataFrame to a CSV string using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.to_csv(index=False)</code>.<br>3. Print the resulting CSV string.
             </div>
             <div class="editor-container" id="editor-w3_1-0"></div>
             <div class="controls"><button onclick="runCode('w3_1-0')">▶ Run Cell</button></div>
@@ -1188,7 +1188,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_1-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: CSV Reading and Inspection</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">io.StringIO(csv_text)</code> to read the CSV into a DataFrame.<br>2. Inspect the dtypes. Notice that 'value' is an object (string) because of "invalid".<br>3. Convert 'value' to numeric using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.to_numeric(..., errors='coerce')</code>.<br>4. Check the dtypes again and print the missing value count.
+                <strong>Scenario: Bank Loan Approvals</strong><br>1. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">io.StringIO(csv_text)</code> to read the CSV into a DataFrame.<br>2. Inspect the dtypes. Notice that 'value' is an object (string) because of "invalid".<br>3. Convert 'value' to numeric using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.to_numeric(..., errors='coerce')</code>.<br>4. Check the dtypes again and print the missing value count.
             </div>
             <div class="editor-container" id="editor-w3_1-1"></div>
             <div class="controls"><button onclick="runCode('w3_1-1')">▶ Run Cell</button></div>
@@ -1198,7 +1198,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_1-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: JSON Round-Trip</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Export the DataFrame to JSON using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">to_json(orient='records')</code>.<br>3. Read the JSON string back into a new DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code>.<br>4. Assert or verify that the shape and columns of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code> match the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>5. Explain in a comment why orient='records' is often preferred for web APIs.
+                <strong>Scenario: Bank Loan Approvals</strong><br>1. Convert <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code> to a DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>2. Export the DataFrame to JSON using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">to_json(orient='records')</code>.<br>3. Read the JSON string back into a new DataFrame <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code>.<br>4. Assert or verify that the shape and columns of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df_json</code> match the original <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code>.<br>5. Explain in a comment why orient='records' is often preferred for web APIs.
             </div>
             <div class="editor-container" id="editor-w3_1-2"></div>
             <div class="controls"><button onclick="runCode('w3_1-2')">▶ Run Cell</button></div>
@@ -1217,7 +1217,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_2-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Selecting Columns</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Select just the first column (e.g. name or timestamp) as a Series.<br>3. Select the first column AND the last column as a DataFrame (use a list of columns).
+                <strong>Scenario: Social Media Posts</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Select just the first column (e.g. name or timestamp) as a Series.<br>3. Select the first column AND the last column as a DataFrame (use a list of columns).
             </div>
             <div class="editor-container" id="editor-w3_2-0"></div>
             <div class="controls"><button onclick="runCode('w3_2-0')">▶ Run Cell</button></div>
@@ -1227,7 +1227,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_2-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: loc vs iloc</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Change the index to be non-sequential (e.g., <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.index = [10, 20, 30...]</code>).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.iloc</code> to select the exactly 3rd row (integer position).<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select rows based on a specific label from your new index.<br>5. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select the 3rd row BUT only the first two columns.
+                <strong>Scenario: Social Media Posts</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Change the index to be non-sequential (e.g., <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df.index = [10, 20, 30...]</code>).<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.iloc</code> to select the exactly 3rd row (integer position).<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select rows based on a specific label from your new index.<br>5. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.loc</code> to select the 3rd row BUT only the first two columns.
             </div>
             <div class="editor-container" id="editor-w3_2-1"></div>
             <div class="controls"><button onclick="runCode('w3_2-1')">▶ Run Cell</button></div>
@@ -1237,7 +1237,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_2-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Boolean Filtering</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.<br>3. Filter for rows where a categorical column equals a specific value, AND a numerical column is not null.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.isin()</code> to filter for rows matching two different categorical values.<br>5. Reset the index of the final filtered DataFrame.
+                <strong>Scenario: Social Media Posts</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.<br>3. Filter for rows where a categorical column equals a specific value, AND a numerical column is not null.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.isin()</code> to filter for rows matching two different categorical values.<br>5. Reset the index of the final filtered DataFrame.
             </div>
             <div class="editor-container" id="editor-w3_2-2"></div>
             <div class="controls"><button onclick="runCode('w3_2-2')">▶ Run Cell</button></div>
@@ -1295,7 +1295,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_4-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Creating New Columns</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a new column that is exactly double the value of an existing numerical column.<br>3. Create a static column called <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data_source</code> and set all its values to "System A".
+                <strong>Scenario: Crypto Portfolio</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a new column that is exactly double the value of an existing numerical column.<br>3. Create a static column called <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data_source</code> and set all its values to "System A".
             </div>
             <div class="editor-container" id="editor-w3_4-0"></div>
             <div class="controls"><button onclick="runCode('w3_4-0')">▶ Run Cell</button></div>
@@ -1305,7 +1305,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_4-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: Vectorized Logic</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a boolean column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> which is True if the numerical column is greater than its mean.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where()</code> to create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">status_label</code>: if <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> is True, set to "Priority", else "Standard".
+                <strong>Scenario: Crypto Portfolio</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Create a boolean column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> which is True if the numerical column is greater than its mean.<br>3. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">np.where()</code> to create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">status_label</code>: if <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">is_high_value</code> is True, set to "Priority", else "Standard".
             </div>
             <div class="editor-container" id="editor-w3_4-1"></div>
             <div class="controls"><button onclick="runCode('w3_4-1')">▶ Run Cell</button></div>
@@ -1315,7 +1315,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_4-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Complex Feature Engineering</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: IoT Sensor Network</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df = pd.DataFrame(data)</code>.<br>2. Clean the numerical column (fill NaNs).<br>3. Create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">normalized_score</code>: subtract the min and divide by (max - min) for the numerical column.<br>4. Create a categorical column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">band</code> using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.cut()</code> to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.
+                <strong>Scenario: Crypto Portfolio</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df = pd.DataFrame(data)</code>.<br>2. Clean the numerical column (fill NaNs).<br>3. Create a column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">normalized_score</code>: subtract the min and divide by (max - min) for the numerical column.<br>4. Create a categorical column <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">band</code> using <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.cut()</code> to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.
             </div>
             <div class="editor-container" id="editor-w3_4-2"></div>
             <div class="controls"><button onclick="runCode('w3_4-2')">▶ Run Cell</button></div>
@@ -1334,7 +1334,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_5-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Summary Statistics</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.describe()</code> to print summary statistics for all numeric columns.<br>3. Find the exact median of the numerical columns.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.value_counts()</code> on one of the categorical columns to see the distribution.
+                <strong>Scenario: Music Library</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.describe()</code> to print summary statistics for all numeric columns.<br>3. Find the exact median of the numerical columns.<br>4. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.value_counts()</code> on one of the categorical columns to see the distribution.
             </div>
             <div class="editor-container" id="editor-w3_5-0"></div>
             <div class="controls"><button onclick="runCode('w3_5-0')">▶ Run Cell</button></div>
@@ -1344,7 +1344,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_5-1">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Intermediate: GroupBy Basics</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group the DataFrame by one of the categorical columns.<br>3. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.mean()</code> for the numerical columns within each group.<br>4. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.count()</code> for each group to see how many records belong to each.
+                <strong>Scenario: Music Library</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group the DataFrame by one of the categorical columns.<br>3. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.mean()</code> for the numerical columns within each group.<br>4. Calculate the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.count()</code> for each group to see how many records belong to each.
             </div>
             <div class="editor-container" id="editor-w3_5-1"></div>
             <div class="controls"><button onclick="runCode('w3_5-1')">▶ Run Cell</button></div>
@@ -1354,7 +1354,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_5-2">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Complex: Advanced GroupBy and Aggregation</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group by the categorical column.<br>3. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.agg()</code> method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.<br>4. Sort the resulting grouped table by the 'mean' value in descending order.
+                <strong>Scenario: Music Library</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Group by the categorical column.<br>3. Use the <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">.agg()</code> method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.<br>4. Sort the resulting grouped table by the 'mean' value in descending order.
             </div>
             <div class="editor-container" id="editor-w3_5-2"></div>
             <div class="controls"><button onclick="runCode('w3_5-2')">▶ Run Cell</button></div>
@@ -1373,7 +1373,7 @@ const lessons = {
         <div class="notebook-cell" id="cell-w3_6-0">
             <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>Easy: Pivot Tables Basics</span></div>
             <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
-                <strong>Scenario: Employee HR System</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.pivot_table()</code> to show the average numerical value for each category (e.g. department, sensor_id).
+                <strong>Scenario: Library Book Loans</strong><br>1. Create <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">df</code> from <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">data</code>.<br>2. Use <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">pd.pivot_table()</code> to show the average numerical value for each category (e.g. department, sensor_id).
             </div>
             <div class="editor-container" id="editor-w3_6-0"></div>
             <div class="controls"><button onclick="runCode('w3_6-0')">▶ Run Cell</button></div>
@@ -1684,342 +1684,7 @@ const lessons = {
 };
 
 const initialCode = {
-    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `import numpy as np\n\n# Code:\n`,    'w2_00-1': `import numpy as np\n\n# Code:\n`,    'w2_00-2': `import numpy as np\n\n# Code:\n`,    'w2_01-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_01-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_01-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_02-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_02-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_02-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_03-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_03-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_03-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_04-0': `import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n# Write your code here:\n`,    'w2_04-1': `import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n# Write your code here:\n`,    'w2_04-2': `import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n# Write your code here:\n`,    'w2_05-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_05-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_05-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_06-0': `import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n# Write your code here:\n`,    'w2_06-1': `import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n# Write your code here:\n`,    'w2_06-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n# Write your code here:\n`,    'w2_07-0': `import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n# Write your code here:\n`,    'w2_07-1': `import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n# Write your code here:\n`,    'w2_07-2': `import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n# Write your code here:\n`,    'w2_08-0': `import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n# Write your code here:\n`,    'w2_08-1': `import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n# Write your code here:\n`,    'w2_08-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n# Write your code here:\n`,    'w2_09-0': `import numpy as np\n\n# Code:\n`,    'w2_09-1': `import numpy as np\n\n# Code:\n`,    'w2_09-2': `import numpy as np\n\n# Code:\n`,    'w4_00-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w3_0-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_0-1': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_0-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_1-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_1-1': `import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n# Write your code here:\n`,    'w3_1-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_2-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_2-1': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_2-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_3-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_3-1': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_3-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_4-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_4-1': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_4-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(42)
-times = pd.date_range("2026-01-01", periods=10, freq="H")
-
-data = {
-    "timestamp": times,
-    "sensor_id": rng.choice(["S1", "S2", "S3"], size=10),
-    "temp_c": rng.normal(20, 5, size=10).round(1),
-    "humidity": rng.integers(30, 90, size=10).astype(float),
-    "error_flag": rng.choice([True, False], p=[0.2, 0.8], size=10)
-}
-data["temp_c"][4] = np.nan
-data["humidity"][8] = 150.0
-\n# Write your code here:\n`,    'w3_5-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_5-1': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_5-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_6-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_6-1': `import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n# Write your code here:\n`,    'w3_6-2': `import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n# Write your code here:\n`,    'w3_7-0': `import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n# Write your code here:\n`,    'w3_7-1': `import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n# Write your code here:\n`,    'w3_7-2': `import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n# Write your code here:\n`,    'w3_8-0': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_8-1': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w3_8-2': `import pandas as pd
-import numpy as np
-
-rng = np.random.default_rng(2026)
-names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa", "Khas", "Ider", "Jargal"]
-depts = ["IT", "HR", "Finance", "IT", "Sales", "IT", "HR", "Sales", "Finance", "IT"]
-
-data = {
-    "emp_id": np.arange(1001, 1011),
-    "name": names,
-    "department": depts,
-    "salary": rng.integers(1000, 5000, size=10).astype(float),
-    "hire_year": rng.integers(2015, 2024, size=10),
-    "performance_score": rng.normal(75, 10, size=10).round(1)
-}
-data["salary"][2] = np.nan
-data["performance_score"][5] = -10.0
-\n# Write your code here:\n`,    'w6_0-0': `import sklearn\n\n# Code:\n`,    'w6_0-1': `import sklearn\n\n# Code:\n`,    'w6_0-2': `import sklearn\n\n# Code:\n`,    'w6_1-0': `import sklearn\n\n# Code:\n`,    'w6_1-1': `import sklearn\n\n# Code:\n`,    'w6_1-2': `import sklearn\n\n# Code:\n`,    'w6_2-0': `import sklearn\n\n# Code:\n`,    'w6_2-1': `import sklearn\n\n# Code:\n`,    'w6_2-2': `import sklearn\n\n# Code:\n`,    'w6_3-0': `import sklearn\n\n# Code:\n`,    'w6_3-1': `import sklearn\n\n# Code:\n`,    'w6_3-2': `import sklearn\n\n# Code:\n`,    'w6_4-0': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n`,    'w6_4-1': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n`,    'w6_4-2': `from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n`
+    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `import numpy as np\n\n# Code:\n`,    'w2_00-1': `import numpy as np\n\n# Code:\n`,    'w2_00-2': `import numpy as np\n\n# Code:\n`,    'w2_01-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_01-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_01-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_02-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_02-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_02-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_03-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_03-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_03-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_04-0': `import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n# Write your code here:\n`,    'w2_04-1': `import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n# Write your code here:\n`,    'w2_04-2': `import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n# Write your code here:\n`,    'w2_05-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_05-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_05-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_06-0': `import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n# Write your code here:\n`,    'w2_06-1': `import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n# Write your code here:\n`,    'w2_06-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n# Write your code here:\n`,    'w2_07-0': `import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n# Write your code here:\n`,    'w2_07-1': `import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n# Write your code here:\n`,    'w2_07-2': `import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n# Write your code here:\n`,    'w2_08-0': `import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n# Write your code here:\n`,    'w2_08-1': `import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n# Write your code here:\n`,    'w2_08-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n# Write your code here:\n`,    'w2_09-0': `import numpy as np\n\n# Code:\n`,    'w2_09-1': `import numpy as np\n\n# Code:\n`,    'w2_09-2': `import numpy as np\n\n# Code:\n`,    'w4_00-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w3_0-0': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-1': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-2': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_1-0': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n`,    'w3_1-1': `import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n# Write your code here:\n`,    'w3_1-2': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n`,    'w3_2-0': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-1': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-2': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_3-0': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-1': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-2': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_4-0': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-1': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-2': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_5-0': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-1': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-2': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_6-0': `import pandas as pd\nimport numpy as np\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\n# Write your code here:\n`,    'w3_6-1': `import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n# Write your code here:\n`,    'w3_6-2': `import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n# Write your code here:\n`,    'w3_7-0': `import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n# Write your code here:\n`,    'w3_7-1': `import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n# Write your code here:\n`,    'w3_7-2': `import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n# Write your code here:\n`,    'w3_8-0': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-1': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-2': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w6_0-0': `import sklearn\n\n# Code:\n`,    'w6_0-1': `import sklearn\n\n# Code:\n`,    'w6_0-2': `import sklearn\n\n# Code:\n`,    'w6_1-0': `import sklearn\n\n# Code:\n`,    'w6_1-1': `import sklearn\n\n# Code:\n`,    'w6_1-2': `import sklearn\n\n# Code:\n`,    'w6_2-0': `import sklearn\n\n# Code:\n`,    'w6_2-1': `import sklearn\n\n# Code:\n`,    'w6_2-2': `import sklearn\n\n# Code:\n`,    'w6_3-0': `import sklearn\n\n# Code:\n`,    'w6_3-1': `import sklearn\n\n# Code:\n`,    'w6_3-2': `import sklearn\n\n# Code:\n`,    'w6_4-0': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n`,    'w6_4-1': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n`,    'w6_4-2': `from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n`
 };
 
 function loadLesson(lessonId) {
