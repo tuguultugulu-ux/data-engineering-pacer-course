@@ -3,179 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Engineering PACER Course</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>PACER Data Engineering Course</title>
     
-    <!-- CodeMirror -->
+    <!-- Modern Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=400">
+    
+    <!-- CodeMirror (Editor & Monokai Theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
     
-    <!-- Pyodide -->
+    <!-- Pyodide Core -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
-    <style>
-        .sidebar ul ul { padding-left: 20px; font-size: 0.9em; display: none; margin-top: 5px; margin-bottom: 10px; }
-        .sidebar li.active > ul { display: block; }
-        .sidebar a.sub-link { color: #bdc3c7; display: block; padding: 3px 0; border-left: 2px solid transparent; padding-left: 10px; margin-bottom: 2px; }
-        .sidebar a.sub-link:hover { border-left: 2px solid #7f8c8d; color: white; }
-        .sidebar a.sub-link.active { color: var(--accent-color); font-weight: bold; border-left: 2px solid var(--accent-color); background-color: rgba(52, 152, 219, 0.1); }
-        .phase-title { cursor: pointer; color: white; display: block; padding: 8px 5px; font-weight: bold; background-color: rgba(0,0,0,0.1); border-radius: 4px; margin-bottom: 5px; }
-        .phase-title:hover { background-color: rgba(0,0,0,0.2); }
-        
-        .overview-content { font-size: 1.05rem; line-height: 1.6; color: #333; }
-        .overview-content h1 { color: #2c3e50; border-bottom: 3px solid var(--accent-color); padding-bottom: 10px; margin-top: 0; }
-        .overview-content h2 { border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-top: 30px; }
-        .overview-content h3 { color: var(--secondary-color); margin-top: 25px; }
-        .overview-content pre { background: var(--code-bg); color: var(--text-color); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); overflow-x: auto; font-family: Monaco, Consolas, monospace; }
-        .overview-content code { font-family: Monaco, Consolas, monospace; background: #eee; padding: 2px 4px; border-radius: 3px; color: #c0392b; }
-        .overview-content pre code { background: none; color: inherit; padding: 0; }
-        .overview-content table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
-        .overview-content th, .overview-content td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        .overview-content th { background-color: #f8f9fa; color: #333; }
-        
-        .external-link-btn { display: inline-block; padding: 15px 30px; font-size: 1.2rem; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 8px; margin: 20px 0; text-align: center; }
-        .external-link-btn:hover { background-color: #2980b9; }
-    
-        .CodeMirror {
-            border: 1px solid #ddd !important;
-            border-radius: 6px !important;
-            font-size: 14px;
-        }
-        .output-container {
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            margin-top: 10px;
-            padding: 12px 15px;
-            font-family: monospace;
-            white-space: pre-wrap;
-            min-height: 40px;
-            background-color: #fdfdfd;
-        }
-        .notebook-cell {
-            border: none;
-            margin-bottom: 40px;
-        }
-        body {
-            margin: 0;
-            padding-bottom: 70px;
-        }
-    </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2 style="text-align: center; border-bottom: 1px solid #555; padding-bottom: 15px; margin-bottom: 20px;">PACER Roadmap</h2>
-        <ul id="nav-list">
-            <li class="active">
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Introduction & Plan</a>
-                <ul>
-                    <li><a href="#" class="sub-link active" onclick="loadLesson('intro')">10-Week Syllabus & Resources</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 1: Python & Git</a>
-                <ul>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p1_overview')">Phase 1: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p1_git')">Pro Git: Basics (Book)</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 2: NumPy</a>
-                <ul id="phase2-links">
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p2_overview')">Phase 2: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_00')">2. Introduction to NumPy (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_01')">Understanding Data Types in Python (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_02')">The Basics of NumPy Arrays (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_03')">Computation on NumPy Arrays: Universal Functions (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_04')">Aggregations: Min, Max, and Everything In Between (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_05')">Computation on Arrays: Broadcasting (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_06')">Comparisons, Masks, and Boolean Logic (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_07')">Fancy Indexing (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_08')">Sorting Arrays (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w2_09')">Structured Data: NumPy's Structured Arrays (Book)</a></li>
-<li><a href="#" class="sub-link" onclick="loadLesson('w2_exam')" style="color: #e74c3c; font-weight: bold; margin-top: 15px; border-top: 1px solid #34495e; padding-top: 10px;">🏆 NumPy Final Exam</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 3: Pandas & EDA</a>
-                <ul id="phase3-links">
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p3_overview')">Phase 3: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_0')">What kind of data does pandas handle? (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_1')">How do I read and write tabular data? (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_2')">How do I select a subset of a DataFrame? (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_3')">How do I create plots in pandas? (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_4')">How to create new columns derived from existing columns (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_5')">How to calculate summary statistics (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_6')">How to reshape the layout of tables (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_7')">How to combine data from multiple tables (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w3_8')">How to handle time series data with ease (Book)</a></li>
-<li><a href="#" class="sub-link" onclick="loadLesson('w3_exam')" style="color: #e74c3c; font-weight: bold; margin-top: 15px; border-top: 1px solid #34495e; padding-top: 10px;">🏆 Pandas Final Exam</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 4: Matplotlib & Stats</a>
-                <ul id="phase4-links">
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p4_overview')">Phase 4: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_00')">4. Visualization with Matplotlib (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_01')">Simple Line Plots (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_02')">Simple Scatter Plots (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_03')">Visualizing Errors (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_04')">Density and Contour Plots (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_05')">Histograms, Binnings, and Density (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_06')">Customizing Plot Legends (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_07')">Customizing Colorbars (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_08')">Multiple Subplots (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_09')">Text and Annotation (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_10')">Customizing Ticks (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_11')">Customizing Matplotlib: Configurations and Stylesheets (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_12')">Three-Dimensional Plotting in Matplotlib (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_13')">Geographic Data with Basemap (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_14')">Visualization with Seaborn (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w4_15')">Further Resources (Book)</a></li>
-<li><a href="#" class="sub-link" onclick="loadLesson('w4_exam')" style="color: #e74c3c; font-weight: bold; margin-top: 15px; border-top: 1px solid #34495e; padding-top: 10px;">🏆 Matplotlib Final Exam</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 5: Data Pipeline</a>
-                <ul id="phase5-links">
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p5_overview')">Phase 5: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p5_monitoring')">Google ML: Monitoring (Book)</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="phase-title" onclick="togglePhase(this)">Phase 6: Scikit-learn</a>
-                <ul id="phase6-links">
-                    <li><a href="#" class="sub-link" onclick="loadLesson('p6_overview')">Phase 6: Project & Goals</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_0')">Getting Started with Scikit-learn (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_1')">Pipeline Documentation (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_2')">ColumnTransformer Documentation (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_3')">Preprocessing Data (Book)</a></li>
-                    <li><a href="#" class="sub-link" onclick="loadLesson('w6_4')">Train Test Split (Book)</a></li>
-<li><a href="#" class="sub-link" onclick="loadLesson('w6_exam')" style="color: #e74c3c; font-weight: bold; margin-top: 15px; border-top: 1px solid #34495e; padding-top: 10px;">🏆 Scikit-Learn Final Exam</a></li>
-                </ul>
-            </li>
+    <!-- Navigation Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>PACER Data Engineering</h2>
+            <p>10-Week End-to-End Curriculum</p>
+        </div>
+        <ul id="nav-list" class="sidebar-nav">
+            <!-- Dynamically populated from course-data.js -->
         </ul>
-    </div>
+    </aside>
 
-    <div class="main-content">
-        <div class="container" id="content-container">
-            <h1>Welcome to the PACER Data Engineering Course</h1>
-            <p>Loading environment...</p>
+    <!-- Main Workspace Content -->
+    <main class="main-content">
+        <div class="main-container" id="content-container">
+            <!-- Dynamically rendered by app.js -->
         </div>
-    </div>
+    </main>
 
-    <!-- GLOBAL FIXED FOOTER -->
-    <div class="global-footer" style="position: fixed; bottom: 0; left: 250px; right: 0; background-color: #2c3e50; padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-shadow: 0 -4px 15px rgba(0,0,0,0.15); transition: left 0.3s ease;">
-        <div style="color: #ecf0f1; font-family: monospace; font-size: 0.95em;">
-            <span id="active-cell-label">Environment: Pyodide (Python 3.10) - Select a cell to run</span>
+    <!-- Global Fixed Action Footer -->
+    <footer class="global-footer">
+        <div class="footer-left">
+            <span id="footer-pyodide-status">Initializing Python...</span>
+            <span style="margin: 0 8px; opacity: 0.4;">|</span>
+            <span id="active-cell-label">Click inside a code cell to begin</span>
         </div>
-        <div style="display: flex; gap: 20px; color: #bdc3c7; font-size: 0.9em; font-family: sans-serif; align-items: center;">
-            <span><kbd style="background: #34495e; padding: 3px 7px; border-radius: 3px; border: 1px solid #7f8c8d; color: white; font-weight: bold;">Ctrl/Cmd + Enter</kbd> Run Code</span>
-            <span><kbd style="background: #34495e; padding: 3px 7px; border-radius: 3px; border: 1px solid #7f8c8d; color: white; font-weight: bold;">Ctrl + Space / Alt + R</kbd> Code Rabbit Review</span>
+        <div class="footer-right">
+            <span><kbd>Ctrl/Cmd + Enter</kbd> Run Code</span>
+            <span><kbd>Ctrl + Space / Alt + R</kbd> Code Rabbit Review</span>
         </div>
-    </div>
+    </footer>
 
-    <!-- Scripts -->
+    <!-- CodeMirror Core & Python Syntax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
-    <script src="js/app.js?v=330"></script>
+
+    <!-- Application Modules -->
+    <script src="js/course-data.js?v=400"></script>
+    <script src="js/pyodide-engine.js?v=400"></script>
+    <script src="js/editor-manager.js?v=400"></script>
+    <script src="js/app.js?v=400"></script>
 </body>
 </html>
