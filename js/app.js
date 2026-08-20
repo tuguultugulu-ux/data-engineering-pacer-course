@@ -102,6 +102,16 @@ const lessons = {
             <div class="output-container" id="output-w2_00-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_00-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - 2. Introduction to NumPy</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">2. Introduction to NumPy</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_00-3"></div>
+            <div class="controls"><button onclick="runCode('w2_00-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_00-3"></div>
+        </div>
+        
     `,
     'w2_01': `
         <h1>Understanding Data Types in Python</h1>
@@ -141,6 +151,16 @@ const lessons = {
             <div class="editor-container" id="editor-w2_01-2"></div>
             <div class="controls"><button onclick="runCode('w2_01-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_01-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_01-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Understanding Data Types in Python</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Understanding Data Types in Python</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_01-3"></div>
+            <div class="controls"><button onclick="runCode('w2_01-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_01-3"></div>
         </div>
         
     `,
@@ -184,6 +204,16 @@ const lessons = {
             <div class="output-container" id="output-w2_02-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_02-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - The Basics of NumPy Arrays</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">The Basics of NumPy Arrays</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_02-3"></div>
+            <div class="controls"><button onclick="runCode('w2_02-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_02-3"></div>
+        </div>
+        
     `,
     'w2_03': `
         <h1>Computation on NumPy Arrays: Universal Functions</h1>
@@ -223,6 +253,16 @@ const lessons = {
             <div class="editor-container" id="editor-w2_03-2"></div>
             <div class="controls"><button onclick="runCode('w2_03-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_03-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_03-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Computation on NumPy Arrays: Universal Functions</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Computation on NumPy Arrays: Universal Functions</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_03-3"></div>
+            <div class="controls"><button onclick="runCode('w2_03-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_03-3"></div>
         </div>
         
     `,
@@ -266,6 +306,16 @@ const lessons = {
             <div class="output-container" id="output-w2_04-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_04-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Aggregations: Min, Max, and Everything In Between</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Aggregations: Min, Max, and Everything In Between</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_04-3"></div>
+            <div class="controls"><button onclick="runCode('w2_04-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_04-3"></div>
+        </div>
+        
     `,
     'w2_05': `
         <h1>Computation on Arrays: Broadcasting</h1>
@@ -305,6 +355,16 @@ const lessons = {
             <div class="editor-container" id="editor-w2_05-2"></div>
             <div class="controls"><button onclick="runCode('w2_05-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_05-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_05-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Computation on Arrays: Broadcasting</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Computation on Arrays: Broadcasting</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_05-3"></div>
+            <div class="controls"><button onclick="runCode('w2_05-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_05-3"></div>
         </div>
         
     `,
@@ -348,6 +408,16 @@ const lessons = {
             <div class="output-container" id="output-w2_06-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_06-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Comparisons, Masks, and Boolean Logic</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Comparisons, Masks, and Boolean Logic</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_06-3"></div>
+            <div class="controls"><button onclick="runCode('w2_06-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_06-3"></div>
+        </div>
+        
     `,
     'w2_07': `
         <h1>Fancy Indexing</h1>
@@ -387,6 +457,16 @@ const lessons = {
             <div class="editor-container" id="editor-w2_07-2"></div>
             <div class="controls"><button onclick="runCode('w2_07-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_07-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_07-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Fancy Indexing</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Fancy Indexing</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_07-3"></div>
+            <div class="controls"><button onclick="runCode('w2_07-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_07-3"></div>
         </div>
         
     `,
@@ -430,6 +510,16 @@ const lessons = {
             <div class="output-container" id="output-w2_08-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_08-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Sorting Arrays</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Sorting Arrays</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_08-3"></div>
+            <div class="controls"><button onclick="runCode('w2_08-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_08-3"></div>
+        </div>
+        
     `,
     'w2_09': `
         <h1>Structured Data: NumPy\'s Structured Arrays</h1>
@@ -469,6 +559,16 @@ const lessons = {
             <div class="editor-container" id="editor-w2_09-2"></div>
             <div class="controls"><button onclick="runCode('w2_09-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_09-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_09-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: NumPy - Structured Data: NumPy's Structured Arrays</strong><br>You must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). <br>You must prove your mastery of <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Structured Data: NumPy's Structured Arrays</code> by integrating it deeply into this pipeline. If your solution uses a <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">for</code> loop, you fail.
+            </div>
+            <div class="editor-container" id="editor-w2_09-3"></div>
+            <div class="controls"><button onclick="runCode('w2_09-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_09-3"></div>
         </div>
         
     `,
@@ -512,6 +612,16 @@ const lessons = {
             <div class="output-container" id="output-w4_00-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_00-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - 4. Visualization with Matplotlib</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_00-3"></div>
+            <div class="controls"><button onclick="runCode('w4_00-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_00-3"></div>
+        </div>
+        
     `,
     'w4_01': `
         <h1>Simple Line Plots</h1>
@@ -551,6 +661,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_01-2"></div>
             <div class="controls"><button onclick="runCode('w4_01-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_01-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_01-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Simple Line Plots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_01-3"></div>
+            <div class="controls"><button onclick="runCode('w4_01-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_01-3"></div>
         </div>
         
     `,
@@ -594,6 +714,16 @@ const lessons = {
             <div class="output-container" id="output-w4_02-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_02-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Simple Scatter Plots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_02-3"></div>
+            <div class="controls"><button onclick="runCode('w4_02-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_02-3"></div>
+        </div>
+        
     `,
     'w4_03': `
         <h1>Visualizing Errors</h1>
@@ -633,6 +763,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_03-2"></div>
             <div class="controls"><button onclick="runCode('w4_03-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_03-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_03-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Visualizing Errors</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_03-3"></div>
+            <div class="controls"><button onclick="runCode('w4_03-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_03-3"></div>
         </div>
         
     `,
@@ -676,6 +816,16 @@ const lessons = {
             <div class="output-container" id="output-w4_04-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_04-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Density and Contour Plots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_04-3"></div>
+            <div class="controls"><button onclick="runCode('w4_04-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_04-3"></div>
+        </div>
+        
     `,
     'w4_05': `
         <h1>Histograms, Binnings, and Density</h1>
@@ -715,6 +865,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_05-2"></div>
             <div class="controls"><button onclick="runCode('w4_05-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_05-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_05-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Histograms, Binnings, and Density</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_05-3"></div>
+            <div class="controls"><button onclick="runCode('w4_05-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_05-3"></div>
         </div>
         
     `,
@@ -758,6 +918,16 @@ const lessons = {
             <div class="output-container" id="output-w4_06-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_06-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Customizing Plot Legends</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_06-3"></div>
+            <div class="controls"><button onclick="runCode('w4_06-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_06-3"></div>
+        </div>
+        
     `,
     'w4_07': `
         <h1>Customizing Colorbars</h1>
@@ -797,6 +967,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_07-2"></div>
             <div class="controls"><button onclick="runCode('w4_07-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_07-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_07-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Customizing Colorbars</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_07-3"></div>
+            <div class="controls"><button onclick="runCode('w4_07-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_07-3"></div>
         </div>
         
     `,
@@ -840,6 +1020,16 @@ const lessons = {
             <div class="output-container" id="output-w4_08-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_08-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Multiple Subplots</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_08-3"></div>
+            <div class="controls"><button onclick="runCode('w4_08-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_08-3"></div>
+        </div>
+        
     `,
     'w4_09': `
         <h1>Text and Annotation</h1>
@@ -879,6 +1069,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_09-2"></div>
             <div class="controls"><button onclick="runCode('w4_09-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_09-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_09-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Text and Annotation</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_09-3"></div>
+            <div class="controls"><button onclick="runCode('w4_09-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_09-3"></div>
         </div>
         
     `,
@@ -922,6 +1122,16 @@ const lessons = {
             <div class="output-container" id="output-w4_10-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_10-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Customizing Ticks</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_10-3"></div>
+            <div class="controls"><button onclick="runCode('w4_10-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_10-3"></div>
+        </div>
+        
     `,
     'w4_11': `
         <h1>Customizing Matplotlib: Configurations and Stylesheets</h1>
@@ -961,6 +1171,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_11-2"></div>
             <div class="controls"><button onclick="runCode('w4_11-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_11-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_11-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Customizing Matplotlib: Configurations and Stylesheets</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_11-3"></div>
+            <div class="controls"><button onclick="runCode('w4_11-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_11-3"></div>
         </div>
         
     `,
@@ -1004,6 +1224,16 @@ const lessons = {
             <div class="output-container" id="output-w4_12-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_12-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Three-Dimensional Plotting in Matplotlib</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_12-3"></div>
+            <div class="controls"><button onclick="runCode('w4_12-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_12-3"></div>
+        </div>
+        
     `,
     'w4_13': `
         <h1>Geographic Data with Basemap</h1>
@@ -1043,6 +1273,16 @@ const lessons = {
             <div class="editor-container" id="editor-w4_13-2"></div>
             <div class="controls"><button onclick="runCode('w4_13-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_13-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_13-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Geographic Data with Basemap</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_13-3"></div>
+            <div class="controls"><button onclick="runCode('w4_13-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_13-3"></div>
         </div>
         
     `,
@@ -1086,6 +1326,16 @@ const lessons = {
             <div class="output-container" id="output-w4_14-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_14-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Visualization with Seaborn</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_14-3"></div>
+            <div class="controls"><button onclick="runCode('w4_14-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_14-3"></div>
+        </div>
+        
     `,
     'w4_15': `
         <h1>Further Resources</h1>
@@ -1127,6 +1377,16 @@ const lessons = {
             <div class="output-container" id="output-w4_15-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_15-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Matplotlib - Further Resources</strong><br>Create publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.
+            </div>
+            <div class="editor-container" id="editor-w4_15-3"></div>
+            <div class="controls"><button onclick="runCode('w4_15-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_15-3"></div>
+        </div>
+        
     `,
     'w3_0': `
         <h1>What kind of data does pandas handle?</h1>
@@ -1164,6 +1424,16 @@ const lessons = {
             <div class="editor-container" id="editor-w3_0-2"></div>
             <div class="controls"><button onclick="runCode('w3_0-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_0-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_0-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - What kind of data does pandas handle?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">What kind of data does pandas handle?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_0-3"></div>
+            <div class="controls"><button onclick="runCode('w3_0-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_0-3"></div>
         </div>
         
     `,
@@ -1205,6 +1475,16 @@ const lessons = {
             <div class="output-container" id="output-w3_1-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_1-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How do I read and write tabular data?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How do I read and write tabular data?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_1-3"></div>
+            <div class="controls"><button onclick="runCode('w3_1-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_1-3"></div>
+        </div>
+        
     `,
     'w3_2': `
         <h1>How do I select a subset of a DataFrame?</h1>
@@ -1242,6 +1522,16 @@ const lessons = {
             <div class="editor-container" id="editor-w3_2-2"></div>
             <div class="controls"><button onclick="runCode('w3_2-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_2-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_2-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How do I select a subset of a DataFrame?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How do I select a subset of a DataFrame?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_2-3"></div>
+            <div class="controls"><button onclick="runCode('w3_2-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_2-3"></div>
         </div>
         
     `,
@@ -1283,6 +1573,16 @@ const lessons = {
             <div class="output-container" id="output-w3_3-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_3-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How do I create plots in pandas?</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How do I create plots in pandas?</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_3-3"></div>
+            <div class="controls"><button onclick="runCode('w3_3-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_3-3"></div>
+        </div>
+        
     `,
     'w3_4': `
         <h1>How to create new columns derived from existing columns</h1>
@@ -1320,6 +1620,16 @@ const lessons = {
             <div class="editor-container" id="editor-w3_4-2"></div>
             <div class="controls"><button onclick="runCode('w3_4-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_4-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_4-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How to create new columns derived from existing columns</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to create new columns derived from existing columns</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_4-3"></div>
+            <div class="controls"><button onclick="runCode('w3_4-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_4-3"></div>
         </div>
         
     `,
@@ -1361,6 +1671,16 @@ const lessons = {
             <div class="output-container" id="output-w3_5-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_5-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How to calculate summary statistics</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to calculate summary statistics</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_5-3"></div>
+            <div class="controls"><button onclick="runCode('w3_5-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_5-3"></div>
+        </div>
+        
     `,
     'w3_6': `
         <h1>How to reshape the layout of tables</h1>
@@ -1398,6 +1718,16 @@ const lessons = {
             <div class="editor-container" id="editor-w3_6-2"></div>
             <div class="controls"><button onclick="runCode('w3_6-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_6-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_6-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How to reshape the layout of tables</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to reshape the layout of tables</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_6-3"></div>
+            <div class="controls"><button onclick="runCode('w3_6-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_6-3"></div>
         </div>
         
     `,
@@ -1439,6 +1769,16 @@ const lessons = {
             <div class="output-container" id="output-w3_7-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w3_7-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How to combine data from multiple tables</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to combine data from multiple tables</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_7-3"></div>
+            <div class="controls"><button onclick="runCode('w3_7-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_7-3"></div>
+        </div>
+        
     `,
     'w3_8': `
         <h1>How to handle time series data with ease</h1>
@@ -1476,6 +1816,16 @@ const lessons = {
             <div class="editor-container" id="editor-w3_8-2"></div>
             <div class="controls"><button onclick="runCode('w3_8-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_8-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w3_8-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Pandas - How to handle time series data with ease</strong><br>You have received a critically corrupt data dump. <br>1. Build a robust data pipeline function that implements <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">How to handle time series data with ease</code>.<br>2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.<br>3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.
+            </div>
+            <div class="editor-container" id="editor-w3_8-3"></div>
+            <div class="controls"><button onclick="runCode('w3_8-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w3_8-3"></div>
         </div>
         
     `,
@@ -1524,6 +1874,16 @@ const lessons = {
             <div class="output-container" id="output-w6_0-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w6_0-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Scikit-Learn - Getting Started with Scikit-learn</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Getting Started with Scikit-learn</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
+            </div>
+            <div class="editor-container" id="editor-w6_0-3"></div>
+            <div class="controls"><button onclick="runCode('w6_0-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_0-3"></div>
+        </div>
+        
     `,
     'w6_1': `
         <h1>Pipeline Documentation</h1>
@@ -1561,6 +1921,16 @@ const lessons = {
             <div class="editor-container" id="editor-w6_1-2"></div>
             <div class="controls"><button onclick="runCode('w6_1-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_1-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w6_1-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Scikit-Learn - Pipeline Documentation</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline Documentation</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
+            </div>
+            <div class="editor-container" id="editor-w6_1-3"></div>
+            <div class="controls"><button onclick="runCode('w6_1-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_1-3"></div>
         </div>
         
     `,
@@ -1602,6 +1972,16 @@ const lessons = {
             <div class="output-container" id="output-w6_2-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w6_2-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Scikit-Learn - ColumnTransformer Documentation</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer Documentation</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
+            </div>
+            <div class="editor-container" id="editor-w6_2-3"></div>
+            <div class="controls"><button onclick="runCode('w6_2-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_2-3"></div>
+        </div>
+        
     `,
     'w6_3': `
         <h1>Preprocessing Data</h1>
@@ -1639,6 +2019,16 @@ const lessons = {
             <div class="editor-container" id="editor-w6_3-2"></div>
             <div class="controls"><button onclick="runCode('w6_3-2')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_3-2"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w6_3-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Scikit-Learn - Preprocessing Data</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Preprocessing Data</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
+            </div>
+            <div class="editor-container" id="editor-w6_3-3"></div>
+            <div class="controls"><button onclick="runCode('w6_3-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_3-3"></div>
         </div>
         
     `,
@@ -1680,11 +2070,101 @@ const lessons = {
             <div class="output-container" id="output-w6_4-2"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w6_4-3">
+            <div class="cell-header" style="background-color: var(--secondary-color); color: white; padding: 8px 12px; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1em;"><span>🏆 Mastery Challenge: Final Test</span></div>
+            <div class="problem-description" style="padding: 15px; background: white; border: 1px solid var(--border-color); border-left: 5px solid var(--accent-color); font-size: 1.0em; color: #333; line-height: 1.6;">
+                <strong>Mastery Challenge: Scikit-Learn - Train Test Split</strong><br>Build a production-grade machine learning pipeline. <br>1. You must integrate <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Train Test Split</code> into an end-to-end <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">Pipeline</code> and <code style="background:#eee;padding:2px 4px;border-radius:3px;color:#c0392b;">ColumnTransformer</code>.<br>2. Explicitly handle unseen categorical variables and impute missing numericals.<br>3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.
+            </div>
+            <div class="editor-container" id="editor-w6_4-3"></div>
+            <div class="controls"><button onclick="runCode('w6_4-3')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_4-3"></div>
+        </div>
+        
     `
 };
 
 const initialCode = {
-    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `import numpy as np\n\n# Code:\n`,    'w2_00-1': `import numpy as np\n\n# Code:\n`,    'w2_00-2': `import numpy as np\n\n# Code:\n`,    'w2_01-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_01-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_01-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_02-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_02-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_02-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_03-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_03-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_03-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_04-0': `import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n# Write your code here:\n`,    'w2_04-1': `import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n# Write your code here:\n`,    'w2_04-2': `import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n# Write your code here:\n`,    'w2_05-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_05-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_05-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_06-0': `import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n# Write your code here:\n`,    'w2_06-1': `import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n# Write your code here:\n`,    'w2_06-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n# Write your code here:\n`,    'w2_07-0': `import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n# Write your code here:\n`,    'w2_07-1': `import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n# Write your code here:\n`,    'w2_07-2': `import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n# Write your code here:\n`,    'w2_08-0': `import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n# Write your code here:\n`,    'w2_08-1': `import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n# Write your code here:\n`,    'w2_08-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n# Write your code here:\n`,    'w2_09-0': `import numpy as np\n\n# Code:\n`,    'w2_09-1': `import numpy as np\n\n# Code:\n`,    'w2_09-2': `import numpy as np\n\n# Code:\n`,    'w4_00-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w3_0-0': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-1': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-2': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_1-0': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n`,    'w3_1-1': `import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n# Write your code here:\n`,    'w3_1-2': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n`,    'w3_2-0': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-1': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-2': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_3-0': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-1': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-2': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_4-0': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-1': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-2': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_5-0': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-1': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-2': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_6-0': `import pandas as pd\nimport numpy as np\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\n# Write your code here:\n`,    'w3_6-1': `import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n# Write your code here:\n`,    'w3_6-2': `import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n# Write your code here:\n`,    'w3_7-0': `import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n# Write your code here:\n`,    'w3_7-1': `import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n# Write your code here:\n`,    'w3_7-2': `import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n# Write your code here:\n`,    'w3_8-0': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-1': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-2': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w6_0-0': `import sklearn\n\n# Code:\n`,    'w6_0-1': `import sklearn\n\n# Code:\n`,    'w6_0-2': `import sklearn\n\n# Code:\n`,    'w6_1-0': `import sklearn\n\n# Code:\n`,    'w6_1-1': `import sklearn\n\n# Code:\n`,    'w6_1-2': `import sklearn\n\n# Code:\n`,    'w6_2-0': `import sklearn\n\n# Code:\n`,    'w6_2-1': `import sklearn\n\n# Code:\n`,    'w6_2-2': `import sklearn\n\n# Code:\n`,    'w6_3-0': `import sklearn\n\n# Code:\n`,    'w6_3-1': `import sklearn\n\n# Code:\n`,    'w6_3-2': `import sklearn\n\n# Code:\n`,    'w6_4-0': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n`,    'w6_4-1': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n`,    'w6_4-2': `from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n`
+    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `import numpy as np\n\n# Code:\n`,    'w2_00-1': `import numpy as np\n\n# Code:\n`,    'w2_00-2': `import numpy as np\n\n# Code:\n`,    'w2_00-3': `import pandas as pd\nimport numpy as np\ndata = {'table': [1, 2, 3], 'bill': [50.0, 100.0, np.nan], 'tip': [5.0, 15.0, 0.0]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_01-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_01-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_01-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_01-3': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_02-0': `import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n# Write your code here:\n`,    'w2_02-1': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n# Write your code here:\n`,    'w2_02-2': `import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n# Write your code here:\n`,    'w2_02-3': `import pandas as pd\nimport numpy as np\ndata = {'animal': ['Lion', 'Elephant', 'Monkey'], 'food_kg': [10, 50, np.nan], 'enclosure': ['A', 'B', 'C']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_03-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_03-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_03-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_03-3': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_04-0': `import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n# Write your code here:\n`,    'w2_04-1': `import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n# Write your code here:\n`,    'w2_04-2': `import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n# Write your code here:\n`,    'w2_04-3': `import pandas as pd\nimport numpy as np\ndata = {'user': ['U1', 'U2', 'U3'], 'minutes_watched': [120, 240, np.nan], 'plan': ['Free', 'Paid', 'Free']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_05-0': `import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n# Write your code here:\n`,    'w2_05-1': `import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n# Write your code here:\n`,    'w2_05-2': `import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n# Write your code here:\n`,    'w2_05-3': `import pandas as pd\nimport numpy as np\ndata = {'member': ['M1', 'M2', 'M3'], 'visits': [10, 20, np.nan], 'plan': ['Basic', 'Premium', 'Basic']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_06-0': `import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n# Write your code here:\n`,    'w2_06-1': `import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n# Write your code here:\n`,    'w2_06-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n# Write your code here:\n`,    'w2_06-3': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_07-0': `import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n# Write your code here:\n`,    'w2_07-1': `import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n# Write your code here:\n`,    'w2_07-2': `import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n# Write your code here:\n`,    'w2_07-3': `import pandas as pd\nimport numpy as np\ndata = {'booking_id': ['B1', 'B2', 'B3'], 'nights': [2, 5, np.nan], 'price_per_night': [100, 150, 200]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_08-0': `import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n# Write your code here:\n`,    'w2_08-1': `import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n# Write your code here:\n`,    'w2_08-2': `import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n# Write your code here:\n`,    'w2_08-3': `import pandas as pd\nimport numpy as np\ndata = {'item': ['Shoes', 'Shirts', 'Pants'], 'stock': [50, 100, np.nan], 'price': [60, 25, 40]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w2_09-0': `import numpy as np\n\n# Code:\n`,    'w2_09-1': `import numpy as np\n\n# Code:\n`,    'w2_09-2': `import numpy as np\n\n# Code:\n`,    'w2_09-3': `import pandas as pd\nimport numpy as np\ndata = {'drug': ['D1', 'D2', 'D3'], 'doses': [1000, 2000, np.nan], 'cost': [5000, 10000, 15000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_00-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_00-3': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_01-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_01-3': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_02-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_02-3': `import pandas as pd\nimport numpy as np\ndata = {'date': ['01', '02', '03'], 'steps': [10000, 5000, np.nan], 'calories': [2500, 1800, 2000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_03-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_03-3': `import pandas as pd\nimport numpy as np\ndata = {'emp_id': np.arange(1001, 1006), 'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'], 'salary': [1500, 2000, np.nan, 2500, 1800]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_04-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_04-3': `import pandas as pd\nimport numpy as np\ndata = {'member': ['M1', 'M2', 'M3'], 'visits': [10, 20, np.nan], 'plan': ['Basic', 'Premium', 'Basic']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_05-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_05-3': `import pandas as pd\nimport numpy as np\ndata = {'animal': ['Lion', 'Elephant', 'Monkey'], 'food_kg': [10, 50, np.nan], 'enclosure': ['A', 'B', 'C']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_06-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_06-3': `import pandas as pd\nimport numpy as np\ndata = {'player': ['P1', 'P2', 'P3'], 'score': [1000, 1500, np.nan], 'level': [1, 2, 3]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_07-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_07-3': `import pandas as pd\nimport numpy as np\ndata = {'drug': ['D1', 'D2', 'D3'], 'doses': [1000, 2000, np.nan], 'cost': [5000, 10000, 15000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_08-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_08-3': `import pandas as pd\nimport numpy as np\ndata = {'table': [1, 2, 3], 'bill': [50.0, 100.0, np.nan], 'tip': [5.0, 15.0, 0.0]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_09-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_09-3': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_10-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_10-3': `import pandas as pd\nimport numpy as np\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_11-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_11-3': `import pandas as pd\nimport numpy as np\ndata = {'flight': ['F1', 'F2', 'F3'], 'delay_mins': [15, 0, np.nan], 'airline': ['AirA', 'AirB', 'AirA']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_12-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_12-3': `import pandas as pd\nimport numpy as np\ndata = {'emp_id': np.arange(1001, 1006), 'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'], 'salary': [1500, 2000, np.nan, 2500, 1800]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_13-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_13-3': `import pandas as pd\nimport numpy as np\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_14-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_14-3': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w4_15-0': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-1': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-2': `import matplotlib.pyplot as plt\nimport numpy as np\n\n# Code:\n`,    'w4_15-3': `import pandas as pd\nimport numpy as np\ndata = {'item': ['Shoes', 'Shirts', 'Pants'], 'stock': [50, 100, np.nan], 'price': [60, 25, 40]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_0-0': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-1': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-2': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}\n# Write your code here:\n`,    'w3_0-3': `import pandas as pd\nimport numpy as np\ndata = {'campaign': ['C1', 'C2', 'C3'], 'spend': [1000, 2000, np.nan], 'revenue': [1500, 2500, 3000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_1-0': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n`,    'w3_1-1': `import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n# Write your code here:\n`,    'w3_1-2': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}\n# Write your code here:\n`,    'w3_1-3': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_2-0': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-1': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-2': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}\n# Write your code here:\n`,    'w3_2-3': `import pandas as pd\nimport numpy as np\ndata = {'post_id': [1, 2, 3], 'likes': [100, 200, np.nan], 'text': ['Hello', ' World ', '  ']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_3-0': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-1': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-2': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}\n# Write your code here:\n`,    'w3_3-3': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_4-0': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-1': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-2': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}\n# Write your code here:\n`,    'w3_4-3': `import pandas as pd\nimport numpy as np\ndata = {'coin': ['BTC', 'ETH', 'SOL'], 'amount': [0.5, 10.0, np.nan], 'value_usd': [30000, 2000, 50]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_5-0': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-1': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-2': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}\n# Write your code here:\n`,    'w3_5-3': `import pandas as pd\nimport numpy as np\ndata = {'song': ['S1', 'S2', 'S3'], 'duration_sec': [180, 240, np.nan], 'genre': ['Pop', 'Rock', 'Pop']}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_6-0': `import pandas as pd\nimport numpy as np\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}\n# Write your code here:\n`,    'w3_6-1': `import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n# Write your code here:\n`,    'w3_6-2': `import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n# Write your code here:\n`,    'w3_6-3': `import pandas as pd\nimport numpy as np\ndata = {'book_id': ['B1', 'B2', 'B3'], 'days_loaned': [14, 7, np.nan], 'overdue_fines': [0, 5, 0]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_7-0': `import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n# Write your code here:\n`,    'w3_7-1': `import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n# Write your code here:\n`,    'w3_7-2': `import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n# Write your code here:\n`,    'w3_7-3': `import pandas as pd\nimport numpy as np\ndata = {'applicant': ['A1', 'A2', 'A3'], 'income': [50000, 80000, np.nan], 'approved': [True, False, True]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w3_8-0': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-1': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-2': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}\n# Write your code here:\n`,    'w3_8-3': `import pandas as pd\nimport numpy as np\ndata = {'car_plate': ['A1', 'A2', 'A3'], 'speed': [60, 80, np.nan], 'limit': [50, 50, 50]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w6_0-0': `import sklearn\n\n# Code:\n`,    'w6_0-1': `import sklearn\n\n# Code:\n`,    'w6_0-2': `import sklearn\n\n# Code:\n`,    'w6_0-3': `import pandas as pd\nimport numpy as np\ndata = {'vin': ['V1', 'V2', 'V3'], 'mileage': [10000, 50000, np.nan], 'price': [20000, 15000, 10000]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w6_1-0': `import sklearn\n\n# Code:\n`,    'w6_1-1': `import sklearn\n\n# Code:\n`,    'w6_1-2': `import sklearn\n\n# Code:\n`,    'w6_1-3': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w6_2-0': `import sklearn\n\n# Code:\n`,    'w6_2-1': `import sklearn\n\n# Code:\n`,    'w6_2-2': `import sklearn\n\n# Code:\n`,    'w6_2-3': `import pandas as pd\nimport numpy as np\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10, 15, np.nan, 25], 'rainfall': [0, 5, 10, 0]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w6_3-0': `import sklearn\n\n# Code:\n`,    'w6_3-1': `import sklearn\n\n# Code:\n`,    'w6_3-2': `import sklearn\n\n# Code:\n`,    'w6_3-3': `import pandas as pd\nimport numpy as np\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120, 130, np.nan, 140], 'age': [45, 32, 60, -5]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`,    'w6_4-0': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n# Write your code here:\n`,    'w6_4-1': `from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n# Write your code here:\n`,    'w6_4-2': `from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n# Write your code here:\n`,    'w6_4-3': `import pandas as pd\nimport numpy as np\ndata = {'movie': ['M1', 'M2', 'M3'], 'tickets': [1000, 2000, np.nan], 'revenue': [15000, 30000, 0]}
+# NO LOOPS ALLOWED. Write your mastery pipeline below:
+`
 };
 
 function loadLesson(lessonId) {
