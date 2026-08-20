@@ -79,13 +79,6 @@ const lessons = {
             <div class="output-container" id="output-w2_00-0"></div>
         </div>
         
-        <div class="notebook-cell" id="cell-w2_00-1">
-            <div class="cell-header"><span>[ ] Practice 2: 2. Introduction to NumPy</span></div>
-            <div class="editor-container" id="editor-w2_00-1"></div>
-            <div class="controls"><button onclick="runCode('w2_00-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w2_00-1"></div>
-        </div>
-        
     `,
     'w2_01': `
         <h1>Understanding Data Types in Python</h1>
@@ -111,6 +104,13 @@ const lessons = {
             <div class="output-container" id="output-w2_01-1"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w2_01-2">
+            <div class="cell-header"><span>[ ] Practice 3: Understanding Data Types in Python</span></div>
+            <div class="editor-container" id="editor-w2_01-2"></div>
+            <div class="controls"><button onclick="runCode('w2_01-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_01-2"></div>
+        </div>
+        
     `,
     'w2_02': `
         <h1>The Basics of NumPy Arrays</h1>
@@ -134,6 +134,13 @@ const lessons = {
             <div class="editor-container" id="editor-w2_02-1"></div>
             <div class="controls"><button onclick="runCode('w2_02-1')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_02-1"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w2_02-2">
+            <div class="cell-header"><span>[ ] Practice 3: The Basics of NumPy Arrays</span></div>
+            <div class="editor-container" id="editor-w2_02-2"></div>
+            <div class="controls"><button onclick="runCode('w2_02-2')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w2_02-2"></div>
         </div>
         
     `,
@@ -179,13 +186,6 @@ const lessons = {
             <div class="output-container" id="output-w2_04-0"></div>
         </div>
         
-        <div class="notebook-cell" id="cell-w2_04-1">
-            <div class="cell-header"><span>[ ] Practice 2: Aggregations: Min, Max, and Everything In Between</span></div>
-            <div class="editor-container" id="editor-w2_04-1"></div>
-            <div class="controls"><button onclick="runCode('w2_04-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w2_04-1"></div>
-        </div>
-        
     `,
     'w2_05': `
         <h1>Computation on Arrays: Broadcasting</h1>
@@ -229,13 +229,6 @@ const lessons = {
             <div class="output-container" id="output-w2_06-0"></div>
         </div>
         
-        <div class="notebook-cell" id="cell-w2_06-1">
-            <div class="cell-header"><span>[ ] Practice 2: Comparisons, Masks, and Boolean Logic</span></div>
-            <div class="editor-container" id="editor-w2_06-1"></div>
-            <div class="controls"><button onclick="runCode('w2_06-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w2_06-1"></div>
-        </div>
-        
     `,
     'w2_07': `
         <h1>Fancy Indexing</h1>
@@ -252,13 +245,6 @@ const lessons = {
             <div class="editor-container" id="editor-w2_07-0"></div>
             <div class="controls"><button onclick="runCode('w2_07-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w2_07-0"></div>
-        </div>
-        
-        <div class="notebook-cell" id="cell-w2_07-1">
-            <div class="cell-header"><span>[ ] Practice 2: Fancy Indexing</span></div>
-            <div class="editor-container" id="editor-w2_07-1"></div>
-            <div class="controls"><button onclick="runCode('w2_07-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w2_07-1"></div>
         </div>
         
     `,
@@ -340,6 +326,13 @@ const lessons = {
             <div class="output-container" id="output-w4_01-0"></div>
         </div>
         
+        <div class="notebook-cell" id="cell-w4_01-1">
+            <div class="cell-header"><span>[ ] Practice 2: Simple Line Plots</span></div>
+            <div class="editor-container" id="editor-w4_01-1"></div>
+            <div class="controls"><button onclick="runCode('w4_01-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_01-1"></div>
+        </div>
+        
     `,
     'w4_02': `
         <h1>Simple Scatter Plots</h1>
@@ -356,6 +349,13 @@ const lessons = {
             <div class="editor-container" id="editor-w4_02-0"></div>
             <div class="controls"><button onclick="runCode('w4_02-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w4_02-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w4_02-1">
+            <div class="cell-header"><span>[ ] Practice 2: Simple Scatter Plots</span></div>
+            <div class="editor-container" id="editor-w4_02-1"></div>
+            <div class="controls"><button onclick="runCode('w4_02-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w4_02-1"></div>
         </div>
         
     `,
@@ -745,13 +745,6 @@ const lessons = {
             <div class="output-container" id="output-w3_2-0"></div>
         </div>
         
-        <div class="notebook-cell" id="cell-w3_2-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
-            <div class="editor-container" id="editor-w3_2-1"></div>
-            <div class="controls"><button onclick="runCode('w3_2-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w3_2-1"></div>
-        </div>
-        
     `,
     'w3_3': `
         <h1>How do I create plots in pandas?</h1>
@@ -766,13 +759,6 @@ const lessons = {
             <div class="editor-container" id="editor-w3_3-0"></div>
             <div class="controls"><button onclick="runCode('w3_3-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w3_3-0"></div>
-        </div>
-        
-        <div class="notebook-cell" id="cell-w3_3-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
-            <div class="editor-container" id="editor-w3_3-1"></div>
-            <div class="controls"><button onclick="runCode('w3_3-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w3_3-1"></div>
         </div>
         
     `,
@@ -837,13 +823,6 @@ const lessons = {
             <div class="output-container" id="output-w3_6-0"></div>
         </div>
         
-        <div class="notebook-cell" id="cell-w3_6-1">
-            <div class="cell-header"><span>[ ] Practice 2: Pandas</span></div>
-            <div class="editor-container" id="editor-w3_6-1"></div>
-            <div class="controls"><button onclick="runCode('w3_6-1')">▶ Run Cell</button></div>
-            <div class="output-container" id="output-w3_6-1"></div>
-        </div>
-        
     `,
     'w3_7': `
         <h1>How to combine data from multiple tables</h1>
@@ -904,6 +883,13 @@ const lessons = {
             <div class="editor-container" id="editor-w6_0-0"></div>
             <div class="controls"><button onclick="runCode('w6_0-0')">▶ Run Cell</button></div>
             <div class="output-container" id="output-w6_0-0"></div>
+        </div>
+        
+        <div class="notebook-cell" id="cell-w6_0-1">
+            <div class="cell-header"><span>[ ] Practice 2: Scikit-learn</span></div>
+            <div class="editor-container" id="editor-w6_0-1"></div>
+            <div class="controls"><button onclick="runCode('w6_0-1')">▶ Run Cell</button></div>
+            <div class="output-container" id="output-w6_0-1"></div>
         </div>
         
     `,
@@ -1002,7 +988,584 @@ const lessons = {
 };
 
 const initialCode = {
-    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `# Problem 1: Explore 2. Introduction to NumPy\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w2_00-1': `# Problem 2: Edge Cases for 2. Introduction to NumPy\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w2_01-0': `# Problem 1: Upcasting\nimport numpy as np\n\n# TODO: Create a python list with integers and one float (e.g. 3.14).\n# TODO: Convert it to a numpy array.\n# TODO: Print the .dtype of the array and explain via comment why it chose that type.\n`,    'w2_01-1': `# Problem 2: Explicit Data Types\nimport numpy as np\n\n# TODO: Create an array of numbers from 1 to 5, but force the data type to be 32-bit floats.\n# TODO: Print the array and its dtype.\n`,    'w2_02-0': `# Problem 1: Array Attributes\nimport numpy as np\n\n# TODO: Use np.random.randint to create a 3-dimensional array of shape (3, 4, 5).\n# TODO: Print its .ndim, .shape, and .size attributes.\n`,    'w2_02-1': `# Problem 2: Slicing\nimport numpy as np\n\n# TODO: Create an array of numbers from 0 to 19 using np.arange().\n# TODO: Slice the array to get every second element starting from index 2 up to index 15.\n`,    'w2_03-0': `# Problem 1: Array Arithmetic (UFuncs)\nimport numpy as np\n\n# TODO: Create a numpy array of integers from 1 to 10.\n# TODO: Multiply every element by 5, then subtract 2, WITHOUT using any for-loops.\n# TODO: Print the final array.\n`,    'w2_03-1': `# Problem 2: Math Functions\nimport numpy as np\n\n# TODO: Create an array of 5 angles (in radians) evenly spaced between 0 and pi.\n# TODO: Use np.sin() and np.cos() to calculate the sine and cosine of these angles.\n`,    'w2_04-0': `# Problem 1: Global Aggregates\nimport numpy as np\n\n# TODO: Generate a massive array of 10,000 random numbers using np.random.rand().\n# TODO: Find the sum, minimum, and maximum values of the entire array using NumPy's built-in aggregation functions.\n`,    'w2_04-1': `# Problem 2: Multi-dimensional Aggregates\nimport numpy as np\n\n# TODO: Create a 5x5 matrix of random integers between 1 and 100.\n# TODO: Find the minimum value of each COLUMN (hint: use the axis argument).\n# TODO: Find the maximum value of each ROW.\n`,    'w2_05-0': `# Problem 1: Broadcasting Rules\nimport numpy as np\n\n# TODO: Create a 1D array of shape (3,) and a 2D array of shape (3, 3).\n# TODO: Add them together and print the result. Observe how the 1D array stretches across the 2D array.\n`,    'w2_05-1': `# Problem 2: Centering an Array\nimport numpy as np\n\n# TODO: Create a 10x3 array of random numbers.\n# TODO: Calculate the mean of each column.\n# TODO: Subtract the column means from the original array to 'center' the data. Print the result.\n`,    'w2_06-0': `# Problem 1: Counting with Booleans\nimport numpy as np\n\n# TODO: Create an array of 50 random integers between 0 and 100.\n# TODO: Use np.count_nonzero() to find how many numbers are strictly greater than 50.\n`,    'w2_06-1': `# Problem 2: Masking\nimport numpy as np\n\n# TODO: Using the same array from Problem 1, extract a new array containing ONLY the numbers that are strictly greater than 50 using boolean masking.\n# TODO: Print the new masked array.\n`,    'w2_07-0': `# Problem 1: Simple Fancy Indexing\nimport numpy as np\n\n# TODO: Create an array of 10 random numbers.\n# TODO: Create a python list containing the indices [2, 5, 8].\n# TODO: Use the list to extract just those three elements from the array.\n`,    'w2_07-1': `# Problem 2: 2D Fancy Indexing\nimport numpy as np\n\n# TODO: Create a 4x4 matrix.\n# TODO: Provide an array of row indices and an array of column indices to extract 4 specific items scattered across the matrix.\n`,    'w2_08-0': `# Problem 1: Sorting and Argsort\nimport numpy as np\n\n# TODO: Create an array of 5 random integers.\n# TODO: Sort the array and print the result.\n# TODO: Now use np.argsort() on the original array and print the resulting indices. Explain how argsort differs from sort.\n`,    'w2_09-0': `# Problem 1: Creating a Structured Array\nimport numpy as np\n\n# TODO: Create a structured array definition with fields for 'name' (string), 'age' (int), and 'salary' (float).\n# TODO: Fill it with data for 3 fictional employees and print the array.\n`,    'w4_00-0': `# Problem 1: Explore 4. Visualization with Matplotlib\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_00-1': `# Problem 2: Edge Cases for 4. Visualization with Matplotlib\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_01-0': `# Problem 1: Line Plot Basics\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# TODO: Create an array x from 0 to 10.\n# TODO: Create an array y which is the sine of x.\n# TODO: (Note: plot won't display in this terminal sandbox, but write the code as if it would)\n# TODO: plt.plot(x, y)\nprint('Write the plotting code!')\n`,    'w4_02-0': `# Problem 1: Scatter Plot Basics\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# TODO: Create random x and y arrays of size 50.\n# TODO: Write the plt.scatter() code.\nprint('Write the plotting code!')\n`,    'w4_03-0': `# Problem 1: Explore Visualizing Errors\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_03-1': `# Problem 2: Edge Cases for Visualizing Errors\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_04-0': `# Problem 1: Explore Density and Contour Plots\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_04-1': `# Problem 2: Edge Cases for Density and Contour Plots\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_05-0': `# Problem 1: Explore Histograms, Binnings, and Density\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_05-1': `# Problem 2: Edge Cases for Histograms, Binnings, and Density\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_06-0': `# Problem 1: Explore Customizing Plot Legends\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_06-1': `# Problem 2: Edge Cases for Customizing Plot Legends\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_07-0': `# Problem 1: Explore Customizing Colorbars\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_07-1': `# Problem 2: Edge Cases for Customizing Colorbars\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_08-0': `# Problem 1: Explore Multiple Subplots\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_08-1': `# Problem 2: Edge Cases for Multiple Subplots\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_09-0': `# Problem 1: Explore Text and Annotation\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_09-1': `# Problem 2: Edge Cases for Text and Annotation\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_10-0': `# Problem 1: Explore Customizing Ticks\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_10-1': `# Problem 2: Edge Cases for Customizing Ticks\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_11-0': `# Problem 1: Explore Customizing Matplotlib: Configurations and Stylesheets\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_11-1': `# Problem 2: Edge Cases for Customizing Matplotlib: Configurations and Stylesheets\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_12-0': `# Problem 1: Explore Three-Dimensional Plotting in Matplotlib\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_12-1': `# Problem 2: Edge Cases for Three-Dimensional Plotting in Matplotlib\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_13-0': `# Problem 1: Explore Geographic Data with Basemap\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_13-1': `# Problem 2: Edge Cases for Geographic Data with Basemap\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_14-0': `# Problem 1: Explore Visualization with Seaborn\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_14-1': `# Problem 2: Edge Cases for Visualization with Seaborn\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w4_15-0': `# Problem 1: Explore Further Resources\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w4_15-1': `# Problem 2: Edge Cases for Further Resources\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_0-0': `# Problem 1: Explore What kind of data does pandas handle?\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_0-1': `# Problem 2: Edge Cases for What kind of data does pandas handle?\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_1-0': `# Problem 1: Explore How do I read and write tabular data?\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_1-1': `# Problem 2: Edge Cases for How do I read and write tabular data?\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_2-0': `# Problem 1: Explore How do I select a subset of a DataFrame?\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_2-1': `# Problem 2: Edge Cases for How do I select a subset of a DataFrame?\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_3-0': `# Problem 1: Explore How do I create plots in pandas?\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_3-1': `# Problem 2: Edge Cases for How do I create plots in pandas?\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_4-0': `# Problem 1: Explore How to create new columns derived from existing columns\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_4-1': `# Problem 2: Edge Cases for How to create new columns derived from existing columns\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_5-0': `# Problem 1: Explore How to calculate summary statistics\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_5-1': `# Problem 2: Edge Cases for How to calculate summary statistics\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_6-0': `# Problem 1: Explore How to reshape the layout of tables\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_6-1': `# Problem 2: Edge Cases for How to reshape the layout of tables\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_7-0': `# Problem 1: Explore How to combine data from multiple tables\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w3_7-1': `# Problem 2: Edge Cases for How to combine data from multiple tables\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w3_8-0': `# Problem 1: Datetime Index\nimport pandas as pd\n\n# TODO: Use pd.date_range to create an index of 10 consecutive days.\n# TODO: Create a Series using this index with random data.\n`,    'w6_0-0': `# Problem 1: The Estimator API\nfrom sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# TODO: Instantiate a LinearRegression model.\n# TODO: Create dummy X (2D) and y (1D) data.\n# TODO: Call model.fit(X, y).\nprint('Write the Scikit-Learn code!')\n`,    'w6_1-0': `# Problem 1: Explore Pipeline Documentation\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w6_1-1': `# Problem 2: Edge Cases for Pipeline Documentation\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w6_2-0': `# Problem 1: Explore ColumnTransformer Documentation\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w6_2-1': `# Problem 2: Edge Cases for ColumnTransformer Documentation\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w6_3-0': `# Problem 1: Explore Preprocessing Data\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w6_3-1': `# Problem 2: Edge Cases for Preprocessing Data\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`,    'w6_4-0': `# Problem 1: Explore Train Test Split\n# TODO: Based on the reading above, implement a core function from the chapter to solve a mock problem.\nprint('Ready!')\n`,    'w6_4-1': `# Problem 2: Edge Cases for Train Test Split\n# TODO: Think of an edge case or error scenario mentioned in the text. Write code that triggers it, and write code that fixes it.\nprint('Ready!')\n`
+    'git-1': `# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')`,    'w2_00-0': `# Practice: 2. Introduction to NumPy
+# Scenario: Apply the concepts from 2. Introduction to NumPy.
+import numpy as np
+
+# 1. Create a dummy dataset relevant to this topic.
+# 2. Apply a core function from the reading to solve a problem.
+`,    'w2_01-0': `# Easy: Array Creation and Inspection
+# Scenario: You are collecting temperature readings.
+import numpy as np
+import pandas as pd
+
+# Data:
+temperatures_list = [22.5, 23.1, "24.5", 21.8, 22.0]
+
+# 1. Convert the mixed list to a NumPy array of type float.
+# 2. Print the shape, ndim, dtype, and itemsize of the array.
+# 3. Create a 3x3 array of zeros to hold tomorrow's forecasts.
+`,    'w2_01-1': `# Intermediate: Slicing and Reshaping
+# Scenario: A 1D array of 24 hourly readings needs to be converted into a 2D array of (days, hours).
+import numpy as np
+
+# Data:
+hourly = np.arange(1, 25)
+
+# 1. Reshape the 24-element array into a (3 days, 8 hours) matrix.
+# 2. Extract the readings for the second day (index 1).
+# 3. Extract the last two hours of every day using slicing.
+`,    'w2_01-2': `# Complex: Advanced Extraction
+# Scenario: You have a matrix of image pixel intensities.
+import numpy as np
+
+# Data:
+rng = np.random.default_rng(42)
+pixels = rng.integers(0, 256, size=(10, 10))
+
+# 1. Extract a 3x3 sub-grid from the exact center of the matrix.
+# 2. Replace the four corner pixels of the full matrix with 0.
+# 3. Print the modified matrix.
+`,    'w2_02-0': `# Easy: Array Creation and Inspection
+# Scenario: You are collecting temperature readings.
+import numpy as np
+import pandas as pd
+
+# Data:
+temperatures_list = [22.5, 23.1, "24.5", 21.8, 22.0]
+
+# 1. Convert the mixed list to a NumPy array of type float.
+# 2. Print the shape, ndim, dtype, and itemsize of the array.
+# 3. Create a 3x3 array of zeros to hold tomorrow's forecasts.
+`,    'w2_02-1': `# Intermediate: Slicing and Reshaping
+# Scenario: A 1D array of 24 hourly readings needs to be converted into a 2D array of (days, hours).
+import numpy as np
+
+# Data:
+hourly = np.arange(1, 25)
+
+# 1. Reshape the 24-element array into a (3 days, 8 hours) matrix.
+# 2. Extract the readings for the second day (index 1).
+# 3. Extract the last two hours of every day using slicing.
+`,    'w2_02-2': `# Complex: Advanced Extraction
+# Scenario: You have a matrix of image pixel intensities.
+import numpy as np
+
+# Data:
+rng = np.random.default_rng(42)
+pixels = rng.integers(0, 256, size=(10, 10))
+
+# 1. Extract a 3x3 sub-grid from the exact center of the matrix.
+# 2. Replace the four corner pixels of the full matrix with 0.
+# 3. Print the modified matrix.
+`,    'w2_03-0': `# Easy: Vectorized Arithmetic
+# Scenario: Apply a currency conversion rate to a list of prices.
+import numpy as np
+
+# Data:
+usd_prices = np.array([19.99, 5.50, 150.00, 2.99])
+conversion_rate = 3400 # to MNT
+
+# 1. Multiply all prices by the conversion rate without using loops.
+# 2. Round the results to the nearest integer.
+`,    'w2_03-1': `# Intermediate: Ufuncs and broadcasting
+# Scenario: You have base prices and a list of different tax rates.
+import numpy as np
+
+# Data:
+base_prices = np.array([[10], [20], [30]]) # shape (3,1)
+tax_rates = np.array([1.05, 1.10, 1.20]) # shape (3,)
+
+# 1. Add the tax to the base prices using broadcasting (result should be 3x3).
+# 2. Find the absolute difference between the highest and lowest taxed prices for each item.
+`,    'w2_04-0': `# Intermediate: Axis Aggregations
+# Scenario: You have test scores for 5 students across 3 exams.
+import numpy as np
+
+# Data:
+scores = np.array([
+    [85, 90, 88],
+    [70, 75, 72],
+    [95, 98, 100],
+    [60, 65, 62],
+    [80, 85, 82]
+])
+
+# 1. Find the mean score for the entire class.
+# 2. Find the minimum score on each exam (columns).
+# 3. Find the maximum score for each student (rows).
+`,    'w2_05-0': `# Easy: Vectorized Arithmetic
+# Scenario: Apply a currency conversion rate to a list of prices.
+import numpy as np
+
+# Data:
+usd_prices = np.array([19.99, 5.50, 150.00, 2.99])
+conversion_rate = 3400 # to MNT
+
+# 1. Multiply all prices by the conversion rate without using loops.
+# 2. Round the results to the nearest integer.
+`,    'w2_05-1': `# Intermediate: Ufuncs and broadcasting
+# Scenario: You have base prices and a list of different tax rates.
+import numpy as np
+
+# Data:
+base_prices = np.array([[10], [20], [30]]) # shape (3,1)
+tax_rates = np.array([1.05, 1.10, 1.20]) # shape (3,)
+
+# 1. Add the tax to the base prices using broadcasting (result should be 3x3).
+# 2. Find the absolute difference between the highest and lowest taxed prices for each item.
+`,    'w2_06-0': `# Complex: Boolean Masking and Filtering
+# Scenario: Sensor anomaly detection.
+import numpy as np
+
+# Data:
+rng = np.random.default_rng(2026)
+sensor_readings = rng.normal(loc=20, scale=5, size=100)
+
+# 1. Find how many readings are considered anomalies (below 10 or above 30).
+# 2. Create a clean array containing ONLY the normal readings using a boolean mask.
+# 3. Instead of dropping anomalies, use np.clip to restrict all values to the 10-30 range.
+`,    'w2_07-0': `# Practice: Fancy Indexing
+# Scenario: Apply the concepts from Fancy Indexing.
+import numpy as np
+
+# 1. Create a dummy dataset relevant to this topic.
+# 2. Apply a core function from the reading to solve a problem.
+`,    'w2_08-0': `# Practice: Sorting Arrays
+# Scenario: Apply the concepts from Sorting Arrays.
+import numpy as np
+
+# 1. Create a dummy dataset relevant to this topic.
+# 2. Apply a core function from the reading to solve a problem.
+`,    'w2_09-0': `# Practice: Structured Data: NumPy's Structured Arrays
+# Scenario: Apply the concepts from Structured Data: NumPy's Structured Arrays.
+import numpy as np
+
+# 1. Create a dummy dataset relevant to this topic.
+# 2. Apply a core function from the reading to solve a problem.
+`,    'w4_00-0': `# Easy Practice: 4. Visualization with Matplotlib
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_00-1': `# Complex Practice: 4. Visualization with Matplotlib
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply 4. Visualization with Matplotlib to clean it.
+`,    'w4_01-0': `# Easy Practice: Simple Line Plots
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_01-1': `# Complex Practice: Simple Line Plots
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Simple Line Plots to clean it.
+`,    'w4_02-0': `# Easy Practice: Simple Scatter Plots
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_02-1': `# Complex Practice: Simple Scatter Plots
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Simple Scatter Plots to clean it.
+`,    'w4_03-0': `# Easy Practice: Visualizing Errors
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_03-1': `# Complex Practice: Visualizing Errors
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Visualizing Errors to clean it.
+`,    'w4_04-0': `# Easy Practice: Density and Contour Plots
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_04-1': `# Complex Practice: Density and Contour Plots
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Density and Contour Plots to clean it.
+`,    'w4_05-0': `# Easy Practice: Histograms, Binnings, and Density
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_05-1': `# Complex Practice: Histograms, Binnings, and Density
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Histograms, Binnings, and Density to clean it.
+`,    'w4_06-0': `# Easy Practice: Customizing Plot Legends
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_06-1': `# Complex Practice: Customizing Plot Legends
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Customizing Plot Legends to clean it.
+`,    'w4_07-0': `# Easy Practice: Customizing Colorbars
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_07-1': `# Complex Practice: Customizing Colorbars
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Customizing Colorbars to clean it.
+`,    'w4_08-0': `# Easy Practice: Multiple Subplots
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_08-1': `# Complex Practice: Multiple Subplots
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Multiple Subplots to clean it.
+`,    'w4_09-0': `# Easy Practice: Text and Annotation
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_09-1': `# Complex Practice: Text and Annotation
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Text and Annotation to clean it.
+`,    'w4_10-0': `# Easy Practice: Customizing Ticks
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_10-1': `# Complex Practice: Customizing Ticks
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Customizing Ticks to clean it.
+`,    'w4_11-0': `# Easy Practice: Customizing Matplotlib: Configurations and Stylesheets
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_11-1': `# Complex Practice: Customizing Matplotlib: Configurations and Stylesheets
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Customizing Matplotlib: Configurations and Stylesheets to clean it.
+`,    'w4_12-0': `# Easy Practice: Three-Dimensional Plotting in Matplotlib
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_12-1': `# Complex Practice: Three-Dimensional Plotting in Matplotlib
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Three-Dimensional Plotting in Matplotlib to clean it.
+`,    'w4_13-0': `# Easy Practice: Geographic Data with Basemap
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_13-1': `# Complex Practice: Geographic Data with Basemap
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Geographic Data with Basemap to clean it.
+`,    'w4_14-0': `# Easy Practice: Visualization with Seaborn
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_14-1': `# Complex Practice: Visualization with Seaborn
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Visualization with Seaborn to clean it.
+`,    'w4_15-0': `# Easy Practice: Further Resources
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w4_15-1': `# Complex Practice: Further Resources
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Further Resources to clean it.
+`,    'w3_0-0': `# Easy: Student Series Report
+# Scenario: A school assistant gives you this list of exam scores.
+import pandas as pd
+import numpy as np
+
+scores = [76, 91, 84, 68, 95, 88, 73]
+names = ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa", "Ganaa"]
+
+# 1. Create a Pandas Series named \`score_series\` using the names as index labels.
+# 2. Print the score for "Caraa".
+# 3. Print students with scores of at least 85.
+# 4. Find the mean, minimum, maximum, and median score.
+# 5. Add 5 bonus points to every score, but cap scores at 100 (use clip).
+`,    'w3_0-1': `# Intermediate: Build and Inspect a DataFrame
+# Scenario: A small bookstore inventory.
+import pandas as pd
+
+data = {
+    "title": ["The Steppe", "Blue Sky", "Nomad Code", "River Song", "Altan Book"],
+    "category": ["History", "Fiction", "Technology", "Fiction", "History"],
+    "price": [18.5, 12.0, 25.0, 15.5, 20.0],
+    "stock": [8, 15, 4, 0, 11],
+    "rating": [4.7, 4.2, 4.9, 4.0, 4.6]
+}
+
+# 1. Create \`books_df\`.
+# 2. Print its shape, column names, index, and dtypes.
+# 3. Select books that cost more than 18.
+# 4. Add an \`inventory_value\` column equal to \`price * stock\`.
+# 5. Find the title of the book with the largest inventory value.
+`,    'w3_1-0': `# Intermediate: CSV Round Trip
+# Scenario: Handling CSV data natively in python.
+import pandas as pd
+import io
+
+csv_text = """order_id,customer,product,quantity,total,status
+1001,Ari,Notebook,2,10.0,paid
+1002,Bataa,Pen,5,7.5,paid
+1003,Caraa,Backpack,1,45.0,pending
+1004,Davaa,Notebook,,5.0,paid
+1005,Enkh,Pen,3,invalid,cancelled
+1005,Enkh,Pen,3,invalid,cancelled"""
+
+# 1. Load the csv_text into a DataFrame using pd.read_csv(io.StringIO(csv_text)).
+# 2. Convert \`total\` to numeric using pd.to_numeric(..., errors='coerce').
+# 3. Remove exact duplicate rows.
+# 4. Create \`valid_orders\`: only paid orders with non-missing quantity and total.
+`,    'w3_1-1': `# Complex: JSON Records and Data Quality
+import pandas as pd
+
+records = [
+    {"id": 1, "name": "Ari", "country": "Mongolia", "score": 88, "active": True},
+    {"id": 2, "name": "Bataa", "country": "Mongolia", "score": None, "active": True},
+    {"id": 3, "name": "Caraa", "country": "Japan", "score": 91, "active": False},
+    {"id": 4, "name": "Davaa", "country": "Mongolia", "score": "unknown", "active": True}
+]
+
+# 1. Convert \`records\` to a DataFrame.
+# 2. Convert \`score\` to numeric, making "unknown" missing.
+# 3. Fill missing \`country\` values with "Unknown".
+# 4. Fill missing score with the median valid score.
+`,    'w3_2-0': `# Complex: Clean a Messy Table
+import pandas as pd
+import numpy as np
+
+members = pd.DataFrame({
+    "name": [" Ari ", "BATAA", "Caraa", "Davaa", "Enkh", "Enkh", None],
+    "age": [16, 17, None, 150, 15, 15, 18],
+    "city": ["Ulaanbaatar", "ulaanbaatar", "Darkhan", "Ulaanbaatar", "Erdenet", "Erdenet", "Khovd"],
+    "hours_volunteered": [8, 12, "ten", 6, None, None, 4]
+})
+
+# 1. Create \`clean_members = members.copy()\`.
+# 2. Clean names: remove outer whitespace (.str.strip()) and convert to title case.
+# 3. Convert "ten" to 10 and change \`hours_volunteered\` to numeric.
+# 4. Treat ages below 13 or above 100 as invalid (replace with np.nan).
+# 5. Remove rows missing a name. Remove duplicate rows.
+`,    'w3_3-0': `# Practice: Mini Data Pipeline
+import pandas as pd
+import numpy as np
+
+raw_data = pd.DataFrame({
+    "user_id": [101, 102, 103, 104, 105, 105, 106, 107],
+    "name": ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Enkh", "Faraa", None],
+    "age": [16, 17, 150, 15, np.nan, np.nan, 18, 20],
+    "hours_online": [3.5, 7.0, -2.0, "five", 4.5, 4.5, np.nan, 6.0],
+    "subscription": ["free", "premium", "free", "basic", "premium", "premium", "basic", "free"]
+})
+
+# FINAL CHALLENGE:
+# 1. Convert hours_online to numeric.
+# 2. Replace negative hours and ages > 100 with np.nan.
+# 3. Fill missing ages and hours with their respective medians.
+# 4. Drop duplicates by user_id.
+# 5. Create 'daily_cost' based on subscription (free: 0, basic: 0.5, premium: 1.0) using np.select or map.
+`,    'w3_4-0': `# Intermediate: Game Scoreboard
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(2026)
+players = np.array(["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa"])
+round_scores = rng.integers(0, 101, size=(6, 5))
+
+# 1. Build a DataFrame with players as its index and columns round_1 through round_5.
+# 2. Add 'total', 'mean', 'best_round', and 'worst_round' columns.
+# 3. Add a 'rank' column, where rank 1 is the highest total (use df['total'].rank(ascending=False)).
+`,    'w3_4-1': `# Complex: Product Inventory Validation
+import pandas as pd
+import numpy as np
+
+inventory = pd.DataFrame({
+    "product_id": np.arange(101, 109),
+    "product": ["Tea", "Coffee", "Juice", "Milk", "Bread", "Rice", "Eggs", "Salt"],
+    "price": [4.5, 8.0, 3.2, 2.8, 1.5, 10.0, 6.5, 1.2],
+    "stock": [20, -3, 15, np.nan, 50, 10, 12, 200],
+    "reorder_level": [5, 5, 8, 10, 20, 3, 6, 25]
+})
+
+# 1. Replace missing or negative stock with 0.
+# 2. Add inventory_value = price * stock.
+# 3. Add a boolean column \`needs_reorder\` (stock <= reorder_level).
+# 4. Use np.clip to cap stock at 100 for a separate \`stock_capped\` column.
+`,    'w3_5-0': `# Intermediate: Game Scoreboard
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(2026)
+players = np.array(["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa"])
+round_scores = rng.integers(0, 101, size=(6, 5))
+
+# 1. Build a DataFrame with players as its index and columns round_1 through round_5.
+# 2. Add 'total', 'mean', 'best_round', and 'worst_round' columns.
+# 3. Add a 'rank' column, where rank 1 is the highest total (use df['total'].rank(ascending=False)).
+`,    'w3_5-1': `# Complex: Product Inventory Validation
+import pandas as pd
+import numpy as np
+
+inventory = pd.DataFrame({
+    "product_id": np.arange(101, 109),
+    "product": ["Tea", "Coffee", "Juice", "Milk", "Bread", "Rice", "Eggs", "Salt"],
+    "price": [4.5, 8.0, 3.2, 2.8, 1.5, 10.0, 6.5, 1.2],
+    "stock": [20, -3, 15, np.nan, 50, 10, 12, 200],
+    "reorder_level": [5, 5, 8, 10, 20, 3, 6, 25]
+})
+
+# 1. Replace missing or negative stock with 0.
+# 2. Add inventory_value = price * stock.
+# 3. Add a boolean column \`needs_reorder\` (stock <= reorder_level).
+# 4. Use np.clip to cap stock at 100 for a separate \`stock_capped\` column.
+`,    'w3_6-0': `# Practice: Mini Data Pipeline
+import pandas as pd
+import numpy as np
+
+raw_data = pd.DataFrame({
+    "user_id": [101, 102, 103, 104, 105, 105, 106, 107],
+    "name": ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Enkh", "Faraa", None],
+    "age": [16, 17, 150, 15, np.nan, np.nan, 18, 20],
+    "hours_online": [3.5, 7.0, -2.0, "five", 4.5, 4.5, np.nan, 6.0],
+    "subscription": ["free", "premium", "free", "basic", "premium", "premium", "basic", "free"]
+})
+
+# FINAL CHALLENGE:
+# 1. Convert hours_online to numeric.
+# 2. Replace negative hours and ages > 100 with np.nan.
+# 3. Fill missing ages and hours with their respective medians.
+# 4. Drop duplicates by user_id.
+# 5. Create 'daily_cost' based on subscription (free: 0, basic: 0.5, premium: 1.0) using np.select or map.
+`,    'w3_7-0': `# Intermediate: Game Scoreboard
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng(2026)
+players = np.array(["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Faraa"])
+round_scores = rng.integers(0, 101, size=(6, 5))
+
+# 1. Build a DataFrame with players as its index and columns round_1 through round_5.
+# 2. Add 'total', 'mean', 'best_round', and 'worst_round' columns.
+# 3. Add a 'rank' column, where rank 1 is the highest total (use df['total'].rank(ascending=False)).
+`,    'w3_7-1': `# Complex: Product Inventory Validation
+import pandas as pd
+import numpy as np
+
+inventory = pd.DataFrame({
+    "product_id": np.arange(101, 109),
+    "product": ["Tea", "Coffee", "Juice", "Milk", "Bread", "Rice", "Eggs", "Salt"],
+    "price": [4.5, 8.0, 3.2, 2.8, 1.5, 10.0, 6.5, 1.2],
+    "stock": [20, -3, 15, np.nan, 50, 10, 12, 200],
+    "reorder_level": [5, 5, 8, 10, 20, 3, 6, 25]
+})
+
+# 1. Replace missing or negative stock with 0.
+# 2. Add inventory_value = price * stock.
+# 3. Add a boolean column \`needs_reorder\` (stock <= reorder_level).
+# 4. Use np.clip to cap stock at 100 for a separate \`stock_capped\` column.
+`,    'w3_8-0': `# Practice: Mini Data Pipeline
+import pandas as pd
+import numpy as np
+
+raw_data = pd.DataFrame({
+    "user_id": [101, 102, 103, 104, 105, 105, 106, 107],
+    "name": ["Ari", "Bataa", "Caraa", "Davaa", "Enkh", "Enkh", "Faraa", None],
+    "age": [16, 17, 150, 15, np.nan, np.nan, 18, 20],
+    "hours_online": [3.5, 7.0, -2.0, "five", 4.5, 4.5, np.nan, 6.0],
+    "subscription": ["free", "premium", "free", "basic", "premium", "premium", "basic", "free"]
+})
+
+# FINAL CHALLENGE:
+# 1. Convert hours_online to numeric.
+# 2. Replace negative hours and ages > 100 with np.nan.
+# 3. Fill missing ages and hours with their respective medians.
+# 4. Drop duplicates by user_id.
+# 5. Create 'daily_cost' based on subscription (free: 0, basic: 0.5, premium: 1.0) using np.select or map.
+`,    'w6_0-0': `# Easy Practice: Getting Started with Scikit-learn
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w6_0-1': `# Complex Practice: Getting Started with Scikit-learn
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Getting Started with Scikit-learn to clean it.
+`,    'w6_1-0': `# Easy Practice: Pipeline Documentation
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w6_1-1': `# Complex Practice: Pipeline Documentation
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Pipeline Documentation to clean it.
+`,    'w6_2-0': `# Easy Practice: ColumnTransformer Documentation
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w6_2-1': `# Complex Practice: ColumnTransformer Documentation
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply ColumnTransformer Documentation to clean it.
+`,    'w6_3-0': `# Easy Practice: Preprocessing Data
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w6_3-1': `# Complex Practice: Preprocessing Data
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Preprocessing Data to clean it.
+`,    'w6_4-0': `# Easy Practice: Train Test Split
+import pandas as pd
+import numpy as np
+
+# Write your code below to practice the concepts from the textbook:
+`,    'w6_4-1': `# Complex Practice: Train Test Split
+import pandas as pd
+import numpy as np
+
+# Think of an edge case or dirty dataset and apply Train Test Split to clean it.
+`
 };
 
 function loadLesson(lessonId) {
