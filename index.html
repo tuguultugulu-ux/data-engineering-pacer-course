@@ -6,7 +6,7 @@
     <title>PACER Data Engineering Course</title>
     
     <!-- Modern Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=600">
+    <link rel="stylesheet" href="css/styles.css?v=700">
     
     <!-- CodeMirror (Editor & Monokai Theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -47,14 +47,60 @@
         </div>
     </footer>
 
+    <!-- AI Settings Modal -->
+    <div id="ai-modal-backdrop" class="modal-backdrop" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>🔑 Code Rabbit AI Reviewer Setup</h3>
+                <button class="modal-close-btn" onclick="closeAiModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.88rem; color: #475569; margin-bottom: 15px; line-height: 1.5;">
+                    Connect your free AI API key to get personalized, live mentor code reviews directly on your Python code. (If no key is provided, Code Rabbit runs in <strong>Offline AST Inspector Mode</strong>).
+                </p>
+
+                <div class="form-group">
+                    <label for="ai-provider-select"><strong>Select AI Provider:</strong></label>
+                    <select id="ai-provider-select" class="form-control">
+                        <option value="gemini">Google Gemini (gemini-1.5-flash) - FREE (Recommended)</option>
+                        <option value="groq">Groq (llama-3.3-70b) - FREE & Superfast</option>
+                        <option value="openai">OpenAI (gpt-4o-mini)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-top: 14px;">
+                    <label for="ai-api-key-input"><strong>API Key:</strong></label>
+                    <input type="password" id="ai-api-key-input" class="form-control" placeholder="Paste your API key here (e.g. AIzaSy...)">
+                </div>
+
+                <div class="provider-help-box" id="provider-help-box" style="margin-top: 14px; font-size: 0.82rem; background: #f8fafc; padding: 12px 14px; border-radius: 6px; color: #334155; border: 1px solid #e2e8f0; line-height: 1.5;">
+                    📌 <strong>Get a Free Google Gemini API Key:</strong><br>
+                    Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #2563eb; font-weight: bold;">Google AI Studio ↗</a> to create a free API key (no billing or credit card required).
+                    <br><br>
+                    🔒 <em>Your key is stored strictly in your browser's local storage and only communicates directly with the AI provider.</em>
+                </div>
+
+                <div id="ai-modal-status" style="margin-top: 14px; font-size: 0.88rem; min-height: 20px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn secondary-btn" onclick="clearAiSettings()">🗑️ Clear</button>
+                <div style="display: flex; gap: 8px;">
+                    <button class="action-btn" style="background: #3b82f6; color: white;" onclick="testAiConnection()">🧪 Test Key</button>
+                    <button class="action-btn run-btn" onclick="saveAiSettings()">💾 Save Key</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CodeMirror Core & Python Syntax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 
     <!-- Application Modules -->
-    <script src="js/course-data.js?v=600"></script>
-    <script src="js/pyodide-engine.js?v=600"></script>
-    <script src="js/editor-manager.js?v=600"></script>
-    <script src="js/app.js?v=600"></script>
+    <script src="js/course-data.js?v=700"></script>
+    <script src="js/pyodide-engine.js?v=700"></script>
+    <script src="js/ai-reviewer.js?v=700"></script>
+    <script src="js/editor-manager.js?v=700"></script>
+    <script src="js/app.js?v=700"></script>
 </body>
 </html>

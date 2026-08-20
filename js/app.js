@@ -1,6 +1,6 @@
 /**
  * PACER Data Engineering - Main Application
- * Coordinates navigation, lesson rendering, sidebar generation, and runtime status.
+ * Coordinates navigation, lesson rendering, sidebar generation, AI modal, and runtime status.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,6 +29,9 @@ function initApp() {
 
     // 3. Load initial lesson
     loadLesson('intro');
+
+    // 4. Bind AI Modal event listeners
+    setupAiModal();
 }
 
 function buildSidebar() {
@@ -180,6 +183,9 @@ function renderLessonHtml(lesson) {
                     </div>
                     <div class="card-actions">
                         <span class="status-badge idle" id="status-badge-${lesson.id}-0">Idle</span>
+                        <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${lesson.id}-0')" title="Reset starter code">
+                            ↺ Reset
+                        </button>
                         <button class="action-btn run-btn" onclick="EditorManager.runCell('${lesson.id}-0')" title="Execute code (Ctrl+Enter)">
                             ▶ Run Solution
                         </button>
@@ -188,7 +194,7 @@ function renderLessonHtml(lesson) {
 
                 <div class="editor-review-split">
                     <div class="editor-pane">
-                        <div class="editor-container" data-cell-id="${lesson.id}-0" ></div>
+                        <div class="editor-container" data-cell-id="${lesson.id}-0"></div>
                     </div>
                 </div>
 
@@ -218,12 +224,21 @@ function renderLessonHtml(lesson) {
         `;
     }
 
+    const aiStatusText = AIReviewer.hasApiKey()
+        ? `✨ AI Active (${AIReviewer.getProvider().toUpperCase()})`
+        : `⚡ AST Inspector (Offline)`;
+
     return `
         <div class="lesson-header">
             <div class="lesson-title-row">
                 <h1>${escapeHtml(lesson.title)}</h1>
-                <div id="pyodide-status-pill" class="status-pill ${PyodideEngine.isReady() ? 'ready' : 'loading'}">
-                    ${PyodideEngine.getStatus()}
+                <div class="header-pills">
+                    <button class="ai-settings-btn" onclick="openAiModal()" title="Configure Gemini / OpenAI API key for live AI code reviews">
+                        ⚙️ AI Settings <span class="ai-status-indicator">${aiStatusText}</span>
+                    </button>
+                    <div id="pyodide-status-pill" class="status-pill ${PyodideEngine.isReady() ? 'ready' : 'loading'}">
+                        ${PyodideEngine.getStatus()}
+                    </div>
                 </div>
             </div>
         </div>
@@ -285,6 +300,9 @@ function renderPracticeCard(practice) {
                 </div>
                 <div class="card-actions">
                     <span class="status-badge idle" id="status-badge-${practice.id}">Idle</span>
+                    <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${practice.id}')" title="Reset starter code">
+                        ↺ Reset
+                    </button>
                     <button class="action-btn rabbit-btn" id="rabbit-btn-${practice.id}" onclick="EditorManager.toggleRabbit('${practice.id}')" title="Toggle hints & review (Ctrl+Space)">
                         🔍 Code Rabbit
                     </button>
@@ -300,7 +318,7 @@ function renderPracticeCard(practice) {
 
             <div class="editor-review-split">
                 <div class="editor-pane">
-                    <div class="editor-container" data-cell-id="${practice.id}" ></div>
+                    <div class="editor-container" data-cell-id="${practice.id}"></div>
                 </div>
                 <div class="review-panel hidden" id="rabbit-${practice.id}">
                     <div class="review-header">
@@ -325,6 +343,103 @@ function renderPracticeCard(practice) {
     `;
 }
 
+/* --- AI Settings Modal Handlers --- */
+function setupAiModal() {
+    // Backdrop click to close
+    const modalBackdrop = document.getElementById('ai-modal-backdrop');
+    if (modalBackdrop) {
+        modalBackdrop.onclick = function(e) {
+            if (e.target === modalBackdrop) {
+                closeAiModal();
+            }
+        };
+    }
+}
+
+function openAiModal() {
+    const modal = document.getElementById('ai-modal-backdrop');
+    const keyInput = document.getElementById('ai-api-key-input');
+    const providerSelect = document.getElementById('ai-provider-select');
+    const statusBox = document.getElementById('ai-modal-status');
+
+    if (keyInput) keyInput.value = AIReviewer.getApiKey();
+    if (providerSelect) providerSelect.value = AIReviewer.getProvider();
+    if (statusBox) statusBox.innerHTML = '';
+
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeAiModal() {
+    const modal = document.getElementById('ai-modal-backdrop');
+    if (modal) modal.style.display = 'none';
+}
+
+function saveAiSettings() {
+    const keyInput = document.getElementById('ai-api-key-input');
+    const providerSelect = document.getElementById('ai-provider-select');
+    const statusBox = document.getElementById('ai-modal-status');
+
+    const key = keyInput ? keyInput.value.trim() : '';
+    const provider = providerSelect ? providerSelect.value : 'gemini';
+
+    AIReviewer.setApiKey(key);
+    AIReviewer.setProvider(provider);
+
+    if (statusBox) {
+        if (key) {
+            statusBox.innerHTML = `<span style="color: #15803d; font-weight: bold;">✓ ${provider.toUpperCase()} API Key saved successfully! Live AI review is now active.</span>`;
+        } else {
+            statusBox.innerHTML = `<span style="color: #b45309; font-weight: bold;">Key removed. Reverted to offline Python AST inspector mode.</span>`;
+        }
+    }
+
+    // Refresh lesson header status pills
+    const activeLink = document.querySelector('.sidebar a.sub-link.active');
+    if (activeLink) {
+        const lessonId = activeLink.getAttribute('data-lesson-id');
+        if (lessonId) loadLesson(lessonId);
+    }
+
+    setTimeout(closeAiModal, 1000);
+}
+
+async function testAiConnection() {
+    const keyInput = document.getElementById('ai-api-key-input');
+    const providerSelect = document.getElementById('ai-provider-select');
+    const statusBox = document.getElementById('ai-modal-status');
+
+    const key = keyInput ? keyInput.value.trim() : '';
+    const provider = providerSelect ? providerSelect.value : 'gemini';
+
+    if (!key) {
+        if (statusBox) statusBox.innerHTML = `<span style="color: #b91c1c;">Please enter an API key to test.</span>`;
+        return;
+    }
+
+    if (statusBox) statusBox.innerHTML = `<span style="color: #1d4ed8;">⏳ Testing connection to ${provider.toUpperCase()}...</span>`;
+
+    try {
+        const testProblem = { title: "Test Problem", markdown: "Return sum of a and b", review: "" };
+        const testRes = await AIReviewer.reviewCode(testProblem, "def add(a, b): return a + b", "3");
+        if (testRes.mode === 'ai') {
+            if (statusBox) statusBox.innerHTML = `<span style="color: #15803d; font-weight: bold;">✓ Success! Connected to ${provider.toUpperCase()} API.</span>`;
+        } else {
+            throw new Error(testRes.error || "Failed to reach AI provider.");
+        }
+    } catch (err) {
+        if (statusBox) statusBox.innerHTML = `<span style="color: #b91c1c; font-weight: bold;">✗ Error: ${escapeHtml(err.message)}</span>`;
+    }
+}
+
+function clearAiSettings() {
+    AIReviewer.setApiKey('');
+    const keyInput = document.getElementById('ai-api-key-input');
+    const statusBox = document.getElementById('ai-modal-status');
+    if (keyInput) keyInput.value = '';
+    if (statusBox) statusBox.innerHTML = `<span style="color: #b45309;">Key cleared. Operating in offline AST Mode.</span>`;
+    saveAiSettings();
+}
+
 function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -332,14 +447,4 @@ function escapeHtml(str) {
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
-}
-
-function escapeHtmlAttr(str) {
-    if (!str) return '';
-    return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
 }
