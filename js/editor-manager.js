@@ -211,6 +211,9 @@ var EditorManager = (function() {
                 statusBadge.className = 'status-badge success';
                 statusBadge.innerText = I18n.t('success');
                 stopTimer(cellId, true);
+                if (typeof ProgressTracker !== 'undefined') {
+                    ProgressTracker.markCompleted(cellId);
+                }
             } else {
                 statusBadge.className = 'status-badge error';
                 statusBadge.innerText = I18n.t('error');
