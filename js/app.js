@@ -825,12 +825,13 @@ function checkAuthGate() {
 
     if (!user) {
         if (overlay) overlay.style.display = 'flex';
+        if (adminSidebarBtn) adminSidebarBtn.style.display = 'none';
         return false;
     }
 
     if (overlay) overlay.style.display = 'none';
 
-    // Show Admin Link IF AND ONLY IF current user is one of the 3 official admins!
+    // Show Admin Link IF AND ONLY IF current authenticated user is one of the 3 designated admins!
     const isUserAdmin = AuthManager.isAdmin(user.email);
     if (adminSidebarBtn) {
         adminSidebarBtn.style.display = isUserAdmin ? 'block' : 'none';
@@ -903,6 +904,21 @@ function handleLogout() {
 }
 
 /* --- Admin Console & Telemetry Dashboard --- */
+
+function checkRouteProtection() {
+    const user = AuthManager.getCurrentUser();
+    if (window.location.hash === '#admin') {
+        if (!user || !AuthManager.isAdmin(user.email)) {
+            window.location.hash = '';
+            alert("403 Forbidden: The Administrative Command Center is strictly restricted to designated course leadership (sarantuyasarnai42@gmail.com, iobama538@gmail.com, tuguultugulu@gmail.com).");
+            return false;
+        } else {
+            openAdminModal();
+        }
+    }
+    return true;
+}
+
 function openAdminModal() {
     const user = AuthManager.getCurrentUser();
     if (!user || !AuthManager.isAdmin(user.email)) {

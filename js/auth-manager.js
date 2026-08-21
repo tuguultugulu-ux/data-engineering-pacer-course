@@ -41,21 +41,18 @@ var AuthManager = (function() {
     }
 
     function getCurrentUser() {
-        const defaultAdmin = {
-            email: "tuguultugulu@gmail.com",
-            name: "Tuguldur (Admin)",
-            role: "ADMIN",
-            loggedInAt: new Date().toISOString()
-        };
-
-        if (typeof localStorage === 'undefined') return defaultAdmin;
+        if (typeof localStorage === 'undefined') return null;
         try {
             const raw = localStorage.getItem(CURRENT_USER_KEY);
-            if (raw) return JSON.parse(raw);
-            localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(defaultAdmin));
-            return defaultAdmin;
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            if (!parsed || !parsed.email) return null;
+            
+            // Re-validate role strictly against current admin accounts
+            parsed.role = isAdmin(parsed.email) ? 'ADMIN' : 'STUDENT';
+            return parsed;
         } catch (e) {
-            return defaultAdmin;
+            return null;
         }
     }
 
