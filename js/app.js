@@ -846,6 +846,12 @@ function checkAuthGate() {
         adminBtn.style.display = userIsAdmin ? 'block' : 'none';
     }
 
+    // Hide Progress Tracker for students
+    var progressCard = document.getElementById('sidebar-progress-card');
+    if (progressCard) {
+        progressCard.style.display = userIsAdmin ? 'block' : 'none';
+    }
+
     // Render profile widget
     if (profileWidget) {
         profileWidget.innerHTML =
