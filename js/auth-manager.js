@@ -282,6 +282,26 @@ var AuthManager = (function() {
         return metrics;
     }
 
+    function resetAllMetrics() {
+        const user = getCurrentUser();
+        if (!user || !isAdmin(user.email)) return;
+        
+        db.collection('metrics').get().then(snapshot => {
+            const batch = db.batch();
+            snapshot.docs.forEach(doc => {
+                batch.delete(doc.ref);
+            });
+            return batch.commit();
+        }).then(() => {
+            localMetrics = {};
+            refreshAdminUI();
+            alert("All student progress metrics have been permanently erased.");
+        }).catch(e => {
+            console.error(e);
+            alert("Database Error: Failed to reset metrics. Make sure you updated the Firebase Security Rules to allow Admins to delete metrics.");
+        });
+    }
+
     return {
         ADMIN_EMAILS: ADMIN_EMAILS,
         getCurrentUser: getCurrentUser,
@@ -293,6 +313,7 @@ var AuthManager = (function() {
         signInWithFirebase: signInWithFirebase,
         logout: logout,
         recordSolveMetric: recordSolveMetric,
-        getGlobalMetrics: getGlobalMetrics
+        getGlobalMetrics: getGlobalMetrics,
+        resetAllMetrics: resetAllMetrics
     };
 })();

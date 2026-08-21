@@ -945,8 +945,16 @@ function renderAdminDashboard() {
         </div>
 
         <div class="admin-section-header">
-            <h3>Student Performance & Problem Solve Times</h3>
-            <p>Monitors how long students take on each coding exercise, phase exam, and capstone project.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3>Student Performance & Problem Solve Times</h3>
+                    <p>Monitors how long students take on each coding exercise, phase exam, and capstone project.</p>
+                </div>
+                <button class="action-btn test-btn" onclick="handleResetProgress()" style="background-color: #ef4444; color: white; border: none; padding: 6px 12px; font-size: 0.8rem;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                    Wipe Progress
+                </button>
+            </div>
         </div>
 
         <div class="admin-table-wrapper">
@@ -1068,6 +1076,11 @@ function handleRemoveApprovedEmail(email) {
     }
 }
 
+function handleResetProgress() {
+    if (confirm("Are you SURE you want to permanently erase all student progress metrics globally? This cannot be undone.")) {
+        AuthManager.resetAllMetrics();
+    }
+}
 
 if (typeof window !== 'undefined') {
     window.handleLogout = handleLogout;
@@ -1076,4 +1089,5 @@ if (typeof window !== 'undefined') {
     window.saveClientIdAndReload = saveClientIdAndReload;
     window.handleAddApprovedEmail = handleAddApprovedEmail;
     window.handleRemoveApprovedEmail = handleRemoveApprovedEmail;
+    window.handleResetProgress = handleResetProgress;
 }
