@@ -1,3 +1,29 @@
+
+function handleGoogleCredentialResponse(response) {
+    if (!response || !response.credential) return;
+    const res = AuthManager.loginWithGoogleCredential(response.credential);
+    if (res.success) {
+        closeAccountSwitcherModal();
+        const overlay = document.getElementById('auth-overlay');
+        if (overlay) overlay.style.display = 'none';
+        checkAuthGate();
+        buildSidebar();
+        if (typeof ProgressTracker !== 'undefined') {
+            ProgressTracker.updateProgressUI();
+        }
+        loadLesson(currentLessonId);
+    } else {
+        const errorEl = document.getElementById('auth-error-msg');
+        if (errorEl) {
+            errorEl.style.display = 'block';
+            errorEl.innerText = res.error || "Access Denied: Google account is not on the approved student roster.";
+        }
+    }
+}
+if (typeof window !== 'undefined') {
+    window.handleGoogleCredentialResponse = handleGoogleCredentialResponse;
+}
+
 /**
  * PACER Data Engineering - Main Application
  * Modern Apple / Linear Aesthetic Architecture:

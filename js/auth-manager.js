@@ -4,9 +4,17 @@
  */
 
 var AuthManager = (function() {
-    const CURRENT_USER_KEY = 'pacer_auth_current_user';
-    const APPROVED_USERS_KEY = 'pacer_approved_users_roster';
-    const GLOBAL_METRICS_KEY = 'pacer_global_user_metrics';
+    const CURRENT_USER_KEY = 'pacer_google_auth_session_v3';
+    const APPROVED_USERS_KEY = 'pacer_approved_users_roster_v3';
+    const GLOBAL_METRICS_KEY = 'pacer_global_user_metrics_v3';
+
+    // Clear legacy unauthenticated cache
+    try {
+        if (typeof localStorage !== 'undefined') {
+            localStorage.removeItem('pacer_auth_current_user');
+            localStorage.removeItem('pacer_auth_current_user_v2');
+        }
+    } catch(e) {}
 
     // Official Admin Accounts specified by Course Leadership
     const ADMIN_ACCOUNTS = [
