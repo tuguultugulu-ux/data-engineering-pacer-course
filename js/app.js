@@ -12,9 +12,13 @@
  * - 5 Real-World Industry Capstone Projects with Authentic Raw File Ingestion & High-Contrast Mandate
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-    initApp();
-});
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+        initApp();
+    }
+}
 
 let currentLessonId = 'intro';
 
@@ -79,8 +83,9 @@ function changeLanguage(lang) {
 }
 
 /* --- Apple / Linear Dynamic Text Scramble & Decoding Animation --- */
-function scrambleText(element, finalString, duration = 320) {
+function scrambleText(element, finalString, duration) {
     if (!element || !finalString) return;
+    if (!duration) duration = 320;
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/-+=#';
     const length = finalString.length;
     const start = performance.now();
@@ -93,8 +98,7 @@ function scrambleText(element, finalString, duration = 320) {
         let output = finalString.slice(0, revealedCount);
         for (let i = revealedCount; i < length; i++) {
             const originalChar = finalString[i];
-            if (originalChar === ' ' || originalChar === '
-' || originalChar === ':' || originalChar === '-' || originalChar === '(' || originalChar === ')') {
+            if (originalChar === ' ' || originalChar === '\n' || originalChar === ':' || originalChar === '-' || originalChar === '(' || originalChar === ')') {
                 output += originalChar;
             } else {
                 output += chars[Math.floor(Math.random() * chars.length)];
@@ -109,11 +113,6 @@ function scrambleText(element, finalString, duration = 320) {
         }
     }
     requestAnimationFrame(update);
-} else {
-            element.textContent = finalString;
-        }
-    }
-    requestAnimationFrame(update);
 }
 
 function buildSidebar() {
@@ -124,7 +123,7 @@ function buildSidebar() {
     if (brandTitleEl) brandTitleEl.innerText = I18n.t('brandTitle');
     if (brandSubEl) brandSubEl.innerText = ''; // 10-week text removed
 
-    if (!navList || !window.COURSE_DATA) return;
+    if (!navList || typeof COURSE_DATA === 'undefined') return;
 
     navList.innerHTML = '';
 
@@ -220,7 +219,7 @@ function loadLesson(lessonId) {
     if (!contentContainer) return;
 
     // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined' && window.scrollTo) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
     // Render Lesson View with silky Apple transition
     contentContainer.classList.remove('view-enter-anim');
@@ -812,8 +811,6 @@ function navigateToPhase(firstLessonId) {
     loadLesson(firstLessonId);
 }
 
-window.openRoadmapModal = openRoadmapModal;
-window.closeRoadmapModal = closeRoadmapModal;
 
 
 /* --------------------------------------------------------------------------
@@ -1057,10 +1054,14 @@ function handleRemoveApprovedEmail(email) {
 }
 
 // Attach globally
-window.openAdminModal = openAdminModal;
-window.closeAdminModal = closeAdminModal;
-window.handleDirectLogin = handleDirectLogin;
-window.handleCustomEmailLogin = handleCustomEmailLogin;
-window.handleLogout = handleLogout;
-window.handleAddApprovedEmail = handleAddApprovedEmail;
-window.handleRemoveApprovedEmail = handleRemoveApprovedEmail;
+if (typeof window !== 'undefined') {
+    window.openRoadmapModal = openRoadmapModal;
+    window.closeRoadmapModal = closeRoadmapModal;
+    window.openAdminModal = openAdminModal;
+    window.closeAdminModal = closeAdminModal;
+    window.handleDirectLogin = handleDirectLogin;
+    window.handleCustomEmailLogin = handleCustomEmailLogin;
+    window.handleLogout = handleLogout;
+    window.handleAddApprovedEmail = handleAddApprovedEmail;
+    window.handleRemoveApprovedEmail = handleRemoveApprovedEmail;
+}
