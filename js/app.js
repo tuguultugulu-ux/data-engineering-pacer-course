@@ -75,9 +75,10 @@ function changeLanguage(lang) {
     loadLesson(currentLessonId);
 }
 
-/* --- Dynamic Text Decoding Animation --- */
-function scrambleText(element, finalString, duration = 300) {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/-';
+/* --- Apple / Linear Dynamic Text Scramble & Decoding Animation --- */
+function scrambleText(element, finalString, duration = 320) {
+    if (!element || !finalString) return;
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/-+=#';
     const length = finalString.length;
     const start = performance.now();
 
@@ -88,8 +89,10 @@ function scrambleText(element, finalString, duration = 300) {
 
         let output = finalString.slice(0, revealedCount);
         for (let i = revealedCount; i < length; i++) {
-            if (finalString[i] === ' ' || finalString[i] === '\n') {
-                output += finalString[i];
+            const originalChar = finalString[i];
+            if (originalChar === ' ' || originalChar === '
+' || originalChar === ':' || originalChar === '-' || originalChar === '(' || originalChar === ')') {
+                output += originalChar;
             } else {
                 output += chars[Math.floor(Math.random() * chars.length)];
             }
@@ -99,6 +102,11 @@ function scrambleText(element, finalString, duration = 300) {
         if (progress < 1) {
             requestAnimationFrame(update);
         } else {
+            element.textContent = finalString;
+        }
+    }
+    requestAnimationFrame(update);
+} else {
             element.textContent = finalString;
         }
     }
@@ -206,14 +214,17 @@ function loadLesson(lessonId) {
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Render Lesson View
+    // Render Lesson View with silky Apple transition
+    contentContainer.classList.remove('view-enter-anim');
+    void contentContainer.offsetWidth; // Trigger reflow
+    contentContainer.classList.add('view-enter-anim');
     contentContainer.innerHTML = renderLessonHtml(lesson);
 
-    // Apply title scramble effect
-    const h1 = contentContainer.querySelector('.lesson-header h1');
+    // Apply title scramble effect on first h1
+    const h1 = contentContainer.querySelector('h1') || contentContainer.querySelector('.lesson-header h1');
     const localizedTitle = I18n.getLessonTitle(lesson.id, lesson.title);
     if (h1) {
-        scrambleText(h1, localizedTitle || 'Lesson', 280);
+        scrambleText(h1, localizedTitle || h1.innerText || 'Lesson', 320);
     }
 
     // Initialize CodeMirror editors in the newly rendered HTML

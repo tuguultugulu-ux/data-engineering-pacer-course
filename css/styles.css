@@ -1700,3 +1700,37 @@ kbd {
     background: var(--midnight-border);
     margin-left: 27px;
 }
+
+/* --------------------------------------------------------------------------
+   Apple Minimalist Motion System (60fps GPU-Accelerated)
+   -------------------------------------------------------------------------- */
+
+.view-enter-anim {
+    animation: viewEnterAnim 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes viewEnterAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.phase-links {
+    animation: subMenuShift 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes subMenuShift {
+    0% {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
