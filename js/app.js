@@ -689,3 +689,111 @@ function escapeHtml(str) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
 }
+
+
+/* --- Visual Curriculum Quest Map Modal Handlers --- */
+function openRoadmapModal() {
+    const modal = document.getElementById('roadmap-modal-backdrop');
+    const container = document.getElementById('roadmap-tree-container');
+    const userStats = ProgressTracker.getStats();
+
+    if (!modal || !container || typeof COURSE_DATA === 'undefined') return;
+
+    // Render Quest Map
+    let html = `
+        <div class="roadmap-user-summary">
+            <div class="user-tier-badge">
+                <span class="badge-title">Rank Level ${userStats.levelInfo.level}</span>
+                <strong>${escapeHtml(userStats.levelInfo.title)}</strong>
+            </div>
+            <div class="user-xp-box">
+                <span>Total XP Earned:</span>
+                <strong style="color: #38bdf8;">${userStats.xp} XP</strong>
+            </div>
+            <div class="user-completion-box">
+                <span>Overall Mastery:</span>
+                <strong style="color: #34d399;">${userStats.completed} / ${userStats.total} (${userStats.percent}%)</strong>
+            </div>
+        </div>
+
+        <div class="roadmap-nodes-flow">
+    `;
+
+    const activeLesson = COURSE_DATA.lessons[currentLessonId] || {};
+    const activePhaseId = activeLesson.phase || 'intro';
+
+    COURSE_DATA.phases.forEach((phase, index) => {
+        const phaseLessons = Object.values(COURSE_DATA.lessons).filter(l => l.phase === phase.id);
+        const totalPhaseChallenges = phaseLessons.reduce((acc, l) => {
+            let c = 0;
+            if (l.isExam) c += 1;
+            if (l.practices) c += l.practices.length;
+            return acc + c;
+        }, 0);
+
+        let completedPhaseChallenges = 0;
+        phaseLessons.forEach(l => {
+            if (l.isExam && ProgressTracker.isCompleted(l.id + '-0')) completedPhaseChallenges += 1;
+            if (l.practices) {
+                l.practices.forEach(p => {
+                    if (ProgressTracker.isCompleted(p.id)) completedPhaseChallenges += 1;
+                });
+            }
+        });
+
+        const isCurrent = (phase.id === activePhaseId);
+        const isCompleted = (totalPhaseChallenges > 0 && completedPhaseChallenges >= totalPhaseChallenges);
+        const localizedTitle = I18n.getPhaseTitle(phase.id, phase.title);
+        const firstLessonId = phaseLessons.length > 0 ? phaseLessons[0].id : 'intro';
+
+        let nodeStatusClass = 'upcoming';
+        let statusBadgeText = I18n.t('lockedPhase');
+
+        if (isCompleted) {
+            nodeStatusClass = 'completed';
+            statusBadgeText = I18n.t('completedPhase');
+        } else if (isCurrent) {
+            nodeStatusClass = 'active-current';
+            statusBadgeText = I18n.t('youAreHere');
+        } else if (completedPhaseChallenges > 0) {
+            nodeStatusClass = 'in-progress';
+            statusBadgeText = `${completedPhaseChallenges}/${totalPhaseChallenges}`;
+        }
+
+        html += `
+            <div class="roadmap-phase-card ${nodeStatusClass}" onclick="navigateToPhase('${firstLessonId}')">
+                <div class="phase-node-marker">
+                    <span class="marker-number">${index + 1}</span>
+                    ${isCurrent ? '<span class="radar-pulse-wave"></span>' : ''}
+                </div>
+                <div class="phase-node-body">
+                    <div class="phase-node-header">
+                        <h4>${escapeHtml(localizedTitle)}</h4>
+                        <span class="phase-status-pill ${nodeStatusClass}">${statusBadgeText}</span>
+                    </div>
+                    <div class="phase-progress-mini">
+                        <div class="mini-bar-track">
+                            <div class="mini-bar-fill" style="width: ${totalPhaseChallenges > 0 ? Math.round((completedPhaseChallenges / totalPhaseChallenges) * 100) : 0}%;"></div>
+                        </div>
+                        <span class="mini-stats">${completedPhaseChallenges} / ${totalPhaseChallenges} Solved</span>
+                    </div>
+                </div>
+            </div>
+            ${index < COURSE_DATA.phases.length - 1 ? '<div class="roadmap-connector-line"></div>' : ''}
+        `;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+    modal.style.display = 'flex';
+}
+
+function closeRoadmapModal() {
+    const modal = document.getElementById('roadmap-modal-backdrop');
+    if (modal) modal.style.display = 'none';
+}
+
+function navigateToPhase(firstLessonId) {
+    closeRoadmapModal();
+    loadLesson(firstLessonId);
+}
