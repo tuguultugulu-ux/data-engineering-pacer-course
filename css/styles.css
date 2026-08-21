@@ -2207,3 +2207,9 @@ kbd {
     border: 1px solid #d3e3fd;
     border-radius: 12px;
 }
+
+/* Security Hardening - Lock Interface When Unauthenticated */
+body.auth-locked .sidebar,
+body.auth-locked .main-content {
+    display: none !important;
+}

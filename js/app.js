@@ -828,7 +828,8 @@ function checkAuthGate() {
     var profileWidget = document.getElementById('sidebar-user-profile');
 
     if (!user || !user.verified) {
-        // Not authenticated — show login gate, hide everything admin
+        // Not authenticated — show login gate, hide everything admin, lock body
+        document.body.classList.add('auth-locked');
         if (overlay) overlay.style.display = 'flex';
         if (adminBtn) adminBtn.style.display = 'none';
         if (profileWidget) profileWidget.innerHTML = '';
@@ -839,6 +840,7 @@ function checkAuthGate() {
     }
 
     // User is authenticated via Google
+    document.body.classList.remove('auth-locked');
     if (overlay) overlay.style.display = 'none';
 
     // Admin controls: ONLY for the 3 designated admins
@@ -1112,6 +1114,7 @@ function handleAddApprovedEmail() {
     const email = input.value.trim();
     if (email) {
         AuthManager.addApprovedUser(email);
+        input.value = ''; // Clear the input field
         renderAdminDashboard();
     }
 }
