@@ -1,79 +1,3 @@
-
-/* --- Authentic Google OAuth Account Selector Handlers --- */
-function openGoogleOAuthModal() {
-    const modal = document.getElementById('google-oauth-modal');
-    if (modal) modal.style.display = 'flex';
-}
-
-function closeGoogleOAuthModal() {
-    const modal = document.getElementById('google-oauth-modal');
-    if (modal) modal.style.display = 'none';
-}
-
-function handleGoogleAccountSelect(email, name) {
-    const spinner = document.getElementById('google-oauth-loading');
-    if (spinner) spinner.style.display = 'block';
-
-    setTimeout(() => {
-        const res = AuthManager.directLoginAs(email, name);
-        if (spinner) spinner.style.display = 'none';
-
-        if (res.success) {
-            closeGoogleOAuthModal();
-            closeAccountSwitcherModal();
-            const overlay = document.getElementById('auth-overlay');
-            if (overlay) overlay.style.display = 'none';
-
-            checkAuthGate();
-            buildSidebar();
-            if (typeof ProgressTracker !== 'undefined') {
-                ProgressTracker.updateProgressUI();
-            }
-            loadLesson(currentLessonId);
-        } else {
-            const errBox = document.getElementById('google-oauth-error');
-            if (errBox) {
-                errBox.style.display = 'block';
-                errBox.innerText = res.error || "Couldn't sign you in: Account is not on the approved student roster.";
-            } else {
-                alert(res.error || "Access Denied: Google account not authorized.");
-            }
-        }
-    }, 280);
-}
-
-if (typeof window !== 'undefined') {
-    window.openGoogleOAuthModal = openGoogleOAuthModal;
-    window.closeGoogleOAuthModal = closeGoogleOAuthModal;
-    window.handleGoogleAccountSelect = handleGoogleAccountSelect;
-}
-
-
-function handleGoogleCredentialResponse(response) {
-    if (!response || !response.credential) return;
-    const res = AuthManager.loginWithGoogleCredential(response.credential);
-    if (res.success) {
-        closeAccountSwitcherModal();
-        const overlay = document.getElementById('auth-overlay');
-        if (overlay) overlay.style.display = 'none';
-        checkAuthGate();
-        buildSidebar();
-        if (typeof ProgressTracker !== 'undefined') {
-            ProgressTracker.updateProgressUI();
-        }
-        loadLesson(currentLessonId);
-    } else {
-        const errorEl = document.getElementById('auth-error-msg');
-        if (errorEl) {
-            errorEl.style.display = 'block';
-            errorEl.innerText = res.error || "Access Denied: Google account is not on the approved student roster.";
-        }
-    }
-}
-if (typeof window !== 'undefined') {
-    window.handleGoogleCredentialResponse = handleGoogleCredentialResponse;
-}
-
 /**
  * PACER Data Engineering - Main Application
  * Modern Apple / Linear Aesthetic Architecture:
@@ -893,126 +817,139 @@ function navigateToPhase(firstLessonId) {
    PACER Data Engineering - Authentication & Admin Dashboard Subsystem
    -------------------------------------------------------------------------- */
 
-function checkAuthGate() {
-    const user = AuthManager.getCurrentUser();
-    const overlay = document.getElementById('auth-overlay');
-    const adminSidebarBtn = document.getElementById('sidebar-admin-item');
-    const userProfileWidget = document.getElementById('sidebar-user-profile');
+/* --------------------------------------------------------------------------
+   REAL Authentication Gate & Admin Dashboard (Google Identity Services)
+   -------------------------------------------------------------------------- */
 
-    if (!user) {
+function checkAuthGate() {
+    var user = AuthManager.getCurrentUser();
+    var overlay = document.getElementById('auth-overlay');
+    var adminBtn = document.getElementById('sidebar-admin-item');
+    var profileWidget = document.getElementById('sidebar-user-profile');
+
+    if (!user || !user.verified) {
+        // Not authenticated — show login gate, hide everything admin
         if (overlay) overlay.style.display = 'flex';
-        if (adminSidebarBtn) adminSidebarBtn.style.display = 'none';
+        if (adminBtn) adminBtn.style.display = 'none';
+        if (profileWidget) profileWidget.innerHTML = '';
+
+        // Try to initialize Google's real button
+        initRealGoogleButton();
         return false;
     }
 
+    // User is authenticated via Google
     if (overlay) overlay.style.display = 'none';
 
-    // Show Admin Link IF AND ONLY IF current authenticated user is one of the 3 designated admins!
-    const isUserAdmin = AuthManager.isAdmin(user.email);
-    if (adminSidebarBtn) {
-        adminSidebarBtn.style.display = isUserAdmin ? 'block' : 'none';
+    // Admin controls: ONLY for the 3 designated admins
+    var userIsAdmin = AuthManager.isAdmin(user.email);
+    if (adminBtn) {
+        adminBtn.style.display = userIsAdmin ? 'block' : 'none';
     }
 
-    // Update user profile widget in sidebar footer
-    if (userProfileWidget) {
-        userProfileWidget.innerHTML = `
-            <div class="user-profile-row" onclick="openAccountSwitcherModal()" title="Click to Switch Account" style="cursor: pointer;">
-                <div class="user-avatar-circle">${user.name ? user.name.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}</div>
-                <div class="user-profile-details">
-                    <span class="user-email-text" title="${escapeHtml(user.name || user.email)}">${escapeHtml(user.name || user.email)}</span>
-                    <span class="user-role-badge ${user.role.toLowerCase()}">${user.role === 'ADMIN' ? 'Admin' : 'Student'}</span>
-                </div>
-                <button class="user-logout-btn" onclick="event.stopPropagation(); openAccountSwitcherModal();" title="Switch Account">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-                </button>
-            </div>
-        `;
+    // Render profile widget
+    if (profileWidget) {
+        profileWidget.innerHTML =
+            '<div class="user-profile-row" style="cursor:default;">' +
+                '<div class="user-avatar-circle">' +
+                    (user.picture
+                        ? '<img src="' + escapeHtml(user.picture) + '" style="width:26px;height:26px;border-radius:50%;" alt="">'
+                        : (user.name ? user.name.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase())) +
+                '</div>' +
+                '<div class="user-profile-details">' +
+                    '<span class="user-email-text" title="' + escapeHtml(user.email) + '">' + escapeHtml(user.name || user.email) + '</span>' +
+                    '<span class="user-role-badge ' + user.role.toLowerCase() + '">' + (userIsAdmin ? 'Admin' : 'Student') + '</span>' +
+                '</div>' +
+                '<button class="user-logout-btn" onclick="handleLogout()" title="Sign Out">' +
+                    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>' +
+                '</button>' +
+            '</div>';
     }
 
     return true;
 }
 
-function handleDirectLogin(email) {
-    const res = AuthManager.directLoginAs(email);
-    if (res.success) {
-        closeAccountSwitcherModal();
-        const overlay = document.getElementById('auth-overlay');
-        if (overlay) overlay.style.display = 'none';
-        checkAuthGate();
-        buildSidebar();
-        if (typeof ProgressTracker !== 'undefined') {
-            ProgressTracker.updateProgressUI();
-        }
-        loadLesson(currentLessonId);
-    } else {
-        const errorEl = document.getElementById('auth-error-msg');
-        if (errorEl) {
-            errorEl.style.display = 'block';
-            errorEl.innerText = res.error || "Access Denied.";
+function initRealGoogleButton() {
+    var clientId = AuthManager.getClientId();
+    var setupNotice = document.getElementById('auth-setup-notice');
+    var btnContainer = document.getElementById('google-signin-btn-container');
+
+    if (!clientId) {
+        // No Client ID — show setup instructions
+        if (setupNotice) setupNotice.style.display = 'block';
+        if (btnContainer) btnContainer.innerHTML = '<p style="color:#64748b; font-size:0.78rem;">Google Sign-In requires an OAuth Client ID</p>';
+        return;
+    }
+
+    if (setupNotice) setupNotice.style.display = 'none';
+
+    // Initialize Google Identity Services with the REAL Client ID
+    var gisReady = AuthManager.initGoogleSignIn('google-signin-btn-container', function(result) {
+        if (result.success) {
+            checkAuthGate();
+            buildSidebar();
+            if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
+            loadLesson(currentLessonId);
         } else {
-            alert(res.error || "Access Denied: Account not authorized.");
+            var errEl = document.getElementById('auth-error-msg');
+            if (errEl) {
+                errEl.style.display = 'block';
+                errEl.innerText = result.error || 'Google Sign-In failed. Your account may not be on the approved roster.';
+            }
         }
+    });
+
+    if (!gisReady && btnContainer) {
+        btnContainer.innerHTML = '<p style="color:#94a3b8; font-size:0.78rem;">Loading Google Sign-In...</p>';
+        // Retry after GIS script loads
+        setTimeout(function() {
+            AuthManager.initGoogleSignIn('google-signin-btn-container', function(result) {
+                if (result.success) {
+                    checkAuthGate();
+                    buildSidebar();
+                    if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
+                    loadLesson(currentLessonId);
+                } else {
+                    var errEl = document.getElementById('auth-error-msg');
+                    if (errEl) {
+                        errEl.style.display = 'block';
+                        errEl.innerText = result.error || 'Access Denied.';
+                    }
+                }
+            });
+        }, 2000);
     }
 }
 
-function openAccountSwitcherModal() {
-    const modal = document.getElementById('switcher-modal-backdrop');
-    if (modal) modal.style.display = 'flex';
-}
-
-function closeAccountSwitcherModal() {
-    const modal = document.getElementById('switcher-modal-backdrop');
-    if (modal) modal.style.display = 'none';
-}
-
-function handleCustomEmailLogin() {
-    const input = document.getElementById('custom-email-input');
-    if (!input) return;
-    const email = input.value.trim();
-    if (!email) return;
-
-    handleDirectLogin(email);
+function saveClientIdAndReload() {
+    var input = document.getElementById('client-id-input');
+    if (!input || !input.value.trim()) return;
+    AuthManager.setClientId(input.value.trim());
+    window.location.reload();
 }
 
 function handleLogout() {
     AuthManager.logout();
     checkAuthGate();
+    var profileWidget = document.getElementById('sidebar-user-profile');
+    if (profileWidget) profileWidget.innerHTML = '';
 }
 
-/* --- Admin Console & Telemetry Dashboard --- */
-
-function checkRouteProtection() {
-    const user = AuthManager.getCurrentUser();
-    if (window.location.hash === '#admin') {
-        if (!user || !AuthManager.isAdmin(user.email)) {
-            window.location.hash = '';
-            alert("403 Forbidden: The Administrative Command Center is strictly restricted to designated course leadership (sarantuyasarnai42@gmail.com, iobama538@gmail.com, tuguultugulu@gmail.com).");
-            return false;
-        } else {
-            openAdminModal();
-        }
-    }
-    return true;
-}
-
+/* --- Admin Console (ONLY for verified admin sessions) --- */
 function openAdminModal() {
-    const user = AuthManager.getCurrentUser();
-    if (!user || !AuthManager.isAdmin(user.email)) {
-        const modal = document.getElementById('admin-modal-backdrop');
-        if (modal) modal.style.display = 'none';
-        alert("Access Denied: The Admin Command Center is strictly restricted to designated course administrators (sarantuyasarnai42@gmail.com, iobama538@gmail.com, tuguultugulu@gmail.com).");
+    var user = AuthManager.getCurrentUser();
+    if (!user || !user.verified || !AuthManager.isAdmin(user.email)) {
+        alert('403 Forbidden: The Admin Command Center is restricted to verified administrator accounts.');
         return;
     }
-
-    const modal = document.getElementById('admin-modal-backdrop');
+    var modal = document.getElementById('admin-modal-backdrop');
     if (!modal) return;
-
     renderAdminDashboard();
     modal.style.display = 'flex';
 }
 
 function closeAdminModal() {
-    const modal = document.getElementById('admin-modal-backdrop');
+    var modal = document.getElementById('admin-modal-backdrop');
     if (modal) modal.style.display = 'none';
 }
 
@@ -1168,6 +1105,7 @@ function renderAdminDashboard() {
     container.innerHTML = html;
 }
 
+
 function handleAddApprovedEmail() {
     const input = document.getElementById('new-student-email-input');
     if (!input) return;
@@ -1185,17 +1123,12 @@ function handleRemoveApprovedEmail(email) {
     }
 }
 
-// Attach globally
+
 if (typeof window !== 'undefined') {
-    window.openRoadmapModal = openRoadmapModal;
-    window.closeRoadmapModal = closeRoadmapModal;
-    window.openAccountSwitcherModal = openAccountSwitcherModal;
-    window.closeAccountSwitcherModal = closeAccountSwitcherModal;
+    window.handleLogout = handleLogout;
     window.openAdminModal = openAdminModal;
     window.closeAdminModal = closeAdminModal;
-    window.handleDirectLogin = handleDirectLogin;
-    window.handleCustomEmailLogin = handleCustomEmailLogin;
-    window.handleLogout = handleLogout;
+    window.saveClientIdAndReload = saveClientIdAndReload;
     window.handleAddApprovedEmail = handleAddApprovedEmail;
     window.handleRemoveApprovedEmail = handleRemoveApprovedEmail;
 }

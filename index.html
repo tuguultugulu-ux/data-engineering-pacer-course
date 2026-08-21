@@ -6,7 +6,7 @@
     <title>PACER Data Engineering Course</title>
     
     <!-- Modern Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=3500">
+    <link rel="stylesheet" href="css/styles.css?v=3600">
     
     <!-- CodeMirror (Editor & Monokai Theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -19,36 +19,38 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-            <!-- Authentication Access Gate Overlay (Only Approved Accounts Permitted) -->
+                <!-- Authentication Access Gate (Real Google OAuth Only) -->
     <div id="auth-overlay" class="auth-overlay-backdrop" style="display: flex;">
-        <div class="auth-card" style="max-width: 440px;">
-            <div class="auth-brand-icon" style="background: #ffffff; padding: 10px;">
-                <svg width="26" height="26" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
-                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.04 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-                </svg>
+        <div class="auth-card" style="max-width: 420px; text-align: center;">
+            <div class="auth-brand-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
             </div>
             <h2>PACER Data Engineering</h2>
-            <p style="margin-bottom: 24px; font-size: 0.86rem; color: #94a3b8;">
-                Sign in with your authorized Google Account to sync progress, telemetry, and curriculum modules.
+            <p style="margin-bottom: 24px; font-size: 0.84rem; color: #94a3b8; line-height: 1.5;">
+                Sign in with your authorized Google Account to access the curriculum. Only pre-approved accounts are permitted.
             </p>
 
-            <!-- Official Google Sign In Action -->
-            <div style="margin-bottom: 20px;">
-                <button class="action-btn" onclick="openGoogleOAuthModal()" style="width: 100%; background: #ffffff; color: #1f1f1f; border: 1px solid #747775; font-weight: 500; font-size: 0.92rem; padding: 13px 20px; justify-content: center; border-radius: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); cursor: pointer; transition: all 0.2s;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" style="margin-right: 10px;">
-                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
-                        <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.04 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-                    </svg>
-                    <span>Sign in with Google</span>
-                </button>
+            <!-- Google's REAL rendered Sign-In button (injected by GIS library) -->
+            <div id="google-signin-btn-container" style="display: flex; justify-content: center; margin-bottom: 16px; min-height: 44px;"></div>
+
+            <!-- Fallback: shown only when Client ID is not configured -->
+            <div id="auth-setup-notice" style="display: none; margin-bottom: 16px;">
+                <div style="background: rgba(251, 188, 5, 0.12); border: 1px solid rgba(251, 188, 5, 0.35); border-radius: var(--radius-md); padding: 14px; text-align: left;">
+                    <strong style="color: #fbbf24; font-size: 0.82rem;">⚠ Google OAuth Client ID Required</strong>
+                    <p style="color: #94a3b8; font-size: 0.76rem; margin: 6px 0 10px 0; line-height: 1.45;">
+                        To enable real Google Sign-In, an OAuth Client ID must be configured.
+                    </p>
+                    <div style="display: flex; gap: 6px;">
+                        <input type="text" id="client-id-input" class="form-control" placeholder="Paste Client ID..." style="font-size: 0.76rem; text-align: left;">
+                        <button class="action-btn run-btn" onclick="saveClientIdAndReload()" style="padding: 0 12px; font-size: 0.76rem; white-space: nowrap;">Save &amp; Reload</button>
+                    </div>
+                    <a href="https://console.cloud.google.com/apis/credentials" target="_blank" style="color: #38bdf8; font-size: 0.72rem; display: inline-block; margin-top: 8px;">Open Google Cloud Console →</a>
+                </div>
             </div>
 
-            <small style="color: #64748b; font-size: 0.74rem;">Protected by PACER Role-Based Access Control</small>
+            <div id="auth-error-msg" style="display: none; color: #f87171; font-size: 0.78rem; margin-top: 10px; font-family: var(--font-mono); line-height: 1.45; background: rgba(248, 113, 113, 0.1); border: 1px solid rgba(248, 113, 113, 0.3); padding: 8px 12px; border-radius: var(--radius-sm);"></div>
+
+            <p style="font-size: 0.7rem; color: #475569; margin-top: 16px;">Protected by Google Identity Services &amp; PACER RBAC</p>
         </div>
     </div>
 
@@ -153,81 +155,6 @@
 
     
     
-    <!-- Authentic Google Identity Account Selector Modal -->
-    <div id="google-oauth-modal" class="google-oauth-backdrop" style="display: none;">
-        <div class="google-oauth-window">
-            <button onclick="closeGoogleOAuthModal()" style="position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 1.4rem; color: #5f6368; cursor: pointer;">&times;</button>
-            <div class="google-oauth-header">
-                <svg width="28" height="28" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
-                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.04 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-                </svg>
-                <h2>Choose an account</h2>
-                <p>to continue to <strong>PACER Data Engineering</strong></p>
-            </div>
-
-            <div id="google-oauth-loading" style="display:none; text-align:center; padding: 10px; color:#0b57d0; font-weight:500; font-size:0.86rem;">
-                <div style="display:inline-block; width:16px; height:16px; border:2px solid #0b57d0; border-top-color:transparent; border-radius:50%; animation:spin 0.6s linear infinite; vertical-align:middle; margin-right:6px;"></div>
-                Signing in with Google...
-            </div>
-
-            <div class="google-accounts-list">
-                <!-- 1. Sarantuya (Admin) -->
-                <button class="google-account-item" onclick="handleGoogleAccountSelect('sarantuyasarnai42@gmail.com', 'Sarantuya (Admin)')">
-                    <div class="google-account-avatar" style="background: #e11d48;">S</div>
-                    <div class="google-account-info">
-                        <div class="google-account-name">Sarantuya <span style="font-size:0.62rem; background:#0071e3; color:#ffffff; padding:1px 5px; border-radius:3px;">Admin</span></div>
-                        <div class="google-account-email">sarantuyasarnai42@gmail.com</div>
-                    </div>
-                </button>
-
-                <!-- 2. Obama (Admin) -->
-                <button class="google-account-item" onclick="handleGoogleAccountSelect('iobama538@gmail.com', 'Obama (Admin)')">
-                    <div class="google-account-avatar" style="background: #0284c7;">O</div>
-                    <div class="google-account-info">
-                        <div class="google-account-name">Obama <span style="font-size:0.62rem; background:#0071e3; color:#ffffff; padding:1px 5px; border-radius:3px;">Admin</span></div>
-                        <div class="google-account-email">iobama538@gmail.com</div>
-                    </div>
-                </button>
-
-                <!-- 3. Tuguldur (Admin) -->
-                <button class="google-account-item" onclick="handleGoogleAccountSelect('tuguultugulu@gmail.com', 'Tuguldur (Admin)')">
-                    <div class="google-account-avatar" style="background: #16a34a;">T</div>
-                    <div class="google-account-info">
-                        <div class="google-account-name">Tuguldur <span style="font-size:0.62rem; background:#0071e3; color:#ffffff; padding:1px 5px; border-radius:3px;">Admin</span></div>
-                        <div class="google-account-email">tuguultugulu@gmail.com</div>
-                    </div>
-                </button>
-
-                <!-- 4. Student Trainee (Student Access - Zero Admin Control) -->
-                <button class="google-account-item" onclick="handleGoogleAccountSelect('student.pacer01@gmail.com', 'Student Trainee')">
-                    <div class="google-account-avatar" style="background: #64748b;">ST</div>
-                    <div class="google-account-info">
-                        <div class="google-account-name">Student Trainee <span style="font-size:0.62rem; background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; padding:1px 5px; border-radius:3px;">Student</span></div>
-                        <div class="google-account-email">student.pacer01@gmail.com</div>
-                    </div>
-                </button>
-            </div>
-
-            <!-- Custom Account Input -->
-            <div class="google-custom-box">
-                <span style="font-size:0.76rem; color:#444746; font-weight:600; display:block; margin-bottom:6px;">Use another Google Account:</span>
-                <div style="display:flex; gap:6px;">
-                    <input type="email" id="google-custom-input" placeholder="name@gmail.com" style="flex:1; padding:7px 10px; border:1px solid #c4c7c5; border-radius:6px; font-size:0.82rem;">
-                    <button onclick="handleGoogleAccountSelect(document.getElementById('google-custom-input').value)" style="background:#0b57d0; color:#ffffff; border:none; padding:7px 14px; border-radius:6px; font-weight:500; font-size:0.82rem; cursor:pointer;">Next</button>
-                </div>
-            </div>
-
-            <div id="google-oauth-error" style="display:none; color:#ba1a1a; font-size:0.76rem; margin-top:10px; background:#ffdad6; padding:8px 10px; border-radius:6px;"></div>
-
-            <div class="google-oauth-footer-text">
-                To continue, Google will share your name, email address, and profile picture with PACER Data Engineering.
-            </div>
-        </div>
-    </div>
-
     <!-- Account Switcher Modal (Frosted Glass Overlay) -->
     <div id="switcher-modal-backdrop" class="modal-backdrop" style="display: none;">
         <div class="modal-card" style="max-width: 460px; width: 92%;">
@@ -355,13 +282,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
 
     <!-- Application Modules -->
-    <script src="js/auth-manager.js?v=3500"></script>
-    <script src="js/i18n.js?v=3500"></script>
-    <script src="js/course-data.js?v=3500"></script>
-    <script src="js/progress-tracker.js?v=3500"></script>
-    <script src="js/pyodide-engine.js?v=3500"></script>
-    <script src="js/ai-reviewer.js?v=3500"></script>
-    <script src="js/editor-manager.js?v=3500"></script>
-    <script src="js/app.js?v=3500"></script>
+    <script src="js/auth-manager.js?v=3600"></script>
+    <script src="js/i18n.js?v=3600"></script>
+    <script src="js/course-data.js?v=3600"></script>
+    <script src="js/progress-tracker.js?v=3600"></script>
+    <script src="js/pyodide-engine.js?v=3600"></script>
+    <script src="js/ai-reviewer.js?v=3600"></script>
+    <script src="js/editor-manager.js?v=3600"></script>
+    <script src="js/app.js?v=3600"></script>
 </body>
 </html>
