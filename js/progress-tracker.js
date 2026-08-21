@@ -1,3 +1,8 @@
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 /**
  * PACER Data Engineering - Progress & Gamified XP Engine
  * Tracks completed practices, XP gain animations, level progression, and visual roadmap state.
@@ -114,7 +119,10 @@ var ProgressTracker = (function() {
             subEl.innerText = `${completed} / ${total} ${label}`;
         }
         if (xpBadgeEl) {
-            xpBadgeEl.innerHTML = `<span class="xp-level">Lv.${levelInfo.level}</span> <span class="xp-val">${xp} XP</span>`;
+            xpBadgeEl.innerHTML = `
+                <span class="xp-level-text">Lv.${levelInfo.level} ${escapeHtml(levelInfo.title)}</span>
+                <span class="xp-points">${xp} XP</span>
+            `;
             xpBadgeEl.title = `${levelInfo.title} (${xp} / ${levelInfo.nextXP} XP)`;
         }
     }

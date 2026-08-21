@@ -250,30 +250,7 @@ function renderLessonHtml(lesson) {
         `;
     }
 
-    // Top Quest & XP HUD
-    const stats = typeof ProgressTracker !== 'undefined' ? ProgressTracker.getStats() : { xp: 0, levelInfo: { level: 1, title: 'Data Apprentice', nextXP: 250 }, percent: 0 };
-    const xpPercent = stats.levelInfo.nextXP > 0 ? Math.min(100, Math.round((stats.xp / stats.levelInfo.nextXP) * 100)) : 100;
-    const topHudHtml = `
-        <div class="top-quest-hud">
-            <div class="hud-left">
-                <div class="hud-rank-pill">
-                    <span class="hud-rank-level">Lv.${stats.levelInfo.level}</span>
-                    <strong class="hud-rank-title">${escapeHtml(stats.levelInfo.title)}</strong>
-                </div>
-                <div class="hud-xp-meter">
-                    <span class="hud-xp-text">${stats.xp} / ${stats.levelInfo.nextXP} XP (${stats.percent}% Mastery)</span>
-                    <div class="hud-xp-bar"><div class="hud-xp-fill" style="width: ${xpPercent}%;"></div></div>
-                </div>
-            </div>
-            <div class="hud-right">
-                <button class="hud-map-btn" onclick="openRoadmapModal()">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-                    <span>${I18n.t('roadmapTitle')}</span>
-                </button>
-            </div>
-        </div>
-    `;
-
+    
     // 3. Final Phase Exam or Capstone Project
     if (lesson.isExam) {
         const isProject = (lesson.phase === 'projects' || lesson.id.startsWith('proj_'));
@@ -289,18 +266,15 @@ function renderLessonHtml(lesson) {
         ];
 
         let schemeHtml = `
-            <div class="scheme-flow-container">
-                <div class="scheme-header">
-                    <span>${I18n.t('architectureMap')}</span>
-                </div>
-                <div class="scheme-flow">
+            <div class="pipeline-breadcrumb">
+                <span class="pipeline-label">${I18n.t('architectureMap')}:</span>
+                <div class="pipeline-steps">
                     ${schemeNodes.map((node, idx) => `
-                        <div class="scheme-node">
-                            <span class="node-step">${escapeHtml(node.step)}</span>
-                            <strong class="node-desc">${escapeHtml(node.desc)}</strong>
-                            <small class="node-target">${escapeHtml(node.target)}</small>
-                        </div>
-                        ${idx < (schemeNodes.length - 1) ? '<div class="scheme-arrow">→</div>' : ''}
+                        <span class="pipeline-step" title="${escapeHtml(node.target || '')}">
+                            <span class="step-num">${idx + 1}</span>
+                            <span class="step-name">${escapeHtml(node.desc || node.step)}</span>
+                        </span>
+                        ${idx < (schemeNodes.length - 1) ? '<span class="pipeline-sep">→</span>' : ''}
                     `).join('')}
                 </div>
             </div>
@@ -325,8 +299,7 @@ function renderLessonHtml(lesson) {
         }
 
         return `
-            ${topHudHtml}
-            <div class="lesson-header">
+                        <div class="lesson-header">
                 <h1>${escapeHtml(localizedTitle)}</h1>
                 <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">${subLabel}</p>
             </div>
@@ -361,8 +334,7 @@ function renderLessonHtml(lesson) {
                     <div class="card-title-group">
                         <span class="level-tag mastery">${isProject ? I18n.t('levelProject') : I18n.t('levelMastery')}</span>
                         <h3 class="card-title">pipeline.py</h3>
-                        <span class="card-xp-reward">${isProject ? '+200 XP' : '+150 XP'}</span>
-                        <span class="timer-badge" id="timer-${lesson.id}-0">00:00</span>
+                                                <span class="timer-badge" id="timer-${lesson.id}-0">00:00</span>
                     </div>
                     <div class="card-actions">
                         <span class="status-badge idle" id="status-badge-${lesson.id}-0">Idle</span>
@@ -439,8 +411,7 @@ function renderLessonHtml(lesson) {
     }
 
     return `
-        ${topHudHtml}
-        <div class="lesson-header">
+                <div class="lesson-header">
             <div class="lesson-title-row">
                 <h1>${escapeHtml(localizedTitle)}</h1>
                 <div class="header-meta">
@@ -511,23 +482,20 @@ function renderPracticeCard(practice) {
         { step: "3. Output", desc: "Processed Array", target: "Target" }
     ];
 
-    let schemeHtml = `
-        <div class="scheme-flow-container">
-            <div class="scheme-header">
-                <span>${I18n.t('architectureMap')}</span>
+        let schemeHtml = `
+            <div class="pipeline-breadcrumb">
+                <span class="pipeline-label">${I18n.t('architectureMap')}:</span>
+                <div class="pipeline-steps">
+                    ${schemeNodes.map((node, idx) => `
+                        <span class="pipeline-step" title="${escapeHtml(node.target || '')}">
+                            <span class="step-num">${idx + 1}</span>
+                            <span class="step-name">${escapeHtml(node.desc || node.step)}</span>
+                        </span>
+                        ${idx < (schemeNodes.length - 1) ? '<span class="pipeline-sep">→</span>' : ''}
+                    `).join('')}
+                </div>
             </div>
-            <div class="scheme-flow">
-                ${schemeNodes.map((node, idx) => `
-                    <div class="scheme-node">
-                        <span class="node-step">${escapeHtml(node.step)}</span>
-                        <strong class="node-desc">${escapeHtml(node.desc)}</strong>
-                        <small class="node-target">${escapeHtml(node.target)}</small>
-                    </div>
-                    ${idx < (schemeNodes.length - 1) ? '<div class="scheme-arrow">→</div>' : ''}
-                `).join('')}
-            </div>
-        </div>
-    `;
+        `;
 
     return `
         <div class="practice-card" id="card-${practice.id}">
@@ -535,8 +503,7 @@ function renderPracticeCard(practice) {
                 <div class="card-title-group">
                     <span class="level-tag ${levelClass}">${levelLabel}</span>
                     <h3 class="card-title">${escapeHtml(practice.title)}</h3>
-                    <span class="card-xp-reward">+50 XP</span>
-                    <span class="timer-badge" id="timer-${practice.id}">00:00</span>
+                                        <span class="timer-badge" id="timer-${practice.id}">00:00</span>
                 </div>
                 <div class="card-actions">
                     <span class="status-badge idle" id="status-badge-${practice.id}">Idle</span>

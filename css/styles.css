@@ -1254,113 +1254,168 @@ kbd {
    Three-Weight Rule (400, 500, 600), Frosted Glass, Hairline Shadow-as-Border
    -------------------------------------------------------------------------- */
 
-/* Top Quest & Progress HUD - Apple Glass Pill Bar */
-.top-quest-hud {
-    background: #ffffff;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: 10px 18px;
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
-}
 
-.hud-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
+/* --------------------------------------------------------------------------
+   PACER Data Engineering - Apple Minimalist Clean Design System
+   -------------------------------------------------------------------------- */
 
-.hud-rank-pill {
-    display: inline-flex;
+/* Sleek Apple Technical Pipeline Breadcrumb */
+.pipeline-breadcrumb {
+    display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--canvas-subtle);
+    margin: 8px 0 14px 0;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.02);
     border: 1px solid var(--border-subtle);
-    padding: 3px 10px;
-    border-radius: 20px;
-}
-
-.hud-rank-level {
-    background: var(--text-primary);
-    color: #ffffff;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 600;
-    padding: 1px 6px;
-    border-radius: 10px;
-}
-
-.hud-rank-title {
-    color: var(--text-primary);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-}
-
-.hud-xp-meter {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 140px;
-}
-
-.hud-xp-text {
+    border-radius: var(--radius-sm);
     font-size: 0.72rem;
     font-family: var(--font-mono);
     color: var(--text-secondary);
+    overflow-x: auto;
+}
+
+.pipeline-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+}
+
+.pipeline-steps {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.pipeline-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+}
+
+.pipeline-step .step-num {
+    background: var(--canvas-subtle);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 2px;
+}
+
+.pipeline-step .step-name {
+    color: var(--text-primary);
     font-weight: 500;
 }
 
-.hud-xp-bar {
-    width: 100%;
-    height: 3px;
-    background: rgba(0, 0, 0, 0.06);
-    border-radius: 2px;
-    overflow: hidden;
+.pipeline-sep {
+    color: var(--border-strong);
+    font-size: 0.75rem;
 }
 
-.hud-xp-fill {
+/* Sidebar Progress & Quest Map Card - Frosted Midnight Glass */
+.sidebar-progress-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--midnight-border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+}
+
+.sidebar-progress-card .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.sidebar-progress-card .progress-header span {
+    font-size: 0.76rem;
+    color: var(--midnight-muted);
+    font-weight: 500;
+}
+
+.sidebar-progress-card .progress-header strong {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar-progress-card .progress-track {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.sidebar-progress-card .progress-fill {
     height: 100%;
     background: var(--accent);
     border-radius: 2px;
     transition: width 0.4s var(--ease-out-spring);
 }
 
-.hud-map-btn {
-    background: #ffffff;
-    color: var(--text-primary);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 5px 12px;
-    font-size: 0.78rem;
+.sidebar-progress-card .progress-sub-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+    color: var(--midnight-muted);
+}
+
+.sidebar-map-btn {
+    background: rgba(0, 113, 227, 0.15);
+    border: 1px solid rgba(0, 113, 227, 0.3);
+    color: #38bdf8;
+    font-size: 0.65rem;
     font-weight: 500;
+    font-family: var(--font-mono);
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
+    gap: 4px;
+    transition: background-color 0.15s;
 }
 
-.hud-map-btn:hover {
-    background: var(--canvas-subtle);
-    border-color: rgba(0, 0, 0, 0.15);
+.sidebar-map-btn:hover {
+    background: rgba(0, 113, 227, 0.25);
 }
 
-.hud-map-btn:active {
-    transform: scale(0.98);
+.sidebar-xp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    border-top: 1px solid var(--midnight-border-subtle);
+    padding-top: 6px;
+    margin-top: 6px;
+}
+
+.sidebar-xp-row .xp-level-text {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.sidebar-xp-row .xp-points {
+    color: #38bdf8;
+    font-weight: 600;
 }
 
 /* Critical Data Engineering Mandate - Apple Precision Editorial Notice */
 .mandate-callout-red {
     background: #ffffff;
-    border: 1px solid rgba(225, 29, 72, 0.2);
+    border: 1px solid rgba(225, 29, 72, 0.18);
     border-left: 3px solid #e11d48;
     border-radius: var(--radius-md);
     padding: 14px 18px;
@@ -1379,7 +1434,7 @@ kbd {
 
 .mandate-content strong {
     color: #e11d48;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -1396,88 +1451,7 @@ kbd {
     margin: 0;
 }
 
-/* Data Architecture Mini-Map / Pipeline Scheme Flow - Apple Technical Wireframe */
-.scheme-flow-container {
-    background: var(--midnight-bg);
-    border: 1px solid var(--midnight-border);
-    border-radius: var(--radius-md);
-    padding: 12px 16px;
-    margin-bottom: 18px;
-}
-
-.scheme-header {
-    font-size: 0.68rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--midnight-muted);
-    font-family: var(--font-mono);
-    margin-bottom: 8px;
-}
-
-.scheme-flow {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-}
-
-.scheme-node {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--midnight-border);
-    border-radius: var(--radius-sm);
-    padding: 7px 11px;
-    min-width: 135px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    transition: background-color 0.15s;
-}
-
-.scheme-node:hover {
-    background: rgba(255, 255, 255, 0.06);
-}
-
-.node-step {
-    font-size: 0.65rem;
-    color: var(--accent);
-    font-family: var(--font-mono);
-    font-weight: 500;
-}
-
-.node-desc {
-    font-size: 0.78rem;
-    color: var(--midnight-text);
-    font-weight: 500;
-}
-
-.node-target {
-    font-size: 0.66rem;
-    color: var(--midnight-muted);
-    font-family: var(--font-mono);
-}
-
-.scheme-arrow {
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 0.85rem;
-    font-weight: 400;
-    flex-shrink: 0;
-}
-
-/* Card XP Reward & Timer Badges */
-.card-xp-reward {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--midnight-border);
-    color: var(--midnight-muted);
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 500;
-    padding: 1px 6px;
-    border-radius: 3px;
-}
-
+/* Timer Badge in Card Header */
 .timer-badge {
     font-family: var(--font-mono);
     font-size: 0.68rem;
@@ -1541,50 +1515,6 @@ kbd {
 .xp-text {
     color: var(--midnight-text);
     font-size: 0.74rem;
-    font-weight: 400;
-}
-
-/* Sidebar Small Map Icon & XP Badge */
-.map-icon-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--midnight-border);
-    color: var(--midnight-muted);
-    font-size: 0.66rem;
-    font-weight: 500;
-    font-family: var(--font-mono);
-    padding: 1px 6px;
-    border-radius: 3px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    transition: background-color 0.15s, color 0.15s;
-}
-
-.map-icon-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-}
-
-.sidebar-xp-badge {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--midnight-border-subtle);
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.sidebar-xp-badge .xp-level {
-    color: #e2e8f0;
-    font-weight: 500;
-}
-
-.sidebar-xp-badge .xp-val {
-    color: var(--midnight-muted);
     font-weight: 400;
 }
 
