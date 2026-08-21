@@ -830,9 +830,10 @@ function checkAuthGate() {
 
     if (overlay) overlay.style.display = 'none';
 
-    // Show Admin Link if current user is one of the 3 admins
+    // Show Admin Link IF AND ONLY IF current user is one of the 3 official admins!
+    const isUserAdmin = AuthManager.isAdmin(user.email);
     if (adminSidebarBtn) {
-        adminSidebarBtn.style.display = (user.role === 'ADMIN' || AuthManager.isAdmin(user.email)) ? 'block' : 'none';
+        adminSidebarBtn.style.display = isUserAdmin ? 'block' : 'none';
     }
 
     // Update user profile widget in sidebar footer
@@ -905,7 +906,9 @@ function handleLogout() {
 function openAdminModal() {
     const user = AuthManager.getCurrentUser();
     if (!user || !AuthManager.isAdmin(user.email)) {
-        alert("Access Denied: Administrative interface is strictly restricted to authorized course leadership.");
+        const modal = document.getElementById('admin-modal-backdrop');
+        if (modal) modal.style.display = 'none';
+        alert("Access Denied: The Admin Command Center is strictly restricted to designated course administrators (sarantuyasarnai42@gmail.com, iobama538@gmail.com, tuguultugulu@gmail.com).");
         return;
     }
 

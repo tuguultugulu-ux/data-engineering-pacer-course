@@ -68,9 +68,14 @@ var AuthManager = (function() {
         }
     }
 
-    function isAdmin(email) {
+        function isAdmin(email) {
         if (!email) return false;
-        return ADMIN_ACCOUNTS.map(e => e.toLowerCase()).includes(email.toLowerCase());
+        const lower = email.trim().toLowerCase();
+        return (
+            lower === "sarantuyasarnai42@gmail.com" ||
+            lower === "iobama538@gmail.com" ||
+            lower === "tuguultugulu@gmail.com"
+        );
     }
 
     function isApproved(email) {
