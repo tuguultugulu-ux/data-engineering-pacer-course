@@ -135,19 +135,33 @@ var AuthManager = (function() {
     auth.onAuthStateChanged((user) => {
         if (user && user.email) {
             const email = user.email.toLowerCase();
-            if (isApproved(email)) {
-                setSession({
-                    email: email,
-                    name: user.displayName || email.split('@')[0],
-                    picture: user.photoURL || '',
-                    role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
-                    verified: true,
-                    uid: user.uid
-                });
-                if (typeof checkAuthGate === 'function') checkAuthGate();
-            } else {
-                auth.signOut();
-            }
+            
+            db.collection('settings').doc('roster').get().then((doc) => {
+                if (doc.exists) {
+                    localRoster = doc.data().emails || localRoster;
+                }
+                
+                if (isApproved(email)) {
+                    setSession({
+                        email: email,
+                        name: user.displayName || email.split('@')[0],
+                        picture: user.photoURL || '',
+                        role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
+                        verified: true,
+                        uid: user.uid
+                    });
+                    if (typeof checkAuthGate === 'function') checkAuthGate();
+                } else {
+                    auth.signOut();
+                }
+            }).catch(e => {
+                // If network fails or rules block, just fallback to localRoster
+                if (isApproved(email)) {
+                    if (typeof checkAuthGate === 'function') checkAuthGate();
+                } else {
+                    auth.signOut();
+                }
+            });
         }
     });
 
@@ -158,29 +172,39 @@ var AuthManager = (function() {
                 const user = result.user;
                 const email = user.email.toLowerCase();
                 
-                if (!isApproved(email)) {
-                    auth.signOut();
-                    const errEl = document.getElementById('auth-error-msg');
-                    if (errEl) {
-                        errEl.style.display = 'block';
-                        errEl.innerText = 'Access Denied: ' + email + ' is not on the approved roster.';
+                // Fetch latest roster from DB now that we are authenticated
+                db.collection('settings').doc('roster').get().then((doc) => {
+                    if (doc.exists) {
+                        localRoster = doc.data().emails || localRoster;
                     }
-                    return;
-                }
+                    
+                    if (!isApproved(email)) {
+                        auth.signOut();
+                        const errEl = document.getElementById('auth-error-msg');
+                        if (errEl) {
+                            errEl.style.display = 'block';
+                            errEl.innerText = 'Access Denied: ' + email + ' is not on the approved roster.';
+                        }
+                        return;
+                    }
 
-                setSession({
-                    email: email,
-                    name: user.displayName || email.split('@')[0],
-                    picture: user.photoURL || '',
-                    role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
-                    verified: true,
-                    uid: user.uid
+                    setSession({
+                        email: email,
+                        name: user.displayName || email.split('@')[0],
+                        picture: user.photoURL || '',
+                        role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
+                        verified: true,
+                        uid: user.uid
+                    });
+
+                    if (typeof checkAuthGate === 'function') checkAuthGate();
+                    if (typeof buildSidebar === 'function') buildSidebar();
+                    if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
+                    if (typeof loadLesson === 'function' && typeof currentLessonId !== 'undefined') loadLesson(currentLessonId);
+                }).catch(err => {
+                    console.error("Failed to fetch roster during login", err);
+                    auth.signOut();
                 });
-
-                if (typeof checkAuthGate === 'function') checkAuthGate();
-                if (typeof buildSidebar === 'function') buildSidebar();
-                if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
-                if (typeof loadLesson === 'function' && typeof currentLessonId !== 'undefined') loadLesson(currentLessonId);
             })
             .catch((error) => {
                 console.error(error);
