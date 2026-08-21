@@ -218,10 +218,9 @@ var EditorManager = (function() {
     async function runCell(cellId) {
         if (!cellId || !editors[cellId]) return;
 
-        recordCodeAttempt(cellId, code);
-
         const cm = editors[cellId];
         const code = cm.getValue();
+        recordCodeAttempt(cellId, code);
         const outputEl = document.getElementById('output-' + cellId);
         const statusBadge = document.getElementById('status-badge-' + cellId);
         const metaEl = document.getElementById('console-meta-' + cellId);
@@ -284,10 +283,9 @@ var EditorManager = (function() {
     async function runTests(cellId) {
         if (!cellId || !editors[cellId]) return;
 
-        recordCodeAttempt(cellId, code);
-
         const cm = editors[cellId];
         const userCode = cm.getValue();
+        recordCodeAttempt(cellId, userCode);
         const outputEl = document.getElementById('output-' + cellId);
         const statusBadge = document.getElementById('status-badge-' + cellId);
         const starterCode = getInitialCode(cellId);
