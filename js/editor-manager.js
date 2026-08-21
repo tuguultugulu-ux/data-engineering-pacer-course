@@ -158,21 +158,47 @@ var EditorManager = (function() {
         });
     }
 
-    function getRunAttempts(cellId) {
-        return runCounts[cellId] || 0;
+    let uniqueCodeAttempts = {};
+
+    function normalizeCode(str) {
+        if (!str) return '';
+        return str.split('\n').map(l => l.trim()).filter(l => l.length > 0).join('\n');
     }
 
-    function incrementRunAttempts(cellId) {
-        runCounts[cellId] = (runCounts[cellId] || 0) + 1;
-        updateSolutionButton(cellId);
-        return runCounts[cellId];
+    function recordCodeAttempt(cellId, userCode) {
+        const starterCode = getInitialCode(cellId);
+        const normUser = normalizeCode(userCode);
+        const normStarter = normalizeCode(starterCode);
+
+        // 1. Must not be empty and must be different from unmodified starter template
+        if (normUser.length === 0 || normUser === normStarter) {
+            return false;
+        }
+
+        if (!uniqueCodeAttempts[cellId]) {
+            uniqueCodeAttempts[cellId] = [];
+        }
+
+        // 2. Check if this code version is identical to any previously recorded attempt
+        const alreadyTried = uniqueCodeAttempts[cellId].some(prev => prev === normUser);
+        if (!alreadyTried) {
+            uniqueCodeAttempts[cellId].push(normUser);
+            updateSolutionButton(cellId);
+            return true;
+        }
+
+        return false;
+    }
+
+    function getMeaningfulAttemptsCount(cellId) {
+        return uniqueCodeAttempts[cellId] ? uniqueCodeAttempts[cellId].length : 0;
     }
 
     function updateSolutionButton(cellId) {
         const btn = document.getElementById('sol-btn-' + cellId);
         if (!btn) return;
 
-        const attempts = getRunAttempts(cellId);
+        const attempts = getMeaningfulAttemptsCount(cellId);
         if (attempts >= 3) {
             btn.className = 'action-btn secondary-btn unlocked';
             btn.innerHTML = `<span>${I18n.t('showSolution')}</span>`;
@@ -185,7 +211,7 @@ var EditorManager = (function() {
     async function runCell(cellId) {
         if (!cellId || !editors[cellId]) return;
 
-        incrementRunAttempts(cellId);
+        recordCodeAttempt(cellId, code);
 
         const cm = editors[cellId];
         const code = cm.getValue();
@@ -251,7 +277,7 @@ var EditorManager = (function() {
     async function runTests(cellId) {
         if (!cellId || !editors[cellId]) return;
 
-        incrementRunAttempts(cellId);
+        recordCodeAttempt(cellId, code);
 
         const cm = editors[cellId];
         const userCode = cm.getValue();
@@ -377,7 +403,7 @@ var EditorManager = (function() {
         const solContainer = document.getElementById('solution-box-' + cellId);
         const btn = document.getElementById('sol-btn-' + cellId);
         const problem = getProblemData(cellId);
-        const attempts = getRunAttempts(cellId);
+        const attempts = getMeaningfulAttemptsCount(cellId);
 
         if (!solContainer) return;
 
@@ -388,10 +414,10 @@ var EditorManager = (function() {
             if (attempts < 3) {
                 // Locked Notice
                 solContainer.innerHTML = `
-                    <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: var(--radius-md); padding: 12px 14px; margin-top: 10px; color: #fbbf24; font-size: 0.8rem; line-height: 1.55;">
-                        <strong>Solution Locked (${attempts} / 3 Runs)</strong><br>
+                    <div style="background: rgba(245, 158, 11, 0.1); border: 1.5px solid rgba(245, 158, 11, 0.35); border-radius: var(--radius-md); padding: 14px 18px; margin-top: 10px; color: #fbbf24; font-size: 0.82rem; line-height: 1.6;">
+                        <strong style="color: #ffffff; font-size: 0.88rem; display: block; margin-bottom: 4px;">Solution Locked (Meaningful Attempts: ${attempts} / 3)</strong>
                         ${I18n.t('solutionLockedMsg')}<strong>${attempts} / 3</strong>.<br>
-                        <em>Test and run your code at least 3 times first to develop muscle memory and problem-solving intuition!</em>
+                        <span style="color: #e2e8f0; font-size: 0.78rem; margin-top: 4px; display: block;">${I18n.t('solutionSpamWarn')}</span>
                     </div>
                 `;
                 if (btn) btn.innerHTML = `<span>${I18n.t('hideSolution')}</span>`;
