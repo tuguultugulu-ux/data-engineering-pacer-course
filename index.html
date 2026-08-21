@@ -6,7 +6,7 @@
     <title>PACER Data Engineering Course</title>
     
     <!-- Modern Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=2900">
+    <link rel="stylesheet" href="css/styles.css?v=3000">
     
     <!-- CodeMirror (Editor & Monokai Theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -156,7 +156,63 @@
         </div>
     </div>
 
-    <!-- Curriculum Quest Map Modal (Frosted Glass Overlay) -->
+    
+    <!-- Account Switcher Modal (Frosted Glass Overlay) -->
+    <div id="switcher-modal-backdrop" class="modal-backdrop" style="display: none;">
+        <div class="modal-card" style="max-width: 460px; width: 92%;">
+            <div class="modal-header">
+                <div>
+                    <h3>Switch User Account</h3>
+                    <p style="font-size: 0.78rem; color: var(--midnight-muted); margin-top: 2px;">Switch between Administrator Accounts or Student Mode</p>
+                </div>
+                <button class="modal-close-btn" onclick="closeAccountSwitcherModal()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 16px 20px;">
+                <div class="auth-quick-title">Designated Course Administrators</div>
+                <button class="auth-quick-btn" onclick="handleDirectLogin('sarantuyasarnai42@gmail.com')">
+                    <div style="display:flex; flex-direction:column; text-align:left;">
+                        <strong style="color:#ffffff;">Sarantuya (Admin)</strong>
+                        <small style="color:#94a3b8; font-size:0.7rem;">sarantuyasarnai42@gmail.com</small>
+                    </div>
+                    <span class="auth-admin-tag">Admin</span>
+                </button>
+                <button class="auth-quick-btn" onclick="handleDirectLogin('iobama538@gmail.com')">
+                    <div style="display:flex; flex-direction:column; text-align:left;">
+                        <strong style="color:#ffffff;">Obama (Admin)</strong>
+                        <small style="color:#94a3b8; font-size:0.7rem;">iobama538@gmail.com</small>
+                    </div>
+                    <span class="auth-admin-tag">Admin</span>
+                </button>
+                <button class="auth-quick-btn" onclick="handleDirectLogin('tuguultugulu@gmail.com')">
+                    <div style="display:flex; flex-direction:column; text-align:left;">
+                        <strong style="color:#ffffff;">Tuguldur (Admin)</strong>
+                        <small style="color:#94a3b8; font-size:0.7rem;">tuguultugulu@gmail.com</small>
+                    </div>
+                    <span class="auth-admin-tag">Admin</span>
+                </button>
+
+                <div class="auth-quick-title" style="margin-top: 14px;">Enrolled Student Testing</div>
+                <button class="auth-quick-btn" onclick="handleDirectLogin('student.pacer01@gmail.com')">
+                    <div style="display:flex; flex-direction:column; text-align:left;">
+                        <strong style="color:#ffffff;">Student Trainee</strong>
+                        <small style="color:#94a3b8; font-size:0.7rem;">student.pacer01@gmail.com</small>
+                    </div>
+                    <span class="user-role-badge student">Student</span>
+                </button>
+
+                <div style="margin-top: 16px;">
+                    <div style="display: flex; gap: 8px;">
+                        <input type="email" id="switcher-custom-email" class="form-control" placeholder="Enter custom approved email..." style="font-size:0.8rem;">
+                        <button class="action-btn run-btn" onclick="handleDirectLogin(document.getElementById('switcher-custom-email').value)" style="padding:0 14px;">Switch</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Curriculum Quest Map Modal (Frosted Glass Overlay) -->
     <div id="roadmap-modal-backdrop" class="modal-backdrop" style="display: none;">
         <div class="modal-card" style="max-width: 640px; width: 92%;">
             <div class="modal-header">
@@ -228,13 +284,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
 
     <!-- Application Modules -->
-    <script src="js/auth-manager.js?v=2900"></script>
-    <script src="js/i18n.js?v=2900"></script>
-    <script src="js/course-data.js?v=2900"></script>
-    <script src="js/progress-tracker.js?v=2900"></script>
-    <script src="js/pyodide-engine.js?v=2900"></script>
-    <script src="js/ai-reviewer.js?v=2900"></script>
-    <script src="js/editor-manager.js?v=2900"></script>
-    <script src="js/app.js?v=2900"></script>
+    <script src="js/auth-manager.js?v=3000"></script>
+    <script src="js/i18n.js?v=3000"></script>
+    <script src="js/course-data.js?v=3000"></script>
+    <script src="js/progress-tracker.js?v=3000"></script>
+    <script src="js/pyodide-engine.js?v=3000"></script>
+    <script src="js/ai-reviewer.js?v=3000"></script>
+    <script src="js/editor-manager.js?v=3000"></script>
+    <script src="js/app.js?v=3000"></script>
 </body>
 </html>

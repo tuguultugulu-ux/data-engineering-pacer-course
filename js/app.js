@@ -838,14 +838,14 @@ function checkAuthGate() {
     // Update user profile widget in sidebar footer
     if (userProfileWidget) {
         userProfileWidget.innerHTML = `
-            <div class="user-profile-row">
-                <div class="user-avatar-circle">${user.email.charAt(0).toUpperCase()}</div>
+            <div class="user-profile-row" onclick="openAccountSwitcherModal()" title="Click to Switch Account" style="cursor: pointer;">
+                <div class="user-avatar-circle">${user.name ? user.name.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}</div>
                 <div class="user-profile-details">
-                    <span class="user-email-text" title="${escapeHtml(user.email)}">${escapeHtml(user.email)}</span>
+                    <span class="user-email-text" title="${escapeHtml(user.name || user.email)}">${escapeHtml(user.name || user.email)}</span>
                     <span class="user-role-badge ${user.role.toLowerCase()}">${user.role === 'ADMIN' ? 'Admin' : 'Student'}</span>
                 </div>
-                <button class="user-logout-btn" onclick="handleLogout()" title="Sign Out">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                <button class="user-logout-btn" onclick="event.stopPropagation(); openAccountSwitcherModal();" title="Switch Account">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
                 </button>
             </div>
         `;
@@ -857,16 +857,34 @@ function checkAuthGate() {
 function handleDirectLogin(email) {
     const res = AuthManager.directLoginAs(email);
     if (res.success) {
+        closeAccountSwitcherModal();
+        const overlay = document.getElementById('auth-overlay');
+        if (overlay) overlay.style.display = 'none';
         checkAuthGate();
         buildSidebar();
+        if (typeof ProgressTracker !== 'undefined') {
+            ProgressTracker.updateProgressUI();
+        }
         loadLesson(currentLessonId);
     } else {
         const errorEl = document.getElementById('auth-error-msg');
         if (errorEl) {
             errorEl.style.display = 'block';
             errorEl.innerText = res.error || "Access Denied.";
+        } else {
+            alert(res.error || "Access Denied: Account not authorized.");
         }
     }
+}
+
+function openAccountSwitcherModal() {
+    const modal = document.getElementById('switcher-modal-backdrop');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeAccountSwitcherModal() {
+    const modal = document.getElementById('switcher-modal-backdrop');
+    if (modal) modal.style.display = 'none';
 }
 
 function handleCustomEmailLogin() {
@@ -1057,6 +1075,8 @@ function handleRemoveApprovedEmail(email) {
 if (typeof window !== 'undefined') {
     window.openRoadmapModal = openRoadmapModal;
     window.closeRoadmapModal = closeRoadmapModal;
+    window.openAccountSwitcherModal = openAccountSwitcherModal;
+    window.closeAccountSwitcherModal = closeAccountSwitcherModal;
     window.openAdminModal = openAdminModal;
     window.closeAdminModal = closeAdminModal;
     window.handleDirectLogin = handleDirectLogin;

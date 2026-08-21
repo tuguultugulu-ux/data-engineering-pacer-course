@@ -217,7 +217,15 @@ var AuthManager = (function() {
         return { success: true, user: user };
     }
 
-    function directLoginAs(email, name = null) {
+    function getAdminDisplayName(email) {
+        const lower = email.toLowerCase();
+        if (lower.includes('sarantuya')) return 'Sarantuya (Admin)';
+        if (lower.includes('obama') || lower.includes('538')) return 'Obama (Admin)';
+        if (lower.includes('tuguul') || lower.includes('tugulu')) return 'Tuguldur (Admin)';
+        return email.split('@')[0] + ' (Admin)';
+    }
+
+    function directLoginAs(email, name) {
         const lower = email.trim().toLowerCase();
         if (!isApproved(lower)) {
             return {
@@ -228,11 +236,14 @@ var AuthManager = (function() {
             };
         }
 
+        const isUserAdmin = isAdmin(lower);
+        const displayName = name || (isUserAdmin ? getAdminDisplayName(lower) : lower.split('@')[0]);
+
         const user = {
             email: lower,
-            name: name || (isAdmin(lower) ? lower.split('@')[0] + " (Admin)" : lower.split('@')[0]),
+            name: displayName,
             picture: '',
-            role: isAdmin(lower) ? 'ADMIN' : 'STUDENT',
+            role: isUserAdmin ? 'ADMIN' : 'STUDENT',
             loggedInAt: new Date().toISOString()
         };
 
