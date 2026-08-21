@@ -8,8 +8,8 @@
  * - Interactive DataFrame & Variable Scope Inspector
  * - Production Reference Solution & Diff Viewer (3-Attempt Gate)
  * - Live Solve Stopwatch / Coding Timer (Starts on typing)
- * - Data Architecture Mini-Map Pipeline Scheme (10 Tiers per Topic)
- * - 5 Real-World Industry Capstone Projects with Red Data Engineering Mandates
+ * - Data Architecture Mini-Map Pipeline Scheme (Ultra High Contrast)
+ * - 5 Real-World Industry Capstone Projects with Authentic Raw File Ingestion & High-Contrast Mandate
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -111,7 +111,7 @@ function buildSidebar() {
     const brandSubEl = document.getElementById('sidebar-brand-subtitle');
 
     if (brandTitleEl) brandTitleEl.innerText = I18n.t('brandTitle');
-    if (brandSubEl) brandSubEl.innerText = ''; // Removed 10-week mastery text
+    if (brandSubEl) brandSubEl.innerText = ''; // 10-week text removed
 
     if (!navList || !window.COURSE_DATA) return;
 
@@ -265,7 +265,7 @@ function renderLessonHtml(lesson) {
         ];
 
         let schemeHtml = `
-            <div class="scheme-flow-container" style="border-radius: var(--radius-md); margin-bottom: 18px; border: 1px solid var(--midnight-border);">
+            <div class="scheme-flow-container">
                 <div class="scheme-header">
                     <span>${I18n.t('architectureMap')}</span>
                 </div>
@@ -282,22 +282,42 @@ function renderLessonHtml(lesson) {
             </div>
         `;
 
+        let projectDownloadRow = '';
+        if (lesson.dataset_url) {
+            projectDownloadRow = `
+                <div class="project-actions-row" style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <a href="${lesson.dataset_url}" download class="action-btn download-btn" style="background: var(--accent); color: #ffffff; padding: 7px 16px; text-decoration: none; border-radius: var(--radius-sm); font-size: 0.82rem; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0, 113, 227, 0.25);">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download Raw Dataset (${escapeHtml(lesson.dataset_url.split('/').pop())})</span>
+                    </a>
+                    ${lesson.github_repo ? `
+                    <a href="${lesson.github_repo}" target="_blank" class="action-btn secondary-btn" style="text-decoration: none; padding: 7px 16px; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 8px; background: #ffffff; box-shadow: 0 0 0 1px var(--border-subtle); color: var(--text-primary);">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        <span>GitHub Benchmark Repository (${escapeHtml(lesson.github_stars || 'Open Source')})</span>
+                    </a>
+                    ` : ''}
+                </div>
+            `;
+        }
+
         return `
             <div class="lesson-header">
                 <h1>${escapeHtml(localizedTitle)}</h1>
                 <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">${subLabel}</p>
             </div>
 
-            <!-- Prominent Red Data Engineering Mandate Callout -->
+            <!-- Prominent Red Data Engineering Mandate Callout (Ultra High Contrast) -->
             <div class="mandate-callout-red">
                 <div class="mandate-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 </div>
                 <div class="mandate-content">
-                    <strong style="letter-spacing: 0.02em;">${I18n.t('mandateTitle')}:</strong>
-                    <p style="margin-top: 4px; line-height: 1.55;">${I18n.t('mandateText')}</p>
+                    <strong>${I18n.t('mandateTitle')}:</strong>
+                    <p>${I18n.t('mandateText')}</p>
                 </div>
             </div>
+
+            ${projectDownloadRow}
 
             <div class="practice-card" style="margin-bottom: 24px; background: #ffffff; box-shadow: 0 0 0 1px var(--border-subtle); color: var(--text-primary);">
                 <div class="card-prompt" style="background: #ffffff; color: var(--text-primary); border-bottom: none;">
@@ -457,7 +477,7 @@ function renderPracticeCard(practice) {
     descHtml = descHtml.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
     descHtml = descHtml.replace(/\n/g, '<br>');
 
-    // Mini-map pipeline scheme
+    // Mini-map pipeline scheme (High Contrast)
     const schemeNodes = practice.pipeline_scheme || [
         { step: "1. Ingest", desc: "Raw Input", target: "DataFrame" },
         { step: "2. Clean", desc: "Data Quality", target: "Zero Nulls" },

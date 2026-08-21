@@ -1,0 +1,501 @@
+session_id,user_id,raw_clickstream_json,order_amount,currency,country_raw
+SESS_10000,U_1173,"{""device"": ""Android"", ""pages_viewed"": 11, ""cart_actions"": 2}",399.53,GBP,Japan
+SESS_10001,U_1017,"{""device"": ""Desktop"", ""pages_viewed"": 1, ""cart_actions"": 7}",293.66,EUR,
+SESS_10002,U_1150,"{""device"": ""iOS"", ""pages_viewed"": 8, ""cart_actions"": 0}",405.1,EUR,Germany
+SESS_10003,U_1188,"{""device"": ""Web_Safari"", ""pages_viewed"": 25, ""cart_actions"": 3}",41.07,GBP,Japan
+SESS_10004,U_1075,"{""device"": ""Android"", ""pages_viewed"": 5, ""cart_actions"": 6}",31.49,,UK
+SESS_10005,U_1034,"{""device"": ""Desktop"", ""pages_viewed"": 11, ""cart_actions"": 0}",440.24,EUR,USA
+SESS_10006,U_1058,"{""device"": ""Desktop"", ""pages_viewed"": 11, ""cart_actions"": 3}",38.52,EUR,Germany
+SESS_10007,U_1155,"{""device"": ""Web_Safari"", ""pages_viewed"": 17, ""cart_actions"": 5}",288.96,USD,Japan
+SESS_10008,U_1017,"{""device"": ""Android"", ""pages_viewed"": 2, ""cart_actions"": 2}",69.62,USD,
+SESS_10009,U_1052,"{""device"": ""Android"", ""pages_viewed"": 17, ""cart_actions"": 1}",218.18,USD,Germany
+SESS_10010,U_1062,"{""device"": ""Web_Safari"", ""pages_viewed"": 6, ""cart_actions"": 3}",265.74,EUR,DE
+SESS_10011,U_1200,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 5}",87.98,,United Kingdom
+SESS_10012,U_1129,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 6}",371.53,,USA
+SESS_10013,U_1195,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 1}",415.87,USD,
+SESS_10014,U_1186,"{""device"": ""Android"", ""pages_viewed"": 9, ""cart_actions"": 6}",212.32,JPY,
+SESS_10015,U_1155,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 5}",219.13,USD,Germany
+SESS_10016,U_1001,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 5}",417.68,JPY,UK
+SESS_10017,U_1098,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 1}",31.89,USD,United Kingdom
+SESS_10018,U_1144,"{""device"": ""Android"", ""pages_viewed"": 7, ""cart_actions"": 6}",350.5,GBP,
+SESS_10019,U_1181,"{""device"": ""Web_Safari"", ""pages_viewed"": 21, ""cart_actions"": 5}",298.14,JPY,Germany
+SESS_10020,U_1062,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 5}",309.25,USD,DE
+SESS_10021,U_1154,"{""device"": ""Web_Safari"", ""pages_viewed"": 22, ""cart_actions"": 2}",276.93,USD,USA
+SESS_10022,U_1029,"{""device"": ""iOS"", ""pages_viewed"": 21, ""cart_actions"": 6}",269.98,USD,
+SESS_10023,U_1048,"{""device"": ""Web_Safari"", ""pages_viewed"": 6, ""cart_actions"": 6}",146.47,JPY,DE
+SESS_10024,U_1187,"{""device"": ""Web_Safari"", ""pages_viewed"": 25, ""cart_actions"": 1}",264.09,GBP,US
+SESS_10025,U_1068,"{""device"": ""Android"", ""pages_viewed"": 24, ""cart_actions"": 6}",17.79,USD,Japan
+SESS_10026,U_1000,"{""device"": ""iOS"", ""pages_viewed"": 3, ""cart_actions"": 6}",299.72,JPY,US
+SESS_10027,U_1045,"{""device"": ""Desktop"", ""pages_viewed"": 6, ""cart_actions"": 2}",94.16,USD,Japan
+SESS_10028,U_1145,"{""device"": ""Android"", ""pages_viewed"": 6, ""cart_actions"": 3}",,USD,Germany
+SESS_10029,U_1066,"{""device"": ""Web_Safari"", ""pages_viewed"": 15, ""cart_actions"": 1}",87.26,EUR,United States
+SESS_10030,U_1096,"{""device"": ""iOS"", ""pages_viewed"": 9, ""cart_actions"": 1}",269.76,,Japan
+SESS_10031,U_1172,"{""device"": ""iOS"", ""pages_viewed"": 1, ""cart_actions"": 0}",430.52,USD,United States
+SESS_10032,U_1054,"{""device"": null, ""pages_viewed"": 1, ""cart_actions"": 6}",444.3,EUR,Japan
+SESS_10033,U_1121,"{""device"": ""Desktop"", ""pages_viewed"": 20, ""cart_actions"": 6}",311.61,GBP,UK
+SESS_10034,U_1061,"{""device"": ""Desktop"", ""pages_viewed"": 22, ""cart_actions"": 6}",39.9,GBP,UK
+SESS_10035,U_1025,"{""device"": ""iOS"", ""pages_viewed"": 15, ""cart_actions"": 6}",401.27,USD,USA
+SESS_10036,U_1154,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 4}",341.88,EUR,UK
+SESS_10037,U_1115,"{""device"": null, ""pages_viewed"": 22, ""cart_actions"": 7}",302.2,USD,UK
+SESS_10038,U_1004,"{""device"": ""Desktop"", ""pages_viewed"": 2, ""cart_actions"": 5}",116.6,,United Kingdom
+SESS_10039,U_1189,"{""device"": null, ""pages_viewed"": 3, ""cart_actions"": 5}",420.2,,United States
+SESS_10040,U_1187,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 3}",393.39,USD,US
+SESS_10041,U_1127,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 8}",218.06,,United States
+SESS_10042,U_1123,"{""device"": null, ""pages_viewed"": 8, ""cart_actions"": 3}",342.66,USD,United States
+SESS_10043,U_1111,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 5}",348.34,EUR,DE
+SESS_10044,U_1170,"{""device"": ""Web_Safari"", ""pages_viewed"": 22, ""cart_actions"": 1}",416.39,,United States
+SESS_10045,U_1177,"{""device"": ""Desktop"", ""pages_viewed"": 8, ""cart_actions"": 1}",179.0,JPY,
+SESS_10046,U_1111,"{""device"": ""Android"", ""pages_viewed"": 8, ""cart_actions"": 4}",53.14,USD,UK
+SESS_10047,U_1189,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 1}",70.43,GBP,United Kingdom
+SESS_10048,U_1147,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 0}",97.59,JPY,United Kingdom
+SESS_10049,U_1081,"{""device"": ""Desktop"", ""pages_viewed"": 22, ""cart_actions"": 2}",276.7,EUR,United States
+SESS_10050,U_1101,"{""device"": ""iOS"", ""pages_viewed"": 18, ""cart_actions"": 7}",370.02,EUR,Germany
+SESS_10051,U_1127,"{""device"": ""Web_Safari"", ""pages_viewed"": 5, ""cart_actions"": 4}",304.43,USD,UK
+SESS_10052,U_1079,"{""device"": null, ""pages_viewed"": 23, ""cart_actions"": 1}",383.74,,Germany
+SESS_10053,U_1126,"{""device"": ""Desktop"", ""pages_viewed"": 23, ""cart_actions"": 6}",,GBP,US
+SESS_10054,U_1183,"{""device"": ""Android"", ""pages_viewed"": 24, ""cart_actions"": 3}",37.87,USD,Japan
+SESS_10055,U_1186,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 2}",253.36,GBP,United Kingdom
+SESS_10056,U_1173,"{""device"": ""Web_Safari"", ""pages_viewed"": 12, ""cart_actions"": 6}",244.61,EUR,DE
+SESS_10057,U_1178,"{""device"": ""Android"", ""pages_viewed"": 23, ""cart_actions"": 8}",71.94,USD,DE
+SESS_10058,U_1117,"{""device"": ""Android"", ""pages_viewed"": 19, ""cart_actions"": 2}",224.86,USD,Germany
+SESS_10059,U_1055,"{""device"": ""Android"", ""pages_viewed"": 24, ""cart_actions"": 0}",387.42,USD,US
+SESS_10060,U_1096,"{""device"": ""Web_Safari"", ""pages_viewed"": 22, ""cart_actions"": 2}",56.78,,US
+SESS_10061,U_1013,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 5}",436.83,JPY,Germany
+SESS_10062,U_1008,"{""device"": ""iOS"", ""pages_viewed"": 8, ""cart_actions"": 6}",314.27,USD,United Kingdom
+SESS_10063,U_1198,"{""device"": ""iOS"", ""pages_viewed"": 25, ""cart_actions"": 7}",297.89,EUR,Japan
+SESS_10064,U_1094,"{""device"": ""iOS"", ""pages_viewed"": 4, ""cart_actions"": 1}",,,
+SESS_10065,U_1057,"{""device"": ""iOS"", ""pages_viewed"": 19, ""cart_actions"": 7}",339.23,USD,United Kingdom
+SESS_10066,U_1123,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 2}",,USD,
+SESS_10067,U_1047,"{""device"": ""Web_Safari"", ""pages_viewed"": 23, ""cart_actions"": 0}",370.6,,United States
+SESS_10068,U_1132,"{""device"": null, ""pages_viewed"": 18, ""cart_actions"": 1}",105.25,USD,US
+SESS_10069,U_1153,"{""device"": ""Android"", ""pages_viewed"": 1, ""cart_actions"": 8}",151.72,USD,US
+SESS_10070,U_1147,"{""device"": ""Android"", ""pages_viewed"": 21, ""cart_actions"": 2}",,EUR,USA
+SESS_10071,U_1021,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 4}",251.83,JPY,USA
+SESS_10072,U_1063,"{""device"": ""Desktop"", ""pages_viewed"": 2, ""cart_actions"": 8}",142.63,,US
+SESS_10073,U_1147,"{""device"": ""Web_Safari"", ""pages_viewed"": 23, ""cart_actions"": 5}",443.92,GBP,
+SESS_10074,U_1130,"{""device"": ""Android"", ""pages_viewed"": 23, ""cart_actions"": 1}",34.46,USD,Germany
+SESS_10075,U_1036,"{""device"": ""Desktop"", ""pages_viewed"": 7, ""cart_actions"": 2}",108.98,GBP,DE
+SESS_10076,U_1032,"{""device"": null, ""pages_viewed"": 14, ""cart_actions"": 1}",128.39,USD,United Kingdom
+SESS_10077,U_1116,"{""device"": ""iOS"", ""pages_viewed"": 9, ""cart_actions"": 6}",77.31,EUR,United States
+SESS_10078,U_1161,"{""device"": ""Desktop"", ""pages_viewed"": 21, ""cart_actions"": 3}",260.18,USD,United Kingdom
+SESS_10079,U_1039,"{""device"": ""Desktop"", ""pages_viewed"": 14, ""cart_actions"": 6}",,EUR,United States
+SESS_10080,U_1069,"{""device"": ""iOS"", ""pages_viewed"": 18, ""cart_actions"": 1}",191.95,GBP,United States
+SESS_10081,U_1092,"{""device"": ""Desktop"", ""pages_viewed"": 25, ""cart_actions"": 4}",362.17,EUR,USA
+SESS_10082,U_1025,"{""device"": ""Web_Safari"", ""pages_viewed"": 8, ""cart_actions"": 6}",355.49,USD,US
+SESS_10083,U_1134,"{""device"": ""Desktop"", ""pages_viewed"": 19, ""cart_actions"": 7}",,GBP,DE
+SESS_10084,U_1141,"{""device"": ""Desktop"", ""pages_viewed"": 20, ""cart_actions"": 1}",89.28,JPY,US
+SESS_10085,U_1088,"{""device"": null, ""pages_viewed"": 18, ""cart_actions"": 6}",70.49,USD,
+SESS_10086,U_1182,"{""device"": ""Android"", ""pages_viewed"": 22, ""cart_actions"": 2}",261.89,EUR,USA
+SESS_10087,U_1185,"{""device"": ""Desktop"", ""pages_viewed"": 23, ""cart_actions"": 3}",196.94,,US
+SESS_10088,U_1112,"{""device"": ""Desktop"", ""pages_viewed"": 15, ""cart_actions"": 8}",429.39,EUR,DE
+SESS_10089,U_1162,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 6}",382.68,USD,United States
+SESS_10090,U_1186,"{""device"": ""Android"", ""pages_viewed"": 3, ""cart_actions"": 2}",51.79,EUR,
+SESS_10091,U_1126,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 8}",74.35,,
+SESS_10092,U_1175,"{""device"": null, ""pages_viewed"": 23, ""cart_actions"": 1}",283.08,USD,United Kingdom
+SESS_10093,U_1179,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 5}",336.46,USD,Japan
+SESS_10094,U_1043,"{""device"": null, ""pages_viewed"": 8, ""cart_actions"": 2}",,USD,
+SESS_10095,U_1090,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 7}",177.38,USD,UK
+SESS_10096,U_1173,"{""device"": ""Android"", ""pages_viewed"": 18, ""cart_actions"": 1}",225.16,EUR,Germany
+SESS_10097,U_1000,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 3}",419.16,USD,Japan
+SESS_10098,U_1158,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 5}",,,UK
+SESS_10099,U_1076,"{""device"": ""Desktop"", ""pages_viewed"": 4, ""cart_actions"": 0}",329.26,JPY,UK
+SESS_10100,U_1002,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 7}",245.16,USD,United Kingdom
+SESS_10101,U_1031,"{""device"": ""Web_Safari"", ""pages_viewed"": 1, ""cart_actions"": 2}",123.81,,United Kingdom
+SESS_10102,U_1095,"{""device"": ""Desktop"", ""pages_viewed"": 12, ""cart_actions"": 6}",248.35,EUR,United States
+SESS_10103,U_1112,"{""device"": ""Web_Safari"", ""pages_viewed"": 6, ""cart_actions"": 2}",203.77,GBP,Germany
+SESS_10104,U_1028,"{""device"": ""Android"", ""pages_viewed"": 10, ""cart_actions"": 0}",198.16,GBP,USA
+SESS_10105,U_1041,"{""device"": ""Android"", ""pages_viewed"": 16, ""cart_actions"": 4}",227.74,,US
+SESS_10106,U_1083,"{""device"": ""Web_Safari"", ""pages_viewed"": 17, ""cart_actions"": 6}",431.59,USD,US
+SESS_10107,U_1039,"{""device"": ""Desktop"", ""pages_viewed"": 17, ""cart_actions"": 0}",117.88,GBP,United Kingdom
+SESS_10108,U_1152,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 7}",226.38,JPY,Germany
+SESS_10109,U_1158,"{""device"": ""Android"", ""pages_viewed"": 24, ""cart_actions"": 8}",137.3,USD,DE
+SESS_10110,U_1179,"{""device"": ""Android"", ""pages_viewed"": 22, ""cart_actions"": 6}",322.31,USD,
+SESS_10111,U_1156,"{""device"": ""Android"", ""pages_viewed"": 7, ""cart_actions"": 2}",72.55,USD,DE
+SESS_10112,U_1049,"{""device"": ""Android"", ""pages_viewed"": 14, ""cart_actions"": 0}",54.56,USD,United Kingdom
+SESS_10113,U_1104,"{""device"": null, ""pages_viewed"": 10, ""cart_actions"": 3}",200.34,USD,
+SESS_10114,U_1109,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 1}",137.04,GBP,United Kingdom
+SESS_10115,U_1063,"{""device"": ""Desktop"", ""pages_viewed"": 2, ""cart_actions"": 2}",,USD,UK
+SESS_10116,U_1054,"{""device"": ""Desktop"", ""pages_viewed"": 16, ""cart_actions"": 4}",58.83,USD,DE
+SESS_10117,U_1125,"{""device"": ""Desktop"", ""pages_viewed"": 11, ""cart_actions"": 4}",305.99,USD,UK
+SESS_10118,U_1092,"{""device"": ""Desktop"", ""pages_viewed"": 24, ""cart_actions"": 8}",118.64,EUR,Germany
+SESS_10119,U_1149,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 1}",338.03,USD,USA
+SESS_10120,U_1150,"{""device"": ""Android"", ""pages_viewed"": 7, ""cart_actions"": 7}",47.57,GBP,DE
+SESS_10121,U_1185,"{""device"": ""Web_Safari"", ""pages_viewed"": 25, ""cart_actions"": 3}",81.85,USD,Germany
+SESS_10122,U_1107,"{""device"": null, ""pages_viewed"": 23, ""cart_actions"": 4}",345.32,GBP,UK
+SESS_10123,U_1114,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 1}",242.84,USD,US
+SESS_10124,U_1153,"{""device"": ""Desktop"", ""pages_viewed"": 23, ""cart_actions"": 2}",430.77,USD,Germany
+SESS_10125,U_1189,"{""device"": ""Web_Safari"", ""pages_viewed"": 16, ""cart_actions"": 8}",437.62,USD,Japan
+SESS_10126,U_1192,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 8}",189.37,EUR,Germany
+SESS_10127,U_1047,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 3}",18.85,,
+SESS_10128,U_1181,"{""device"": null, ""pages_viewed"": 9, ""cart_actions"": 4}",143.92,EUR,
+SESS_10129,U_1030,"{""device"": ""Android"", ""pages_viewed"": 8, ""cart_actions"": 0}",141.95,USD,DE
+SESS_10130,U_1034,"{""device"": ""Desktop"", ""pages_viewed"": 2, ""cart_actions"": 3}",106.34,USD,USA
+SESS_10131,U_1166,"{""device"": ""Desktop"", ""pages_viewed"": 21, ""cart_actions"": 5}",426.7,EUR,US
+SESS_10132,U_1104,"{""device"": null, ""pages_viewed"": 10, ""cart_actions"": 5}",287.29,USD,UK
+SESS_10133,U_1056,"{""device"": ""Desktop"", ""pages_viewed"": 6, ""cart_actions"": 4}",248.76,USD,United Kingdom
+SESS_10134,U_1167,"{""device"": ""Desktop"", ""pages_viewed"": 21, ""cart_actions"": 8}",207.35,GBP,DE
+SESS_10135,U_1052,"{""device"": null, ""pages_viewed"": 21, ""cart_actions"": 6}",115.8,JPY,UK
+SESS_10136,U_1037,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 7}",95.49,USD,Germany
+SESS_10137,U_1145,"{""device"": ""Web_Safari"", ""pages_viewed"": 24, ""cart_actions"": 2}",24.16,USD,US
+SESS_10138,U_1100,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 1}",200.48,,United Kingdom
+SESS_10139,U_1025,"{""device"": null, ""pages_viewed"": 5, ""cart_actions"": 0}",179.38,USD,United States
+SESS_10140,U_1003,"{""device"": ""iOS"", ""pages_viewed"": 5, ""cart_actions"": 3}",131.43,USD,USA
+SESS_10141,U_1027,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 5}",51.96,USD,Japan
+SESS_10142,U_1194,"{""device"": null, ""pages_viewed"": 15, ""cart_actions"": 2}",223.33,EUR,USA
+SESS_10143,U_1139,"{""device"": ""Desktop"", ""pages_viewed"": 21, ""cart_actions"": 8}",373.84,USD,
+SESS_10144,U_1075,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 6}",411.79,USD,Germany
+SESS_10145,U_1109,"{""device"": ""Web_Safari"", ""pages_viewed"": 5, ""cart_actions"": 5}",113.26,JPY,United States
+SESS_10146,U_1125,"{""device"": ""Android"", ""pages_viewed"": 4, ""cart_actions"": 3}",430.79,GBP,United States
+SESS_10147,U_1157,"{""device"": ""Desktop"", ""pages_viewed"": 4, ""cart_actions"": 5}",415.15,USD,US
+SESS_10148,U_1045,"{""device"": ""Web_Safari"", ""pages_viewed"": 17, ""cart_actions"": 5}",310.55,USD,DE
+SESS_10149,U_1159,"{""device"": ""Desktop"", ""pages_viewed"": 12, ""cart_actions"": 1}",232.17,GBP,DE
+SESS_10150,U_1182,"{""device"": ""iOS"", ""pages_viewed"": 1, ""cart_actions"": 2}",78.77,USD,United Kingdom
+SESS_10151,U_1114,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 1}",432.42,EUR,US
+SESS_10152,U_1023,"{""device"": ""Desktop"", ""pages_viewed"": 5, ""cart_actions"": 2}",168.38,,United Kingdom
+SESS_10153,U_1123,"{""device"": ""Web_Safari"", ""pages_viewed"": 20, ""cart_actions"": 5}",425.65,EUR,United Kingdom
+SESS_10154,U_1107,"{""device"": null, ""pages_viewed"": 16, ""cart_actions"": 8}",246.63,EUR,United Kingdom
+SESS_10155,U_1021,"{""device"": null, ""pages_viewed"": 23, ""cart_actions"": 6}",352.82,EUR,United States
+SESS_10156,U_1060,"{""device"": ""Desktop"", ""pages_viewed"": 1, ""cart_actions"": 3}",22.46,,US
+SESS_10157,U_1028,"{""device"": ""iOS"", ""pages_viewed"": 12, ""cart_actions"": 5}",392.05,USD,DE
+SESS_10158,U_1117,"{""device"": ""Android"", ""pages_viewed"": 18, ""cart_actions"": 6}",375.1,USD,US
+SESS_10159,U_1030,"{""device"": ""Android"", ""pages_viewed"": 13, ""cart_actions"": 0}",199.75,USD,United States
+SESS_10160,U_1169,"{""device"": null, ""pages_viewed"": 3, ""cart_actions"": 7}",393.66,USD,US
+SESS_10161,U_1093,"{""device"": ""Android"", ""pages_viewed"": 3, ""cart_actions"": 3}",,JPY,US
+SESS_10162,U_1195,"{""device"": ""Android"", ""pages_viewed"": 16, ""cart_actions"": 2}",318.88,EUR,Japan
+SESS_10163,U_1105,"{""device"": ""Desktop"", ""pages_viewed"": 15, ""cart_actions"": 0}",82.81,USD,US
+SESS_10164,U_1128,"{""device"": ""Android"", ""pages_viewed"": 1, ""cart_actions"": 6}",310.76,,
+SESS_10165,U_1182,"{""device"": ""Desktop"", ""pages_viewed"": 19, ""cart_actions"": 8}",113.88,USD,DE
+SESS_10166,U_1023,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 2}",189.18,USD,Germany
+SESS_10167,U_1100,"{""device"": ""Android"", ""pages_viewed"": 24, ""cart_actions"": 8}",48.59,,Japan
+SESS_10168,U_1080,"{""device"": ""Web_Safari"", ""pages_viewed"": 13, ""cart_actions"": 2}",,GBP,United Kingdom
+SESS_10169,U_1049,"{""device"": ""Desktop"", ""pages_viewed"": 4, ""cart_actions"": 1}",,GBP,USA
+SESS_10170,U_1061,"{""device"": ""Desktop"", ""pages_viewed"": 6, ""cart_actions"": 8}",107.18,USD,DE
+SESS_10171,U_1048,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 0}",51.99,USD,Japan
+SESS_10172,U_1011,"{""device"": ""iOS"", ""pages_viewed"": 11, ""cart_actions"": 1}",18.69,GBP,DE
+SESS_10173,U_1101,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 5}",330.67,USD,United States
+SESS_10174,U_1084,"{""device"": ""Web_Safari"", ""pages_viewed"": 24, ""cart_actions"": 8}",366.26,USD,USA
+SESS_10175,U_1150,"{""device"": ""Web_Safari"", ""pages_viewed"": 16, ""cart_actions"": 0}",80.92,,United States
+SESS_10176,U_1160,"{""device"": ""iOS"", ""pages_viewed"": 23, ""cart_actions"": 3}",366.25,USD,US
+SESS_10177,U_1128,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 8}",163.52,USD,UK
+SESS_10178,U_1074,"{""device"": ""Desktop"", ""pages_viewed"": 20, ""cart_actions"": 6}",,JPY,Germany
+SESS_10179,U_1053,"{""device"": null, ""pages_viewed"": 20, ""cart_actions"": 1}",261.6,,United States
+SESS_10180,U_1003,"{""device"": ""Android"", ""pages_viewed"": 25, ""cart_actions"": 4}",436.49,USD,Japan
+SESS_10181,U_1024,"{""device"": ""Web_Safari"", ""pages_viewed"": 11, ""cart_actions"": 2}",85.24,EUR,UK
+SESS_10182,U_1090,"{""device"": ""iOS"", ""pages_viewed"": 3, ""cart_actions"": 2}",215.42,,DE
+SESS_10183,U_1195,"{""device"": ""Web_Safari"", ""pages_viewed"": 21, ""cart_actions"": 2}",437.68,,USA
+SESS_10184,U_1093,"{""device"": ""Desktop"", ""pages_viewed"": 13, ""cart_actions"": 6}",413.96,USD,Japan
+SESS_10185,U_1093,"{""device"": null, ""pages_viewed"": 20, ""cart_actions"": 5}",311.76,,DE
+SESS_10186,U_1174,"{""device"": ""iOS"", ""pages_viewed"": 20, ""cart_actions"": 0}",121.5,USD,US
+SESS_10187,U_1026,"{""device"": ""Desktop"", ""pages_viewed"": 13, ""cart_actions"": 2}",386.42,EUR,United Kingdom
+SESS_10188,U_1118,"{""device"": ""iOS"", ""pages_viewed"": 12, ""cart_actions"": 7}",247.78,,United States
+SESS_10189,U_1021,"{""device"": ""Android"", ""pages_viewed"": 24, ""cart_actions"": 1}",416.28,JPY,Germany
+SESS_10190,U_1102,"{""device"": ""Desktop"", ""pages_viewed"": 3, ""cart_actions"": 5}",277.9,EUR,Japan
+SESS_10191,U_1029,"{""device"": ""Desktop"", ""pages_viewed"": 15, ""cart_actions"": 0}",427.61,USD,Germany
+SESS_10192,U_1081,"{""device"": null, ""pages_viewed"": 2, ""cart_actions"": 6}",,GBP,United Kingdom
+SESS_10193,U_1121,"{""device"": ""Android"", ""pages_viewed"": 2, ""cart_actions"": 3}",429.4,JPY,DE
+SESS_10194,U_1064,"{""device"": ""Android"", ""pages_viewed"": 3, ""cart_actions"": 2}",,JPY,United States
+SESS_10195,U_1076,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 8}",403.49,USD,USA
+SESS_10196,U_1023,"{""device"": ""Web_Safari"", ""pages_viewed"": 11, ""cart_actions"": 4}",166.94,JPY,Japan
+SESS_10197,U_1121,"{""device"": null, ""pages_viewed"": 23, ""cart_actions"": 2}",205.0,JPY,USA
+SESS_10198,U_1143,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 1}",266.64,USD,UK
+SESS_10199,U_1170,"{""device"": ""Desktop"", ""pages_viewed"": 1, ""cart_actions"": 2}",421.21,,UK
+SESS_10200,U_1029,"{""device"": ""Web_Safari"", ""pages_viewed"": 9, ""cart_actions"": 8}",444.88,USD,Japan
+SESS_10201,U_1163,"{""device"": null, ""pages_viewed"": 4, ""cart_actions"": 0}",440.88,JPY,
+SESS_10202,U_1198,"{""device"": ""Android"", ""pages_viewed"": 20, ""cart_actions"": 6}",106.25,EUR,USA
+SESS_10203,U_1094,"{""device"": ""Desktop"", ""pages_viewed"": 1, ""cart_actions"": 4}",233.41,USD,Japan
+SESS_10204,U_1166,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 6}",375.26,JPY,
+SESS_10205,U_1195,"{""device"": ""Desktop"", ""pages_viewed"": 4, ""cart_actions"": 2}",177.31,USD,
+SESS_10206,U_1111,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 6}",320.41,USD,United States
+SESS_10207,U_1026,"{""device"": ""iOS"", ""pages_viewed"": 21, ""cart_actions"": 0}",193.91,,
+SESS_10208,U_1025,"{""device"": ""Web_Safari"", ""pages_viewed"": 17, ""cart_actions"": 0}",385.49,EUR,Germany
+SESS_10209,U_1198,"{""device"": ""Web_Safari"", ""pages_viewed"": 18, ""cart_actions"": 6}",387.51,USD,UK
+SESS_10210,U_1118,"{""device"": ""Web_Safari"", ""pages_viewed"": 21, ""cart_actions"": 6}",,GBP,Germany
+SESS_10211,U_1129,"{""device"": ""Desktop"", ""pages_viewed"": 9, ""cart_actions"": 4}",407.66,JPY,Germany
+SESS_10212,U_1001,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 0}",,GBP,
+SESS_10213,U_1189,"{""device"": null, ""pages_viewed"": 11, ""cart_actions"": 5}",263.9,JPY,Germany
+SESS_10214,U_1142,"{""device"": ""Web_Safari"", ""pages_viewed"": 7, ""cart_actions"": 6}",363.58,JPY,US
+SESS_10215,U_1162,"{""device"": ""Web_Safari"", ""pages_viewed"": 24, ""cart_actions"": 2}",153.38,USD,United Kingdom
+SESS_10216,U_1059,"{""device"": ""iOS"", ""pages_viewed"": 23, ""cart_actions"": 2}",289.68,JPY,DE
+SESS_10217,U_1141,"{""device"": ""Android"", ""pages_viewed"": 11, ""cart_actions"": 3}",,USD,United Kingdom
+SESS_10218,U_1002,"{""device"": null, ""pages_viewed"": 5, ""cart_actions"": 0}",251.5,USD,United Kingdom
+SESS_10219,U_1006,"{""device"": ""Android"", ""pages_viewed"": 15, ""cart_actions"": 5}",298.85,EUR,DE
+SESS_10220,U_1049,"{""device"": null, ""pages_viewed"": 8, ""cart_actions"": 6}",301.78,EUR,United States
+SESS_10221,U_1036,"{""device"": ""iOS"", ""pages_viewed"": 21, ""cart_actions"": 1}",418.33,USD,United States
+SESS_10222,U_1036,"{""device"": ""Desktop"", ""pages_viewed"": 9, ""cart_actions"": 2}",,,UK
+SESS_10223,U_1053,"{""device"": ""Web_Safari"", ""pages_viewed"": 4, ""cart_actions"": 7}",194.98,,United States
+SESS_10224,U_1053,"{""device"": ""Web_Safari"", ""pages_viewed"": 13, ""cart_actions"": 5}",211.13,USD,US
+SESS_10225,U_1076,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 0}",164.12,GBP,Japan
+SESS_10226,U_1157,"{""device"": null, ""pages_viewed"": 18, ""cart_actions"": 0}",337.64,USD,Germany
+SESS_10227,U_1155,"{""device"": ""iOS"", ""pages_viewed"": 18, ""cart_actions"": 0}",346.02,EUR,UK
+SESS_10228,U_1029,"{""device"": ""Android"", ""pages_viewed"": 1, ""cart_actions"": 5}",51.3,USD,DE
+SESS_10229,U_1070,"{""device"": ""Web_Safari"", ""pages_viewed"": 7, ""cart_actions"": 1}",254.9,EUR,Japan
+SESS_10230,U_1190,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 8}",416.22,EUR,US
+SESS_10231,U_1050,"{""device"": ""Desktop"", ""pages_viewed"": 13, ""cart_actions"": 1}",348.41,EUR,US
+SESS_10232,U_1052,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 7}",339.98,GBP,United States
+SESS_10233,U_1155,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 3}",177.67,USD,Japan
+SESS_10234,U_1042,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 4}",142.66,GBP,United Kingdom
+SESS_10235,U_1007,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 5}",95.87,EUR,United States
+SESS_10236,U_1055,"{""device"": ""Desktop"", ""pages_viewed"": 12, ""cart_actions"": 2}",68.2,GBP,USA
+SESS_10237,U_1183,"{""device"": ""Desktop"", ""pages_viewed"": 7, ""cart_actions"": 7}",154.88,EUR,
+SESS_10238,U_1016,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 3}",59.77,EUR,United States
+SESS_10239,U_1146,"{""device"": ""Web_Safari"", ""pages_viewed"": 22, ""cart_actions"": 6}",154.25,EUR,USA
+SESS_10240,U_1126,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 4}",68.98,USD,UK
+SESS_10241,U_1151,"{""device"": ""Web_Safari"", ""pages_viewed"": 8, ""cart_actions"": 0}",294.99,USD,Japan
+SESS_10242,U_1072,"{""device"": ""Android"", ""pages_viewed"": 13, ""cart_actions"": 0}",414.35,USD,UK
+SESS_10243,U_1165,"{""device"": ""iOS"", ""pages_viewed"": 3, ""cart_actions"": 7}",,JPY,DE
+SESS_10244,U_1070,"{""device"": ""Desktop"", ""pages_viewed"": 25, ""cart_actions"": 5}",257.06,GBP,Japan
+SESS_10245,U_1156,"{""device"": ""iOS"", ""pages_viewed"": 13, ""cart_actions"": 4}",212.74,USD,UK
+SESS_10246,U_1158,"{""device"": ""iOS"", ""pages_viewed"": 1, ""cart_actions"": 3}",,USD,US
+SESS_10247,U_1026,"{""device"": ""Desktop"", ""pages_viewed"": 23, ""cart_actions"": 6}",53.29,GBP,
+SESS_10248,U_1001,"{""device"": ""iOS"", ""pages_viewed"": 9, ""cart_actions"": 0}",427.01,USD,DE
+SESS_10249,U_1084,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 4}",417.31,,United States
+SESS_10250,U_1032,"{""device"": ""Desktop"", ""pages_viewed"": 5, ""cart_actions"": 6}",305.68,EUR,Japan
+SESS_10251,U_1169,"{""device"": ""Web_Safari"", ""pages_viewed"": 9, ""cart_actions"": 5}",224.98,USD,DE
+SESS_10252,U_1196,"{""device"": ""Desktop"", ""pages_viewed"": 23, ""cart_actions"": 1}",378.46,EUR,Germany
+SESS_10253,U_1177,"{""device"": ""iOS"", ""pages_viewed"": 3, ""cart_actions"": 7}",,USD,Germany
+SESS_10254,U_1119,"{""device"": ""Web_Safari"", ""pages_viewed"": 7, ""cart_actions"": 7}",105.77,GBP,DE
+SESS_10255,U_1181,"{""device"": ""Web_Safari"", ""pages_viewed"": 21, ""cart_actions"": 2}",60.96,USD,Germany
+SESS_10256,U_1093,"{""device"": ""Web_Safari"", ""pages_viewed"": 15, ""cart_actions"": 8}",189.09,USD,DE
+SESS_10257,U_1108,"{""device"": ""Android"", ""pages_viewed"": 22, ""cart_actions"": 4}",266.1,USD,US
+SESS_10258,U_1118,"{""device"": ""iOS"", ""pages_viewed"": 24, ""cart_actions"": 1}",403.93,USD,DE
+SESS_10259,U_1007,"{""device"": ""Web_Safari"", ""pages_viewed"": 22, ""cart_actions"": 8}",130.53,USD,UK
+SESS_10260,U_1110,"{""device"": ""Android"", ""pages_viewed"": 5, ""cart_actions"": 6}",235.95,USD,Japan
+SESS_10261,U_1069,"{""device"": ""Desktop"", ""pages_viewed"": 4, ""cart_actions"": 0}",333.42,JPY,Germany
+SESS_10262,U_1075,"{""device"": ""Android"", ""pages_viewed"": 13, ""cart_actions"": 2}",245.36,,
+SESS_10263,U_1110,"{""device"": ""iOS"", ""pages_viewed"": 22, ""cart_actions"": 0}",432.15,EUR,United States
+SESS_10264,U_1013,"{""device"": ""iOS"", ""pages_viewed"": 19, ""cart_actions"": 4}",246.48,EUR,Germany
+SESS_10265,U_1158,"{""device"": ""Web_Safari"", ""pages_viewed"": 13, ""cart_actions"": 6}",334.26,EUR,Japan
+SESS_10266,U_1052,"{""device"": ""Android"", ""pages_viewed"": 7, ""cart_actions"": 5}",322.05,EUR,USA
+SESS_10267,U_1024,"{""device"": ""Android"", ""pages_viewed"": 17, ""cart_actions"": 7}",385.87,EUR,US
+SESS_10268,U_1080,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 2}",213.02,USD,Japan
+SESS_10269,U_1109,"{""device"": ""Desktop"", ""pages_viewed"": 1, ""cart_actions"": 2}",398.35,USD,USA
+SESS_10270,U_1152,"{""device"": ""Desktop"", ""pages_viewed"": 16, ""cart_actions"": 0}",122.67,USD,USA
+SESS_10271,U_1004,"{""device"": null, ""pages_viewed"": 22, ""cart_actions"": 4}",243.49,USD,US
+SESS_10272,U_1198,"{""device"": ""iOS"", ""pages_viewed"": 4, ""cart_actions"": 4}",161.02,,UK
+SESS_10273,U_1139,"{""device"": ""Desktop"", ""pages_viewed"": 22, ""cart_actions"": 7}",214.56,GBP,DE
+SESS_10274,U_1181,"{""device"": ""Desktop"", ""pages_viewed"": 17, ""cart_actions"": 7}",313.32,USD,US
+SESS_10275,U_1105,"{""device"": ""Android"", ""pages_viewed"": 22, ""cart_actions"": 2}",28.44,JPY,UK
+SESS_10276,U_1052,"{""device"": ""iOS"", ""pages_viewed"": 7, ""cart_actions"": 6}",434.97,,
+SESS_10277,U_1044,"{""device"": ""Desktop"", ""pages_viewed"": 22, ""cart_actions"": 5}",185.1,JPY,DE
+SESS_10278,U_1079,"{""device"": ""Android"", ""pages_viewed"": 2, ""cart_actions"": 8}",377.86,USD,United Kingdom
+SESS_10279,U_1116,"{""device"": null, ""pages_viewed"": 12, ""cart_actions"": 4}",18.63,USD,Japan
+SESS_10280,U_1174,"{""device"": ""Android"", ""pages_viewed"": 17, ""cart_actions"": 4}",303.98,EUR,Japan
+SESS_10281,U_1073,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 0}",109.54,USD,USA
+SESS_10282,U_1125,"{""device"": ""Desktop"", ""pages_viewed"": 1, ""cart_actions"": 6}",377.84,USD,DE
+SESS_10283,U_1035,"{""device"": ""Desktop"", ""pages_viewed"": 10, ""cart_actions"": 8}",349.47,USD,United States
+SESS_10284,U_1182,"{""device"": ""Desktop"", ""pages_viewed"": 5, ""cart_actions"": 3}",414.44,EUR,Germany
+SESS_10285,U_1008,"{""device"": ""Web_Safari"", ""pages_viewed"": 12, ""cart_actions"": 3}",292.11,JPY,United Kingdom
+SESS_10286,U_1025,"{""device"": ""Desktop"", ""pages_viewed"": 10, ""cart_actions"": 4}",204.58,GBP,US
+SESS_10287,U_1174,"{""device"": ""Android"", ""pages_viewed"": 9, ""cart_actions"": 2}",101.79,EUR,United States
+SESS_10288,U_1076,"{""device"": null, ""pages_viewed"": 21, ""cart_actions"": 7}",178.55,JPY,United States
+SESS_10289,U_1035,"{""device"": null, ""pages_viewed"": 15, ""cart_actions"": 5}",313.05,GBP,Japan
+SESS_10290,U_1090,"{""device"": ""Web_Safari"", ""pages_viewed"": 15, ""cart_actions"": 6}",215.66,USD,United Kingdom
+SESS_10291,U_1022,"{""device"": ""Android"", ""pages_viewed"": 20, ""cart_actions"": 4}",267.44,GBP,US
+SESS_10292,U_1158,"{""device"": null, ""pages_viewed"": 19, ""cart_actions"": 4}",,JPY,US
+SESS_10293,U_1103,"{""device"": ""iOS"", ""pages_viewed"": 15, ""cart_actions"": 8}",38.64,USD,DE
+SESS_10294,U_1166,"{""device"": ""iOS"", ""pages_viewed"": 11, ""cart_actions"": 1}",260.97,GBP,USA
+SESS_10295,U_1031,"{""device"": null, ""pages_viewed"": 22, ""cart_actions"": 8}",38.06,EUR,
+SESS_10296,U_1036,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 7}",404.35,USD,DE
+SESS_10297,U_1160,"{""device"": ""Desktop"", ""pages_viewed"": 24, ""cart_actions"": 0}",286.29,EUR,United States
+SESS_10298,U_1017,"{""device"": ""iOS"", ""pages_viewed"": 5, ""cart_actions"": 1}",122.53,USD,Japan
+SESS_10299,U_1006,"{""device"": null, ""pages_viewed"": 15, ""cart_actions"": 6}",,USD,DE
+SESS_10300,U_1103,"{""device"": ""Web_Safari"", ""pages_viewed"": 6, ""cart_actions"": 3}",252.82,,United States
+SESS_10301,U_1110,"{""device"": ""Android"", ""pages_viewed"": 21, ""cart_actions"": 0}",371.07,EUR,US
+SESS_10302,U_1130,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 7}",140.91,USD,Japan
+SESS_10303,U_1094,"{""device"": ""Desktop"", ""pages_viewed"": 13, ""cart_actions"": 6}",61.69,JPY,United Kingdom
+SESS_10304,U_1037,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 7}",184.4,EUR,USA
+SESS_10305,U_1165,"{""device"": null, ""pages_viewed"": 15, ""cart_actions"": 0}",169.31,USD,Japan
+SESS_10306,U_1185,"{""device"": ""Web_Safari"", ""pages_viewed"": 9, ""cart_actions"": 0}",170.62,EUR,UK
+SESS_10307,U_1180,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 8}",,USD,UK
+SESS_10308,U_1167,"{""device"": null, ""pages_viewed"": 11, ""cart_actions"": 7}",357.21,EUR,DE
+SESS_10309,U_1100,"{""device"": ""iOS"", ""pages_viewed"": 21, ""cart_actions"": 7}",220.21,USD,
+SESS_10310,U_1198,"{""device"": null, ""pages_viewed"": 9, ""cart_actions"": 2}",271.15,GBP,United Kingdom
+SESS_10311,U_1017,"{""device"": ""iOS"", ""pages_viewed"": 1, ""cart_actions"": 2}",304.39,,Japan
+SESS_10312,U_1082,"{""device"": ""Android"", ""pages_viewed"": 25, ""cart_actions"": 3}",398.13,JPY,United Kingdom
+SESS_10313,U_1016,"{""device"": ""iOS"", ""pages_viewed"": 20, ""cart_actions"": 4}",383.36,USD,Japan
+SESS_10314,U_1195,"{""device"": ""Desktop"", ""pages_viewed"": 20, ""cart_actions"": 0}",154.7,,United Kingdom
+SESS_10315,U_1034,"{""device"": null, ""pages_viewed"": 18, ""cart_actions"": 3}",228.63,EUR,Germany
+SESS_10316,U_1051,"{""device"": ""Android"", ""pages_viewed"": 14, ""cart_actions"": 8}",98.65,USD,United States
+SESS_10317,U_1052,"{""device"": ""iOS"", ""pages_viewed"": 5, ""cart_actions"": 0}",192.49,USD,UK
+SESS_10318,U_1047,"{""device"": null, ""pages_viewed"": 16, ""cart_actions"": 3}",263.11,,
+SESS_10319,U_1090,"{""device"": ""Desktop"", ""pages_viewed"": 20, ""cart_actions"": 8}",363.69,,United Kingdom
+SESS_10320,U_1160,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 1}",240.0,USD,United States
+SESS_10321,U_1127,"{""device"": ""Android"", ""pages_viewed"": 2, ""cart_actions"": 8}",112.45,EUR,DE
+SESS_10322,U_1099,"{""device"": ""Desktop"", ""pages_viewed"": 3, ""cart_actions"": 2}",47.53,EUR,
+SESS_10323,U_1156,"{""device"": null, ""pages_viewed"": 10, ""cart_actions"": 6}",252.48,USD,Japan
+SESS_10324,U_1067,"{""device"": ""iOS"", ""pages_viewed"": 2, ""cart_actions"": 5}",102.22,USD,US
+SESS_10325,U_1052,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 5}",303.55,USD,Germany
+SESS_10326,U_1126,"{""device"": ""iOS"", ""pages_viewed"": 19, ""cart_actions"": 0}",45.78,JPY,United States
+SESS_10327,U_1141,"{""device"": ""Web_Safari"", ""pages_viewed"": 5, ""cart_actions"": 4}",60.27,,
+SESS_10328,U_1057,"{""device"": ""Desktop"", ""pages_viewed"": 14, ""cart_actions"": 7}",384.68,EUR,USA
+SESS_10329,U_1014,"{""device"": ""iOS"", ""pages_viewed"": 25, ""cart_actions"": 3}",389.23,USD,
+SESS_10330,U_1123,"{""device"": ""iOS"", ""pages_viewed"": 13, ""cart_actions"": 6}",201.93,JPY,
+SESS_10331,U_1035,"{""device"": ""iOS"", ""pages_viewed"": 15, ""cart_actions"": 1}",442.4,GBP,UK
+SESS_10332,U_1049,"{""device"": ""Desktop"", ""pages_viewed"": 14, ""cart_actions"": 0}",55.02,USD,Germany
+SESS_10333,U_1105,"{""device"": null, ""pages_viewed"": 19, ""cart_actions"": 0}",21.48,EUR,USA
+SESS_10334,U_1019,"{""device"": ""iOS"", ""pages_viewed"": 5, ""cart_actions"": 7}",34.02,GBP,Germany
+SESS_10335,U_1074,"{""device"": ""Android"", ""pages_viewed"": 20, ""cart_actions"": 6}",68.23,USD,United States
+SESS_10336,U_1064,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 7}",368.84,EUR,Japan
+SESS_10337,U_1182,"{""device"": ""Desktop"", ""pages_viewed"": 12, ""cart_actions"": 8}",299.34,EUR,UK
+SESS_10338,U_1178,"{""device"": null, ""pages_viewed"": 17, ""cart_actions"": 1}",,JPY,Japan
+SESS_10339,U_1071,"{""device"": ""iOS"", ""pages_viewed"": 7, ""cart_actions"": 2}",241.63,EUR,
+SESS_10340,U_1053,"{""device"": ""iOS"", ""pages_viewed"": 12, ""cart_actions"": 2}",,EUR,Japan
+SESS_10341,U_1166,"{""device"": ""Web_Safari"", ""pages_viewed"": 4, ""cart_actions"": 0}",29.68,EUR,United Kingdom
+SESS_10342,U_1076,"{""device"": ""iOS"", ""pages_viewed"": 2, ""cart_actions"": 4}",182.01,USD,United Kingdom
+SESS_10343,U_1098,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 3}",95.23,JPY,
+SESS_10344,U_1013,"{""device"": ""Desktop"", ""pages_viewed"": 2, ""cart_actions"": 8}",422.69,GBP,DE
+SESS_10345,U_1192,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 0}",375.72,JPY,United Kingdom
+SESS_10346,U_1200,"{""device"": ""iOS"", ""pages_viewed"": 4, ""cart_actions"": 8}",328.76,EUR,
+SESS_10347,U_1118,"{""device"": ""Web_Safari"", ""pages_viewed"": 19, ""cart_actions"": 8}",432.73,,Germany
+SESS_10348,U_1033,"{""device"": ""iOS"", ""pages_viewed"": 9, ""cart_actions"": 4}",,EUR,
+SESS_10349,U_1075,"{""device"": ""Desktop"", ""pages_viewed"": 19, ""cart_actions"": 6}",,EUR,UK
+SESS_10350,U_1068,"{""device"": ""Desktop"", ""pages_viewed"": 21, ""cart_actions"": 0}",262.27,GBP,DE
+SESS_10351,U_1045,"{""device"": ""Web_Safari"", ""pages_viewed"": 15, ""cart_actions"": 0}",217.9,GBP,Japan
+SESS_10352,U_1163,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 6}",,USD,DE
+SESS_10353,U_1156,"{""device"": null, ""pages_viewed"": 11, ""cart_actions"": 1}",127.23,EUR,DE
+SESS_10354,U_1126,"{""device"": ""Android"", ""pages_viewed"": 8, ""cart_actions"": 2}",283.81,USD,Germany
+SESS_10355,U_1029,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 8}",267.25,USD,
+SESS_10356,U_1183,"{""device"": ""Android"", ""pages_viewed"": 2, ""cart_actions"": 4}",22.01,GBP,
+SESS_10357,U_1183,"{""device"": ""iOS"", ""pages_viewed"": 20, ""cart_actions"": 3}",48.7,,United States
+SESS_10358,U_1130,"{""device"": ""iOS"", ""pages_viewed"": 8, ""cart_actions"": 3}",176.54,JPY,United States
+SESS_10359,U_1164,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 2}",,GBP,UK
+SESS_10360,U_1104,"{""device"": ""Desktop"", ""pages_viewed"": 16, ""cart_actions"": 4}",84.74,USD,DE
+SESS_10361,U_1038,"{""device"": null, ""pages_viewed"": 1, ""cart_actions"": 1}",366.49,GBP,Germany
+SESS_10362,U_1096,"{""device"": null, ""pages_viewed"": 2, ""cart_actions"": 2}",449.05,USD,United States
+SESS_10363,U_1057,"{""device"": null, ""pages_viewed"": 17, ""cart_actions"": 8}",249.45,USD,
+SESS_10364,U_1013,"{""device"": null, ""pages_viewed"": 16, ""cart_actions"": 8}",152.87,EUR,DE
+SESS_10365,U_1062,"{""device"": ""Desktop"", ""pages_viewed"": 8, ""cart_actions"": 5}",151.95,USD,Germany
+SESS_10366,U_1113,"{""device"": ""Web_Safari"", ""pages_viewed"": 12, ""cart_actions"": 1}",234.95,GBP,Japan
+SESS_10367,U_1154,"{""device"": ""Android"", ""pages_viewed"": 15, ""cart_actions"": 6}",375.1,USD,
+SESS_10368,U_1062,"{""device"": ""Web_Safari"", ""pages_viewed"": 22, ""cart_actions"": 2}",361.2,GBP,UK
+SESS_10369,U_1030,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 6}",79.55,,Germany
+SESS_10370,U_1046,"{""device"": ""Web_Safari"", ""pages_viewed"": 1, ""cart_actions"": 2}",129.57,,United States
+SESS_10371,U_1032,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 0}",445.62,USD,
+SESS_10372,U_1135,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 5}",318.16,EUR,DE
+SESS_10373,U_1030,"{""device"": ""Desktop"", ""pages_viewed"": 11, ""cart_actions"": 1}",34.68,GBP,Japan
+SESS_10374,U_1104,"{""device"": ""Web_Safari"", ""pages_viewed"": 24, ""cart_actions"": 6}",222.54,USD,US
+SESS_10375,U_1185,"{""device"": null, ""pages_viewed"": 17, ""cart_actions"": 1}",18.39,GBP,Japan
+SESS_10376,U_1097,"{""device"": ""Desktop"", ""pages_viewed"": 15, ""cart_actions"": 2}",270.82,USD,Germany
+SESS_10377,U_1076,"{""device"": ""Web_Safari"", ""pages_viewed"": 11, ""cart_actions"": 0}",405.33,JPY,DE
+SESS_10378,U_1082,"{""device"": ""Web_Safari"", ""pages_viewed"": 11, ""cart_actions"": 2}",33.24,EUR,United Kingdom
+SESS_10379,U_1132,"{""device"": ""Desktop"", ""pages_viewed"": 19, ""cart_actions"": 5}",,EUR,US
+SESS_10380,U_1030,"{""device"": ""Desktop"", ""pages_viewed"": 9, ""cart_actions"": 7}",400.13,EUR,DE
+SESS_10381,U_1155,"{""device"": ""iOS"", ""pages_viewed"": 8, ""cart_actions"": 4}",104.98,USD,USA
+SESS_10382,U_1153,"{""device"": ""iOS"", ""pages_viewed"": 18, ""cart_actions"": 8}",17.9,USD,UK
+SESS_10383,U_1052,"{""device"": ""Desktop"", ""pages_viewed"": 19, ""cart_actions"": 6}",241.59,,DE
+SESS_10384,U_1028,"{""device"": ""iOS"", ""pages_viewed"": 15, ""cart_actions"": 6}",52.79,USD,DE
+SESS_10385,U_1187,"{""device"": ""iOS"", ""pages_viewed"": 12, ""cart_actions"": 1}",111.76,USD,UK
+SESS_10386,U_1040,"{""device"": null, ""pages_viewed"": 11, ""cart_actions"": 4}",334.95,USD,UK
+SESS_10387,U_1009,"{""device"": ""Web_Safari"", ""pages_viewed"": 4, ""cart_actions"": 8}",381.02,USD,USA
+SESS_10388,U_1062,"{""device"": ""Android"", ""pages_viewed"": 19, ""cart_actions"": 6}",110.79,EUR,DE
+SESS_10389,U_1120,"{""device"": ""Android"", ""pages_viewed"": 16, ""cart_actions"": 2}",137.93,EUR,United States
+SESS_10390,U_1132,"{""device"": ""Android"", ""pages_viewed"": 1, ""cart_actions"": 6}",,EUR,US
+SESS_10391,U_1009,"{""device"": ""Web_Safari"", ""pages_viewed"": 23, ""cart_actions"": 4}",289.5,EUR,UK
+SESS_10392,U_1123,"{""device"": null, ""pages_viewed"": 22, ""cart_actions"": 2}",380.7,EUR,Japan
+SESS_10393,U_1125,"{""device"": ""Web_Safari"", ""pages_viewed"": 20, ""cart_actions"": 5}",143.51,EUR,United States
+SESS_10394,U_1193,"{""device"": ""Desktop"", ""pages_viewed"": 14, ""cart_actions"": 7}",303.15,USD,US
+SESS_10395,U_1118,"{""device"": ""Desktop"", ""pages_viewed"": 22, ""cart_actions"": 1}",188.17,USD,Japan
+SESS_10396,U_1125,"{""device"": null, ""pages_viewed"": 14, ""cart_actions"": 3}",,EUR,
+SESS_10397,U_1055,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 8}",128.8,GBP,United Kingdom
+SESS_10398,U_1100,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 6}",38.77,,Germany
+SESS_10399,U_1086,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 7}",264.04,USD,
+SESS_10400,U_1052,"{""device"": ""iOS"", ""pages_viewed"": 20, ""cart_actions"": 5}",249.8,USD,United Kingdom
+SESS_10401,U_1023,"{""device"": ""Desktop"", ""pages_viewed"": 12, ""cart_actions"": 8}",,USD,
+SESS_10402,U_1053,"{""device"": ""Desktop"", ""pages_viewed"": 18, ""cart_actions"": 3}",379.59,JPY,Germany
+SESS_10403,U_1074,"{""device"": ""Android"", ""pages_viewed"": 12, ""cart_actions"": 5}",255.53,EUR,USA
+SESS_10404,U_1009,"{""device"": ""iOS"", ""pages_viewed"": 25, ""cart_actions"": 8}",188.1,,USA
+SESS_10405,U_1040,"{""device"": ""Desktop"", ""pages_viewed"": 10, ""cart_actions"": 0}",351.0,EUR,USA
+SESS_10406,U_1069,"{""device"": ""iOS"", ""pages_viewed"": 13, ""cart_actions"": 6}",337.13,EUR,United States
+SESS_10407,U_1019,"{""device"": ""iOS"", ""pages_viewed"": 17, ""cart_actions"": 6}",,USD,United States
+SESS_10408,U_1188,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 3}",388.8,GBP,United Kingdom
+SESS_10409,U_1131,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 4}",58.36,,United Kingdom
+SESS_10410,U_1074,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 3}",259.03,,DE
+SESS_10411,U_1179,"{""device"": null, ""pages_viewed"": 17, ""cart_actions"": 3}",447.02,JPY,UK
+SESS_10412,U_1195,"{""device"": null, ""pages_viewed"": 23, ""cart_actions"": 1}",266.38,USD,United Kingdom
+SESS_10413,U_1197,"{""device"": ""Android"", ""pages_viewed"": 15, ""cart_actions"": 5}",62.39,EUR,UK
+SESS_10414,U_1036,"{""device"": ""iOS"", ""pages_viewed"": 4, ""cart_actions"": 8}",391.2,,Germany
+SESS_10415,U_1021,"{""device"": ""Android"", ""pages_viewed"": 13, ""cart_actions"": 7}",380.25,EUR,USA
+SESS_10416,U_1196,"{""device"": ""Web_Safari"", ""pages_viewed"": 9, ""cart_actions"": 6}",161.97,USD,USA
+SESS_10417,U_1082,"{""device"": null, ""pages_viewed"": 20, ""cart_actions"": 6}",131.64,EUR,
+SESS_10418,U_1125,"{""device"": null, ""pages_viewed"": 16, ""cart_actions"": 5}",117.55,,Japan
+SESS_10419,U_1131,"{""device"": null, ""pages_viewed"": 24, ""cart_actions"": 1}",200.18,USD,United Kingdom
+SESS_10420,U_1032,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 8}",87.3,,United States
+SESS_10421,U_1009,"{""device"": ""Web_Safari"", ""pages_viewed"": 16, ""cart_actions"": 2}",243.2,USD,
+SESS_10422,U_1107,"{""device"": ""Web_Safari"", ""pages_viewed"": 1, ""cart_actions"": 4}",448.15,EUR,
+SESS_10423,U_1082,"{""device"": null, ""pages_viewed"": 12, ""cart_actions"": 2}",242.61,EUR,UK
+SESS_10424,U_1132,"{""device"": null, ""pages_viewed"": 9, ""cart_actions"": 7}",422.25,USD,US
+SESS_10425,U_1134,"{""device"": ""Web_Safari"", ""pages_viewed"": 1, ""cart_actions"": 5}",80.4,USD,USA
+SESS_10426,U_1079,"{""device"": ""Android"", ""pages_viewed"": 7, ""cart_actions"": 1}",159.0,USD,Japan
+SESS_10427,U_1152,"{""device"": ""Android"", ""pages_viewed"": 3, ""cart_actions"": 5}",399.25,GBP,USA
+SESS_10428,U_1049,"{""device"": ""Desktop"", ""pages_viewed"": 10, ""cart_actions"": 6}",148.0,JPY,DE
+SESS_10429,U_1143,"{""device"": null, ""pages_viewed"": 21, ""cart_actions"": 3}",,USD,United States
+SESS_10430,U_1187,"{""device"": ""Android"", ""pages_viewed"": 9, ""cart_actions"": 2}",59.51,JPY,UK
+SESS_10431,U_1147,"{""device"": null, ""pages_viewed"": 20, ""cart_actions"": 4}",335.71,,Germany
+SESS_10432,U_1043,"{""device"": ""iOS"", ""pages_viewed"": 8, ""cart_actions"": 3}",,USD,US
+SESS_10433,U_1042,"{""device"": ""Web_Safari"", ""pages_viewed"": 1, ""cart_actions"": 5}",,USD,US
+SESS_10434,U_1130,"{""device"": ""Web_Safari"", ""pages_viewed"": 14, ""cart_actions"": 7}",232.66,USD,Germany
+SESS_10435,U_1143,"{""device"": ""Web_Safari"", ""pages_viewed"": 13, ""cart_actions"": 6}",169.42,GBP,
+SESS_10436,U_1020,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 2}",377.62,USD,United Kingdom
+SESS_10437,U_1143,"{""device"": ""Web_Safari"", ""pages_viewed"": 16, ""cart_actions"": 4}",257.69,JPY,UK
+SESS_10438,U_1045,"{""device"": ""iOS"", ""pages_viewed"": 12, ""cart_actions"": 7}",165.51,JPY,Germany
+SESS_10439,U_1157,"{""device"": null, ""pages_viewed"": 7, ""cart_actions"": 6}",420.94,USD,Germany
+SESS_10440,U_1113,"{""device"": ""Desktop"", ""pages_viewed"": 17, ""cart_actions"": 3}",,EUR,UK
+SESS_10441,U_1024,"{""device"": ""Desktop"", ""pages_viewed"": 9, ""cart_actions"": 8}",278.95,USD,DE
+SESS_10442,U_1164,"{""device"": ""Web_Safari"", ""pages_viewed"": 13, ""cart_actions"": 0}",321.36,EUR,USA
+SESS_10443,U_1146,"{""device"": ""iOS"", ""pages_viewed"": 23, ""cart_actions"": 7}",290.02,,US
+SESS_10444,U_1121,"{""device"": null, ""pages_viewed"": 4, ""cart_actions"": 0}",281.62,USD,US
+SESS_10445,U_1033,"{""device"": ""iOS"", ""pages_viewed"": 14, ""cart_actions"": 1}",,USD,UK
+SESS_10446,U_1024,"{""device"": null, ""pages_viewed"": 9, ""cart_actions"": 3}",335.79,GBP,UK
+SESS_10447,U_1181,"{""device"": ""Android"", ""pages_viewed"": 19, ""cart_actions"": 5}",424.14,JPY,United Kingdom
+SESS_10448,U_1170,"{""device"": ""iOS"", ""pages_viewed"": 3, ""cart_actions"": 3}",233.16,EUR,United States
+SESS_10449,U_1044,"{""device"": ""Web_Safari"", ""pages_viewed"": 2, ""cart_actions"": 4}",314.59,JPY,US
+SESS_10450,U_1162,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 4}",66.21,,United States
+SESS_10451,U_1144,"{""device"": ""Web_Safari"", ""pages_viewed"": 3, ""cart_actions"": 1}",94.39,USD,US
+SESS_10452,U_1081,"{""device"": null, ""pages_viewed"": 21, ""cart_actions"": 0}",358.1,EUR,UK
+SESS_10453,U_1117,"{""device"": ""iOS"", ""pages_viewed"": 24, ""cart_actions"": 3}",311.19,EUR,US
+SESS_10454,U_1079,"{""device"": ""iOS"", ""pages_viewed"": 13, ""cart_actions"": 4}",76.09,GBP,United Kingdom
+SESS_10455,U_1057,"{""device"": ""Android"", ""pages_viewed"": 9, ""cart_actions"": 3}",143.3,,DE
+SESS_10456,U_1023,"{""device"": ""Web_Safari"", ""pages_viewed"": 12, ""cart_actions"": 5}",294.19,,US
+SESS_10457,U_1009,"{""device"": null, ""pages_viewed"": 13, ""cart_actions"": 2}",106.64,JPY,UK
+SESS_10458,U_1165,"{""device"": ""Desktop"", ""pages_viewed"": 7, ""cart_actions"": 5}",234.14,EUR,United States
+SESS_10459,U_1131,"{""device"": ""Android"", ""pages_viewed"": 9, ""cart_actions"": 3}",28.68,USD,
+SESS_10460,U_1168,"{""device"": ""Android"", ""pages_viewed"": 16, ""cart_actions"": 2}",155.5,JPY,USA
+SESS_10461,U_1082,"{""device"": ""iOS"", ""pages_viewed"": 21, ""cart_actions"": 5}",18.44,JPY,Japan
+SESS_10462,U_1085,"{""device"": ""Desktop"", ""pages_viewed"": 21, ""cart_actions"": 1}",170.73,USD,Japan
+SESS_10463,U_1139,"{""device"": ""Android"", ""pages_viewed"": 25, ""cart_actions"": 0}",283.23,JPY,United Kingdom
+SESS_10464,U_1121,"{""device"": ""Android"", ""pages_viewed"": 9, ""cart_actions"": 5}",224.91,JPY,DE
+SESS_10465,U_1010,"{""device"": ""Android"", ""pages_viewed"": 25, ""cart_actions"": 8}",200.26,EUR,United Kingdom
+SESS_10466,U_1151,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 8}",145.75,EUR,US
+SESS_10467,U_1033,"{""device"": ""Desktop"", ""pages_viewed"": 2, ""cart_actions"": 1}",348.13,GBP,Japan
+SESS_10468,U_1101,"{""device"": ""Android"", ""pages_viewed"": 15, ""cart_actions"": 0}",102.18,USD,DE
+SESS_10469,U_1078,"{""device"": ""iOS"", ""pages_viewed"": 6, ""cart_actions"": 3}",204.9,EUR,US
+SESS_10470,U_1175,"{""device"": null, ""pages_viewed"": 25, ""cart_actions"": 5}",,USD,UK
+SESS_10471,U_1025,"{""device"": ""Web_Safari"", ""pages_viewed"": 18, ""cart_actions"": 6}",412.08,JPY,Japan
+SESS_10472,U_1180,"{""device"": ""Android"", ""pages_viewed"": 25, ""cart_actions"": 1}",153.49,USD,United Kingdom
+SESS_10473,U_1197,"{""device"": ""Desktop"", ""pages_viewed"": 10, ""cart_actions"": 6}",247.34,GBP,Japan
+SESS_10474,U_1171,"{""device"": null, ""pages_viewed"": 1, ""cart_actions"": 3}",92.5,EUR,UK
+SESS_10475,U_1092,"{""device"": ""Desktop"", ""pages_viewed"": 17, ""cart_actions"": 0}",341.98,USD,Germany
+SESS_10476,U_1035,"{""device"": ""Web_Safari"", ""pages_viewed"": 7, ""cart_actions"": 0}",204.4,GBP,United Kingdom
+SESS_10477,U_1167,"{""device"": ""Android"", ""pages_viewed"": 14, ""cart_actions"": 2}",183.26,,USA
+SESS_10478,U_1066,"{""device"": ""Web_Safari"", ""pages_viewed"": 6, ""cart_actions"": 2}",240.05,USD,Japan
+SESS_10479,U_1021,"{""device"": ""Desktop"", ""pages_viewed"": 22, ""cart_actions"": 1}",190.95,USD,US
+SESS_10480,U_1081,"{""device"": ""Android"", ""pages_viewed"": 19, ""cart_actions"": 8}",212.79,,United Kingdom
+SESS_10481,U_1108,"{""device"": ""iOS"", ""pages_viewed"": 10, ""cart_actions"": 6}",290.84,,
+SESS_10482,U_1095,"{""device"": ""Web_Safari"", ""pages_viewed"": 23, ""cart_actions"": 5}",437.72,USD,US
+SESS_10483,U_1108,"{""device"": null, ""pages_viewed"": 25, ""cart_actions"": 6}",49.8,USD,UK
+SESS_10484,U_1181,"{""device"": null, ""pages_viewed"": 9, ""cart_actions"": 3}",282.32,,United Kingdom
+SESS_10485,U_1012,"{""device"": ""Web_Safari"", ""pages_viewed"": 10, ""cart_actions"": 0}",227.99,GBP,USA
+SESS_10486,U_1153,"{""device"": ""Desktop"", ""pages_viewed"": 9, ""cart_actions"": 6}",143.82,USD,
+SESS_10487,U_1068,"{""device"": ""Android"", ""pages_viewed"": 10, ""cart_actions"": 5}",209.35,EUR,USA
+SESS_10488,U_1152,"{""device"": ""iOS"", ""pages_viewed"": 12, ""cart_actions"": 0}",187.35,USD,United States
+SESS_10489,U_1136,"{""device"": ""iOS"", ""pages_viewed"": 5, ""cart_actions"": 2}",202.53,EUR,UK
+SESS_10490,U_1117,"{""device"": null, ""pages_viewed"": 8, ""cart_actions"": 8}",32.68,GBP,UK
+SESS_10491,U_1009,"{""device"": ""Android"", ""pages_viewed"": 20, ""cart_actions"": 1}",441.42,USD,UK
+SESS_10492,U_1163,"{""device"": ""Desktop"", ""pages_viewed"": 14, ""cart_actions"": 6}",,EUR,United States
+SESS_10493,U_1110,"{""device"": ""iOS"", ""pages_viewed"": 7, ""cart_actions"": 4}",282.78,EUR,USA
+SESS_10494,U_1095,"{""device"": null, ""pages_viewed"": 16, ""cart_actions"": 3}",205.07,USD,DE
+SESS_10495,U_1128,"{""device"": ""iOS"", ""pages_viewed"": 20, ""cart_actions"": 6}",310.02,EUR,USA
+SESS_10496,U_1104,"{""device"": ""Android"", ""pages_viewed"": 1, ""cart_actions"": 6}",134.52,,UK
+SESS_10497,U_1024,"{""device"": ""Android"", ""pages_viewed"": 8, ""cart_actions"": 0}",111.16,EUR,Japan
+SESS_10498,U_1150,"{""device"": ""Web_Safari"", ""pages_viewed"": 21, ""cart_actions"": 5}",221.89,USD,UK
+SESS_10499,U_1087,"{""device"": ""Desktop"", ""pages_viewed"": 12, ""cart_actions"": 7}",386.64,,Germany

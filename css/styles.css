@@ -1246,35 +1246,113 @@ kbd {
     flex-shrink: 0;
 }
 
-/* Critical Data Engineering Mandate Red Callout */
+
+/* Critical Data Engineering Mandate Red Callout - Ultra High Contrast */
 .mandate-callout-red {
-    background: rgba(239, 68, 68, 0.08);
-    border: 1px solid rgba(239, 68, 68, 0.28);
+    background: #fef2f2;
+    border: 2px solid #ef4444;
+    border-left: 6px solid #dc2626;
     border-radius: var(--radius-md);
-    padding: 14px 18px;
-    margin-bottom: 20px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
     display: flex;
-    gap: 14px;
+    gap: 16px;
     align-items: flex-start;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
 }
 
 .mandate-icon {
-    color: #ef4444;
+    color: #dc2626;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 2px;
 }
 
 .mandate-content strong {
-    color: #f87171;
-    font-size: 0.84rem;
+    color: #b91c1c;
+    font-size: 0.88rem;
     font-weight: 600;
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
 }
 
 .mandate-content p {
-    color: #cbd5e1;
-    font-size: 0.84rem;
-    line-height: 1.55;
+    color: #1e293b;
+    font-size: 0.86rem;
+    font-weight: 500;
+    line-height: 1.6;
     margin: 0;
+}
+
+/* Data Architecture Mini-Map / Pipeline Scheme Flow - Ultra High Contrast */
+.scheme-flow-container {
+    background: #090d16;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.scheme-header {
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #38bdf8;
+    font-family: var(--font-mono);
+    margin-bottom: 10px;
+}
+
+.scheme-flow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+.scheme-node {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    min-width: 150px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: transform 0.15s, background-color 0.15s;
+}
+
+.scheme-node:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+
+.node-step {
+    font-size: 0.72rem;
+    color: #38bdf8;
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.node-desc {
+    font-size: 0.82rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.node-target {
+    font-size: 0.72rem;
+    color: #93c5fd;
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.scheme-arrow {
+    color: #38bdf8;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex-shrink: 0;
 }
