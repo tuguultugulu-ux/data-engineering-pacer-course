@@ -342,27 +342,34 @@ is_cheating
                         msg: isMn ? "Алдаа: Үр дүнг шууд хэвлэхийг хориглоно." : "Failed: Detected hardcoded expected output strings. Compute the result programmatically."
                     });
                 } else {
-                    // Evaluate if the student's solution "works" (even if written differently)
-                    let isWorkingSolution = false;
-                    let validationMsg = "";
+                    // Evaluate if the student's solution "works"
+                    let isWorkingSolution = true;
+                    let validationMsg = [];
                     
+                    // 1. Check Data Structures (Structural Integrity)
                     if (expectedShape && hasDataStructures) {
                         const mainDF = scope.find(s => s.type === 'DataFrame') || scope[0];
-                        // If shapes match, the transformation logic is structurally correct
-                        if (JSON.stringify(mainDF.shape) === JSON.stringify(expectedShape)) {
-                            isWorkingSolution = true;
-                            validationMsg = isMn ? "Өгөгдлийн бүтэц зөв байна." : "DataFrame shape matches the expected solution shape.";
+                        if (JSON.stringify(mainDF.shape) !== JSON.stringify(expectedShape)) {
+                            isWorkingSolution = false;
+                            validationMsg.push(isMn ? "Өгөгдлийн хэмжээ зөрүүтэй байна." : "DataFrame shape is incorrect.");
                         }
                     }
                     
-                    // Fallback to loose stdout checking if it's not a DataFrame problem
-                    if (!isWorkingSolution) {
-                        // Check if the user output contains the core expected text (ignoring exact whitespace formatting)
-                        const userStripped = userStdout.replace(/\\s+/g, '');
-                        const expectedStripped = expectedStdout.replace(/\\s+/g, '');
-                        if (expectedStripped.length > 0 && userStripped.includes(expectedStripped)) {
-                            isWorkingSolution = true;
-                            validationMsg = isMn ? "Үр дүнгийн гаралт таарч байна." : "Execution output contains the expected core results.";
+                    // 2. Check Stdout Overlap (If solution expects output, user MUST output something similar)
+                    const expectedWords = expectedStdout.match(/[a-zA-Z0-9_]+/g) || [];
+                    if (expectedWords.length > 0) {
+                        const userWords = userStdout.match(/[a-zA-Z0-9_]+/g) || [];
+                        const userWordsSet = new Set(userWords);
+                        const overlap = expectedWords.filter(w => userWordsSet.has(w)).length;
+                        const matchRatio = overlap / expectedWords.length;
+                        
+                        if (userWords.length === 0) {
+                            isWorkingSolution = false;
+                            validationMsg.push(isMn ? "Код ямар ч үр дүн хэвлэсэнгүй." : "No output was produced (expected printed output).");
+                        } else if (matchRatio < 0.4) {
+                            // Require at least 40% of the keywords/numbers to be present
+                            isWorkingSolution = false;
+                            validationMsg.push(isMn ? "Хэвлэгдсэн үр дүн дутуу эсвэл буруу байна." : "Printed output is missing required information.");
                         }
                     }
 
@@ -370,13 +377,13 @@ is_cheating
                         tests.push({
                             name: isMn ? "Шийдлийн Баталгаажуулалт" : "Solution Integrity Check",
                             passed: true,
-                            msg: isMn ? "Зөв: Таны бичсэн код амжилттай ажиллаж зөв үр дүн гаргалаа." : "Passed: Your code effectively solves the problem. " + validationMsg
+                            msg: isMn ? "Зөв: Таны бичсэн код амжилттай ажиллаж зөв үр дүн гаргалаа." : "Passed: Your code correctly computed and printed the expected results."
                         });
                     } else {
                         tests.push({
                             name: isMn ? "Шийдлийн Баталгаажуулалт" : "Solution Integrity Check",
                             passed: false,
-                            msg: isMn ? "Гаралт эсвэл өгөгдлийн бүтэц хүлээгдэж буй үр дүнгээс зөрж байна." : "Failed: Your code executed, but the resulting DataFrame shape or output does not match the solution's expected result."
+                            msg: isMn ? "Алдаа: " + validationMsg.join(' ') : "Failed: " + validationMsg.join(' ')
                         });
                     }
                 }
