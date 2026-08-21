@@ -86,6 +86,7 @@ var AuthManager = (function() {
         const lower = email.trim().toLowerCase();
         if (lower && !localRoster.map(e=>e.toLowerCase()).includes(lower)) {
             const newRoster = [...localRoster, lower];
+            localRoster = newRoster; // Optimistic update
             db.collection('settings').doc('roster').set({ emails: newRoster }).catch(e => {
                 console.error(e);
                 alert("Database Error: Could not add user. Check Firebase Security Rules.");
@@ -99,6 +100,7 @@ var AuthManager = (function() {
         const lower = email.trim().toLowerCase();
         if (ADMIN_EMAILS.includes(lower)) return false; 
         const newRoster = localRoster.filter(e => e.toLowerCase() !== lower);
+        localRoster = newRoster; // Optimistic update
         db.collection('settings').doc('roster').set({ emails: newRoster }).catch(e => {
             console.error(e);
             alert("Database Error: Could not remove user. Check Firebase Security Rules.");
