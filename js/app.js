@@ -265,16 +265,16 @@ function renderLessonHtml(lesson) {
             { step: "4. Model Ready", desc: "Zero-Leakage Training Split", target: "High-Accuracy ML Ready" }
         ];
 
-        let schemeHtml = `
-            <div class="pipeline-breadcrumb">
-                <span class="pipeline-label">${I18n.t('architectureMap')}:</span>
-                <div class="pipeline-steps">
+                let schemeHtml = `
+            <div class="pipeline-breadcrumb" style="display: flex; align-items: center; gap: 10px; margin: 10px 16px 14px 16px; padding: 8px 14px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); font-size: 0.75rem; font-family: var(--font-mono); color: #cbd5e1; overflow-x: auto;">
+                <span class="pipeline-label" style="font-weight: 600; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; flex-shrink: 0;">${I18n.t('architectureMap')}:</span>
+                <div class="pipeline-steps" style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                     ${schemeNodes.map((node, idx) => `
-                        <span class="pipeline-step" title="${escapeHtml(node.target || '')}">
-                            <span class="step-num">${idx + 1}</span>
-                            <span class="step-name">${escapeHtml(node.desc || node.step)}</span>
+                        <span class="pipeline-step" style="display: inline-flex; align-items: center; gap: 5px; color: #cbd5e1;" title="${escapeHtml(node.target || '')}">
+                            <span class="step-num" style="background: rgba(56, 189, 248, 0.18); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.65rem; font-weight: 600; padding: 1px 6px; border-radius: 3px;">${idx + 1}</span>
+                            <span class="step-name" style="color: #ffffff; font-weight: 600; font-size: 0.78rem;">${escapeHtml(node.desc || node.step)}</span>
                         </span>
-                        ${idx < (schemeNodes.length - 1) ? '<span class="pipeline-sep">→</span>' : ''}
+                        ${idx < (schemeNodes.length - 1) ? '<span class="pipeline-sep" style="color: #94a3b8; font-size: 0.85rem; font-weight: 600;">→</span>' : ''}
                     `).join('')}
                 </div>
             </div>
@@ -482,16 +482,16 @@ function renderPracticeCard(practice) {
         { step: "3. Output", desc: "Processed Array", target: "Target" }
     ];
 
-        let schemeHtml = `
-            <div class="pipeline-breadcrumb">
-                <span class="pipeline-label">${I18n.t('architectureMap')}:</span>
-                <div class="pipeline-steps">
+                let schemeHtml = `
+            <div class="pipeline-breadcrumb" style="display: flex; align-items: center; gap: 10px; margin: 10px 16px 14px 16px; padding: 8px 14px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); font-size: 0.75rem; font-family: var(--font-mono); color: #cbd5e1; overflow-x: auto;">
+                <span class="pipeline-label" style="font-weight: 600; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; flex-shrink: 0;">${I18n.t('architectureMap')}:</span>
+                <div class="pipeline-steps" style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                     ${schemeNodes.map((node, idx) => `
-                        <span class="pipeline-step" title="${escapeHtml(node.target || '')}">
-                            <span class="step-num">${idx + 1}</span>
-                            <span class="step-name">${escapeHtml(node.desc || node.step)}</span>
+                        <span class="pipeline-step" style="display: inline-flex; align-items: center; gap: 5px; color: #cbd5e1;" title="${escapeHtml(node.target || '')}">
+                            <span class="step-num" style="background: rgba(56, 189, 248, 0.18); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.65rem; font-weight: 600; padding: 1px 6px; border-radius: 3px;">${idx + 1}</span>
+                            <span class="step-name" style="color: #ffffff; font-weight: 600; font-size: 0.78rem;">${escapeHtml(node.desc || node.step)}</span>
                         </span>
-                        ${idx < (schemeNodes.length - 1) ? '<span class="pipeline-sep">→</span>' : ''}
+                        ${idx < (schemeNodes.length - 1) ? '<span class="pipeline-sep" style="color: #94a3b8; font-size: 0.85rem; font-weight: 600;">→</span>' : ''}
                     `).join('')}
                 </div>
             </div>

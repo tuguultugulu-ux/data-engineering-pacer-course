@@ -1259,64 +1259,66 @@ kbd {
    PACER Data Engineering - Apple Minimalist Clean Design System
    -------------------------------------------------------------------------- */
 
-/* Sleek Apple Technical Pipeline Breadcrumb - High Contrast for Dark Cards */
+
+/* Sleek Apple Technical Pipeline Breadcrumb - Ultra High Contrast Guarantee */
 .pipeline-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0 16px 0;
-    padding: 8px 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-sm);
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-    color: #cbd5e1;
-    overflow-x: auto;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 10px 16px 14px 16px !important;
+    padding: 8px 14px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: var(--radius-sm) !important;
+    font-size: 0.75rem !important;
+    font-family: var(--font-mono) !important;
+    color: #cbd5e1 !important;
+    overflow-x: auto !important;
 }
 
 .pipeline-label {
-    font-weight: 600;
-    color: #38bdf8;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-size: 0.68rem;
-    flex-shrink: 0;
+    font-weight: 600 !important;
+    color: #38bdf8 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    font-size: 0.68rem !important;
+    flex-shrink: 0 !important;
 }
 
 .pipeline-steps {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
 }
 
 .pipeline-step {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    color: #cbd5e1;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    color: #cbd5e1 !important;
 }
 
 .pipeline-step .step-num {
-    background: rgba(56, 189, 248, 0.15);
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    color: #38bdf8;
-    font-size: 0.65rem;
-    font-weight: 600;
-    padding: 1px 5px;
-    border-radius: 2px;
+    background: rgba(56, 189, 248, 0.18) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    color: #38bdf8 !important;
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    padding: 1px 6px !important;
+    border-radius: 3px !important;
 }
 
 .pipeline-step .step-name {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 0.78rem;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.78rem !important;
 }
 
 .pipeline-sep {
-    color: #64748b;
-    font-size: 0.82rem;
+    color: #94a3b8 !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
 }
 
 /* Sidebar Progress & Quest Map Card - Frosted Midnight Glass */
