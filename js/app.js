@@ -183,13 +183,18 @@ function buildSidebar() {
 }
 
 function togglePhase(phaseId) {
+    const target = document.getElementById('phase-item-' + phaseId);
+    if (!target) return;
+    const wasActive = target.classList.contains('active');
+
+    // Toggle target and keep others clean
     document.querySelectorAll('.sidebar-nav > li').forEach(li => {
-        if (li.id === 'phase-item-' + phaseId) {
-            li.classList.toggle('active');
-        } else {
-            li.classList.remove('active');
-        }
+        li.classList.remove('active');
     });
+
+    if (!wasActive) {
+        target.classList.add('active');
+    }
 }
 
 function loadLesson(lessonId) {

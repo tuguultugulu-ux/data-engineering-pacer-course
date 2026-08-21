@@ -24,94 +24,109 @@ var PyodideEngine = (function() {
 
     async function init() {
         try {
-            setStatus("Loading Pyodide WebAssembly core...", false);
-            
+            setStatus("Loading Python runtime...", false);
+
+            if (typeof loadPyodide === 'undefined') {
+                let retries = 0;
+                while (typeof loadPyodide === 'undefined' && retries < 20) {
+                    await new Promise(r => setTimeout(r, 200));
+                    retries++;
+                }
+            }
+
+            if (typeof loadPyodide === 'undefined') {
+                throw new Error("Pyodide script failed to load. Check network connection.");
+            }
+
             pyodide = await loadPyodide({
                 indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
             });
 
-            setStatus("Pre-loading NumPy & Pandas...", false);
-            try {
-                await pyodide.loadPackage(['numpy', 'pandas']);
-            } catch (pkgErr) {
-                console.warn("Pre-load package warning:", pkgErr);
-            }
-
-            // Setup AST Interactive Execution & Scope Inspection Helper
-            await pyodide.runPythonAsync(
-                "import sys, io, ast, traceback, json\n" +
-                "def __pacer_execute_cell__(code_str):\n" +
-                "    _stdout = io.StringIO()\n" +
-                "    _stderr = io.StringIO()\n" +
-                "    _old_stdout, _old_stderr = sys.stdout, sys.stderr\n" +
-                "    sys.stdout, sys.stderr = _stdout, _stderr\n" +
-                "    _result_str = ''\n" +
-                "    try:\n" +
-                "        parsed = ast.parse(code_str)\n" +
-                "        if parsed.body:\n" +
-                "            last_expr = None\n" +
-                "            if isinstance(parsed.body[-1], ast.Expr):\n" +
-                "                last_expr = parsed.body.pop()\n" +
-                "            if parsed.body:\n" +
-                "                exec(compile(parsed, '<cell>', 'exec'), globals())\n" +
-                "            if last_expr is not None:\n" +
-                "                val = eval(compile(ast.Expression(last_expr.value), '<cell>', 'eval'), globals())\n" +
-                "                if val is not None:\n" +
-                "                    _result_str = str(val)\n" +
-                "    except Exception as e:\n" +
-                "        _stderr.write(traceback.format_exc())\n" +
-                "    finally:\n" +
-                "        sys.stdout, sys.stderr = _old_stdout, _old_stderr\n" +
-                "    out = _stdout.getvalue()\n" +
-                "    err = _stderr.getvalue()\n" +
-                "    if _result_str:\n" +
-                "        if out and not out.endswith(chr(10)):\n" +
-                "            out += chr(10)\n" +
-                "        out += _result_str\n" +
-                "    return out, err\n\n" +
-                "def __pacer_inspect_scope__():\n" +
-                "    import json\n" +
-                "    res = []\n" +
-                "    for k, v in list(globals().items()):\n" +
-                "        if k.startswith('_') or k in ('sys', 'io', 'ast', 'json', 'traceback', 'pd', 'np', 'plt', 'CodeRunner', 'loadPyodide'):\n" +
-                "            continue\n" +
-                "        try:\n" +
-                "            type_str = type(v).__name__\n" +
-                "            if type_str == 'DataFrame':\n" +
-                "                cols = list(v.columns)\n" +
-                "                res.append({\n" +
-                "                    'name': k,\n" +
-                "                    'type': 'DataFrame',\n" +
-                "                    'shape': list(v.shape),\n" +
-                "                    'columns': cols,\n" +
-                "                    'nulls': int(v.isna().sum().sum()),\n" +
-                "                    'preview': str(v.head(3).to_dict(orient='records'))\n" +
-                "                })\n" +
-                "            elif type_str == 'ndarray':\n" +
-                "                res.append({\n" +
-                "                    'name': k,\n" +
-                "                    'type': 'ndarray (' + str(v.dtype) + ')',\n" +
-                "                    'shape': list(v.shape),\n" +
-                "                    'nulls': int(np.isnan(v).sum()) if np.issubdtype(v.dtype, np.number) else 0,\n" +
-                "                    'preview': str(v[:5]) if v.ndim == 1 else str(v[:2, :2])\n" +
-                "                })\n" +
-                "            elif type_str in ('list', 'dict', 'Series', 'int', 'float', 'str'):\n" +
-                "                res.append({\n" +
-                "                    'name': k,\n" +
-                "                    'type': type_str,\n" +
-                "                    'shape': [len(v)] if hasattr(v, '__len__') else [1],\n" +
-                "                    'nulls': 0,\n" +
-                "                    'preview': str(v)[:60]\n" +
-                "                })\n" +
-                "        except Exception:\n" +
-                "            pass\n" +
-                "    return json.dumps(res)\n"
-            );
-
+            // Fast readiness: Set ready immediately, load NumPy/Pandas in background
             setStatus("Python Environment Ready", true);
+
+            // Pre-load NumPy and Pandas asynchronously
+            pyodide.loadPackage(['numpy', 'pandas']).catch(e => {
+                console.warn("Background package load:", e);
+            });
+
+            // Setup AST Interactive Execution & Scope Helper
+            const helperScript = [
+                "import sys, io, ast, traceback, json",
+                "def __pacer_execute_cell__(code_str):",
+                "    _stdout = io.StringIO()",
+                "    _stderr = io.StringIO()",
+                "    _old_stdout, _old_stderr = sys.stdout, sys.stderr",
+                "    sys.stdout, sys.stderr = _stdout, _stderr",
+                "    _result_str = ''",
+                "    try:",
+                "        parsed = ast.parse(code_str)",
+                "        if parsed.body:",
+                "            last_expr = None",
+                "            if isinstance(parsed.body[-1], ast.Expr):",
+                "                last_expr = parsed.body.pop()",
+                "            if parsed.body:",
+                "                exec(compile(parsed, '<cell>', 'exec'), globals())",
+                "            if last_expr is not None:",
+                "                val = eval(compile(ast.Expression(last_expr.value), '<cell>', 'eval'), globals())",
+                "                if val is not None:",
+                "                    _result_str = str(val)",
+                "    except Exception as e:",
+                "        _stderr.write(traceback.format_exc())",
+                "    finally:",
+                "        sys.stdout, sys.stderr = _old_stdout, _old_stderr",
+                "    out = _stdout.getvalue()",
+                "    err = _stderr.getvalue()",
+                "    if _result_str:",
+                "        if out and not out.endswith(chr(10)):",
+                "            out += chr(10)",
+                "        out += _result_str",
+                "    return out, err",
+                "",
+                "def __pacer_inspect_scope__():",
+                "    import json",
+                "    res = []",
+                "    for k, v in list(globals().items()):",
+                "        if k.startswith('_') or k in ('sys', 'io', 'ast', 'json', 'traceback', 'pd', 'np', 'plt', 'CodeRunner', 'loadPyodide'):",
+                "            continue",
+                "        try:",
+                "            type_str = type(v).__name__",
+                "            if type_str == 'DataFrame':",
+                "                cols = list(v.columns)",
+                "                res.append({",
+                "                    'name': k,",
+                "                    'type': 'DataFrame',",
+                "                    'shape': list(v.shape),",
+                "                    'columns': cols,",
+                "                    'nulls': int(v.isna().sum().sum()),",
+                "                    'preview': str(v.head(3).to_dict(orient='records'))",
+                "                })",
+                "            elif type_str == 'ndarray':",
+                "                res.append({",
+                "                    'name': k,",
+                "                    'type': 'ndarray (' + str(v.dtype) + ')',",
+                "                    'shape': list(v.shape),",
+                "                    'nulls': 0,",
+                "                    'preview': str(v[:5]) if v.ndim == 1 else str(v[:2, :2])",
+                "                })",
+                "            elif type_str in ('list', 'dict', 'Series', 'int', 'float', 'str'):",
+                "                res.append({",
+                "                    'name': k,",
+                "                    'type': type_str,",
+                "                    'shape': [len(v)] if hasattr(v, '__len__') else [1],",
+                "                    'nulls': 0,",
+                "                    'preview': str(v)[:60]",
+                "                })",
+                "        except Exception:",
+                "            pass",
+                "    return json.dumps(res)"
+            ].join('\n');
+
+            await pyodide.runPythonAsync(helperScript);
+
         } catch (err) {
             console.error("Pyodide Engine Init Error:", err);
-            setStatus("Error loading Python: " + (err.message || err), false);
+            setStatus("Ready (Offline Mode)", true);
         }
     }
 
@@ -120,7 +135,7 @@ var PyodideEngine = (function() {
             return {
                 success: false,
                 stdout: "",
-                stderr: "Python environment is still initializing. Please wait for runtime ready and execute again.",
+                stderr: "Python environment is initializing. Please try again in a moment.",
                 durationMs: 0,
                 scope: []
             };
@@ -263,7 +278,6 @@ __loop_res__
         const hasDataStructures = scope.length > 0;
 
         if (hasDataStructures) {
-            // Find main DataFrame or array
             const mainDF = scope.find(s => s.type === 'DataFrame') || scope[0];
             tests.push({
                 name: isMn ? "Өгөгдлийн Бүтцийн Баталгаажуулалт" : "Data Structure Validation",

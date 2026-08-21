@@ -233,9 +233,9 @@ body {
 }
 
 .phase-item.active > .phase-links {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
 }
 
 .sub-link {
