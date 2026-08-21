@@ -1259,63 +1259,64 @@ kbd {
    PACER Data Engineering - Apple Minimalist Clean Design System
    -------------------------------------------------------------------------- */
 
-/* Sleek Apple Technical Pipeline Breadcrumb */
+/* Sleek Apple Technical Pipeline Breadcrumb - High Contrast for Dark Cards */
 .pipeline-breadcrumb {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 8px 0 14px 0;
-    padding: 6px 12px;
-    background: rgba(0, 0, 0, 0.02);
-    border: 1px solid var(--border-subtle);
+    gap: 10px;
+    margin: 10px 0 16px 0;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-sm);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-family: var(--font-mono);
-    color: var(--text-secondary);
+    color: #cbd5e1;
     overflow-x: auto;
 }
 
 .pipeline-label {
     font-weight: 600;
-    color: var(--text-primary);
+    color: #38bdf8;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     flex-shrink: 0;
 }
 
 .pipeline-steps {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     flex-shrink: 0;
 }
 
 .pipeline-step {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    color: var(--text-secondary);
+    gap: 5px;
+    color: #cbd5e1;
 }
 
 .pipeline-step .step-num {
-    background: var(--canvas-subtle);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    font-size: 0.62rem;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #38bdf8;
+    font-size: 0.65rem;
     font-weight: 600;
-    padding: 0 4px;
+    padding: 1px 5px;
     border-radius: 2px;
 }
 
 .pipeline-step .step-name {
-    color: var(--text-primary);
+    color: #ffffff;
     font-weight: 500;
+    font-size: 0.78rem;
 }
 
 .pipeline-sep {
-    color: var(--border-strong);
-    font-size: 0.75rem;
+    color: #64748b;
+    font-size: 0.82rem;
 }
 
 /* Sidebar Progress & Quest Map Card - Frosted Midnight Glass */
