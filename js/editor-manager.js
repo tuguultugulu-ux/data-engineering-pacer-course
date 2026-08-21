@@ -1,12 +1,11 @@
 /**
  * PACER Data Engineering - Editor & Execution Manager
  * Production-Grade Architecture:
- * - CodeMirror 5 with Monokai theme & sub-pixel focus borders
+ * - CodeMirror 5 with Jupyter-Style Auto-Closing Brackets & Quotes `() [] {} '' ""`
+ * - Strict Real Automated Unit Test Runner & Assertion Verification
+ * - Live Interactive DataFrame Scope Inspector
  * - Live Solve Stopwatch / Coding Timer (Starts on typing)
  * - 3-Attempt Solution Lock Gate
- * - Automated Unit Test Runner & Assertion Verification
- * - Interactive DataFrame Scope Inspector
- * - Data Architecture Block Scheme / Mini-Map
  */
 
 var EditorManager = (function() {
@@ -26,8 +25,7 @@ var EditorManager = (function() {
                     markdown: l.description,
                     code: l.starterCode,
                     solution: l.starterCode + "\n# Production Architecture Solution\n# Ingest -> Impute -> Scale -> Transform -> Baseline\n",
-                    test_code: "",
-                    pipeline_scheme: [
+                    pipeline_scheme: l.pipeline_scheme || [
                         {"step": "1. Ingest", "desc": "Raw Multi-source Data", "target": "Raw Ingestion"},
                         {"step": "2. Preprocess", "desc": "Imputation & Encoding", "target": "ColumnTransformer"},
                         {"step": "3. Pipeline", "desc": "Model Estimation", "target": "Evaluation Metric"}
@@ -126,6 +124,7 @@ var EditorManager = (function() {
                 tabSize: 4,
                 smartIndent: true,
                 matchBrackets: true,
+                autoCloseBrackets: true, // Jupyter-style auto-closing () [] {} '' ""
                 viewportMargin: Infinity,
                 extraKeys: {
                     "Ctrl-Enter": function() { runCell(cellId); },
@@ -224,8 +223,11 @@ var EditorManager = (function() {
             metaEl.innerHTML = `<span style="font-family:var(--font-mono); color:#94a3b8; font-size:0.68rem;">${I18n.t('execTime')}: ${res.durationMs}ms</span>`;
         }
 
-        // Update data inspector widget
-        renderScopeInspector(cellId, res.scope);
+        // Update data inspector widget live if open
+        const inspectorBox = document.getElementById('inspector-box-' + cellId);
+        if (inspectorBox && !inspectorBox.classList.contains('hidden')) {
+            renderScopeInspector(cellId, res.scope);
+        }
 
         if (outputEl) {
             let parts = [];
@@ -255,7 +257,8 @@ var EditorManager = (function() {
         const userCode = cm.getValue();
         const outputEl = document.getElementById('output-' + cellId);
         const statusBadge = document.getElementById('status-badge-' + cellId);
-        const problem = getProblemData(cellId);
+        const starterCode = getInitialCode(cellId);
+        const problem = getProblemData(cellId) || {};
 
         if (statusBadge) {
             statusBadge.className = 'status-badge running';
@@ -264,14 +267,10 @@ var EditorManager = (function() {
 
         if (outputEl) {
             outputEl.className = 'output-console running';
-            outputEl.innerHTML = `<span class="console-loading">Running automated unit test assertions...</span>`;
+            outputEl.innerHTML = `<span class="console-loading">Running strict automated unit test assertions...</span>`;
         }
 
-        const testScript = problem && problem.test_code
-            ? problem.test_code
-            : `import json; json.dumps([{"name": "Runtime Verification", "passed": True, "msg": "Executed successfully"}])`;
-
-        const tests = await PyodideEngine.runUnitTests(userCode, testScript);
+        const tests = await PyodideEngine.runUnitTests(userCode, starterCode, problem);
         const allPassed = tests.length > 0 && tests.every(t => t.passed);
 
         if (statusBadge) {
@@ -295,9 +294,9 @@ var EditorManager = (function() {
             tests.forEach((t, idx) => {
                 const mark = t.passed ? '✓' : '✗';
                 const color = t.passed ? '#34d399' : '#f87171';
-                testHtml += `<div style="margin-bottom: 4px; padding-left: 8px; border-left: 2px solid ${color};">`;
+                testHtml += `<div style="margin-bottom: 6px; padding-left: 8px; border-left: 2.5px solid ${color};">`;
                 testHtml += `<span style="color:${color}; font-weight:600;">${mark} Test ${idx + 1}: ${escapeHtml(t.name)}</span>`;
-                testHtml += `<div style="font-size:0.75rem; color:#94a3b8; margin-top:2px;">${escapeHtml(t.msg)}</div>`;
+                testHtml += `<div style="font-size:0.75rem; color:#cbd5e1; margin-top:2px;">${escapeHtml(t.msg)}</div>`;
                 testHtml += `</div>`;
             });
             testHtml += `</div>`;
@@ -305,6 +304,73 @@ var EditorManager = (function() {
             outputEl.className = allPassed ? 'output-console success' : 'output-console error';
             outputEl.innerHTML = testHtml;
         }
+    }
+
+    async function toggleDataInspector(cellId) {
+        const box = document.getElementById('inspector-box-' + cellId);
+        if (!box) return;
+
+        const isHidden = box.classList.contains('hidden');
+        if (isHidden) {
+            box.classList.remove('hidden');
+            box.innerHTML = `<div style="padding: 10px 14px; font-size: 0.76rem; color: #94a3b8; font-family: var(--font-mono);">Inspecting in-memory Python scope...</div>`;
+            const scope = await PyodideEngine.inspectScope();
+            renderScopeInspector(cellId, scope);
+        } else {
+            box.classList.add('hidden');
+        }
+    }
+
+    function renderScopeInspector(cellId, scopeData) {
+        const box = document.getElementById('inspector-box-' + cellId);
+        if (!box) return;
+
+        if (!scopeData || scopeData.length === 0) {
+            box.innerHTML = `<div style="padding: 12px 16px; font-size: 0.78rem; color: #94a3b8; font-family: var(--font-mono); background: rgba(0,0,0,0.35); border-radius: var(--radius-sm);">No active user DataFrames or NumPy arrays in memory. Run your Python code first to populate the variable scope.</div>`;
+            return;
+        }
+
+        let html = `
+            <div style="padding: 12px 16px; background: rgba(0,0,0,0.4); border: 1px solid var(--midnight-border); border-radius: var(--radius-sm); margin-top: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 600; color: #38bdf8; font-family: var(--font-mono);">
+                        Active In-Memory Data Structures (${scopeData.length})
+                    </span>
+                    <button class="action-btn secondary-btn" style="padding: 2px 8px; font-size: 0.7rem;" onclick="EditorManager.refreshScope('${cellId}')">
+                        Refresh Scope
+                    </button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.76rem; font-family: var(--font-mono); color: #cbd5e1;">
+                        <thead>
+                            <tr style="border-bottom: 1.5px solid var(--midnight-border); text-align: left; color: #94a3b8;">
+                                <th style="padding: 6px 8px;">${I18n.t('varName')}</th>
+                                <th style="padding: 6px 8px;">${I18n.t('varType')}</th>
+                                <th style="padding: 6px 8px;">${I18n.t('varShape')}</th>
+                                <th style="padding: 6px 8px;">${I18n.t('varMissing')}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+
+        scopeData.forEach(v => {
+            html += `
+                <tr style="border-bottom: 1px solid var(--midnight-border-subtle);">
+                    <td style="padding: 6px 8px; color: #38bdf8; font-weight: 600;">${escapeHtml(v.name)}</td>
+                    <td style="padding: 6px 8px; color: #ffffff;">${escapeHtml(v.type)}</td>
+                    <td style="padding: 6px 8px; color: #34d399; font-weight: 500;">${escapeHtml(JSON.stringify(v.shape))}</td>
+                    <td style="padding: 6px 8px; color: ${v.nulls > 0 ? '#f87171' : '#94a3b8'};">${v.nulls}</td>
+                </tr>
+            `;
+        });
+
+        html += `</tbody></table></div></div>`;
+        box.innerHTML = html;
+    }
+
+    async function refreshScope(cellId) {
+        const scope = await PyodideEngine.inspectScope();
+        renderScopeInspector(cellId, scope);
     }
 
     function toggleSolution(cellId) {
@@ -360,56 +426,11 @@ var EditorManager = (function() {
         }
     }
 
-    function toggleDataInspector(cellId) {
-        const box = document.getElementById('inspector-box-' + cellId);
-        if (box) {
-            box.classList.toggle('hidden');
-        }
-    }
-
     function toggleScheme(cellId) {
         const box = document.getElementById('scheme-box-' + cellId);
         if (box) {
             box.classList.toggle('hidden');
         }
-    }
-
-    function renderScopeInspector(cellId, scopeData) {
-        const box = document.getElementById('inspector-box-' + cellId);
-        if (!box) return;
-
-        if (!scopeData || scopeData.length === 0) {
-            box.innerHTML = `<div style="padding: 10px 14px; font-size: 0.75rem; color: #64748b; font-family: var(--font-mono);">No active DataFrames or NumPy arrays in memory.</div>`;
-            return;
-        }
-
-        let html = `
-            <div style="padding: 10px 14px; background: rgba(0,0,0,0.3); border-bottom: 1px solid var(--midnight-border);">
-                <div style="font-size: 0.75rem; font-weight: 600; color: #ffffff; font-family: var(--font-mono); margin-bottom: 8px;">
-                    Active In-Memory Data Structures (${scopeData.length})
-                </div>
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem; font-family: var(--font-mono); color: #cbd5e1;">
-                    <tr style="border-bottom: 1px solid var(--midnight-border); text-align: left; color: #94a3b8;">
-                        <th style="padding: 4px 6px;">${I18n.t('varName')}</th>
-                        <th style="padding: 4px 6px;">${I18n.t('varType')}</th>
-                        <th style="padding: 4px 6px;">${I18n.t('varShape')}</th>
-                        <th style="padding: 4px 6px;">${I18n.t('varMissing')}</th>
-                    </tr>
-        `;
-
-        scopeData.forEach(v => {
-            html += `
-                <tr style="border-bottom: 1px solid var(--midnight-border-subtle);">
-                    <td style="padding: 4px 6px; color: #38bdf8; font-weight: 500;">${escapeHtml(v.name)}</td>
-                    <td style="padding: 4px 6px; color: #cbd5e1;">${escapeHtml(v.type)}</td>
-                    <td style="padding: 4px 6px; color: #34d399;">${escapeHtml(v.shape)}</td>
-                    <td style="padding: 4px 6px; color: ${v.nulls > 0 ? '#f87171' : '#94a3b8'};">${v.nulls}</td>
-                </tr>
-            `;
-        });
-
-        html += `</table></div>`;
-        box.innerHTML = html;
     }
 
     async function toggleRabbit(cellId) {
@@ -534,6 +555,7 @@ var EditorManager = (function() {
         toggleSolution: toggleSolution,
         copySolutionToEditor: copySolutionToEditor,
         toggleDataInspector: toggleDataInspector,
+        refreshScope: refreshScope,
         toggleScheme: toggleScheme,
         toggleRabbit: toggleRabbit,
         resetCell: resetCell,
