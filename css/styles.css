@@ -1245,3 +1245,36 @@ kbd {
     font-weight: 600;
     flex-shrink: 0;
 }
+
+/* Critical Data Engineering Mandate Red Callout */
+.mandate-callout-red {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.28);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.mandate-icon {
+    color: #ef4444;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.mandate-content strong {
+    color: #f87171;
+    font-size: 0.84rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.mandate-content p {
+    color: #cbd5e1;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    margin: 0;
+}

@@ -21,7 +21,7 @@ var I18n = (function() {
     const dict = {
         en: {
             brandTitle: "PACER Data Engineering",
-            brandSubtitle: "10-Week Mastery Curriculum",
+            brandSubtitle: "",
             aiSetupTitle: "AI Reviewer Setup",
             aiOfflineStatus: "Offline AST Mode",
             aiActiveSuffix: " Active",
@@ -40,6 +40,8 @@ var I18n = (function() {
             attemptsLabel: "runs",
             solveTimeLabel: "Time: ",
             architectureMap: "Data Architecture Pipeline Flow",
+            mandateTitle: "CRITICAL DATA ENGINEERING MANDATE",
+            mandateText: "Raw data must be thoroughly cleaned, validated, sorted, and authentically preserved without synthetic data leakage to ensure downstream ML models achieve maximum training accuracy and generalization in production.",
             benchmarkBtn: "Benchmark",
             progressTitle: "Curriculum Progress",
             progressLabel: "Challenges Solved",
@@ -59,6 +61,8 @@ var I18n = (function() {
             examTitleSub: "Comprehensive Phase Evaluation — Advanced End-to-End Pipeline",
             examCardTitle: "Final Phase Exam",
             examNotice: "This exam evaluates every core concept covered in this phase. You have a blank slate. Write and execute your entire solution below.",
+            projectCardTitle: "Production Capstone Project",
+            projectNotice: "Transform authentic messy raw data into a pristine, leak-free, validated dataset ready for high-accuracy machine learning model training.",
             terminalOutput: "Terminal Output",
             codeRabbitReview: "Code Rabbit Review",
             pressRun: "Press Ctrl+Enter or click Run to execute code.",
@@ -75,6 +79,7 @@ var I18n = (function() {
             levelAdvanced: "Advanced",
             levelComplex: "Complex",
             levelMastery: "Mastery",
+            levelProject: "Capstone Project",
             modalTitle: "Code Rabbit AI Reviewer Configuration",
             modalDesc: "Connect your API key to enable live generative code reviews on your Python submissions. If left blank, Code Rabbit operates in <strong>Offline AST Inspector Mode</strong>.",
             providerLabel: "AI Provider",
@@ -93,7 +98,7 @@ var I18n = (function() {
         },
         mn: {
             brandTitle: "PACER Өгөгдлийн Инженерчлэл",
-            brandSubtitle: "10 Долоо хоногийн Цогц Хөтөлбөр",
+            brandSubtitle: "",
             aiSetupTitle: "AI Код Шалгагч Тохиргоо",
             aiOfflineStatus: "Офлайн AST Горим",
             aiActiveSuffix: " Идэвхтэй",
@@ -112,6 +117,8 @@ var I18n = (function() {
             attemptsLabel: "удаа",
             solveTimeLabel: "Хугацаа: ",
             architectureMap: "Өгөгдлийн Бүтэц ба Пайплайн Схем",
+            mandateTitle: "ЧУХАЛ ИНЖЕНЕРЧЛЭЛИЙН ШААРДЛАГА",
+            mandateText: "Бодит өгөгдлийг сайтар цэвэрлэж, алдааг засч, эрэмбэлж, дата алдагдалгүйгээр жинхэнэ эх бүтцээр нь бэлтгэж байж цаашдын Machine Learning загварууд хамгийн өндөр нарийвчлалтайгаар суралцах боломжтой болно.",
             benchmarkBtn: "Хурд Хэмжих",
             progressTitle: "Сургалтын Явц",
             progressLabel: "Бодсон Даалгавар",
@@ -131,6 +138,8 @@ var I18n = (function() {
             examTitleSub: "Үе шатны Нэгдсэн Үнэлгээ — Төгсгөлийн Цогц Пайплайн Шалгалт",
             examCardTitle: "Үе Шатны Төгсгөлийн Шалгалт",
             examNotice: "Энэхүү шалгалт нь тухайн үе шатанд судалсан бүх чухал концепцуудыг шалгана. Танд хоосон хуудас өгөгдсөн бөгөөд бүтэн шийдлээ доор бичиж ажиллуулна уу.",
+            projectCardTitle: "Бодит Үйлдвэрлэлийн Төсөл",
+            projectNotice: "Бодит бохир, эмх замбараагүй түүхий өгөгдлийг цэвэрлэж, эрэмбэлэн, Machine Learning сургалтад 100% бэлэн болгоно уу.",
             terminalOutput: "Терминал Гаралт",
             codeRabbitReview: "Code Rabbit Зөвлөгөө",
             pressRun: "Кодоо ажиллуулахын тулд Ctrl+Enter дарах эсвэл Ажиллуулах товчийг дарна уу.",
@@ -147,6 +156,7 @@ var I18n = (function() {
             levelAdvanced: "Ахисан шат",
             levelComplex: "Гүнзгий шат",
             levelMastery: "Мастер шалгалт",
+            levelProject: "Үйлдвэрлэлийн Төсөл",
             modalTitle: "Code Rabbit AI Тохиргоо",
             modalDesc: "Python кодондоо хиймэл оюуны бодит зөвлөгөө авахын тулд API түлхүүрээ оруулна уу. Түлхүүргүй тохиолдолд <strong>Офлайн AST шалгагч горимоор</strong> ажиллана.",
             providerLabel: "AI Үйлчилгээ үзүүлэгч",
@@ -166,17 +176,18 @@ var I18n = (function() {
     };
 
     const phaseTitlesMn = {
-        "intro": "Танилцуулга ба 10 Долоо Хоногийн Төлөвлөгөө",
+        "intro": "Танилцуулга ба Төлөвлөгөө",
         "1": "Үе шат 1: Python суурь ба Git",
         "2": "Үе шат 2: NumPy Тоон Өгөгдөл",
         "3": "Үе шат 3: Pandas ба Дата Аудит",
         "4": "Үе шат 4: Визуализаци ба Статистик",
         "5": "Үе шат 5: Өгөгдлийн Пайплайн Бүтээх",
-        "6": "Үе шат 6: Scikit-learn Пайплайн"
+        "6": "Үе шат 6: Scikit-learn Пайплайн",
+        "projects": "Бодит Үйлдвэрлэлийн Төслүүд"
     };
 
     const lessonTitlesMn = {
-        "intro": "10 Долоо хоногийн Хөтөлбөр ба Эх Сурвалжууд",
+        "intro": "Сургалтын Хөтөлбөр ба Эх Сурвалжууд",
         "p1_overview": "Үе шат 1: Төслийн Зорилго",
         "p1_git": "Pro Git: Суурь Ухагдахуун",
         "p2_overview": "Үе шат 2: Төслийн Зорилго",
@@ -188,7 +199,12 @@ var I18n = (function() {
         "w2_exam": "NumPy Төгсгөлийн Шалгалт",
         "w3_exam": "Pandas Төгсгөлийн Шалгалт",
         "w4_exam": "Matplotlib Төгсгөлийн Шалгалт",
-        "w6_exam": "Scikit-Learn Төгсгөлийн Шалгалт"
+        "w6_exam": "Scikit-Learn Төгсгөлийн Шалгалт",
+        "proj_fintech": "Төсөл 1: FinTech Их Хэмжээний Гүйлгээний Пайплайн",
+        "proj_iot": "Төсөл 2: Үйлдвэрийн IoT Мэдрэгч ба Телеметрийн Шинжилгээ",
+        "proj_ecommerce": "Төсөл 3: Цахим Худалдааны Clickstream ба Хэрэглэгчийн LTV",
+        "proj_clinical": "Төсөл 4: Эрүүл Мэндийн Цахим Карт (EMR) ба Нууцлал",
+        "proj_market": "Төсөл 5: Санхүүгийн Зах Зээлийн Big Data ба Санах Ойн Оновчлол"
     };
 
     function t(key) {

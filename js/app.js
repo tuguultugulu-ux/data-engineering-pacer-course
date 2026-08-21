@@ -8,7 +8,8 @@
  * - Interactive DataFrame & Variable Scope Inspector
  * - Production Reference Solution & Diff Viewer (3-Attempt Gate)
  * - Live Solve Stopwatch / Coding Timer (Starts on typing)
- * - Data Architecture Mini-Map Pipeline Scheme (5 Tiers per Topic)
+ * - Data Architecture Mini-Map Pipeline Scheme (10 Tiers per Topic)
+ * - 5 Real-World Industry Capstone Projects with Red Data Engineering Mandates
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -110,7 +111,7 @@ function buildSidebar() {
     const brandSubEl = document.getElementById('sidebar-brand-subtitle');
 
     if (brandTitleEl) brandTitleEl.innerText = I18n.t('brandTitle');
-    if (brandSubEl) brandSubEl.innerText = I18n.t('brandSubtitle');
+    if (brandSubEl) brandSubEl.innerText = ''; // Removed 10-week mastery text
 
     if (!navList || !window.COURSE_DATA) return;
 
@@ -249,29 +250,72 @@ function renderLessonHtml(lesson) {
         `;
     }
 
-    // 3. Final Phase Exam
+    // 3. Final Phase Exam or Capstone Project
     if (lesson.isExam) {
+        const isProject = (lesson.phase === 'projects' || lesson.id.startsWith('proj_'));
+        const badgeLabel = isProject ? I18n.t('projectCardTitle') : I18n.t('examCardTitle');
+        const subLabel = isProject ? I18n.t('projectNotice') : I18n.t('examTitleSub');
+
+        // Pipeline Scheme Mini-Map
+        const schemeNodes = lesson.pipeline_scheme || [
+            { step: "1. Ingest", desc: "Raw Messy Data Feed", target: "Uncleaned DataFrame" },
+            { step: "2. Clean & Sanitize", desc: "Outlier & Missing Impute", target: "Clean Authenticity" },
+            { step: "3. Feature Pipeline", desc: "Vectorized Transformations", target: "X & y Matrices" },
+            { step: "4. Model Ready", desc: "Zero-Leakage Training Split", target: "High-Accuracy ML Ready" }
+        ];
+
+        let schemeHtml = `
+            <div class="scheme-flow-container" style="border-radius: var(--radius-md); margin-bottom: 18px; border: 1px solid var(--midnight-border);">
+                <div class="scheme-header">
+                    <span>${I18n.t('architectureMap')}</span>
+                </div>
+                <div class="scheme-flow">
+                    ${schemeNodes.map((node, idx) => `
+                        <div class="scheme-node">
+                            <span class="node-step">${escapeHtml(node.step)}</span>
+                            <strong class="node-desc">${escapeHtml(node.desc)}</strong>
+                            <small class="node-target">${escapeHtml(node.target)}</small>
+                        </div>
+                        ${idx < (schemeNodes.length - 1) ? '<div class="scheme-arrow">→</div>' : ''}
+                    `).join('')}
+                </div>
+            </div>
+        `;
+
         return `
             <div class="lesson-header">
                 <h1>${escapeHtml(localizedTitle)}</h1>
-                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">${I18n.t('examTitleSub')}</p>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">${subLabel}</p>
+            </div>
+
+            <!-- Prominent Red Data Engineering Mandate Callout -->
+            <div class="mandate-callout-red">
+                <div class="mandate-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="mandate-content">
+                    <strong style="letter-spacing: 0.02em;">${I18n.t('mandateTitle')}:</strong>
+                    <p style="margin-top: 4px; line-height: 1.55;">${I18n.t('mandateText')}</p>
+                </div>
             </div>
 
             <div class="practice-card" style="margin-bottom: 24px; background: #ffffff; box-shadow: 0 0 0 1px var(--border-subtle); color: var(--text-primary);">
                 <div class="card-prompt" style="background: #ffffff; color: var(--text-primary); border-bottom: none;">
-                    <span class="level-tag complex" style="margin-bottom: 8px; display: inline-block;">${I18n.t('examCardTitle')}</span>
+                    <span class="level-tag complex" style="margin-bottom: 8px; display: inline-block;">${badgeLabel}</span>
                     <p style="margin-top: 6px; font-size: 0.92rem; line-height: 1.6;">${escapeHtml(lesson.description)}</p>
                     <p style="margin-top: 10px; font-size: 0.82rem; color: var(--text-secondary); font-style: italic;">
-                        ${I18n.t('examNotice')}
+                        ${isProject ? I18n.t('projectNotice') : I18n.t('examNotice')}
                     </p>
                 </div>
             </div>
 
+            ${schemeHtml}
+
             <div class="practice-card" id="card-${lesson.id}-0">
                 <div class="card-header">
                     <div class="card-title-group">
-                        <span class="level-tag mastery">${I18n.t('levelMastery')}</span>
-                        <h3 class="card-title">main.py</h3>
+                        <span class="level-tag mastery">${isProject ? I18n.t('levelProject') : I18n.t('levelMastery')}</span>
+                        <h3 class="card-title">pipeline.py</h3>
                         <span class="timer-badge" id="timer-${lesson.id}-0">00:00</span>
                     </div>
                     <div class="card-actions">
@@ -282,6 +326,9 @@ function renderLessonHtml(lesson) {
                         </button>
                         <button class="action-btn secondary-btn" id="sol-btn-${lesson.id}-0" onclick="EditorManager.toggleSolution('${lesson.id}-0')" title="${I18n.t('showSolution')}">
                             <span>${I18n.t('showSolution')} (0/3)</span>
+                        </button>
+                        <button class="action-btn secondary-btn" onclick="EditorManager.toggleDataInspector('${lesson.id}-0')" title="${I18n.t('dataInspector')}">
+                            <span>${I18n.t('dataInspector')}</span>
                         </button>
                         <button class="action-btn test-btn" onclick="EditorManager.runTests('${lesson.id}-0')" title="${I18n.t('runTestsBtn')}">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -331,7 +378,7 @@ function renderLessonHtml(lesson) {
         `;
     }
 
-    // 4. Standard Chapter with Book & Practices (5 Tiers)
+    // 4. Standard Chapter with Book & Practices (10 Tiers)
     let practicesHtml = '';
     if (lesson.practices && lesson.practices.length > 0) {
         practicesHtml = `
