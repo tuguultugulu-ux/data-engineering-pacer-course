@@ -833,9 +833,6 @@ function checkAuthGate() {
         if (overlay) overlay.style.display = 'flex';
         if (adminBtn) adminBtn.style.display = 'none';
         if (profileWidget) profileWidget.innerHTML = '';
-
-        // Try to initialize Google's real button
-        initRealGoogleButton();
         return false;
     }
 
@@ -871,62 +868,7 @@ function checkAuthGate() {
     return true;
 }
 
-function initRealGoogleButton() {
-    var clientId = AuthManager.getClientId();
-    var setupNotice = document.getElementById('auth-setup-notice');
-    var btnContainer = document.getElementById('google-signin-btn-container');
-
-    if (!clientId) {
-        // No Client ID — show setup instructions
-        if (setupNotice) setupNotice.style.display = 'block';
-        if (btnContainer) btnContainer.innerHTML = '<p style="color:#64748b; font-size:0.78rem;">Google Sign-In requires an OAuth Client ID</p>';
-        return;
-    }
-
-    if (setupNotice) setupNotice.style.display = 'none';
-
-    // Initialize Google Identity Services with the REAL Client ID
-    var gisReady = AuthManager.initGoogleSignIn('google-signin-btn-container', function(result) {
-        if (result.success) {
-            checkAuthGate();
-            buildSidebar();
-            if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
-            loadLesson(currentLessonId);
-        } else {
-            var errEl = document.getElementById('auth-error-msg');
-            if (errEl) {
-                errEl.style.display = 'block';
-                errEl.innerText = result.error || 'Google Sign-In failed. Your account may not be on the approved roster.';
-            }
-        }
-    });
-
-    if (!gisReady && btnContainer) {
-        btnContainer.innerHTML = '<p style="color:#94a3b8; font-size:0.78rem;">Loading Google Sign-In...</p>';
-        // Retry after GIS script loads
-        setTimeout(function() {
-            AuthManager.initGoogleSignIn('google-signin-btn-container', function(result) {
-                if (result.success) {
-                    checkAuthGate();
-                    buildSidebar();
-                    if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
-                    loadLesson(currentLessonId);
-                } else {
-                    var errEl = document.getElementById('auth-error-msg');
-                    if (errEl) {
-                        errEl.style.display = 'block';
-                        errEl.innerText = result.error || 'Access Denied.';
-                    }
-                }
-            });
-        }, 2000);
-    }
-}
-
 function saveClientIdAndReload() {
-    var input = document.getElementById('client-id-input');
-    if (!input || !input.value.trim()) return;
-    AuthManager.setClientId(input.value.trim());
     window.location.reload();
 }
 

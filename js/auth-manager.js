@@ -1,12 +1,9 @@
 /**
- * PACER Data Engineering - REAL Google Identity Services Authentication Engine
- * Integrated with Firebase Firestore for Real-time Global Sync
+ * PACER Data Engineering - Secure Firebase Auth Engine
+ * Integrated with Firebase Auth and Firestore for Global State Sync
  */
 
 var AuthManager = (function() {
-    // Real Google Cloud OAuth 2.0 Client ID
-    const GOOGLE_CLIENT_ID = '14912518856-9thfqfbne77r82p6kpicuv3l27aurr2q.apps.googleusercontent.com';
-
     // Firebase Configuration
     const firebaseConfig = {
       projectId: "pacer-course-14722",
@@ -22,8 +19,9 @@ var AuthManager = (function() {
         firebase.initializeApp(firebaseConfig);
     }
     const db = firebase.firestore();
+    const auth = firebase.auth();
 
-    const SESSION_KEY = 'pacer_verified_session_v4';
+    const SESSION_KEY = 'pacer_verified_session_v5';
 
     const ADMIN_EMAILS = [
         'sarantuyasarnai42@gmail.com',
@@ -44,20 +42,13 @@ var AuthManager = (function() {
 
     // ── Real-Time Firebase Sync ──────────────────────────────────
     
-    // 1. Sync Approved Roster
     db.collection('settings').doc('roster').onSnapshot((doc) => {
         if (doc.exists) {
             localRoster = doc.data().emails || localRoster;
             refreshAdminUI();
-        } else {
-            // Seed database on first load
-            db.collection('settings').doc('roster').set({ emails: localRoster }).catch(e => console.warn(e));
         }
-    }, (error) => {
-        console.warn("Firebase roster sync error (ensure DB is created in console):", error);
-    });
+    }, (error) => console.warn("Firebase roster sync error:", error));
 
-    // 2. Sync Metrics (Student Progress)
     db.collection('metrics').onSnapshot((snapshot) => {
         const newMetrics = {};
         snapshot.forEach(doc => {
@@ -65,9 +56,7 @@ var AuthManager = (function() {
         });
         localMetrics = newMetrics;
         refreshAdminUI();
-    }, (error) => {
-        console.warn("Firebase metrics sync error:", error);
-    });
+    }, (error) => console.warn("Firebase metrics sync error:", error));
 
     function refreshAdminUI() {
         if (typeof window !== 'undefined' && document.getElementById('admin-modal-backdrop') && document.getElementById('admin-modal-backdrop').style.display === 'flex') {
@@ -91,9 +80,7 @@ var AuthManager = (function() {
         return localRoster.map(e => e.toLowerCase()).includes(lower);
     }
 
-    function getApprovedRoster() {
-        return localRoster;
-    }
+    function getApprovedRoster() { return localRoster; }
 
     function addApprovedUser(email) {
         const lower = email.trim().toLowerCase();
@@ -107,25 +94,14 @@ var AuthManager = (function() {
 
     function removeApprovedUser(email) {
         const lower = email.trim().toLowerCase();
-        if (ADMIN_EMAILS.includes(lower)) return false; // Never remove core admins
+        if (ADMIN_EMAILS.includes(lower)) return false; 
         const newRoster = localRoster.filter(e => e.toLowerCase() !== lower);
         db.collection('settings').doc('roster').set({ emails: newRoster }).catch(e => console.error(e));
         return true;
     }
 
-    // ── Session Management (verified sessions only) ──────────────
+    // ── Session Management ───────────────────────────────────────
     
-    function parseJwt(token) {
-        try {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const payload = decodeURIComponent(atob(base64).split('').map(c =>
-                '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-            ).join(''));
-            return JSON.parse(payload);
-        } catch(e) { return null; }
-    }
-
     function getCurrentUser() {
         try {
             const raw = localStorage.getItem(SESSION_KEY);
@@ -147,40 +123,74 @@ var AuthManager = (function() {
         } catch(e) {}
     }
 
-    function handleGoogleCredential(credential) {
-        const payload = parseJwt(credential);
-        if (!payload || !payload.email) return { success: false, error: 'Invalid token.' };
-
-        const email = payload.email.toLowerCase();
-        if (!isApproved(email)) {
-            return {
-                success: false,
-                unauthorized: true,
-                email: email,
-                error: 'Access Denied: ' + email + ' is not on the approved roster.'
-            };
+    // Restore session on load if Firebase remembers them
+    auth.onAuthStateChanged((user) => {
+        if (user && user.email) {
+            const email = user.email.toLowerCase();
+            if (isApproved(email)) {
+                setSession({
+                    email: email,
+                    name: user.displayName || email.split('@')[0],
+                    picture: user.photoURL || '',
+                    role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
+                    verified: true,
+                    uid: user.uid
+                });
+                if (typeof checkAuthGate === 'function') checkAuthGate();
+            } else {
+                auth.signOut();
+            }
         }
+    });
 
-        const user = {
-            email: email,
-            name: payload.name || email.split('@')[0],
-            picture: payload.picture || '',
-            role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
-            verified: true,
-            loggedInAt: new Date().toISOString()
-        };
+    function signInWithFirebase() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                const user = result.user;
+                const email = user.email.toLowerCase();
+                
+                if (!isApproved(email)) {
+                    auth.signOut();
+                    const errEl = document.getElementById('auth-error-msg');
+                    if (errEl) {
+                        errEl.style.display = 'block';
+                        errEl.innerText = 'Access Denied: ' + email + ' is not on the approved roster.';
+                    }
+                    return;
+                }
 
-        setSession(user);
-        return { success: true, user: user };
+                setSession({
+                    email: email,
+                    name: user.displayName || email.split('@')[0],
+                    picture: user.photoURL || '',
+                    role: isAdmin(email) ? 'ADMIN' : 'STUDENT',
+                    verified: true,
+                    uid: user.uid
+                });
+
+                if (typeof checkAuthGate === 'function') checkAuthGate();
+                if (typeof buildSidebar === 'function') buildSidebar();
+                if (typeof ProgressTracker !== 'undefined') ProgressTracker.updateProgressUI();
+                if (typeof loadLesson === 'function' && typeof currentLessonId !== 'undefined') loadLesson(currentLessonId);
+            })
+            .catch((error) => {
+                console.error(error);
+                const errEl = document.getElementById('auth-error-msg');
+                if (errEl) {
+                    errEl.style.display = 'block';
+                    errEl.innerText = error.message || 'Google Sign-In failed.';
+                }
+            });
     }
 
     function logout() {
         setSession(null);
-        try {
-            if (typeof google !== 'undefined' && google.accounts && google.accounts.id) {
-                google.accounts.id.disableAutoSelect();
-            }
-        } catch(e) {}
+        auth.signOut().then(() => {
+            if (typeof checkAuthGate === 'function') checkAuthGate();
+            var profileWidget = document.getElementById('sidebar-user-profile');
+            if (profileWidget) profileWidget.innerHTML = '';
+        });
     }
 
     // ── Telemetry (Global Sync to Firestore) ─────────────────────
@@ -195,7 +205,6 @@ var AuthManager = (function() {
         
         const docRef = db.collection('metrics').doc(email);
         
-        // Transaction to safely update solves
         db.runTransaction((transaction) => {
             return transaction.get(docRef).then((doc) => {
                 let data = doc.exists ? doc.data() : {
@@ -226,7 +235,6 @@ var AuthManager = (function() {
 
     function getGlobalMetrics() {
         const metrics = JSON.parse(JSON.stringify(localMetrics));
-        // Fill empty spots for roster members
         localRoster.forEach(email => {
             const lower = email.toLowerCase();
             if (!metrics[lower]) {
@@ -242,41 +250,6 @@ var AuthManager = (function() {
         return metrics;
     }
 
-    // ── GIS Initialization ───────────────────────────────────────
-    
-    function getClientId() { return GOOGLE_CLIENT_ID; }
-    function setClientId(id) {} // No longer needed since it's hardcoded
-
-    function initGoogleSignIn(buttonElementId, callback) {
-        if (!GOOGLE_CLIENT_ID) return false;
-        if (typeof google === 'undefined' || !google.accounts || !google.accounts.id) return false;
-
-        google.accounts.id.initialize({
-            client_id: GOOGLE_CLIENT_ID,
-            callback: function(response) {
-                if (response && response.credential) {
-                    const result = handleGoogleCredential(response.credential);
-                    if (callback) callback(result);
-                }
-            },
-            auto_select: false,
-            cancel_on_tap_outside: true
-        });
-
-        const btnEl = document.getElementById(buttonElementId);
-        if (btnEl) {
-            google.accounts.id.renderButton(btnEl, {
-                theme: 'outline',
-                size: 'large',
-                width: 380,
-                text: 'signin_with',
-                shape: 'rectangular',
-                logo_alignment: 'left'
-            });
-        }
-        return true;
-    }
-
     return {
         ADMIN_EMAILS: ADMIN_EMAILS,
         getCurrentUser: getCurrentUser,
@@ -285,10 +258,7 @@ var AuthManager = (function() {
         getApprovedRoster: getApprovedRoster,
         addApprovedUser: addApprovedUser,
         removeApprovedUser: removeApprovedUser,
-        handleGoogleCredential: handleGoogleCredential,
-        initGoogleSignIn: initGoogleSignIn,
-        getClientId: getClientId,
-        setClientId: setClientId,
+        signInWithFirebase: signInWithFirebase,
         logout: logout,
         recordSolveMetric: recordSolveMetric,
         getGlobalMetrics: getGlobalMetrics
