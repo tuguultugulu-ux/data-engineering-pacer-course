@@ -4,12 +4,8 @@
  */
 
 var AuthManager = (function() {
-    // ═══════════════════════════════════════════════════════════════
-    // CONFIGURATION: Replace with your real Google Cloud OAuth Client ID
-    // Create one at: https://console.cloud.google.com/apis/credentials
-    // Authorized JavaScript origin: https://tuguultugulu-ux.github.io
-    // ═══════════════════════════════════════════════════════════════
-    const GOOGLE_CLIENT_ID = localStorage.getItem('pacer_google_client_id') || '';
+    // Real Google Cloud OAuth 2.0 Client ID
+    const GOOGLE_CLIENT_ID = '14912518856-9thfqfbne77r82p6kpicuv3l27aurr2q.apps.googleusercontent.com';
 
     const SESSION_KEY = 'pacer_verified_session_v4';
     const APPROVED_USERS_KEY = 'pacer_approved_roster_v4';
