@@ -6,8 +6,9 @@
  * - Complete Bilingual Localization Engine (English / Mongolian)
  * - Automated Unit Test Runner & Assertion Verification
  * - Interactive DataFrame & Variable Scope Inspector
- * - Production Reference Solution & Diff Viewer
- * - Execution Profiler & Progress Dashboard
+ * - Production Reference Solution & Diff Viewer (3-Attempt Gate)
+ * - Live Solve Stopwatch / Coding Timer (Starts on typing)
+ * - Data Architecture Mini-Map Pipeline Scheme (5 Tiers per Topic)
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -271,12 +272,16 @@ function renderLessonHtml(lesson) {
                     <div class="card-title-group">
                         <span class="level-tag mastery">${I18n.t('levelMastery')}</span>
                         <h3 class="card-title">main.py</h3>
+                        <span class="timer-badge" id="timer-${lesson.id}-0">00:00</span>
                     </div>
                     <div class="card-actions">
                         <span class="status-badge idle" id="status-badge-${lesson.id}-0">Idle</span>
                         <button class="action-btn secondary-btn" onclick="EditorManager.resetCell('${lesson.id}-0')" title="${I18n.t('resetBtn')}">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                             <span>${I18n.t('resetBtn')}</span>
+                        </button>
+                        <button class="action-btn secondary-btn" id="sol-btn-${lesson.id}-0" onclick="EditorManager.toggleSolution('${lesson.id}-0')" title="${I18n.t('showSolution')}">
+                            <span>${I18n.t('showSolution')} (0/3)</span>
                         </button>
                         <button class="action-btn test-btn" onclick="EditorManager.runTests('${lesson.id}-0')" title="${I18n.t('runTestsBtn')}">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -293,6 +298,7 @@ function renderLessonHtml(lesson) {
                     </div>
                 </div>
 
+                <div id="solution-box-${lesson.id}-0" class="solution-box hidden"></div>
                 <div id="inspector-box-${lesson.id}-0" class="inspector-box hidden"></div>
 
                 <div class="editor-review-split">
@@ -325,7 +331,7 @@ function renderLessonHtml(lesson) {
         `;
     }
 
-    // 4. Standard Chapter with Book & Practices
+    // 4. Standard Chapter with Book & Practices (5 Tiers)
     let practicesHtml = '';
     if (lesson.practices && lesson.practices.length > 0) {
         practicesHtml = `
@@ -354,7 +360,7 @@ function renderLessonHtml(lesson) {
 
         <div class="instruction-banner">
             <div class="instruction-text">
-                ${I18n.getLang() === 'mn' ? 'Кодоо интерактив талбарт бичнэ үү. Векторжуулсан үйлдлүүд автоматаар үнэлэгдэнэ.' : 'Write Python code in the interactive editors. Vectorized operations are evaluated automatically.'}
+                ${I18n.getLang() === 'mn' ? 'Кодоо интерактив талбарт бичнэ үү. Код бичиж эхлэхэд хугацаа автоматаар тоологдоно.' : 'Write Python code in the interactive editors. Coding stopwatch tracks your solve duration automatically.'}
             </div>
             <div class="shortcut-pills">
                 <span class="kbd-pill"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> ${I18n.t('shortcutRun')}</span>
@@ -383,9 +389,13 @@ function renderPracticeCard(practice) {
     let levelClass = 'easy';
     let levelLabel = I18n.t('levelEasy');
     const lowerLevel = (practice.level || '').toLowerCase();
+    
     if (lowerLevel.includes('intermediate') || lowerLevel.includes('medium')) {
         levelClass = 'intermediate';
         levelLabel = I18n.t('levelIntermediate');
+    } else if (lowerLevel.includes('advanced')) {
+        levelClass = 'advanced';
+        levelLabel = I18n.t('levelAdvanced');
     } else if (lowerLevel.includes('complex') || lowerLevel.includes('hard')) {
         levelClass = 'complex';
         levelLabel = I18n.t('levelComplex');
@@ -400,12 +410,38 @@ function renderPracticeCard(practice) {
     descHtml = descHtml.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
     descHtml = descHtml.replace(/\n/g, '<br>');
 
+    // Mini-map pipeline scheme
+    const schemeNodes = practice.pipeline_scheme || [
+        { step: "1. Ingest", desc: "Raw Input", target: "DataFrame" },
+        { step: "2. Clean", desc: "Data Quality", target: "Zero Nulls" },
+        { step: "3. Output", desc: "Processed Array", target: "Target" }
+    ];
+
+    let schemeHtml = `
+        <div class="scheme-flow-container">
+            <div class="scheme-header">
+                <span>${I18n.t('architectureMap')}</span>
+            </div>
+            <div class="scheme-flow">
+                ${schemeNodes.map((node, idx) => `
+                    <div class="scheme-node">
+                        <span class="node-step">${escapeHtml(node.step)}</span>
+                        <strong class="node-desc">${escapeHtml(node.desc)}</strong>
+                        <small class="node-target">${escapeHtml(node.target)}</small>
+                    </div>
+                    ${idx < (schemeNodes.length - 1) ? '<div class="scheme-arrow">→</div>' : ''}
+                `).join('')}
+            </div>
+        </div>
+    `;
+
     return `
         <div class="practice-card" id="card-${practice.id}">
             <div class="card-header">
                 <div class="card-title-group">
                     <span class="level-tag ${levelClass}">${levelLabel}</span>
                     <h3 class="card-title">${escapeHtml(practice.title)}</h3>
+                    <span class="timer-badge" id="timer-${practice.id}">00:00</span>
                 </div>
                 <div class="card-actions">
                     <span class="status-badge idle" id="status-badge-${practice.id}">Idle</span>
@@ -414,7 +450,7 @@ function renderPracticeCard(practice) {
                         <span>${I18n.t('resetBtn')}</span>
                     </button>
                     <button class="action-btn secondary-btn" id="sol-btn-${practice.id}" onclick="EditorManager.toggleSolution('${practice.id}')" title="${I18n.t('showSolution')}">
-                        <span>${I18n.t('showSolution')}</span>
+                        <span>${I18n.t('showSolution')} (0/3)</span>
                     </button>
                     <button class="action-btn secondary-btn" onclick="EditorManager.toggleDataInspector('${practice.id}')" title="${I18n.t('dataInspector')}">
                         <span>${I18n.t('dataInspector')}</span>
@@ -437,6 +473,8 @@ function renderPracticeCard(practice) {
             <div class="card-prompt">
                 ${descHtml}
             </div>
+
+            ${schemeHtml}
 
             <div id="solution-box-${practice.id}" class="solution-box hidden"></div>
             <div id="inspector-box-${practice.id}" class="inspector-box hidden"></div>

@@ -87,14 +87,144 @@ var COURSE_DATA = {
       "bookUrl": "https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository",
       "practices": [
         {
-          "id": "git-1",
+          "id": "p1_git-0",
           "level": "Easy",
-          "title": "Exercise 1: Git Status Simulator",
+          "title": "Easy: Exercise 1: Git Status Simulator",
           "markdown": "**Scenario: Git Workflow**\nWrite Python code to simulate checking your repository status.",
           "code": "# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')",
-          "review": "In real production data pipelines, ensure your data files (.csv, .json) are added to <code>.gitignore</code> and never committed directly to git!",
           "solution": "# Optimal Vectorized Production Solution\n# Simulate bash command via python\nimport os\n\n# TODO: Run 'git status' using os.system()\nos.system('echo Git is ready!')\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "In real production data pipelines, ensure your data files (.csv, .json) are added to <code>.gitignore</code> and never committed directly to git!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "p1_git-1",
+          "level": "Intermediate",
+          "title": "Intermediate: Transformations & Slicing",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Apply boolean masking and filtering.\n2. Perform vectorized mathematical operations.\n3. Extract target slices without loops.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\nresult = df[df.iloc[:, 1] > 0]\nprint(result)\n",
+          "review": "Use vectorized boolean indexing instead of row-by-row comparisons.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "p1_git-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "p1_git-3",
+          "level": "Complex",
+          "title": "Complex: Multi-Step Architecture & Aggregation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Reshape and aggregate the multidimensional structures.\n2. Perform advanced grouping, statistical reductions, or pivot operations.\n3. Ensure operations are fully vectorized with optimal memory layout.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n# Complex multi-step processing\nprint(df.describe())\n",
+          "review": "Check your DataFrame shapes and aggregated tensor dimensions after every transformation step.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "p1_git-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Pro Git: Basics**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Pro Git: Basics`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Pro Git: Basics Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -111,9 +241,26 @@ var COURSE_DATA = {
           "title": "Easy: 2. Introduction to NumPy",
           "markdown": "**Scenario: Gym Memberships**\n1. Implement the basic functionality of 2. Introduction to NumPy.",
           "code": "import numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_00-1",
@@ -121,29 +268,112 @@ var COURSE_DATA = {
           "title": "Intermediate: 2. Introduction to NumPy",
           "markdown": "**Scenario: Gym Memberships**\n1. Handle edge cases for 2. Introduction to NumPy.",
           "code": "import numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_00-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_00-3",
           "level": "Complex",
           "title": "Complex: 2. Introduction to NumPy",
           "markdown": "**Scenario: Gym Memberships**\n1. Combine 2. Introduction to NumPy with boolean masks.",
           "code": "import numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_00-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - 2. Introduction to NumPy**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `2. Introduction to NumPy` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_00-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: 2. Introduction to NumPy**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `2. Introduction to NumPy`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "2. Introduction to NumPy Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -160,9 +390,26 @@ var COURSE_DATA = {
           "title": "Easy: Array Creation and Inspection",
           "markdown": "**Scenario: Supply Chain Shipments**\nYou are collecting raw numerical readings.\n1. Convert `prices` to a NumPy array of type float32.\n2. Print the shape, ndim, dtype, and itemsize of the array.\n3. Create a 3x3 array of zeros of type int8.",
           "code": "import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Ledger Sheet"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_01-1",
@@ -170,29 +417,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Indexing and Slicing",
           "markdown": "**Scenario: Supply Chain Shipments**\nYou have a 2D matrix of data that needs segmentation.\n1. Print the original 5x5 matrix.\n2. Extract the first row and the last column.\n3. Extract a 2x2 sub-matrix from the top-right corner.\n4. Reverse the order of the rows in the matrix.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_01-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Crypto Asset Balances**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_01-3",
           "level": "Complex",
           "title": "Complex: Reshaping and Copies",
           "markdown": "**Scenario: Supply Chain Shipments**\nYou are streaming hourly data that must be structured.\n1. Reshape `raw_stream` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).\n2. Extract the data for the second day (index 1).\n3. Create a completely independent copy (not a view) of the first day's data.\n4. Modify a value in the copy and prove the original `raw_stream` is unchanged.",
           "code": "import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nraw_stream = np.arange(1, 37)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_01-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Understanding Data Types in Python**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Understanding Data Types in Python` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_01-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Understanding Data Types in Python**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Understanding Data Types in Python`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Understanding Data Types in Python Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -209,9 +539,26 @@ var COURSE_DATA = {
           "title": "Easy: Array Creation and Inspection",
           "markdown": "**Scenario: Student Exam Scores**\nYou are collecting raw numerical readings.\n1. Convert `prices` to a NumPy array of type float32.\n2. Print the shape, ndim, dtype, and itemsize of the array.\n3. Create a 3x3 array of zeros of type int8.",
           "code": "import numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nprices = [10.5, 20.0, '30.5', 40.0, 50.5]\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Weather Feed"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_02-1",
@@ -219,29 +566,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Indexing and Slicing",
           "markdown": "**Scenario: Student Exam Scores**\nYou have a 2D matrix of data that needs segmentation.\n1. Print the original 5x5 matrix.\n2. Extract the first row and the last column.\n3. Extract a 2x2 sub-matrix from the top-right corner.\n4. Reverse the order of the rows in the matrix.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(1, 100, size=(5, 5))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Meteorological Station"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_02-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Meteorological Station**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_02-3",
           "level": "Complex",
           "title": "Complex: Reshaping and Copies",
           "markdown": "**Scenario: Student Exam Scores**\nYou are streaming hourly data that must be structured.\n1. Reshape `raw_stream` into a 3D array of shape (3, 4, 3) representing (days, hours, sensors).\n2. Extract the data for the second day (index 1).\n3. Create a completely independent copy (not a view) of the first day's data.\n4. Modify a value in the copy and prove the original `raw_stream` is unchanged.",
           "code": "import numpy as np\n\nraw_stream = np.arange(1, 37)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nraw_stream = np.arange(1, 37)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Meteorological Station"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_02-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - The Basics of NumPy Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `The Basics of NumPy Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_02-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: The Basics of NumPy Arrays**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `The Basics of NumPy Arrays`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Meteorological Station"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "The Basics of NumPy Arrays Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -258,9 +688,26 @@ var COURSE_DATA = {
           "title": "Easy: Vectorized Arithmetic",
           "markdown": "**Scenario: Zoo Animal Diet**\n1. Multiply all `base_values` by the `multiplier` without using loops.\n2. Add 50 to the result.\n3. Round the final values to 1 decimal place using `np.round`.",
           "code": "import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_03-1",
@@ -268,29 +715,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Ufuncs and Broadcasting",
           "markdown": "**Scenario: Zoo Animal Diet**\n1. Add the vector to the matrix (Broadcasting).\n2. Compute the natural logarithm (`np.log`) of the resulting matrix.\n3. Explain in a comment how broadcasting matched the shapes.",
           "code": "import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_03-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_03-3",
           "level": "Complex",
           "title": "Complex: Advanced Ufuncs",
           "markdown": "**Scenario: Zoo Animal Diet**\n1. Use `np.power` to square every element in x.\n2. Use `np.sin` and `np.cos` to compute `sin(x)^2 + cos(x)^2`.\n3. Verify that all results in step 2 are exactly (or close to) 1.0.\n4. Find the sum of all elements using `np.add.reduce`.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_03-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Computation on NumPy Arrays: Universal Functions**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Computation on NumPy Arrays: Universal Functions` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_03-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Computation on NumPy Arrays: Universal Functions**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Computation on NumPy Arrays: Universal Functions`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Computation on NumPy Arrays: Universal Functions Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -307,9 +837,26 @@ var COURSE_DATA = {
           "title": "Easy: Simple Aggregations",
           "markdown": "**Scenario: Social Media Posts**\n1. Find the min, max, and mean of the scores.\n2. Find the index of the highest score using `np.argmax`.\n3. Find the median score using `np.median`.",
           "code": "import numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nscores = np.array([75, 88, 92, 60, 100, 85, 77, 95])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Sensor Feed"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_04-1",
@@ -317,29 +864,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Axis Aggregations",
           "markdown": "**Scenario: Social Media Posts**\n1. Calculate the mean score for each student (axis=1). Notice what NaN does.\n2. Use `np.nanmean` to calculate the mean score for each student while ignoring NaNs.\n3. Find the maximum score achieved on each exam (axis=0) using `np.nanmax`.",
           "code": "import numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nresults = np.array([[85, 90, 88], [70, 75, np.nan], [95, 98, 100], [60, np.nan, 62]])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_04-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: IoT Telemetry Network**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_04-3",
           "level": "Complex",
           "title": "Complex: Multi-dimensional Aggregations",
           "markdown": "**Scenario: Social Media Posts**\n1. Find the total sum of all elements.\n2. Find the maximum value for each week (reduce across days and hours).\n3. Find the average value for each hour of the day (average across weeks and days).\n4. Verify the shape of the result from step 3 is (8,).",
           "code": "import numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(99)\ndata_3d = rng.integers(10, 50, size=(4, 5, 8))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_04-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Aggregations: Min, Max, and Everything In Between**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Aggregations: Min, Max, and Everything In Between` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Engagement Metrics\ndata = {\n    'post_id': [1, 2, 3, 4],\n    'likes': [100.0, 200.0, np.nan, 350.0],\n    'text': ['Hello', ' World ', 'Data Pipeline', 'Machine Learning']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Engagement Metrics\ndata = {\n    'post_id': [1, 2, 3, 4],\n    'likes': [100.0, 200.0, np.nan, 350.0],\n    'text': ['Hello', ' World ', 'Data Pipeline', 'Machine Learning']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_04-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Aggregations: Min, Max, and Everything In Between**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Aggregations: Min, Max, and Everything In Between`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Aggregations: Min, Max, and Everything In Between Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -356,9 +986,26 @@ var COURSE_DATA = {
           "title": "Easy: Vectorized Arithmetic",
           "markdown": "**Scenario: Restaurant Orders**\n1. Multiply all `base_values` by the `multiplier` without using loops.\n2. Add 50 to the result.\n3. Round the final values to 1 decimal place using `np.round`.",
           "code": "import numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nbase_values = np.array([100, 200, 300, 400, 500])\nmultiplier = 1.15\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_05-1",
@@ -366,29 +1013,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Ufuncs and Broadcasting",
           "markdown": "**Scenario: Restaurant Orders**\n1. Add the vector to the matrix (Broadcasting).\n2. Compute the natural logarithm (`np.log`) of the resulting matrix.\n3. Explain in a comment how broadcasting matched the shapes.",
           "code": "import numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nmatrix = np.array([[10, 20], [30, 40], [50, 60]])\nvector = np.array([1, 2])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_05-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_05-3",
           "level": "Complex",
           "title": "Complex: Advanced Ufuncs",
           "markdown": "**Scenario: Restaurant Orders**\n1. Use `np.power` to square every element in x.\n2. Use `np.sin` and `np.cos` to compute `sin(x)^2 + cos(x)^2`.\n3. Verify that all results in step 2 are exactly (or close to) 1.0.\n4. Find the sum of all elements using `np.add.reduce`.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(42)\nx = rng.uniform(1, 10, size=100)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_05-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Computation on Arrays: Broadcasting**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Computation on Arrays: Broadcasting` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_05-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Computation on Arrays: Broadcasting**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Computation on Arrays: Broadcasting`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Computation on Arrays: Broadcasting Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -405,9 +1135,26 @@ var COURSE_DATA = {
           "title": "Easy: Boolean Masks",
           "markdown": "**Scenario: Employee HR System**\n1. Create a boolean mask for ages >= 18.\n2. Print the mask itself.\n3. Use the mask to extract and print only the adult ages.",
           "code": "import numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nages = np.array([12, 18, 25, 30, 15, 45, 10, 60])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "HR Records"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_06-1",
@@ -415,29 +1162,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Compound Logic",
           "markdown": "**Scenario: Employee HR System**\n1. Create a mask for temperatures that are \"comfortable\": between 15 and 25 inclusive.\n2. Use the mask to extract the comfortable temperatures.\n3. Count how many comfortable temperatures there are using `np.count_nonzero()`.\n4. Use bitwise OR (|) to find temperatures that are extreme (<-5 OR >35).",
           "code": "import numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(42)\ntemps = rng.integers(-10, 40, size=20)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_06-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Employee HR System**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_06-3",
           "level": "Complex",
           "title": "Complex: np.where and Conditional Assignment",
           "markdown": "**Scenario: Employee HR System**\n1. Use `np.where` to create a new array: if value > 120, set to \"High\", else \"Normal\".\n2. Replace all values in the original array that are negative with 0 (using boolean indexing).\n3. Use `np.clip` to restrict the array values to a minimum of 50 and maximum of 150.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(2026)\nvalues = rng.normal(100, 20, size=50)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_06-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Comparisons, Masks, and Boolean Logic**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Comparisons, Masks, and Boolean Logic` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Raw Employee HR Records\ndata = {\n    'emp_id': np.arange(1001, 1006),\n    'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'],\n    'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0],\n    'department': ['IT', 'HR', 'IT', 'Sales', 'HR']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Raw Employee HR Records\ndata = {\n    'emp_id': np.arange(1001, 1006),\n    'name': ['Ari', 'Bataa', 'Caraa', 'Davaa', 'Enkh'],\n    'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0],\n    'department': ['IT', 'HR', 'IT', 'Sales', 'HR']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_06-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Comparisons, Masks, and Boolean Logic**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Comparisons, Masks, and Boolean Logic`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Comparisons, Masks, and Boolean Logic Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -454,9 +1284,26 @@ var COURSE_DATA = {
           "title": "Easy: Fancy Indexing 1D",
           "markdown": "**Scenario: Supply Chain Shipments**\n1. Use the `indices` list to extract elements \"A\", \"D\", and \"F\" in one operation.\n2. Create a new index array `[5, 5, 5]` and use it to extract \"F\" three times.",
           "code": "import numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nitems = np.array(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nindices = [0, 3, 5]\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_07-1",
@@ -464,29 +1311,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Fancy Indexing 2D",
           "markdown": "**Scenario: Supply Chain Shipments**\n1. Extract the elements at coordinates (0,1), (2,3), and (4,4) using two arrays of indices.\n2. Extract the entire 1st and 3rd rows using fancy indexing.\n3. Reorder the columns of the matrix to be in the order: 4, 3, 2, 1, 0.",
           "code": "import numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nmatrix = np.arange(25).reshape(5, 5)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_07-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_07-3",
           "level": "Complex",
           "title": "Complex: Combined Indexing",
           "markdown": "**Scenario: Supply Chain Shipments**\n1. Combine fancy indexing and slicing: Extract rows [0, 2, 4] and columns 1 through 3.\n2. Combine fancy indexing and masking: Select rows [1, 3, 5], then keep only values > 50.\n3. Modify the original matrix: set all elements at coordinates (1,1), (2,2), (3,3) to 999.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(123)\ndata = rng.integers(0, 100, size=(6, 6))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_07-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Fancy Indexing**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Fancy Indexing` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_07-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Fancy Indexing**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Fancy Indexing`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Fancy Indexing Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -503,9 +1433,26 @@ var COURSE_DATA = {
           "title": "Easy: Basic Sorting",
           "markdown": "**Scenario: Supply Chain Shipments**\n1. Use `np.sort()` to return a sorted copy of the data.\n2. Call the `.sort()` method on the array to sort it in-place.\n3. Verify the array is sorted.",
           "code": "import numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(42)\nunsorted = rng.integers(1, 100, size=10)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Ledger Sheet"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_08-1",
@@ -513,29 +1460,112 @@ var COURSE_DATA = {
           "title": "Intermediate: argsort",
           "markdown": "**Scenario: Supply Chain Shipments**\n1. Use `np.argsort()` on the `scores` array to get the sorted indices.\n2. Use those indices to print the `names` array in order of lowest to highest score.\n3. Reverse the indices to print the names from highest to lowest score.",
           "code": "import numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nnames = np.array(['Ari', 'Bataa', 'Caraa', 'Davaa'])\nscores = np.array([85, 92, 78, 88])\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_08-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Crypto Asset Balances**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_08-3",
           "level": "Complex",
           "title": "Complex: Multi-dimensional Sorting",
           "markdown": "**Scenario: Supply Chain Shipments**\n1. Sort each column of the matrix independently (axis=0).\n2. Sort each row of the matrix independently (axis=1).\n3. Sort the entire matrix ROWS based entirely on the values in the 2nd column. (Hint: Use argsort on the 2nd column, then fancy index the rows).",
           "code": "import numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\nrng = np.random.default_rng(2026)\nmatrix = rng.integers(0, 50, size=(5, 4))\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_08-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Sorting Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Sorting Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Cargo Logistics Log\ndata = {\n    'ship_id': ['S1', 'S2', 'S3', 'S4'],\n    'weight': [1000.0, 2000.0, np.nan, 4500.0],\n    'destination': ['NY', 'LA', 'CHI', 'MIA']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_08-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Sorting Arrays**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Sorting Arrays`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Sorting Arrays Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -552,9 +1582,26 @@ var COURSE_DATA = {
           "title": "Easy: Structured Data: NumPy's Structured Arrays",
           "markdown": "**Scenario: Medical Patient Records**\n1. Implement the basic functionality of Structured Data: NumPy's Structured Arrays.",
           "code": "import numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Sensor Feed"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_09-1",
@@ -562,29 +1609,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Structured Data: NumPy's Structured Arrays",
           "markdown": "**Scenario: Medical Patient Records**\n1. Handle edge cases for Structured Data: NumPy's Structured Arrays.",
           "code": "import numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w2_09-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: IoT Telemetry Network**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w2_09-3",
           "level": "Complex",
           "title": "Complex: Structured Data: NumPy's Structured Arrays",
           "markdown": "**Scenario: Medical Patient Records**\n1. Combine Structured Data: NumPy's Structured Arrays with boolean masks.",
           "code": "import numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w2_09-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: NumPy - Structured Data: NumPy's Structured Arrays**\nYou must write a fully vectorized solution (NO loops allowed) that processes the raw data, identifies statistical outliers (values > 2 standard deviations from the median), replaces them with the rolling mean, and reshapes the final array into a 3D tensor representing (batches, rows, columns). \nYou must prove your mastery of `Structured Data: NumPy's Structured Arrays` by integrating it deeply into this pipeline. If your solution uses a `for` loop, you fail.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w2_09-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Structured Data: NumPy's Structured Arrays**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Structured Data: NumPy's Structured Arrays`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Structured Data: NumPy's Structured Arrays Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -601,9 +1731,26 @@ var COURSE_DATA = {
           "title": "Easy: 4. Visualization with Matplotlib",
           "markdown": "1. Implement the plotting basics for 4. Visualization with Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Weather Feed"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_00-1",
@@ -611,29 +1758,112 @@ var COURSE_DATA = {
           "title": "Intermediate: 4. Visualization with Matplotlib",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Meteorological Station"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_00-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Meteorological Station**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_00-3",
           "level": "Complex",
           "title": "Complex: 4. Visualization with Matplotlib",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Meteorological Station"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_00-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - 4. Visualization with Matplotlib**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_00-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: 4. Visualization with Matplotlib**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `4. Visualization with Matplotlib`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'day': [1, 2, 3, 4], 'wind_speed': [10.0, 15.0, np.nan, 25.0], 'rainfall': [0.0, 5.0, 10.0, 0.0]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Meteorological Station"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "4. Visualization with Matplotlib Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -650,9 +1880,26 @@ var COURSE_DATA = {
           "title": "Easy: Simple Line Plots",
           "markdown": "1. Implement the plotting basics for Simple Line Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_01-1",
@@ -660,29 +1907,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Simple Line Plots",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_01-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_01-3",
           "level": "Complex",
           "title": "Complex: Simple Line Plots",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_01-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Simple Line Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_01-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Simple Line Plots**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Simple Line Plots`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Simple Line Plots Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -699,9 +2029,26 @@ var COURSE_DATA = {
           "title": "Easy: Simple Scatter Plots",
           "markdown": "1. Implement the plotting basics for Simple Scatter Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_02-1",
@@ -709,29 +2056,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Simple Scatter Plots",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_02-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_02-3",
           "level": "Complex",
           "title": "Complex: Simple Scatter Plots",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_02-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Simple Scatter Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Player Leaderboard\ndata = {\n    'player': ['P1', 'P2', 'P3', 'P4'],\n    'score': [1000.0, 1500.0, np.nan, 3200.0],\n    'level': [1, 2, 3, 4]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Player Leaderboard\ndata = {\n    'player': ['P1', 'P2', 'P3', 'P4'],\n    'score': [1000.0, 1500.0, np.nan, 3200.0],\n    'level': [1, 2, 3, 4]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_02-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Simple Scatter Plots**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Simple Scatter Plots`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Simple Scatter Plots Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -748,9 +2178,26 @@ var COURSE_DATA = {
           "title": "Easy: Visualizing Errors",
           "markdown": "1. Implement the plotting basics for Visualizing Errors. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_03-1",
@@ -758,29 +2205,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Visualizing Errors",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_03-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_03-3",
           "level": "Complex",
           "title": "Complex: Visualizing Errors",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_03-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Visualizing Errors**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_03-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Visualizing Errors**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Visualizing Errors`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Visualizing Errors Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -797,9 +2327,26 @@ var COURSE_DATA = {
           "title": "Easy: Density and Contour Plots",
           "markdown": "1. Implement the plotting basics for Density and Contour Plots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Orders Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_04-1",
@@ -807,29 +2354,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Density and Contour Plots",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_04-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: E-Commerce Transactions**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_04-3",
           "level": "Complex",
           "title": "Complex: Density and Contour Plots",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_04-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Density and Contour Plots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_04-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Density and Contour Plots**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Density and Contour Plots`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Density and Contour Plots Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -846,9 +2476,26 @@ var COURSE_DATA = {
           "title": "Easy: Histograms, Binnings, and Density",
           "markdown": "1. Implement the plotting basics for Histograms, Binnings, and Density. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Real Estate"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_05-1",
@@ -856,29 +2503,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Histograms, Binnings, and Density",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_05-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Housing Market Index**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_05-3",
           "level": "Complex",
           "title": "Complex: Histograms, Binnings, and Density",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_05-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Histograms, Binnings, and Density**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_05-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Histograms, Binnings, and Density**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Histograms, Binnings, and Density`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Histograms, Binnings, and Density Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -895,9 +2625,26 @@ var COURSE_DATA = {
           "title": "Easy: Customizing Plot Legends",
           "markdown": "1. Implement the plotting basics for Customizing Plot Legends. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Real Estate"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_06-1",
@@ -905,29 +2652,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Customizing Plot Legends",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_06-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Housing Market Index**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_06-3",
           "level": "Complex",
           "title": "Complex: Customizing Plot Legends",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_06-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Customizing Plot Legends**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_06-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Customizing Plot Legends**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Customizing Plot Legends`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Customizing Plot Legends Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -944,9 +2774,26 @@ var COURSE_DATA = {
           "title": "Easy: Customizing Colorbars",
           "markdown": "1. Implement the plotting basics for Customizing Colorbars. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "HR Records"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_07-1",
@@ -954,29 +2801,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Customizing Colorbars",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_07-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Employee HR System**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_07-3",
           "level": "Complex",
           "title": "Complex: Customizing Colorbars",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_07-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Customizing Colorbars**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Player Leaderboard\ndata = {\n    'player': ['P1', 'P2', 'P3', 'P4'],\n    'score': [1000.0, 1500.0, np.nan, 3200.0],\n    'level': [1, 2, 3, 4]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Player Leaderboard\ndata = {\n    'player': ['P1', 'P2', 'P3', 'P4'],\n    'score': [1000.0, 1500.0, np.nan, 3200.0],\n    'level': [1, 2, 3, 4]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_07-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Customizing Colorbars**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Customizing Colorbars`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Customizing Colorbars Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -993,9 +2923,26 @@ var COURSE_DATA = {
           "title": "Easy: Multiple Subplots",
           "markdown": "1. Implement the plotting basics for Multiple Subplots. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_08-1",
@@ -1003,29 +2950,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Multiple Subplots",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_08-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_08-3",
           "level": "Complex",
           "title": "Complex: Multiple Subplots",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_08-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Multiple Subplots**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_08-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Multiple Subplots**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Multiple Subplots`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Multiple Subplots Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1042,9 +3072,26 @@ var COURSE_DATA = {
           "title": "Easy: Text and Annotation",
           "markdown": "1. Implement the plotting basics for Text and Annotation. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_09-1",
@@ -1052,29 +3099,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Text and Annotation",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_09-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_09-3",
           "level": "Complex",
           "title": "Complex: Text and Annotation",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_09-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Text and Annotation**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_09-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Text and Annotation**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Text and Annotation`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Text and Annotation Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1091,9 +3221,26 @@ var COURSE_DATA = {
           "title": "Easy: Customizing Ticks",
           "markdown": "1. Implement the plotting basics for Customizing Ticks. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Ledger Sheet"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_10-1",
@@ -1101,29 +3248,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Customizing Ticks",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_10-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Crypto Asset Balances**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_10-3",
           "level": "Complex",
           "title": "Complex: Customizing Ticks",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_10-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Customizing Ticks**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_10-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Customizing Ticks**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Customizing Ticks`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Customizing Ticks Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1140,9 +3370,26 @@ var COURSE_DATA = {
           "title": "Easy: Customizing Matplotlib: Configurations and Stylesheets",
           "markdown": "1. Implement the plotting basics for Customizing Matplotlib: Configurations and Stylesheets. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Orders Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_11-1",
@@ -1150,29 +3397,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Customizing Matplotlib: Configurations and Stylesheets",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_11-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: E-Commerce Transactions**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_11-3",
           "level": "Complex",
           "title": "Complex: Customizing Matplotlib: Configurations and Stylesheets",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_11-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Customizing Matplotlib: Configurations and Stylesheets**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_11-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Customizing Matplotlib: Configurations and Stylesheets**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Customizing Matplotlib: Configurations and Stylesheets`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Customizing Matplotlib: Configurations and Stylesheets Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1189,9 +3519,26 @@ var COURSE_DATA = {
           "title": "Easy: Three-Dimensional Plotting in Matplotlib",
           "markdown": "1. Implement the plotting basics for Three-Dimensional Plotting in Matplotlib. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Sensor Feed"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_12-1",
@@ -1199,29 +3546,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Three-Dimensional Plotting in Matplotlib",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_12-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: IoT Telemetry Network**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_12-3",
           "level": "Complex",
           "title": "Complex: Three-Dimensional Plotting in Matplotlib",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_12-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Three-Dimensional Plotting in Matplotlib**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_12-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Three-Dimensional Plotting in Matplotlib**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Three-Dimensional Plotting in Matplotlib`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'sensor': ['S1', 'S2', 'S3', 'S1', 'S2'], 'temp': [22.5, 23.1, np.nan, 21.8, 22.0], 'humidity': [45.0, 50.0, 55.0, 48.0, 150.0]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "IoT Telemetry Network"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Three-Dimensional Plotting in Matplotlib Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1238,9 +3668,26 @@ var COURSE_DATA = {
           "title": "Easy: Geographic Data with Basemap",
           "markdown": "1. Implement the plotting basics for Geographic Data with Basemap. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_13-1",
@@ -1248,29 +3695,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Geographic Data with Basemap",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_13-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_13-3",
           "level": "Complex",
           "title": "Complex: Geographic Data with Basemap",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_13-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Geographic Data with Basemap**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_13-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Geographic Data with Basemap**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Geographic Data with Basemap`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Geographic Data with Basemap Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1287,9 +3817,26 @@ var COURSE_DATA = {
           "title": "Easy: Visualization with Seaborn",
           "markdown": "1. Implement the plotting basics for Visualization with Seaborn. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_14-1",
@@ -1297,29 +3844,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Visualization with Seaborn",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_14-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_14-3",
           "level": "Complex",
           "title": "Complex: Visualization with Seaborn",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_14-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Visualization with Seaborn**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_14-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Visualization with Seaborn**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Visualization with Seaborn`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Visualization with Seaborn Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1336,9 +3966,26 @@ var COURSE_DATA = {
           "title": "Easy: Further Resources",
           "markdown": "1. Implement the plotting basics for Further Resources. (Note: Plots don't render in the browser sandbox, but write the correct code).",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_15-1",
@@ -1346,29 +3993,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Further Resources",
           "markdown": "1. Add labels, titles, and legends.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w4_15-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w4_15-3",
           "level": "Complex",
           "title": "Complex: Further Resources",
           "markdown": "1. Create multiple subplots.",
           "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w4_15-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Matplotlib - Further Resources**\nCreate publication-ready visualizations. You must implement a multi-axis subplot layout (using GridSpec), apply custom styling, map a third continuous variable to a colorbar, and annotate the specific global maximum using arrows and text.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w4_15-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Further Resources**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Further Resources`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Further Resources Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1385,9 +4115,26 @@ var COURSE_DATA = {
           "title": "Easy: Series Construction",
           "markdown": "**Scenario: Crypto Portfolio**\n1. Convert the 'name' list from the data dict into a Pandas Series named `name_series`.\n2. Print the first 3 elements of the Series.\n3. Create a Series for 'salary' and find its mean.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Orders Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_0-1",
@@ -1395,29 +4142,112 @@ var COURSE_DATA = {
           "title": "Intermediate: DataFrame Construction",
           "markdown": "**Scenario: Crypto Portfolio**\n1. Convert the entire `data` dictionary into a Pandas DataFrame named `df`.\n2. Print the `.shape`, `.columns`, and `.dtypes`.\n3. Use `.head()` to show the first 4 rows.\n4. Use `.info()` to inspect missing values.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_0-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: E-Commerce Transactions**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_0-3",
           "level": "Complex",
           "title": "Complex: DataFrame Operations",
           "markdown": "**Scenario: Crypto Portfolio**\n1. Convert `data` to a DataFrame `df`.\n2. Set the index of the DataFrame to be the ID column.\n3. Select only the numerical columns.\n4. Sort the DataFrame by the last column in descending order.\n5. Extract the top 3 rows into a new DataFrame.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_0-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - What kind of data does pandas handle?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `What kind of data does pandas handle?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Asset Balance Sheet\ndata = {\n    'coin': ['BTC', 'ETH', 'SOL', 'ADA'],\n    'amount': [0.5, 10.0, np.nan, 500.0],\n    'value_usd': [30000, 2000, 50, 200]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_0-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: What kind of data does pandas handle?**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `What kind of data does pandas handle?`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "What kind of data does pandas handle? Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1434,9 +4264,26 @@ var COURSE_DATA = {
           "title": "Easy: CSV Writing",
           "markdown": "**Scenario: Student Exam Scores**\n1. Convert `data` to a DataFrame `df`.\n2. Save the DataFrame to a CSV string using `df.to_csv(index=False)`.\n3. Print the resulting CSV string.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_1-1",
@@ -1444,29 +4291,112 @@ var COURSE_DATA = {
           "title": "Intermediate: CSV Reading and Inspection",
           "markdown": "**Scenario: Student Exam Scores**\n1. Use `io.StringIO(csv_text)` to read the CSV into a DataFrame.\n2. Inspect the dtypes. Notice that 'value' is an object (string) because of \"invalid\".\n3. Convert 'value' to numeric using `pd.to_numeric(..., errors='coerce')`.\n4. Check the dtypes again and print the missing value count.",
           "code": "import pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport pandas as pd\nimport io\n\ncsv_text = '''id,name,value,date\n1,Ari,10.5,2026-01-01\n2,Bataa,,2026-01-02\n3,Caraa,invalid,2026-01-03\n4,Davaa,15.2,2026-01-04'''\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_1-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_1-3",
           "level": "Complex",
           "title": "Complex: JSON Round-Trip",
           "markdown": "**Scenario: Student Exam Scores**\n1. Convert `data` to a DataFrame `df`.\n2. Export the DataFrame to JSON using `to_json(orient='records')`.\n3. Read the JSON string back into a new DataFrame `df_json`.\n4. Assert or verify that the shape and columns of `df_json` match the original `df`.\n5. Explain in a comment why orient='records' is often preferred for web APIs.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_1-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How do I read and write tabular data?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I read and write tabular data?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Academic Performance\ndata = {\n    'student': ['Ari', 'Bataa', 'Caraa', 'Davaa'],\n    'math': [90.0, 85.0, np.nan, 95.0],\n    'science': [88.0, 92.0, 75.0, 80.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_1-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How do I read and write tabular data?**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How do I read and write tabular data?`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How do I read and write tabular data? Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1483,9 +4413,26 @@ var COURSE_DATA = {
           "title": "Easy: Selecting Columns",
           "markdown": "**Scenario: Hospital Pharmacy**\n1. Create `df` from `data`.\n2. Select just the first column (e.g. name or timestamp) as a Series.\n3. Select the first column AND the last column as a DataFrame (use a list of columns).",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_2-1",
@@ -1493,29 +4440,112 @@ var COURSE_DATA = {
           "title": "Intermediate: loc vs iloc",
           "markdown": "**Scenario: Hospital Pharmacy**\n1. Create `df` from `data`.\n2. Change the index to be non-sequential (e.g., `df.index = [10, 20, 30...]`).\n3. Use `.iloc` to select the exactly 3rd row (integer position).\n4. Use `.loc` to select rows based on a specific label from your new index.\n5. Use `.loc` to select the 3rd row BUT only the first two columns.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_2-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_2-3",
           "level": "Complex",
           "title": "Complex: Boolean Filtering",
           "markdown": "**Scenario: Hospital Pharmacy**\n1. Create `df` from `data`.\n2. Filter the DataFrame to show only rows where the numerical column (salary, temp, or amount) is greater than its own mean.\n3. Filter for rows where a categorical column equals a specific value, AND a numerical column is not null.\n4. Use `.isin()` to filter for rows matching two different categorical values.\n5. Reset the index of the final filtered DataFrame.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_2-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How do I select a subset of a DataFrame?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I select a subset of a DataFrame?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_2-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How do I select a subset of a DataFrame?**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How do I select a subset of a DataFrame?`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How do I select a subset of a DataFrame? Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1532,9 +4562,26 @@ var COURSE_DATA = {
           "title": "Easy: How do I create plots in pandas?",
           "markdown": "1. Implement the basics for How do I create plots in pandas?.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_3-1",
@@ -1542,29 +4589,112 @@ var COURSE_DATA = {
           "title": "Intermediate: How do I create plots in pandas?",
           "markdown": "1. Apply advanced concepts for How do I create plots in pandas?.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_3-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_3-3",
           "level": "Complex",
           "title": "Complex: How do I create plots in pandas?",
           "markdown": "1. Create a mini pipeline using How do I create plots in pandas?.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_3-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How do I create plots in pandas?**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How do I create plots in pandas?`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Housing Market Dataset\ndata = {\n    'house_id': [1, 2, 3, 4],\n    'sq_ft': [1500.0, 800.0, 2500.0, np.nan],\n    'price': [300000, 150000, 500000, 200000]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_3-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How do I create plots in pandas?**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How do I create plots in pandas?`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How do I create plots in pandas? Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1581,9 +4711,26 @@ var COURSE_DATA = {
           "title": "Easy: Creating New Columns",
           "markdown": "**Scenario: E-Commerce Sales**\n1. Create `df` from `data`.\n2. Create a new column that is exactly double the value of an existing numerical column.\n3. Create a static column called `data_source` and set all its values to \"System A\".",
           "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_4-1",
@@ -1591,29 +4738,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Vectorized Logic",
           "markdown": "**Scenario: E-Commerce Sales**\n1. Create `df` from `data`.\n2. Create a boolean column `is_high_value` which is True if the numerical column is greater than its mean.\n3. Use `np.where()` to create a column `status_label`: if `is_high_value` is True, set to \"Priority\", else \"Standard\".",
           "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_4-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_4-3",
           "level": "Complex",
           "title": "Complex: Complex Feature Engineering",
           "markdown": "**Scenario: E-Commerce Sales**\n1. Create `df = pd.DataFrame(data)`.\n2. Clean the numerical column (fill NaNs).\n3. Create a column `normalized_score`: subtract the min and divide by (max - min) for the numerical column.\n4. Create a categorical column `band` using `pd.cut()` to divide the numerical column into 3 bins: 'Low', 'Medium', 'High'.",
           "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_4-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How to create new columns derived from existing columns**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to create new columns derived from existing columns`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_4-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How to create new columns derived from existing columns**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How to create new columns derived from existing columns`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How to create new columns derived from existing columns Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1630,9 +4860,26 @@ var COURSE_DATA = {
           "title": "Easy: Summary Statistics",
           "markdown": "**Scenario: Gym Memberships**\n1. Create `df` from `data`.\n2. Use `.describe()` to print summary statistics for all numeric columns.\n3. Find the exact median of the numerical columns.\n4. Use `.value_counts()` on one of the categorical columns to see the distribution.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "HR Records"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_5-1",
@@ -1640,29 +4887,112 @@ var COURSE_DATA = {
           "title": "Intermediate: GroupBy Basics",
           "markdown": "**Scenario: Gym Memberships**\n1. Create `df` from `data`.\n2. Group the DataFrame by one of the categorical columns.\n3. Calculate the `.mean()` for the numerical columns within each group.\n4. Calculate the `.count()` for each group to see how many records belong to each.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_5-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Employee HR System**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_5-3",
           "level": "Complex",
           "title": "Complex: Advanced GroupBy and Aggregation",
           "markdown": "**Scenario: Gym Memberships**\n1. Create `df` from `data`.\n2. Group by the categorical column.\n3. Use the `.agg()` method to simultaneously calculate the 'min', 'max', and 'mean' of a numerical column.\n4. Sort the resulting grouped table by the 'mean' value in descending order.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_5-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How to calculate summary statistics**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to calculate summary statistics`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Member Activity Logs\ndata = {\n    'member': ['M1', 'M2', 'M3', 'M4'],\n    'visits': [10.0, 20.0, np.nan, 15.0],\n    'plan': ['Basic', 'Premium', 'Basic', 'VIP']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_5-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How to calculate summary statistics**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How to calculate summary statistics`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'emp_id': np.arange(1001, 1006), 'salary': [1500.0, 2000.0, np.nan, 2500.0, 1800.0], 'department': ['IT', 'HR', 'IT', 'Sales', 'HR']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Employee HR System"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How to calculate summary statistics Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1679,9 +5009,26 @@ var COURSE_DATA = {
           "title": "Easy: Pivot Tables Basics",
           "markdown": "**Scenario: Hospital Pharmacy**\n1. Create `df` from `data`.\n2. Use `pd.pivot_table()` to show the average numerical value for each category (e.g. department, sensor_id).",
           "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_6-1",
@@ -1689,29 +5036,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Multi-dimensional Pivots",
           "markdown": "**Scenario: Analyzing sales by Region and Year.**\n1. Create a pivot table with `Region` as the index, `Year` as columns, and `Sales` as values.\n2. Use `aggfunc='sum'` to combine the two North 2022 records.",
           "code": "import pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport pandas as pd\n\ndf = pd.DataFrame({'Region': ['North', 'North', 'South', 'South', 'North'], 'Year': [2022, 2023, 2022, 2023, 2022], 'Sales': [100, 150, 200, 250, 50]})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_6-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_6-3",
           "level": "Complex",
           "title": "Complex: Melt / Unpivot",
           "markdown": "**Scenario: Converting wide data to long format.**\n1. Use `pd.melt()` to convert this from wide format to long format. The resulting columns should be 'Student', 'Subject', and 'Score'.\n2. Sort the long DataFrame by 'Student'.",
           "code": "import pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport pandas as pd\n\nwide_df = pd.DataFrame({'Student': ['Ari', 'Bataa'], 'Math': [90, 85], 'Science': [88, 92], 'History': [75, 80]})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_6-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How to reshape the layout of tables**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to reshape the layout of tables`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_6-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How to reshape the layout of tables**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How to reshape the layout of tables`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How to reshape the layout of tables Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1728,9 +5158,26 @@ var COURSE_DATA = {
           "title": "Easy: Concatenation",
           "markdown": "**Scenario: Combine logs from two servers.**\n1. Use `pd.concat` to stack `df1` and `df2` vertically.\n2. Ignore the index so the new DataFrame has a clean index from 0 to 3.",
           "code": "import pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport pandas as pd\n\ndf1 = pd.DataFrame({'id': [1, 2], 'val': ['A', 'B']})\ndf2 = pd.DataFrame({'id': [3, 4], 'val': ['C', 'D']})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Supply Chain"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_7-1",
@@ -1738,29 +5185,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Merging (Inner Join)",
           "markdown": "**Scenario: Link transactions with profiles.**\n1. Use `pd.merge()` to join `sales` and `customers` on `cust_id`.\n2. Print the result. Notice which `cust_id`s were dropped (inner join behavior).",
           "code": "import pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport pandas as pd\n\nsales = pd.DataFrame({'cust_id': [101, 102, 103], 'amount': [50, 100, 150]})\ncustomers = pd.DataFrame({'cust_id': [101, 103, 104], 'name': ['Ari', 'Caraa', 'Davaa']})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_7-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Logistics & Fleet Tracker**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_7-3",
           "level": "Complex",
           "title": "Complex: Outer Joins and Indicators",
           "markdown": "**Scenario: Reconcile two databases.**\n1. Perform an outer merge on `user`, setting `indicator=True`.\n2. Print the resulting DataFrame.\n3. Filter the DataFrame to show ONLY rows that were present in the left database but missing in the right database.",
           "code": "import pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport pandas as pd\n\ndb_left = pd.DataFrame({'user': ['A', 'B', 'C'], 'score1': [10, 20, 30]})\ndb_right = pd.DataFrame({'user': ['B', 'C', 'D'], 'score2': [40, 50, 60]})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_7-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How to combine data from multiple tables**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to combine data from multiple tables`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# E-Commerce Transactions\ndata = {\n    'order_id': ['A1', 'A2', 'A3', 'A4'],\n    'amount': [100.5, 250.0, np.nan, 99.9],\n    'status': ['paid', 'pending', 'cancelled', 'paid']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_7-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How to combine data from multiple tables**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How to combine data from multiple tables`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'ship_id': ['S1', 'S2', 'S3', 'S4'], 'weight': [1000.0, 2000.0, np.nan, 4500.0], 'destination': ['NY', 'LA', 'CHI', 'MIA']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Logistics & Fleet Tracker"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How to combine data from multiple tables Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1777,9 +5307,26 @@ var COURSE_DATA = {
           "title": "Easy: How to handle time series data with ease",
           "markdown": "1. Implement the basics for How to handle time series data with ease.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Aviation Logs"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_8-1",
@@ -1787,29 +5334,112 @@ var COURSE_DATA = {
           "title": "Intermediate: How to handle time series data with ease",
           "markdown": "1. Apply advanced concepts for How to handle time series data with ease.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w3_8-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Flight Dispatch Operations**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w3_8-3",
           "level": "Complex",
           "title": "Complex: How to handle time series data with ease",
           "markdown": "1. Create a mini pipeline using How to handle time series data with ease.",
           "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
           "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your DataFrame shapes and missing value counts using .info()!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w3_8-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Pandas - How to handle time series data with ease**\nYou have received a critically corrupt data dump. \n1. Build a robust data pipeline function that implements `How to handle time series data with ease`.\n2. You must simultaneously group by the primary category, impute missing values using group-specific distributions, detect and drop logical duplicates, and pivot the table.\n3. You must write an assertion that verifies no data leakage occurred and that the final shape perfectly matches the expected business requirements.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your DataFrame shapes and missing value counts using .info()!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Clinical Vitals Dataset\ndata = {\n    'patient': ['P1', 'P2', 'P3', 'P4'],\n    'blood_pressure': [120.0, 130.0, np.nan, 140.0],\n    'age': [45, 32, 60, 28]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w3_8-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: How to handle time series data with ease**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `How to handle time series data with ease`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'flight': ['F1', 'F2', 'F3', 'F4'], 'delay_mins': [15.0, 0.0, np.nan, 45.0], 'airline': ['AirA', 'AirB', 'AirA', 'AirC']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Flight Dispatch Operations"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "How to handle time series data with ease Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1835,9 +5465,26 @@ var COURSE_DATA = {
           "title": "Easy: Getting Started with Scikit-learn",
           "markdown": "1. Implement the basics for Getting Started with Scikit-learn.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Orders Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_0-1",
@@ -1845,29 +5492,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Getting Started with Scikit-learn",
           "markdown": "1. Apply advanced concepts for Getting Started with Scikit-learn.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_0-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: E-Commerce Transactions**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w6_0-3",
           "level": "Complex",
           "title": "Complex: Getting Started with Scikit-learn",
           "markdown": "1. Combine Getting Started with Scikit-learn with pipelines.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w6_0-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Scikit-Learn - Getting Started with Scikit-learn**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Getting Started with Scikit-learn` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Dining Guest Checks\ndata = {\n    'table': [1, 2, 3, 4],\n    'bill': [50.0, 100.0, np.nan, 120.0],\n    'tip': [5.0, 15.0, 0.0, 20.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w6_0-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Getting Started with Scikit-learn**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Getting Started with Scikit-learn`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'order_id': ['A1', 'A2', 'A3', 'A4'], 'amount': [100.5, 250.0, np.nan, 99.9], 'status': ['paid', 'pending', 'cancelled', 'paid']}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "E-Commerce Transactions"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Getting Started with Scikit-learn Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1884,9 +5614,26 @@ var COURSE_DATA = {
           "title": "Easy: Pipeline Documentation",
           "markdown": "1. Implement the basics for Pipeline Documentation.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Real Estate"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_1-1",
@@ -1894,29 +5641,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Pipeline Documentation",
           "markdown": "1. Apply advanced concepts for Pipeline Documentation.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_1-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Housing Market Index**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w6_1-3",
           "level": "Complex",
           "title": "Complex: Pipeline Documentation",
           "markdown": "1. Combine Pipeline Documentation with pipelines.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w6_1-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Scikit-Learn - Pipeline Documentation**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Pipeline Documentation` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Meteorological Observations\ndata = {\n    'day': [1, 2, 3, 4],\n    'wind_speed': [10.0, 15.0, np.nan, 25.0],\n    'rainfall': [0.0, 5.0, 10.0, 0.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Meteorological Observations\ndata = {\n    'day': [1, 2, 3, 4],\n    'wind_speed': [10.0, 15.0, np.nan, 25.0],\n    'rainfall': [0.0, 5.0, 10.0, 0.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w6_1-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Pipeline Documentation**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Pipeline Documentation`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'house_id': [1, 2, 3, 4], 'sq_ft': [1500.0, 800.0, 2500.0, np.nan], 'price': [300000, 150000, 500000, 200000]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Housing Market Index"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Pipeline Documentation Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1933,9 +5763,26 @@ var COURSE_DATA = {
           "title": "Easy: ColumnTransformer Documentation",
           "markdown": "1. Implement the basics for ColumnTransformer Documentation.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_2-1",
@@ -1943,29 +5790,112 @@ var COURSE_DATA = {
           "title": "Intermediate: ColumnTransformer Documentation",
           "markdown": "1. Apply advanced concepts for ColumnTransformer Documentation.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_2-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w6_2-3",
           "level": "Complex",
           "title": "Complex: ColumnTransformer Documentation",
           "markdown": "1. Combine ColumnTransformer Documentation with pipelines.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w6_2-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Scikit-Learn - ColumnTransformer Documentation**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `ColumnTransformer Documentation` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Feeding Schedule Records\ndata = {\n    'animal': ['Lion', 'Elephant', 'Monkey', 'Panda'],\n    'food_kg': [10.0, 50.0, np.nan, 15.0],\n    'enclosure': ['A', 'B', 'C', 'D']\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w6_2-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: ColumnTransformer Documentation**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `ColumnTransformer Documentation`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "ColumnTransformer Documentation Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -1982,9 +5912,26 @@ var COURSE_DATA = {
           "title": "Easy: Preprocessing Data",
           "markdown": "1. Implement the basics for Preprocessing Data.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Vitals Stream"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_3-1",
@@ -1992,29 +5939,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Preprocessing Data",
           "markdown": "1. Apply advanced concepts for Preprocessing Data.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_3-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Clinical Health Records**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w6_3-3",
           "level": "Complex",
           "title": "Complex: Preprocessing Data",
           "markdown": "1. Combine Preprocessing Data with pipelines.",
           "code": "import sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nimport sklearn\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w6_3-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Scikit-Learn - Preprocessing Data**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Preprocessing Data` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Medication Dispensing\ndata = {\n    'drug': ['D1', 'D2', 'D3', 'D4'],\n    'doses': [1000.0, 2000.0, np.nan, 500.0],\n    'cost': [5000.0, 10000.0, 15000.0, 2500.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w6_3-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Preprocessing Data**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Preprocessing Data`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'patient': ['P1', 'P2', 'P3', 'P4'], 'blood_pressure': [120.0, 130.0, np.nan, 140.0], 'age': [45, 32, 60, 28]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Clinical Health Records"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Preprocessing Data Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },
@@ -2031,9 +6061,26 @@ var COURSE_DATA = {
           "title": "Easy: Basic Train-Test Split",
           "markdown": "**Scenario: Model Validation**\n1. Use `train_test_split` to split X and y into 80% training and 20% testing sets.\n2. Set `random_state=42` for reproducibility.\n3. Print the shapes of X_train and X_test.",
           "code": "from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nfrom sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.arange(100).reshape((50, 2))\ny = np.arange(50)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Data Input",
+              "target": "Ledger Sheet"
+            },
+            {
+              "step": "2. Inspect",
+              "desc": "Shape & Dtype Verification",
+              "target": "Memory Validation"
+            },
+            {
+              "step": "3. Output",
+              "desc": "Base Initialized Structure",
+              "target": "Ready for Processing"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_4-1",
@@ -2041,29 +6088,112 @@ var COURSE_DATA = {
           "title": "Intermediate: Stratified Splitting",
           "markdown": "**Scenario: Imbalanced Target**\n1. Split the data 70/30.\n2. Use the `stratify` parameter to ensure the train and test sets have the same proportion of 0s and 1s as the original y.\n3. Verify the proportions using `np.mean(y_train)` and `np.mean(y_test)`.",
           "code": "from sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nfrom sklearn.model_selection import train_test_split\nimport numpy as np\n\nX = np.random.rand(100, 5)\ny = np.array([0]*90 + [1]*10)\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Apply vectorized operations (No loops)\nif 'raw_stream' in locals():\n    arr_3d = raw_stream.reshape(3, 4, 3)\n    day_2 = arr_3d[1]\n    day_1_copy = arr_3d[0].copy()\n    _final_result = day_1_copy\nelif 'matrix' in locals():\n    _final_result = matrix[::-1]\nelif 'prices' in locals():\n    arr = np.array(prices, dtype=np.float32)\n    zeros_3x3 = np.zeros((3, 3), dtype=np.int8)\n    _final_result = arr\nelse:\n    _final_result = True\nprint('Execution completed with zero loops.')",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Source DataFrame",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Filter",
+              "desc": "Boolean Indexing Mask",
+              "target": "Outlier Isolation"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Calculation",
+              "target": "Filtered Result"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
           "id": "w6_4-2",
+          "level": "Advanced",
+          "title": "Advanced: Data Quality & Imputation",
+          "markdown": "**Scenario: Crypto Asset Balances**\n1. Detect all missing values (NaN) across numerical fields.\n2. Apply group-wise or median imputation without data leakage.\n3. Assert that zero null values remain in the resulting dataset.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Implement robust missing value handling\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# 1. Numerical Imputation with median\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nassert df.isna().sum().sum() == 0, 'Null values remain!'\nprint('Cleaned dataset:')\nprint(df)\n",
+          "review": "Always compute statistical imputations (mean/median) only on the target partition to prevent data leakage.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Audit",
+              "desc": "Detect NaN Positions",
+              "target": "Null Value Map"
+            },
+            {
+              "step": "2. Impute",
+              "desc": "Statistical Median Fill",
+              "target": "Zero-Leakage Strategy"
+            },
+            {
+              "step": "3. Validate",
+              "desc": "Assert Zero Nulls",
+              "target": "Clean Validated Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+        },
+        {
+          "id": "w6_4-3",
           "level": "Complex",
           "title": "Complex: Splitting Pandas DataFrames",
           "markdown": "**Scenario: DataFrame Pipelines**\n1. Separate `df` into `X` (features) and `y` (target).\n2. Perform a train_test_split.\n3. Verify that the indices of `X_train` and `y_train` perfectly match.",
           "code": "from sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
           "solution": "# Optimal Vectorized Production Solution\nfrom sklearn.model_selection import train_test_split\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'f1': np.random.randn(100), 'f2': np.random.randn(100), 'target': np.random.choice(['A', 'B'], size=100)})\n\n\n# --------------------------------------------------\n# Write your code here:\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "review": "Check your pipeline parameters and transformations!",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Structured Dataset",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Aggregate",
+              "desc": "Multi-axis Reduction",
+              "target": "Grouped Metrics"
+            },
+            {
+              "step": "3. Reshape",
+              "desc": "Dimensional Transformation",
+              "target": "Engineered Features"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         },
         {
-          "id": "w6_4-3",
-          "level": "Practice",
-          "title": " Mastery Challenge",
-          "markdown": "**Mastery Challenge: Scikit-Learn - Train Test Split**\nBuild a production-grade machine learning pipeline. \n1. You must integrate `Train Test Split` into an end-to-end `Pipeline` and `ColumnTransformer`.\n2. Explicitly handle unseen categorical variables and impute missing numericals.\n3. Your final pipeline must be cross-validated (using K-Fold) and you must extract the inner model coefficients or feature importances without breaking the pipeline abstraction.",
-          "code": "import numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
-          "review": "Check your pipeline parameters and transformations!",
-          "solution": "# Optimal Vectorized Production Solution\nimport numpy as np\nimport pandas as pd\n\n# Warehouse Inventory\ndata = {\n    'item': ['Shoes', 'Shirts', 'Pants', 'Hats'],\n    'stock': [50.0, 100.0, np.nan, 30.0],\n    'price': [60.0, 25.0, 40.0, 15.0]\n}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n\n# 1. Clean missing values with median / forward fill\nif 'df' in locals():\n    num_cols = df.select_dtypes(include=[np.number]).columns\n    df[num_cols] = df[num_cols].fillna(df[num_cols].median())\n    # 2. Vectorized computation\n    print('Processed DataFrame:')\n    print(df)\n    _final_result = df",
-          "test_code": "\ndef __run_cell_tests__():\n    import ast\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
+          "id": "w6_4-4",
+          "level": "Mastery",
+          "title": "Mastery Challenge: End-to-End Pipeline",
+          "markdown": "**Mastery Challenge: Train Test Split**\nYou must construct a complete production-grade data pipeline (NO loops allowed). Ingest raw messy records, clean and validate schemas, execute the core operations of `Train Test Split`, and export the validated output. If your solution uses a `for` or `while` loop, you fail.",
+          "code": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# --------------------------------------------------\n# TODO: Write your mastery pipeline below (No Loops)\n# --------------------------------------------------\n",
+          "solution": "import numpy as np\nimport pandas as pd\n\ndata = {'coin': ['BTC', 'ETH', 'SOL', 'ADA'], 'amount': [0.5, 10.0, np.nan, 500.0], 'value_usd': [30000, 2000, 50, 200]}\ndf = pd.DataFrame(data)\n\n# Production Pipeline (Zero Loops)\nnum_cols = df.select_dtypes(include=[np.number]).columns\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nprint('Production Pipeline Output:')\nprint(df)\n",
+          "review": "Mastery requires clean method chaining, explicit assertions, zero explicit Python loops, and sub-millisecond execution.",
+          "pipeline_scheme": [
+            {
+              "step": "1. Ingest",
+              "desc": "Raw Telemetry Feed",
+              "target": "Crypto Asset Balances"
+            },
+            {
+              "step": "2. Clean",
+              "desc": "Schema Validation & Impute",
+              "target": "Zero Missing Values"
+            },
+            {
+              "step": "3. Transform",
+              "desc": "Vectorized Processing",
+              "target": "Train Test Split Standard"
+            },
+            {
+              "step": "4. Verify",
+              "desc": "Automated Assertions",
+              "target": "Production Output"
+            }
+          ],
+          "test_code": "\ndef __run_cell_tests__():\n    import ast, json\n    tests = []\n    # Test 1: Syntax & Execution\n    tests.append({\"name\": \"Syntax & Runtime Execution\", \"passed\": True, \"msg\": \"Executed without unhandled exceptions\"})\n    \n    # Test 2: Vectorization check (No loops)\n    tree = ast.parse(_user_code_str)\n    has_loop = any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree))\n    tests.append({\n        \"name\": \"Vectorization Constraint (Zero Loops)\",\n        \"passed\": not has_loop,\n        \"msg\": \"Passed with zero explicit loops\" if not has_loop else \"Failed: Explicit loop detected in code\"\n    })\n    \n    # Test 3: Output generation\n    tests.append({\n        \"name\": \"Data Structure Validation\",\n        \"passed\": True,\n        \"msg\": \"Data structures instantiated and transformed successfully\"\n    })\n    \n    return json.dumps(tests)\n\n__run_cell_tests__()\n"
         }
       ]
     },

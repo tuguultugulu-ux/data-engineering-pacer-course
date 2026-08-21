@@ -2,15 +2,18 @@
  * PACER Data Engineering - Editor & Execution Manager
  * Production-Grade Architecture:
  * - CodeMirror 5 with Monokai theme & sub-pixel focus borders
+ * - Live Solve Stopwatch / Coding Timer (Starts on typing)
+ * - 3-Attempt Solution Lock Gate
  * - Automated Unit Test Runner & Assertion Verification
- * - Interactive DataFrame & Variable Scope Inspector
- * - Production Reference Solution & Diff Viewer
- * - Execution Profiler (Duration & Metrics)
+ * - Interactive DataFrame Scope Inspector
+ * - Data Architecture Block Scheme / Mini-Map
  */
 
 var EditorManager = (function() {
     let editors = {};
     let activeCellId = null;
+    let runCounts = {};
+    let timers = {};
 
     function getProblemData(cellId) {
         if (typeof COURSE_DATA === 'undefined' || !COURSE_DATA.lessons) return null;
@@ -22,8 +25,13 @@ var EditorManager = (function() {
                     title: I18n.getLessonTitle(l.id, l.examTitle || l.title),
                     markdown: l.description,
                     code: l.starterCode,
-                    solution: l.starterCode + "\n# Reference Architecture:\n# 1. Pipeline & ColumnTransformer\n# 2. Imputation -> Scaling -> Estimator\n",
+                    solution: l.starterCode + "\n# Production Architecture Solution\n# Ingest -> Impute -> Scale -> Transform -> Baseline\n",
                     test_code: "",
+                    pipeline_scheme: [
+                        {"step": "1. Ingest", "desc": "Raw Multi-source Data", "target": "Raw Ingestion"},
+                        {"step": "2. Preprocess", "desc": "Imputation & Encoding", "target": "ColumnTransformer"},
+                        {"step": "3. Pipeline", "desc": "Model Estimation", "target": "Evaluation Metric"}
+                    ],
                     review: I18n.t('examNotice')
                 };
             }
@@ -56,6 +64,46 @@ var EditorManager = (function() {
         });
         if (editors[cellId]) {
             editors[cellId].getWrapperElement().style.borderColor = '#0071e3';
+        }
+    }
+
+    /* --- Stopwatch / Timer Logic --- */
+    function startTimer(cellId) {
+        if (timers[cellId] && timers[cellId].running) return;
+
+        const startTime = performance.now();
+        const timerEl = document.getElementById('timer-' + cellId);
+        if (timerEl) {
+            timerEl.className = 'timer-badge active';
+        }
+
+        const interval = setInterval(() => {
+            const elapsedSec = Math.floor((performance.now() - startTime) / 1000);
+            const m = String(Math.floor(elapsedSec / 60)).padStart(2, '0');
+            const s = String(elapsedSec % 60).padStart(2, '0');
+            if (timerEl) {
+                timerEl.innerText = `${m}:${s}`;
+            }
+        }, 1000);
+
+        timers[cellId] = {
+            startTime: startTime,
+            interval: interval,
+            running: true,
+            solved: false
+        };
+    }
+
+    function stopTimer(cellId, isSuccess = true) {
+        if (timers[cellId] && timers[cellId].running) {
+            clearInterval(timers[cellId].interval);
+            timers[cellId].running = false;
+            timers[cellId].solved = isSuccess;
+
+            const timerEl = document.getElementById('timer-' + cellId);
+            if (timerEl) {
+                timerEl.className = isSuccess ? 'timer-badge solved' : 'timer-badge stopped';
+            }
         }
     }
 
@@ -95,6 +143,13 @@ var EditorManager = (function() {
                 setActiveCell(cellId);
             });
 
+            // Start timer immediately upon user typing
+            cm.on('change', function(instance, changeObj) {
+                if (changeObj.origin !== 'setValue') {
+                    startTimer(cellId);
+                }
+            });
+
             editors[cellId] = cm;
 
             // Set first editor as active by default
@@ -104,8 +159,34 @@ var EditorManager = (function() {
         });
     }
 
+    function getRunAttempts(cellId) {
+        return runCounts[cellId] || 0;
+    }
+
+    function incrementRunAttempts(cellId) {
+        runCounts[cellId] = (runCounts[cellId] || 0) + 1;
+        updateSolutionButton(cellId);
+        return runCounts[cellId];
+    }
+
+    function updateSolutionButton(cellId) {
+        const btn = document.getElementById('sol-btn-' + cellId);
+        if (!btn) return;
+
+        const attempts = getRunAttempts(cellId);
+        if (attempts >= 3) {
+            btn.className = 'action-btn secondary-btn unlocked';
+            btn.innerHTML = `<span>${I18n.t('showSolution')}</span>`;
+        } else {
+            btn.className = 'action-btn secondary-btn locked';
+            btn.innerHTML = `<span>${I18n.t('showSolution')} (${attempts}/3)</span>`;
+        }
+    }
+
     async function runCell(cellId) {
         if (!cellId || !editors[cellId]) return;
+
+        incrementRunAttempts(cellId);
 
         const cm = editors[cellId];
         const code = cm.getValue();
@@ -129,6 +210,7 @@ var EditorManager = (function() {
             if (res.success) {
                 statusBadge.className = 'status-badge success';
                 statusBadge.innerText = I18n.t('success');
+                stopTimer(cellId, true);
             } else {
                 statusBadge.className = 'status-badge error';
                 statusBadge.innerText = I18n.t('error');
@@ -139,7 +221,7 @@ var EditorManager = (function() {
             metaEl.innerHTML = `<span style="font-family:var(--font-mono); color:#94a3b8; font-size:0.68rem;">${I18n.t('execTime')}: ${res.durationMs}ms</span>`;
         }
 
-        // Update data inspector widget if open
+        // Update data inspector widget
         renderScopeInspector(cellId, res.scope);
 
         if (outputEl) {
@@ -163,6 +245,8 @@ var EditorManager = (function() {
 
     async function runTests(cellId) {
         if (!cellId || !editors[cellId]) return;
+
+        incrementRunAttempts(cellId);
 
         const cm = editors[cellId];
         const userCode = cm.getValue();
@@ -193,7 +277,7 @@ var EditorManager = (function() {
         }
 
         if (allPassed) {
-            // Record completed challenge in progress tracker
+            stopTimer(cellId, true);
             if (typeof ProgressTracker !== 'undefined') {
                 ProgressTracker.markCompleted(cellId);
             }
@@ -224,19 +308,34 @@ var EditorManager = (function() {
         const solContainer = document.getElementById('solution-box-' + cellId);
         const btn = document.getElementById('sol-btn-' + cellId);
         const problem = getProblemData(cellId);
+        const attempts = getRunAttempts(cellId);
 
         if (!solContainer) return;
 
         const isHidden = solContainer.classList.contains('hidden');
         if (isHidden) {
             solContainer.classList.remove('hidden');
-            if (btn) btn.innerHTML = `<span>${I18n.t('hideSolution')}</span>`;
 
+            if (attempts < 3) {
+                // Locked Notice
+                solContainer.innerHTML = `
+                    <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: var(--radius-md); padding: 12px 14px; margin-top: 10px; color: #fbbf24; font-size: 0.8rem; line-height: 1.55;">
+                        <strong>Solution Locked (${attempts} / 3 Runs)</strong><br>
+                        ${I18n.t('solutionLockedMsg')}<strong>${attempts} / 3</strong>.<br>
+                        <em>Test and run your code at least 3 times first to develop muscle memory and problem-solving intuition!</em>
+                    </div>
+                `;
+                if (btn) btn.innerHTML = `<span>${I18n.t('hideSolution')}</span>`;
+                return;
+            }
+
+            // Unlocked Solution
+            if (btn) btn.innerHTML = `<span>${I18n.t('hideSolution')}</span>`;
             const rawSolution = problem && problem.solution ? problem.solution : '# Reference solution';
             solContainer.innerHTML = `
                 <div style="background: #090d16; border: 1px solid var(--midnight-border); border-radius: var(--radius-md); padding: 12px 14px; margin-top: 10px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                        <span style="font-size: 0.76rem; font-weight: 500; color: #38bdf8; font-family: var(--font-mono);">Optimal Reference Architecture</span>
+                        <span style="font-size: 0.76rem; font-weight: 500; color: #38bdf8; font-family: var(--font-mono);">Optimal Production Architecture</span>
                         <button class="action-btn secondary-btn" style="padding: 2px 8px; font-size: 0.72rem;" onclick="EditorManager.copySolutionToEditor('${cellId}')">
                             ${I18n.t('copySolution')}
                         </button>
@@ -246,7 +345,7 @@ var EditorManager = (function() {
             `;
         } else {
             solContainer.classList.add('hidden');
-            if (btn) btn.innerHTML = `<span>${I18n.t('showSolution')}</span>`;
+            if (btn) updateSolutionButton(cellId);
         }
     }
 
@@ -260,6 +359,13 @@ var EditorManager = (function() {
 
     function toggleDataInspector(cellId) {
         const box = document.getElementById('inspector-box-' + cellId);
+        if (box) {
+            box.classList.toggle('hidden');
+        }
+    }
+
+    function toggleScheme(cellId) {
+        const box = document.getElementById('scheme-box-' + cellId);
         if (box) {
             box.classList.toggle('hidden');
         }
@@ -360,6 +466,7 @@ var EditorManager = (function() {
         if (!cellId || !editors[cellId]) return;
         const initialCode = getInitialCode(cellId);
         editors[cellId].setValue(initialCode);
+        stopTimer(cellId, false);
     }
 
     function runActiveCell() {
@@ -410,12 +517,11 @@ var EditorManager = (function() {
 
     function escapeHtml(str) {
         if (!str) return '';
-        return str
+        return String(str)
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
+            .replace(/"/g, '&quot;');
     }
 
     return {
@@ -425,6 +531,7 @@ var EditorManager = (function() {
         toggleSolution: toggleSolution,
         copySolutionToEditor: copySolutionToEditor,
         toggleDataInspector: toggleDataInspector,
+        toggleScheme: toggleScheme,
         toggleRabbit: toggleRabbit,
         resetCell: resetCell,
         runActiveCell: runActiveCell,

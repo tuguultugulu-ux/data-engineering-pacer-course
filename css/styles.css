@@ -1144,3 +1144,104 @@ kbd {
 .solution-box.hidden, .inspector-box.hidden {
     display: none;
 }
+
+/* Live Solve Stopwatch / Timer Badge */
+.timer-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #64748b;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--midnight-border);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-badge.active {
+    color: #60a5fa;
+    background: rgba(0, 113, 227, 0.15);
+    border-color: rgba(0, 113, 227, 0.35);
+}
+
+.timer-badge.solved {
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+/* Level Advanced Tag */
+.level-tag.advanced {
+    background: rgba(249, 115, 22, 0.12);
+    color: #fb923c;
+}
+
+/* Data Architecture Mini-Map / Pipeline Scheme Flow */
+.scheme-flow-container {
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--midnight-border);
+    padding: 12px 18px;
+}
+
+.scheme-header {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    font-family: var(--font-mono);
+    margin-bottom: 8px;
+}
+
+.scheme-flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.scheme-node {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--midnight-border);
+    border-radius: var(--radius-md);
+    padding: 8px 12px;
+    min-width: 140px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: background-color 0.15s;
+}
+
+.scheme-node:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.node-step {
+    font-size: 0.68rem;
+    color: #60a5fa;
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.node-desc {
+    font-size: 0.78rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.node-target {
+    font-size: 0.68rem;
+    color: #94a3b8;
+    font-family: var(--font-mono);
+}
+
+.scheme-arrow {
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
