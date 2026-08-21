@@ -98,9 +98,16 @@ var EditorManager = (function() {
             timers[cellId].running = false;
             timers[cellId].solved = isSuccess;
 
+            const elapsedSec = Math.floor((performance.now() - timers[cellId].startTime) / 1000);
+
             const timerEl = document.getElementById('timer-' + cellId);
             if (timerEl) {
                 timerEl.className = isSuccess ? 'timer-badge solved' : 'timer-badge stopped';
+            }
+
+            // Transmit solve telemetry to AuthManager
+            if (isSuccess && typeof AuthManager !== 'undefined') {
+                AuthManager.recordSolveMetric(cellId, elapsedSec);
             }
         }
     }

@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 let currentLessonId = 'intro';
 
 function initApp() {
+    // Check authentication gate first
+    if (!checkAuthGate()) return;
     // 1. Build sidebar
     buildSidebar();
 
@@ -806,3 +808,253 @@ function navigateToPhase(firstLessonId) {
 
 window.openRoadmapModal = openRoadmapModal;
 window.closeRoadmapModal = closeRoadmapModal;
+
+
+/* --------------------------------------------------------------------------
+   PACER Data Engineering - Authentication & Admin Dashboard Subsystem
+   -------------------------------------------------------------------------- */
+
+function checkAuthGate() {
+    const user = AuthManager.getCurrentUser();
+    const overlay = document.getElementById('auth-overlay');
+    const adminSidebarBtn = document.getElementById('sidebar-admin-item');
+    const userProfileWidget = document.getElementById('sidebar-user-profile');
+
+    if (!user) {
+        if (overlay) overlay.style.display = 'flex';
+        return false;
+    }
+
+    if (overlay) overlay.style.display = 'none';
+
+    // Show Admin Link if current user is one of the 3 admins
+    if (adminSidebarBtn) {
+        adminSidebarBtn.style.display = (user.role === 'ADMIN' || AuthManager.isAdmin(user.email)) ? 'block' : 'none';
+    }
+
+    // Update user profile widget in sidebar footer
+    if (userProfileWidget) {
+        userProfileWidget.innerHTML = `
+            <div class="user-profile-row">
+                <div class="user-avatar-circle">${user.email.charAt(0).toUpperCase()}</div>
+                <div class="user-profile-details">
+                    <span class="user-email-text" title="${escapeHtml(user.email)}">${escapeHtml(user.email)}</span>
+                    <span class="user-role-badge ${user.role.toLowerCase()}">${user.role === 'ADMIN' ? 'Admin' : 'Student'}</span>
+                </div>
+                <button class="user-logout-btn" onclick="handleLogout()" title="Sign Out">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </button>
+            </div>
+        `;
+    }
+
+    return true;
+}
+
+function handleDirectLogin(email) {
+    const res = AuthManager.directLoginAs(email);
+    if (res.success) {
+        checkAuthGate();
+        buildSidebar();
+        loadLesson(currentLessonId);
+    } else {
+        const errorEl = document.getElementById('auth-error-msg');
+        if (errorEl) {
+            errorEl.style.display = 'block';
+            errorEl.innerText = res.error || "Access Denied.";
+        }
+    }
+}
+
+function handleCustomEmailLogin() {
+    const input = document.getElementById('custom-email-input');
+    if (!input) return;
+    const email = input.value.trim();
+    if (!email) return;
+
+    handleDirectLogin(email);
+}
+
+function handleLogout() {
+    AuthManager.logout();
+    checkAuthGate();
+}
+
+/* --- Admin Console & Telemetry Dashboard --- */
+function openAdminModal() {
+    const user = AuthManager.getCurrentUser();
+    if (!user || !AuthManager.isAdmin(user.email)) {
+        alert("Access Denied: Administrative interface is strictly restricted to authorized course leadership.");
+        return;
+    }
+
+    const modal = document.getElementById('admin-modal-backdrop');
+    if (!modal) return;
+
+    renderAdminDashboard();
+    modal.style.display = 'flex';
+}
+
+function closeAdminModal() {
+    const modal = document.getElementById('admin-modal-backdrop');
+    if (modal) modal.style.display = 'none';
+}
+
+function renderAdminDashboard() {
+    const container = document.getElementById('admin-dashboard-container');
+    if (!container) return;
+
+    const metrics = AuthManager.getGlobalMetrics();
+    const users = Object.values(metrics);
+    const approvedRoster = AuthManager.getApprovedRoster();
+
+    // Calculate aggregated metrics
+    const totalUsers = users.length;
+    let totalSolves = 0;
+    let totalDurationSec = 0;
+    let problemSolveTimes = {}; // { cellId: [durations] }
+
+    users.forEach(u => {
+        if (u.solves) {
+            for (let cell in u.solves) {
+                totalSolves += 1;
+                const d = u.solves[cell].durationSec || 0;
+                totalDurationSec += d;
+                if (!problemSolveTimes[cell]) problemSolveTimes[cell] = [];
+                problemSolveTimes[cell].push(d);
+            }
+        }
+    });
+
+    const avgSolveMins = totalSolves > 0 ? (totalDurationSec / totalSolves / 60).toFixed(1) : "0.0";
+
+    let html = `
+        <div class="admin-kpi-grid">
+            <div class="admin-kpi-card">
+                <span class="kpi-title">Active Enrolled Users</span>
+                <strong class="kpi-value">${totalUsers}</strong>
+                <small class="kpi-sub">${approvedRoster.length} Authorized Accounts</small>
+            </div>
+            <div class="admin-kpi-card">
+                <span class="kpi-title">Total Solved Challenges</span>
+                <strong class="kpi-value" style="color: #38bdf8;">${totalSolves}</strong>
+                <small class="kpi-sub">Across 58 Curriculum Topics</small>
+            </div>
+            <div class="admin-kpi-card">
+                <span class="kpi-title">Avg Coding Time / Problem</span>
+                <strong class="kpi-value" style="color: #34d399;">${avgSolveMins} <span style="font-size:0.9rem; font-weight:400;">mins</span></strong>
+                <small class="kpi-sub">Real-time Stopwatch Telemetry</small>
+            </div>
+        </div>
+
+        <div class="admin-section-header">
+            <h3>Student Performance & Problem Solve Times</h3>
+            <p>Monitors how long students take on each coding exercise, phase exam, and capstone project.</p>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Student Account</th>
+                        <th>Role</th>
+                        <th>Challenges Solved</th>
+                        <th>Total Time Spent</th>
+                        <th>Last Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+
+    users.forEach(u => {
+        const solvedCount = u.solves ? Object.keys(u.solves).length : 0;
+        const totalMins = u.totalCodingSec ? (u.totalCodingSec / 60).toFixed(1) : 0;
+        const lastActiveDate = u.lastActive ? new Date(u.lastActive).toLocaleDateString() + ' ' + new Date(u.lastActive).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'Recently';
+        const isUserAdmin = AuthManager.isAdmin(u.email);
+
+        html += `
+            <tr>
+                <td>
+                    <strong style="color: #ffffff; display:block;">${escapeHtml(u.name || u.email)}</strong>
+                    <small style="color: #94a3b8; font-family: var(--font-mono);">${escapeHtml(u.email)}</small>
+                </td>
+                <td>
+                    <span class="user-role-badge ${isUserAdmin ? 'admin' : 'student'}">${isUserAdmin ? 'Admin' : 'Student'}</span>
+                </td>
+                <td style="font-family: var(--font-mono); color: #38bdf8; font-weight: 600;">
+                    ${solvedCount} / 419
+                </td>
+                <td style="font-family: var(--font-mono); color: #ffffff;">
+                    ${totalMins} mins
+                </td>
+                <td style="font-size: 0.76rem; color: #94a3b8;">
+                    ${lastActiveDate}
+                </td>
+            </tr>
+        `;
+    });
+
+    html += `
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-section-header" style="margin-top: 24px;">
+            <h3>Approved Student Access Roster</h3>
+            <p>Only email accounts listed here are permitted to access the PACER curriculum.</p>
+        </div>
+
+        <div class="admin-roster-manager">
+            <div class="roster-input-row">
+                <input type="email" id="new-student-email-input" class="form-control" placeholder="Enter student email (e.g. student@gmail.com)" style="flex:1;">
+                <button class="action-btn run-btn" onclick="handleAddApprovedEmail()">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span>Approve Student</span>
+                </button>
+            </div>
+            <div class="roster-tags-list">
+                ${approvedRoster.map(email => {
+                    const isCoreAdmin = AuthManager.isAdmin(email);
+                    return `
+                        <div class="roster-tag-pill ${isCoreAdmin ? 'admin-pill' : ''}">
+                            <span>${escapeHtml(email)}</span>
+                            ${isCoreAdmin ? '<span class="admin-mini-tag">Admin</span>' : `
+                                <button class="roster-remove-btn" onclick="handleRemoveApprovedEmail('${escapeHtml(email)}')" title="Revoke Access">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                </button>
+                            `}
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = html;
+}
+
+function handleAddApprovedEmail() {
+    const input = document.getElementById('new-student-email-input');
+    if (!input) return;
+    const email = input.value.trim();
+    if (email) {
+        AuthManager.addApprovedUser(email);
+        renderAdminDashboard();
+    }
+}
+
+function handleRemoveApprovedEmail(email) {
+    if (confirm(`Revoke curriculum access for ${email}?`)) {
+        AuthManager.removeApprovedUser(email);
+        renderAdminDashboard();
+    }
+}
+
+// Attach globally
+window.openAdminModal = openAdminModal;
+window.closeAdminModal = closeAdminModal;
+window.handleDirectLogin = handleDirectLogin;
+window.handleCustomEmailLogin = handleCustomEmailLogin;
+window.handleLogout = handleLogout;
+window.handleAddApprovedEmail = handleAddApprovedEmail;
+window.handleRemoveApprovedEmail = handleRemoveApprovedEmail;
