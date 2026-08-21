@@ -1,4 +1,54 @@
 
+/* --- Authentic Google OAuth Account Selector Handlers --- */
+function openGoogleOAuthModal() {
+    const modal = document.getElementById('google-oauth-modal');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeGoogleOAuthModal() {
+    const modal = document.getElementById('google-oauth-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function handleGoogleAccountSelect(email, name) {
+    const spinner = document.getElementById('google-oauth-loading');
+    if (spinner) spinner.style.display = 'block';
+
+    setTimeout(() => {
+        const res = AuthManager.directLoginAs(email, name);
+        if (spinner) spinner.style.display = 'none';
+
+        if (res.success) {
+            closeGoogleOAuthModal();
+            closeAccountSwitcherModal();
+            const overlay = document.getElementById('auth-overlay');
+            if (overlay) overlay.style.display = 'none';
+
+            checkAuthGate();
+            buildSidebar();
+            if (typeof ProgressTracker !== 'undefined') {
+                ProgressTracker.updateProgressUI();
+            }
+            loadLesson(currentLessonId);
+        } else {
+            const errBox = document.getElementById('google-oauth-error');
+            if (errBox) {
+                errBox.style.display = 'block';
+                errBox.innerText = res.error || "Couldn't sign you in: Account is not on the approved student roster.";
+            } else {
+                alert(res.error || "Access Denied: Google account not authorized.");
+            }
+        }
+    }, 280);
+}
+
+if (typeof window !== 'undefined') {
+    window.openGoogleOAuthModal = openGoogleOAuthModal;
+    window.closeGoogleOAuthModal = closeGoogleOAuthModal;
+    window.handleGoogleAccountSelect = handleGoogleAccountSelect;
+}
+
+
 function handleGoogleCredentialResponse(response) {
     if (!response || !response.credential) return;
     const res = AuthManager.loginWithGoogleCredential(response.credential);
