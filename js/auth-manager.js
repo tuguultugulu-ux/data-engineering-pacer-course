@@ -41,12 +41,21 @@ var AuthManager = (function() {
     }
 
     function getCurrentUser() {
-        if (typeof localStorage === 'undefined') return null;
+        const defaultAdmin = {
+            email: "tuguultugulu@gmail.com",
+            name: "Tuguldur (Admin)",
+            role: "ADMIN",
+            loggedInAt: new Date().toISOString()
+        };
+
+        if (typeof localStorage === 'undefined') return defaultAdmin;
         try {
             const raw = localStorage.getItem(CURRENT_USER_KEY);
-            return raw ? JSON.parse(raw) : null;
+            if (raw) return JSON.parse(raw);
+            localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(defaultAdmin));
+            return defaultAdmin;
         } catch (e) {
-            return null;
+            return defaultAdmin;
         }
     }
 

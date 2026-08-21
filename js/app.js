@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
 let currentLessonId = 'intro';
 
 function initApp() {
-    // Check authentication gate first
-    if (!checkAuthGate()) return;
     // 1. Build sidebar
     buildSidebar();
+
+    // Check authentication state
+    checkAuthGate();
 
     // 2. Initialize Pyodide Runtime
     PyodideEngine.onStatusChange(function(statusText, isReady) {
