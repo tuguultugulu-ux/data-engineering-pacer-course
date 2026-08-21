@@ -102,7 +102,7 @@ var AuthManager = (function() {
         return true;
     }
 
-    /* --- Telemetry & Solve Time Tracking --- */
+    /* --- 100% Real Live Telemetry & Solve Time Tracking --- */
     function recordSolveMetric(cellId, durationSec) {
         const user = getCurrentUser();
         if (!user || !user.email) return;
@@ -116,7 +116,7 @@ var AuthManager = (function() {
 
         if (!allMetrics[email]) {
             allMetrics[email] = {
-                name: user.name || email.split('@')[0],
+                name: user.name || (isAdmin(email) ? getAdminDisplayName(email) : email.split('@')[0]),
                 email: email,
                 lastActive: new Date().toISOString(),
                 totalCodingSec: 0,
@@ -124,12 +124,19 @@ var AuthManager = (function() {
             };
         }
 
+        const actualDuration = Math.max(1, durationSec || 1);
         allMetrics[email].lastActive = new Date().toISOString();
-        allMetrics[email].totalCodingSec += durationSec;
         allMetrics[email].solves[cellId] = {
-            durationSec: durationSec,
+            durationSec: actualDuration,
             solvedAt: new Date().toISOString()
         };
+
+        // Recompute real total coding time
+        let total = 0;
+        for (let k in allMetrics[email].solves) {
+            total += (allMetrics[email].solves[k].durationSec || 0);
+        }
+        allMetrics[email].totalCodingSec = total;
 
         try {
             localStorage.setItem(GLOBAL_METRICS_KEY, JSON.stringify(allMetrics));
@@ -137,42 +144,28 @@ var AuthManager = (function() {
     }
 
     function getGlobalMetrics() {
+        let allMetrics = {};
         try {
             const raw = localStorage.getItem(GLOBAL_METRICS_KEY);
-            if (raw) return JSON.parse(raw);
+            if (raw) allMetrics = JSON.parse(raw);
         } catch (e) {}
 
-        // Mock baseline seed data for admin dashboard demonstration
-        return {
-            "tuguultugulu@gmail.com": {
-                name: "Tuguldur (Admin)",
-                email: "tuguultugulu@gmail.com",
-                lastActive: new Date().toISOString(),
-                totalCodingSec: 3420,
-                solves: { "w2_exam-0": { durationSec: 420 }, "proj_fintech-0": { durationSec: 780 }, "proj_market-0": { durationSec: 1100 } }
-            },
-            "sarantuyasarnai42@gmail.com": {
-                name: "Sarantuya (Admin)",
-                email: "sarantuyasarnai42@gmail.com",
-                lastActive: new Date(Date.now() - 3600000).toISOString(),
-                totalCodingSec: 4100,
-                solves: { "proj_iot-0": { durationSec: 640 }, "proj_ecommerce-0": { durationSec: 890 } }
-            },
-            "iobama538@gmail.com": {
-                name: "Obama (Admin)",
-                email: "iobama538@gmail.com",
-                lastActive: new Date(Date.now() - 7200000).toISOString(),
-                totalCodingSec: 2900,
-                solves: { "proj_clinical-0": { durationSec: 950 } }
-            },
-            "student.pacer01@gmail.com": {
-                name: "Student Pacer 01",
-                email: "student.pacer01@gmail.com",
-                lastActive: new Date(Date.now() - 86400000).toISOString(),
-                totalCodingSec: 5200,
-                solves: { "p1_git-0": { durationSec: 180 }, "w2_exam-0": { durationSec: 620 } }
+        // Populate roster with 100% genuine real telemetry (0 if never solved)
+        const roster = getApprovedRoster();
+        roster.forEach(email => {
+            const lower = email.toLowerCase();
+            if (!allMetrics[lower]) {
+                allMetrics[lower] = {
+                    name: isAdmin(lower) ? getAdminDisplayName(lower) : lower.split('@')[0],
+                    email: lower,
+                    lastActive: null,
+                    totalCodingSec: 0,
+                    solves: {}
+                };
             }
-        };
+        });
+
+        return allMetrics;
     }
 
     /* --- Google OAuth & JWT Parser --- */

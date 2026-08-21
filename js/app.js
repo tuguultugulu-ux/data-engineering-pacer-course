@@ -988,10 +988,28 @@ function renderAdminDashboard() {
     `;
 
     users.forEach(u => {
-        const solvedCount = u.solves ? Object.keys(u.solves).length : 0;
-        const totalMins = u.totalCodingSec ? (u.totalCodingSec / 60).toFixed(1) : 0;
-        const lastActiveDate = u.lastActive ? new Date(u.lastActive).toLocaleDateString() + ' ' + new Date(u.lastActive).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'Recently';
+        const solvedKeys = u.solves ? Object.keys(u.solves) : [];
+        const solvedCount = solvedKeys.length;
+        const totalMins = u.totalCodingSec ? (u.totalCodingSec / 60).toFixed(1) : "0.0";
+        const lastActiveDate = u.lastActive ? new Date(u.lastActive).toLocaleDateString() + ' ' + new Date(u.lastActive).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'Never (Inactive)';
         const isUserAdmin = AuthManager.isAdmin(u.email);
+
+        let solvesBreakdownHtml = '';
+        if (solvedCount > 0) {
+            solvesBreakdownHtml = `
+                <div style="margin-top: 6px; font-size: 0.72rem; font-family: var(--font-mono); color: #94a3b8; line-height: 1.4;">
+                    ${solvedKeys.map(k => {
+                        const sec = u.solves[k].durationSec || 0;
+                        const m = Math.floor(sec / 60);
+                        const s = sec % 60;
+                        const timeStr = m > 0 ? `${m}m ${s}s` : `${s}s`;
+                        return `<span style="display:inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color:#38bdf8; padding: 1px 6px; border-radius: 3px; margin: 2px 4px 2px 0;">${escapeHtml(k)}: ${timeStr}</span>`;
+                    }).join('')}
+                </div>
+            `;
+        } else {
+            solvesBreakdownHtml = `<div style="font-size:0.72rem; color:#64748b; font-style:italic; margin-top:2px;">No problems solved yet</div>`;
+        }
 
         html += `
             <tr>
@@ -1002,13 +1020,14 @@ function renderAdminDashboard() {
                 <td>
                     <span class="user-role-badge ${isUserAdmin ? 'admin' : 'student'}">${isUserAdmin ? 'Admin' : 'Student'}</span>
                 </td>
-                <td style="font-family: var(--font-mono); color: #38bdf8; font-weight: 600;">
+                <td style="font-family: var(--font-mono); color: ${solvedCount > 0 ? '#38bdf8' : '#64748b'}; font-weight: 600;">
                     ${solvedCount} / 419
+                    ${solvesBreakdownHtml}
                 </td>
-                <td style="font-family: var(--font-mono); color: #ffffff;">
+                <td style="font-family: var(--font-mono); color: ${totalMins > 0 ? '#ffffff' : '#64748b'};">
                     ${totalMins} mins
                 </td>
-                <td style="font-size: 0.76rem; color: #94a3b8;">
+                <td style="font-size: 0.74rem; color: ${u.lastActive ? '#94a3b8' : '#64748b'};">
                     ${lastActiveDate}
                 </td>
             </tr>
